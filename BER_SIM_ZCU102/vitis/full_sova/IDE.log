@@ -1,0 +1,813 @@
+09:28:47 INFO  : Registering command handlers for Vitis TCF services
+09:28:47 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\richa\Desktop\vitis_ZCU102\full_sova\temp_xsdb_launch_script.tcl
+09:28:50 INFO  : XSCT server has started successfully.
+09:28:50 INFO  : Successfully done setting XSCT server connection channel  
+09:28:50 INFO  : plnx-install-location is set to ''
+09:28:51 INFO  : Platform repository initialization has completed.
+09:28:53 INFO  : Successfully done setting workspace for the tool. 
+09:28:53 INFO  : Successfully done query RDI_DATADIR 
+09:29:55 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:29:55 INFO  : Result from executing command 'getPlatforms': 
+09:29:55 WARN  : An unexpected exception occurred in the module 'platform project logging'
+09:29:55 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+09:29:57 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+09:32:08 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:32:08 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+09:32:08 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:55:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:55:24 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:55:24 INFO  : 'jtag frequency' command is executed.
+09:55:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:55:40 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:55:40 INFO  : Context for processor 'microblaze_0' is selected.
+09:55:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:55:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:55:40 INFO  : Context for processor 'microblaze_0' is selected.
+09:55:41 INFO  : System reset is completed.
+09:55:44 INFO  : 'after 3000' command is executed.
+09:55:44 INFO  : Context for processor 'microblaze_0' is selected.
+09:55:44 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:55:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:55:44 INFO  : Context for processor 'microblaze_0' is selected.
+09:55:44 INFO  : 'con' command is executed.
+09:55:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:55:44 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+09:59:20 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:59:29 INFO  : Disconnected from the channel tcfchan#2.
+09:59:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:59:30 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:59:30 INFO  : 'jtag frequency' command is executed.
+09:59:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:59:47 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:59:47 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:47 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:59:47 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:59:47 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:47 INFO  : System reset is completed.
+09:59:50 INFO  : 'after 3000' command is executed.
+09:59:50 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:50 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:59:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:59:50 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:50 INFO  : 'con' command is executed.
+09:59:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:59:50 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+09:24:39 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+09:25:00 INFO  : Result from executing command 'getProjects': design_1_wrapper
+09:25:00 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+09:25:10 INFO  : Disconnected from the channel tcfchan#3.
+09:25:11 INFO  : The hardware specfication used by project 'full_sova' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+09:25:11 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+09:25:11 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.mmi' stored in project is removed.
+09:25:11 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream' in project 'full_sova'.
+09:25:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:25:12 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:25:12 INFO  : 'jtag frequency' command is executed.
+09:25:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:25:28 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:25:28 INFO  : Context for processor 'microblaze_0' is selected.
+09:25:28 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa'.
+09:25:28 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:25:28 INFO  : Context for processor 'microblaze_0' is selected.
+09:25:28 INFO  : System reset is completed.
+09:25:31 INFO  : 'after 3000' command is executed.
+09:25:31 INFO  : Context for processor 'microblaze_0' is selected.
+09:25:31 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:25:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:25:32 INFO  : Context for processor 'microblaze_0' is selected.
+09:25:32 INFO  : 'con' command is executed.
+09:25:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:25:32 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+09:30:50 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:31:02 INFO  : Disconnected from the channel tcfchan#5.
+09:31:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:31:03 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:31:03 INFO  : 'jtag frequency' command is executed.
+09:31:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:31:19 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:31:20 INFO  : Context for processor 'microblaze_0' is selected.
+09:31:20 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa'.
+09:31:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:31:20 INFO  : Context for processor 'microblaze_0' is selected.
+09:31:20 INFO  : System reset is completed.
+09:31:23 INFO  : 'after 3000' command is executed.
+09:31:23 INFO  : Context for processor 'microblaze_0' is selected.
+09:31:23 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:31:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:31:23 INFO  : Context for processor 'microblaze_0' is selected.
+09:31:23 INFO  : 'con' command is executed.
+09:31:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:31:23 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+21:11:30 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+21:15:11 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+21:15:17 INFO  : Disconnected from the channel tcfchan#6.
+21:15:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:15:18 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+21:15:18 INFO  : 'jtag frequency' command is executed.
+21:15:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+21:15:34 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+21:15:34 INFO  : Context for processor 'microblaze_0' is selected.
+21:15:34 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa'.
+21:15:34 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:15:34 INFO  : Context for processor 'microblaze_0' is selected.
+21:15:34 INFO  : System reset is completed.
+21:15:37 INFO  : 'after 3000' command is executed.
+21:15:38 INFO  : Context for processor 'microblaze_0' is selected.
+21:15:38 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+21:15:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+21:15:38 INFO  : Context for processor 'microblaze_0' is selected.
+21:15:38 INFO  : 'con' command is executed.
+21:15:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:15:38 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+10:55:32 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\richa\Desktop\vitis_ZCU102\full_sova\temp_xsdb_launch_script.tcl
+10:55:34 INFO  : XSCT server has started successfully.
+10:55:34 INFO  : Successfully done setting XSCT server connection channel  
+10:55:34 INFO  : plnx-install-location is set to ''
+10:55:34 INFO  : Successfully done setting workspace for the tool. 
+10:55:37 INFO  : Platform repository initialization has completed.
+10:55:37 INFO  : Registering command handlers for Vitis TCF services
+10:55:40 INFO  : Successfully done query RDI_DATADIR 
+10:56:08 INFO  : Result from executing command 'getProjects': design_1_wrapper
+10:56:08 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+10:56:08 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+10:56:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:56:11 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+10:56:11 INFO  : 'jtag frequency' command is executed.
+10:56:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+10:56:26 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+10:56:26 INFO  : Context for processor 'microblaze_0' is selected.
+10:56:26 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa'.
+10:56:26 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:56:26 INFO  : Context for processor 'microblaze_0' is selected.
+10:56:26 INFO  : System reset is completed.
+10:56:29 INFO  : 'after 3000' command is executed.
+10:56:29 INFO  : Context for processor 'microblaze_0' is selected.
+10:56:29 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+10:56:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/full_700M.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+10:56:29 INFO  : Context for processor 'microblaze_0' is selected.
+10:56:29 INFO  : 'con' command is executed.
+10:56:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:56:29 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+18:42:05 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+18:42:13 INFO  : Result from executing command 'getProjects': design_1_wrapper
+18:42:13 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+18:42:20 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+18:42:26 INFO  : Disconnected from the channel tcfchan#2.
+18:42:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:42:28 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+18:42:28 INFO  : 'jtag frequency' command is executed.
+18:42:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+18:42:43 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+18:42:43 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+18:42:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:42:43 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:43 INFO  : System reset is completed.
+18:42:46 INFO  : 'after 3000' command is executed.
+18:42:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:46 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+18:42:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+18:42:46 INFO  : Context for processor 'microblaze_0' is selected.
+18:42:46 INFO  : 'con' command is executed.
+18:42:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:42:46 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+18:48:43 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+18:48:49 INFO  : Result from executing command 'getProjects': design_1_wrapper
+18:48:49 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+18:48:55 INFO  : Disconnected from the channel tcfchan#4.
+18:48:56 INFO  : The hardware specfication used by project 'full_sova' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+18:48:56 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+18:48:56 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.mmi' stored in project is removed.
+18:48:56 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream' in project 'full_sova'.
+18:48:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:48:56 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+18:48:56 INFO  : 'jtag frequency' command is executed.
+18:48:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+18:49:12 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+18:49:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:49:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+18:49:12 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:49:12 INFO  : Context for processor 'microblaze_0' is selected.
+18:49:12 INFO  : System reset is completed.
+18:49:15 INFO  : 'after 3000' command is executed.
+18:49:15 INFO  : Context for processor 'microblaze_0' is selected.
+18:49:15 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+18:49:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+18:49:15 INFO  : Context for processor 'microblaze_0' is selected.
+18:49:15 INFO  : 'con' command is executed.
+18:49:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:49:15 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+18:52:05 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+18:54:11 INFO  : Disconnected from the channel tcfchan#6.
+18:54:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:54:12 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+18:54:12 INFO  : 'jtag frequency' command is executed.
+18:54:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+18:54:28 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+18:54:28 INFO  : Context for processor 'microblaze_0' is selected.
+18:54:28 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+18:54:28 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+18:54:28 INFO  : Context for processor 'microblaze_0' is selected.
+18:54:28 INFO  : System reset is completed.
+18:54:31 INFO  : 'after 3000' command is executed.
+18:54:31 INFO  : Context for processor 'microblaze_0' is selected.
+18:54:31 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+18:54:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+18:54:31 INFO  : Context for processor 'microblaze_0' is selected.
+18:54:31 INFO  : 'con' command is executed.
+18:54:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+18:54:31 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+09:57:24 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:59:19 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:59:26 INFO  : Disconnected from the channel tcfchan#7.
+09:59:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:59:27 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:59:27 INFO  : 'jtag frequency' command is executed.
+09:59:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:59:43 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:59:44 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:59:44 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:59:44 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:44 INFO  : System reset is completed.
+09:59:47 INFO  : 'after 3000' command is executed.
+09:59:47 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:47 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:59:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:59:47 INFO  : Context for processor 'microblaze_0' is selected.
+09:59:47 INFO  : 'con' command is executed.
+09:59:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:59:47 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+20:56:32 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+20:56:41 INFO  : Disconnected from the channel tcfchan#8.
+20:56:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:56:43 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+20:56:43 INFO  : 'jtag frequency' command is executed.
+20:56:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+20:56:58 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+20:56:58 INFO  : Context for processor 'microblaze_0' is selected.
+20:56:58 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+20:56:58 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:56:58 INFO  : Context for processor 'microblaze_0' is selected.
+20:56:58 INFO  : System reset is completed.
+20:57:01 INFO  : 'after 3000' command is executed.
+20:57:01 INFO  : Context for processor 'microblaze_0' is selected.
+20:57:01 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+20:57:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+20:57:02 INFO  : Context for processor 'microblaze_0' is selected.
+20:57:02 INFO  : 'con' command is executed.
+20:57:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:57:02 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+21:21:16 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+21:21:33 INFO  : Result from executing command 'getProjects': design_1_wrapper
+21:21:33 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+21:21:38 INFO  : Disconnected from the channel tcfchan#9.
+21:21:39 INFO  : The hardware specfication used by project 'full_sova' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+21:21:39 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+21:21:39 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.mmi' stored in project is removed.
+21:21:39 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream' in project 'full_sova'.
+21:21:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:21:39 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+21:21:39 INFO  : 'jtag frequency' command is executed.
+21:21:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+21:21:55 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+21:21:55 INFO  : Context for processor 'microblaze_0' is selected.
+21:21:55 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:21:55 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:21:55 INFO  : Context for processor 'microblaze_0' is selected.
+21:21:55 INFO  : System reset is completed.
+21:21:58 INFO  : 'after 3000' command is executed.
+21:21:58 INFO  : Context for processor 'microblaze_0' is selected.
+21:21:58 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+21:21:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+21:21:59 INFO  : Context for processor 'microblaze_0' is selected.
+21:21:59 INFO  : 'con' command is executed.
+21:21:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:21:59 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+21:22:51 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+21:23:00 INFO  : Disconnected from the channel tcfchan#11.
+21:23:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:23:01 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+21:23:01 INFO  : 'jtag frequency' command is executed.
+21:23:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+21:23:16 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+21:23:16 INFO  : Context for processor 'microblaze_0' is selected.
+21:23:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:23:16 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:23:16 INFO  : Context for processor 'microblaze_0' is selected.
+21:23:16 INFO  : System reset is completed.
+21:23:19 INFO  : 'after 3000' command is executed.
+21:23:19 INFO  : Context for processor 'microblaze_0' is selected.
+21:23:20 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+21:23:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+21:23:20 INFO  : Context for processor 'microblaze_0' is selected.
+21:23:20 INFO  : 'con' command is executed.
+21:23:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:23:20 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+21:29:11 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+21:29:18 INFO  : Disconnected from the channel tcfchan#12.
+21:29:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:29:19 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+21:29:19 INFO  : 'jtag frequency' command is executed.
+21:29:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+21:29:35 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+21:29:35 INFO  : Context for processor 'microblaze_0' is selected.
+21:29:35 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+21:29:35 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:29:35 INFO  : Context for processor 'microblaze_0' is selected.
+21:29:35 INFO  : System reset is completed.
+21:29:38 INFO  : 'after 3000' command is executed.
+21:29:38 INFO  : Context for processor 'microblaze_0' is selected.
+21:29:38 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+21:29:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+21:29:38 INFO  : Context for processor 'microblaze_0' is selected.
+21:29:38 INFO  : 'con' command is executed.
+21:29:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:29:38 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+04:35:15 WARN  : channel "tcfchan#13" closed
+11:38:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\richa\Desktop\vitis_ZCU102\full_sova\temp_xsdb_launch_script.tcl
+11:38:52 INFO  : XSCT server has started successfully.
+11:38:52 INFO  : plnx-install-location is set to ''
+11:38:52 INFO  : Successfully done setting XSCT server connection channel  
+11:38:52 INFO  : Successfully done setting workspace for the tool. 
+11:38:57 INFO  : Platform repository initialization has completed.
+11:38:57 INFO  : Successfully done query RDI_DATADIR 
+11:38:57 INFO  : Registering command handlers for Vitis TCF services
+11:39:13 INFO  : Result from executing command 'getProjects': design_1_wrapper
+11:39:14 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+11:39:15 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+11:39:31 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+11:39:33 INFO  : Result from executing command 'getProjects': design_1_wrapper
+11:39:33 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+11:39:41 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+11:39:47 INFO  : The hardware specfication used by project 'full_sova' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+11:39:47 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+11:39:47 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.mmi' stored in project is removed.
+11:39:47 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream' in project 'full_sova'.
+11:39:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:39:48 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+11:39:48 INFO  : 'jtag frequency' command is executed.
+11:39:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+11:40:04 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+11:40:04 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:40:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:40:04 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:04 INFO  : System reset is completed.
+11:40:07 INFO  : 'after 3000' command is executed.
+11:40:07 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:08 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+11:40:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+11:40:08 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:08 INFO  : 'con' command is executed.
+11:40:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:40:08 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+11:41:40 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+11:41:46 INFO  : Disconnected from the channel tcfchan#3.
+11:41:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:41:47 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+11:41:47 INFO  : 'jtag frequency' command is executed.
+11:41:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+11:42:04 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+11:42:04 INFO  : Context for processor 'microblaze_0' is selected.
+11:42:04 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:42:04 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:42:04 INFO  : Context for processor 'microblaze_0' is selected.
+11:42:04 INFO  : System reset is completed.
+11:42:07 INFO  : 'after 3000' command is executed.
+11:42:07 INFO  : Context for processor 'microblaze_0' is selected.
+11:42:07 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+11:42:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+11:42:07 INFO  : Context for processor 'microblaze_0' is selected.
+11:42:07 INFO  : 'con' command is executed.
+11:42:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:42:07 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+11:54:47 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+11:54:53 INFO  : Disconnected from the channel tcfchan#4.
+11:54:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:54:54 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+11:54:54 INFO  : 'jtag frequency' command is executed.
+11:54:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+11:55:10 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+11:55:11 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:11 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:55:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:55:11 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:11 INFO  : System reset is completed.
+11:55:14 INFO  : 'after 3000' command is executed.
+11:55:14 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:14 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+11:55:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+11:55:14 INFO  : Context for processor 'microblaze_0' is selected.
+11:55:14 INFO  : 'con' command is executed.
+11:55:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:55:14 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+18:59:17 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+18:59:37 INFO  : Result from executing command 'getProjects': design_1_wrapper
+18:59:37 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+18:59:38 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+19:01:57 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+19:02:05 INFO  : Disconnected from the channel tcfchan#5.
+19:02:06 INFO  : The hardware specfication used by project 'full_sova' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+19:02:06 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+19:02:06 INFO  : The file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream\design_1_wrapper.mmi' stored in project is removed.
+19:02:06 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova\_ide\bitstream' in project 'full_sova'.
+19:02:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:02:07 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+19:02:07 INFO  : 'jtag frequency' command is executed.
+19:02:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+19:02:23 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+19:02:23 INFO  : Context for processor 'microblaze_0' is selected.
+19:02:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+19:02:23 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:02:23 INFO  : Context for processor 'microblaze_0' is selected.
+19:02:23 INFO  : System reset is completed.
+19:02:26 INFO  : 'after 3000' command is executed.
+19:02:26 INFO  : Context for processor 'microblaze_0' is selected.
+19:02:26 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+19:02:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+19:02:26 INFO  : Context for processor 'microblaze_0' is selected.
+19:02:26 INFO  : 'con' command is executed.
+19:02:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:02:26 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+19:04:22 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+19:04:29 INFO  : Disconnected from the channel tcfchan#7.
+19:04:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:04:31 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+19:04:31 INFO  : 'jtag frequency' command is executed.
+19:04:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+19:04:46 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+19:04:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:46 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+19:04:46 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:04:46 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:46 INFO  : System reset is completed.
+19:04:49 INFO  : 'after 3000' command is executed.
+19:04:49 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:50 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+19:04:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+19:04:50 INFO  : Context for processor 'microblaze_0' is selected.
+19:04:50 INFO  : 'con' command is executed.
+19:04:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:04:50 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+09:25:48 INFO  : Checking for BSP changes to sync application flags for project 'full_sova'...
+09:25:54 INFO  : Disconnected from the channel tcfchan#8.
+09:25:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:25:55 INFO  : Jtag cable 'Digilent JTAG-SMT2NC 210308A46BE7' is selected.
+09:25:55 INFO  : 'jtag frequency' command is executed.
+09:25:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}' command is executed.
+09:26:11 INFO  : Device configured successfully with "C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit"
+09:26:11 INFO  : Context for processor 'microblaze_0' is selected.
+09:26:11 INFO  : Hardware design and registers information is loaded from 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+09:26:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:26:11 INFO  : Context for processor 'microblaze_0' is selected.
+09:26:11 INFO  : System reset is completed.
+09:26:15 INFO  : 'after 3000' command is executed.
+09:26:15 INFO  : Context for processor 'microblaze_0' is selected.
+09:26:15 INFO  : The application 'C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf' is downloaded to processor 'microblaze_0'.
+09:26:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT2NC 210308A46BE7" && level==0 && jtag_device_ctx=="jsn-JTAG-SMT2NC-210308A46BE7-24738093-0"}
+fpga -file C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/richa/Desktop/vitis_ZCU102/full_sova/full_sova/Debug/full_sova.elf
+----------------End of Script----------------
+
+09:26:15 INFO  : Context for processor 'microblaze_0' is selected.
+09:26:15 INFO  : 'con' command is executed.
+09:26:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+09:26:15 INFO  : Launch script is exported to file 'C:\Users\richa\Desktop\vitis_ZCU102\full_sova\full_sova_system\_ide\scripts\debugger_full_sova-default.tcl'
+03:57:03 WARN  : channel "tcfchan#9" closed

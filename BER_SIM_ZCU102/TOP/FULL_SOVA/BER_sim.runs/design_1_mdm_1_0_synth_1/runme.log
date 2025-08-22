@@ -1,0 +1,434 @@
+
+*** Running vivado
+    with args -log design_1_mdm_1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mdm_1_0.tcl
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source design_1_mdm_1_0.tcl -notrace
+Command: synth_design -top design_1_mdm_1_0 -part xczu9eg-ffvb1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28950
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2747.590 ; gain = 48.781 ; free physical = 158465 ; free virtual = 610584
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_mdm_1_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/synth/design_1_mdm_1_0.vhd:74]
+	Parameter C_FAMILY bound to: zynquplus - type: string 
+	Parameter C_REVISION bound to: (null) - type: string 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_BSCANID bound to: 76547328 - type: integer 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_AVOID_PRIMITIVES bound to: 0 - type: integer 
+	Parameter C_INTERCONNECT bound to: 2 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_THREAD_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_ADDR_SIZE bound to: 32 - type: integer 
+	Parameter C_DATA_SIZE bound to: 32 - type: integer 
+	Parameter C_LMB_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:12616' bound to instance 'U0' of component 'MDM' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/synth/design_1_mdm_1_0.vhd:1656]
+INFO: [Synth 8-638] synthesizing module 'MDM' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:14299]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BSCANE2' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:321' bound to instance 'BSCAN_I' of component 'MB_BSCANE2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:15905]
+INFO: [Synth 8-638] synthesizing module 'MB_BSCANE2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:345]
+	Parameter DISABLE_JTAG bound to: FALSE - type: string 
+	Parameter JTAG_CHAIN bound to: 2 - type: integer 
+INFO: [Synth 8-113] binding component instance 'BSCANE2_I' to cell 'BSCANE2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:355]
+INFO: [Synth 8-256] done synthesizing module 'MB_BSCANE2' (1#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:345]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-3491] module 'MB_LUT1' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:1469' bound to instance 'LUT1_I' of component 'MB_LUT1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:15923]
+INFO: [Synth 8-638] synthesizing module 'MB_LUT1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:1483]
+	Parameter INIT bound to: 2'b10 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'LUT1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:1505]
+INFO: [Synth 8-256] done synthesizing module 'MB_LUT1' (2#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:1483]
+	Parameter C_TARGET bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'MB_BUFG' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:383' bound to instance 'BUFG_DRCK' of component 'MB_BUFG' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:16391]
+INFO: [Synth 8-638] synthesizing module 'MB_BUFG' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:396]
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'BUFG' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:406]
+INFO: [Synth 8-256] done synthesizing module 'MB_BUFG' (3#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:396]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_JTAG_CHAIN bound to: 2 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_REG_NUM_CE bound to: 4 - type: integer 
+	Parameter C_REG_DATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_TRACE_ASYNC_RESET bound to: 0 - type: integer 
+	Parameter C_TRACE_CLK_FREQ_HZ bound to: 200000000 - type: integer 
+	Parameter C_TRACE_CLK_OUT_PHASE bound to: 90 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_TRACE_ID bound to: 110 - type: integer 
+	Parameter C_M_AXIS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXIS_ID_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'MDM_Core' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:5734' bound to instance 'MDM_Core_I1' of component 'MDM_Core' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:16489]
+INFO: [Synth 8-638] synthesizing module 'MDM_Core' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:6971]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:297' bound to instance 'config_scan_reset_i' of component 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:7654]
+INFO: [Synth 8-638] synthesizing module 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:306]
+INFO: [Synth 8-256] done synthesizing module 'xil_scan_reset_control' (4#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:306]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:297' bound to instance 'sel_n_reset_i' of component 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:7664]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:297' bound to instance 'shift_n_reset_i' of component 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:7674]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_USE_BSCAN bound to: 0 - type: integer 
+	Parameter C_MB_DBG_PORTS bound to: 1 - type: integer 
+	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter C_DEBUG_INTERFACE bound to: 0 - type: integer 
+	Parameter C_DBG_REG_ACCESS bound to: 0 - type: integer 
+	Parameter C_DBG_MEM_ACCESS bound to: 0 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_USE_CROSS_TRIGGER bound to: 0 - type: integer 
+	Parameter C_EXT_TRIG_RESET_VALUE bound to: 20'b11110001001000110100 
+	Parameter C_USE_UART bound to: 0 - type: integer 
+	Parameter C_UART_WIDTH bound to: 8 - type: integer 
+	Parameter C_TRACE_OUTPUT bound to: 0 - type: integer 
+	Parameter C_TRACE_PROTOCOL bound to: 1 - type: integer 
+	Parameter C_EN_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'JTAG_CONTROL' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3017' bound to instance 'JTAG_CONTROL_I' of component 'JTAG_CONTROL' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:10365]
+INFO: [Synth 8-638] synthesizing module 'JTAG_CONTROL' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3290]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:297' bound to instance 'config_with_scan_reset_i' of component 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3599]
+INFO: [Synth 8-3491] module 'xil_scan_reset_control' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:297' bound to instance 'sel_with_scan_reset_i' of component 'xil_scan_reset_control' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3607]
+	Parameter C_TARGET bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDC_1' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:682' bound to instance 'FDC_I' of component 'MB_FDC_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3664]
+INFO: [Synth 8-638] synthesizing module 'MB_FDC_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:698]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDC_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:719]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDC_1' (5#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:698]
+	Parameter C_TARGET bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'MB_FDRE_1' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:741' bound to instance 'SYNC_FDRE' of component 'MB_FDRE_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3674]
+INFO: [Synth 8-638] synthesizing module 'MB_FDRE_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:758]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'Native' to cell 'FDRE_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:781]
+INFO: [Synth 8-256] done synthesizing module 'MB_FDRE_1' (6#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:758]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0000000101100111 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:804' bound to instance 'SRL16E_1' of component 'MB_SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3868]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter INIT bound to: 16'b0000000101100111 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:832]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0100001010000111 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:804' bound to instance 'SRL16E_2' of component 'MB_SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3886]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter INIT bound to: 16'b0100001010000111 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:832]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized1' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0100010001000011 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:804' bound to instance 'SRL16E_ID_1' of component 'MB_SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3957]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter INIT bound to: 16'b0100010001000011 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:832]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized3' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter C_TARGET bound to: 6 - type: integer 
+	Parameter C_STATIC bound to: 1 - type: bool 
+	Parameter C_USE_SRL16 bound to: yes - type: string 
+	Parameter INIT bound to: 16'b0101100001001101 
+INFO: [Synth 8-3491] module 'MB_SRL16E' declared at '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:804' bound to instance 'SRL16E_ID_2' of component 'MB_SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3975]
+INFO: [Synth 8-638] synthesizing module 'MB_SRL16E__parameterized5' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+	Parameter INIT bound to: 16'b0101100001001101 
+INFO: [Synth 8-113] binding component instance 'MB_SRL16E_I1' to cell 'SRL16E' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:832]
+INFO: [Synth 8-256] done synthesizing module 'MB_SRL16E__parameterized5' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:828]
+INFO: [Synth 8-256] done synthesizing module 'JTAG_CONTROL' (8#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:3290]
+INFO: [Synth 8-256] done synthesizing module 'MDM_Core' (9#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:6971]
+INFO: [Synth 8-256] done synthesizing module 'MDM' (10#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/2932/hdl/mdm_v3_2_vh_rfs.vhd:14299]
+INFO: [Synth 8-256] done synthesizing module 'design_1_mdm_1_0' (11#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/synth/design_1_mdm_1_0.vhd:74]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2805.527 ; gain = 106.719 ; free physical = 159576 ; free virtual = 611701
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2823.340 ; gain = 124.531 ; free physical = 159155 ; free virtual = 611286
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2823.340 ; gain = 124.531 ; free physical = 159154 ; free virtual = 611286
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2831.277 ; gain = 0.000 ; free physical = 159073 ; free virtual = 611204
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0_ooc_trace.xdc] for cell 'U0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0_ooc_trace.xdc] for cell 'U0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc] for cell 'U0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_mdm_1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_mdm_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_mdm_1_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_mdm_1_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3003.996 ; gain = 0.000 ; free physical = 159318 ; free virtual = 611452
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  FDC_1 => FDCE (inverted pins: C): 1 instance 
+  FDRE_1 => FDRE (inverted pins: C): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3003.996 ; gain = 0.000 ; free physical = 159328 ; free virtual = 611462
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3003.996 ; gain = 305.188 ; free physical = 159298 ; free virtual = 611462
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3003.996 ; gain = 305.188 ; free physical = 159296 ; free virtual = 611460
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_mdm_1_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3003.996 ; gain = 305.188 ; free physical = 159301 ; free virtual = 611459
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3003.996 ; gain = 305.188 ; free physical = 158783 ; free virtual = 610942
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 4     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 23    
+	  12 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 3003.996 ; gain = 305.188 ; free physical = 158610 ; free virtual = 610772
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 3356.691 ; gain = 657.883 ; free physical = 155224 ; free virtual = 607417
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 3379.723 ; gain = 680.914 ; free physical = 155353 ; free virtual = 607546
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 3387.730 ; gain = 688.922 ; free physical = 155329 ; free virtual = 607522
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156323 ; free virtual = 608505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156324 ; free virtual = 608505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156327 ; free virtual = 608508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156325 ; free virtual = 608507
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156329 ; free virtual = 608511
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156329 ; free virtual = 608511
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                 | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[26] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[10] | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|MDM         | MDM_Core_I1/Use_BSCAN.Config_Reg_reg[3]  | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BSCANE2 |     1|
+|2     |BUFG    |     1|
+|3     |LUT1    |     5|
+|4     |LUT2    |    14|
+|5     |LUT3    |    24|
+|6     |LUT4    |    13|
+|7     |LUT5    |    18|
+|8     |LUT6    |    32|
+|9     |SRL16E  |     7|
+|14    |FDCE    |    30|
+|15    |FDC     |     1|
+|16    |FDPE    |     6|
+|17    |FDRE    |    74|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.699 ; gain = 691.891 ; free physical = 156328 ; free virtual = 608510
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3390.699 ; gain = 511.234 ; free physical = 156350 ; free virtual = 608532
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 3390.707 ; gain = 691.891 ; free physical = 156349 ; free virtual = 608531
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3390.707 ; gain = 0.000 ; free physical = 156455 ; free virtual = 608629
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3467.371 ; gain = 0.000 ; free physical = 156330 ; free virtual = 608503
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  FDC_1 => FDCE (inverted pins: C): 1 instance 
+  FDRE_1 => FDRE (inverted pins: C): 1 instance 
+
+Synth Design complete, checksum: 3273ea17
+INFO: [Common 17-83] Releasing license: Synthesis
+72 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:01:07 . Memory (MB): peak = 3467.371 ; gain = 982.199 ; free physical = 156461 ; free virtual = 608630
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_mdm_1_0_synth_1/design_1_mdm_1_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mdm_1_0, cache-ID = 4c5285a78e837e98
+INFO: [Coretcl 2-1174] Renamed 12 cell refs.
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_mdm_1_0_synth_1/design_1_mdm_1_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_mdm_1_0_utilization_synth.rpt -pb design_1_mdm_1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 15 14:09:11 2024...

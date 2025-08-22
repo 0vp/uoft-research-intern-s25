@@ -1,0 +1,742 @@
+run all
+=== RS(200,168) SerDes + ZGC IP Test Bench ===
+INFO_BITS =        1344, CODE_BITS =        1600
+
+=== TEST 0: SerDes-Only Test (S2P → P2S Direct) ===
+Testing SerDes-only bypass (S2P -> P2S direct connection)
+This validates bit accuracy without any RS encoding/decoding
+Sending        1344 bits with counter starting from 0
+  Counter pattern: LSB of incrementing 8-bit counter
+  Expected: 0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,...
+  SerDes test mode enabled: data_bit -> S2P -> P2S -> serdes_out
+  S2P ready: 1, P2S ready: 1
+  [45000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [55000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [65000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [75000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [85000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [95000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [105000] Counter=000, Bit: data_bit=0, data_valid=1
+  Byte          0 starting (counter=000)
+  [115000] Counter=001, Bit: data_bit=0, data_valid=1
+  [125000] Counter=001, Bit: data_bit=1, data_valid=1
+  [135000] Counter=001, Bit: data_bit=0, data_valid=1
+  [145000] Counter=001, Bit: data_bit=0, data_valid=1
+  [155000] Counter=001, Bit: data_bit=0, data_valid=1
+  [165000] Counter=001, Bit: data_bit=0, data_valid=1
+  [175000] Counter=001, Bit: data_bit=0, data_valid=1
+  [185000] Counter=001, Bit: data_bit=0, data_valid=1
+  [195000] Counter=002, Bit: data_bit=0, data_valid=1
+  [205000] Counter=002, Bit: data_bit=0, data_valid=1
+  [215000] Counter=002, Bit: data_bit=1, data_valid=1
+  [225000] Counter=002, Bit: data_bit=0, data_valid=1
+  [235000] Counter=002, Bit: data_bit=0, data_valid=1
+  [245000] Counter=002, Bit: data_bit=0, data_valid=1
+  [255000] Counter=002, Bit: data_bit=0, data_valid=1
+  [265000] Counter=002, Bit: data_bit=0, data_valid=1
+  [275000] Counter=003, Bit: data_bit=0, data_valid=1
+  [285000] Counter=003, Bit: data_bit=1, data_valid=1
+  [295000] Counter=003, Bit: data_bit=1, data_valid=1
+  [305000] Counter=003, Bit: data_bit=0, data_valid=1
+  [315000] Counter=003, Bit: data_bit=0, data_valid=1
+  [325000] Counter=003, Bit: data_bit=0, data_valid=1
+  [335000] Counter=003, Bit: data_bit=0, data_valid=1
+  [345000] Counter=003, Bit: data_bit=0, data_valid=1
+  [355000] Counter=004, Bit: data_bit=0, data_valid=1
+  [365000] Counter=004, Bit: data_bit=0, data_valid=1
+  [375000] Counter=004, Bit: data_bit=0, data_valid=1
+  [385000] Counter=004, Bit: data_bit=1, data_valid=1
+  [395000] Counter=004, Bit: data_bit=0, data_valid=1
+  [405000] Counter=004, Bit: data_bit=0, data_valid=1
+  [415000] Counter=004, Bit: data_bit=0, data_valid=1
+  [425000] Counter=004, Bit: data_bit=0, data_valid=1
+  [435000] Counter=005, Bit: data_bit=0, data_valid=1
+  [445000] Counter=005, Bit: data_bit=1, data_valid=1
+  [455000] Counter=005, Bit: data_bit=0, data_valid=1
+  [465000] Counter=005, Bit: data_bit=1, data_valid=1
+  [475000] Counter=005, Bit: data_bit=0, data_valid=1
+  [485000] Counter=005, Bit: data_bit=0, data_valid=1
+  [495000] Counter=005, Bit: data_bit=0, data_valid=1
+  [505000] Counter=005, Bit: data_bit=0, data_valid=1
+  [515000] Counter=006, Bit: data_bit=0, data_valid=1
+  [525000] Counter=006, Bit: data_bit=0, data_valid=1
+  [535000] Counter=006, Bit: data_bit=1, data_valid=1
+  [545000] Counter=006, Bit: data_bit=1, data_valid=1
+  [555000] Counter=006, Bit: data_bit=0, data_valid=1
+  [565000] Counter=006, Bit: data_bit=0, data_valid=1
+  [575000] Counter=006, Bit: data_bit=0, data_valid=1
+  [585000] Counter=006, Bit: data_bit=0, data_valid=1
+  [595000] Counter=007, Bit: data_bit=0, data_valid=1
+  [605000] Counter=007, Bit: data_bit=1, data_valid=1
+  [615000] Counter=007, Bit: data_bit=1, data_valid=1
+  [625000] Counter=007, Bit: data_bit=1, data_valid=1
+  [635000] Counter=007, Bit: data_bit=0, data_valid=1
+  [645000] Counter=007, Bit: data_bit=0, data_valid=1
+  [655000] Counter=007, Bit: data_bit=0, data_valid=1
+  [665000] Counter=007, Bit: data_bit=0, data_valid=1
+  [675000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [685000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [695000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [705000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [715000] Counter=008, Bit: data_bit=1, data_valid=1
+  Byte          1 starting (counter=008)
+  [725000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [735000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [745000] Counter=008, Bit: data_bit=0, data_valid=1
+  Byte          1 starting (counter=008)
+  [755000] Counter=009, Bit: data_bit=0, data_valid=1
+  [765000] Counter=009, Bit: data_bit=1, data_valid=1
+  [775000] Counter=009, Bit: data_bit=0, data_valid=1
+  [785000] Counter=009, Bit: data_bit=0, data_valid=1
+  [795000] Counter=009, Bit: data_bit=1, data_valid=1
+  [805000] Counter=009, Bit: data_bit=0, data_valid=1
+  [815000] Counter=009, Bit: data_bit=0, data_valid=1
+  [825000] Counter=009, Bit: data_bit=0, data_valid=1
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          2 starting (counter=016)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          3 starting (counter=024)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          4 starting (counter=032)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          5 starting (counter=040)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          6 starting (counter=048)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  Byte          7 starting (counter=056)
+  All        1344 bits sent
+  S2P bypass status: valid=0, data[31:0]=03020100
+  P2S bypass ready=1, S2P frames= 0, P2S frames= 0
+  [16025000] Counter: Completed frame 1/1 - stopping generation
+  SerDes output completed:  1344 bits received
+Comparing input and output data:
+  First 64 bits of input:  0706050403020100
+  First 64 bits of output: 0706050403020100
+PASS: SerDes-only test - Perfect bit accuracy!
+  All        1344 bits match exactly
+  Resetting between tests...
+  Reset complete
+
+=== TEST 1: SerDes Pipeline Validation (Clean Channel) ===
+Sending        1344 information bits through clean channel...
+  Counter starts from 0 again for this test
+  [42415000] enc_data_valid RISING EDGE, enc_data_out=0, p2s.serial_data_out=0
+  [42415000] Encoded           0 bits...
+  [42415000] CHANNEL Frame bit     0: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42415000] CHANNEL: New frame starting, first bit: enc_out=0 -> channel=0
+  [42425000] CHANNEL Frame bit     1: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42435000] CHANNEL Frame bit     2: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42445000] CHANNEL Frame bit     3: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42455000] CHANNEL Frame bit     4: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42465000] CHANNEL Frame bit     5: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42475000] CHANNEL Frame bit     6: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42485000] CHANNEL Frame bit     7: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42495000] CHANNEL Frame bit     8: enc_out=1, channel=1, dec_will_receive=1 (inject=0)
+  [42505000] CHANNEL Frame bit     9: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42515000] CHANNEL Frame bit    10: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42525000] CHANNEL Frame bit    11: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42535000] CHANNEL Frame bit    12: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42545000] CHANNEL Frame bit    13: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42555000] CHANNEL Frame bit    14: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42565000] CHANNEL Frame bit    15: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42575000] CHANNEL Frame bit    16: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42585000] CHANNEL Frame bit    17: enc_out=1, channel=1, dec_will_receive=1 (inject=0)
+  [42595000] CHANNEL Frame bit    18: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42605000] CHANNEL Frame bit    19: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42615000] CHANNEL Frame bit    20: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42625000] CHANNEL Frame bit    21: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42635000] CHANNEL Frame bit    22: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42645000] CHANNEL Frame bit    23: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42655000] CHANNEL Frame bit    24: enc_out=1, channel=1, dec_will_receive=1 (inject=0)
+  [42665000] CHANNEL Frame bit    25: enc_out=1, channel=1, dec_will_receive=1 (inject=0)
+  [42675000] CHANNEL Frame bit    26: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42685000] CHANNEL Frame bit    27: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42695000] CHANNEL Frame bit    28: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42705000] CHANNEL Frame bit    29: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42715000] CHANNEL Frame bit    30: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [42725000] CHANNEL Frame bit    31: enc_out=0, channel=0, dec_will_receive=0 (inject=0)
+  [44685000] Counter: Completed frame 1/1 - stopping generation
+  [52415000] Encoded        1000 bits...
+  [58415000] enc_data_valid FALLING EDGE
+  Input data (first 64 bytes hex):
+    3f3e3d3c3b3a393837363534333231302f2e2d2c2b2a292827262524232221201f1e1d1c1b1a191817161514131211100f0e0d0c0b0a09080706050403020100
+  Output data (first 64 bytes hex):
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0ee6bf860a09080706050403020100
+FAIL: Clean channel - Input/output mismatch
+  Full Input:  a7a6a5a4a3a2a1a09f9e9d9c9b9a999897969594939291908f8e8d8c8b8a898887868584838281807f7e7d7c7b7a797877767574737271706f6e6d6c6b6a696867666564636261605f5e5d5c5b5a595857565554535251504f4e4d4c4b4a494847464544434241403f3e3d3c3b3a393837363534333231302f2e2d2c2b2a292827262524232221201f1e1d1c1b1a191817161514131211100f0e0d0c0b0a09080706050403020100
+  Full Output: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0ee6bf860a09080706050403020100
+  Resetting between tests...
+  Reset complete
+
+=== TEST 2: Error Injection and Correction ===
+Sending        1344 bits with 3 error injections...
+  Counter starts from 0 again for this test
+  [88095000] enc_data_valid RISING EDGE, enc_data_out=0, p2s.serial_data_out=0
+  [88095000] Encoded           0 bits...
+  [88095000] CHANNEL Frame bit     0: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88095000] CHANNEL: New frame starting, first bit: enc_out=0 -> channel=0
+  [88105000] CHANNEL Frame bit     1: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88115000] CHANNEL Frame bit     2: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88125000] CHANNEL Frame bit     3: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88135000] CHANNEL Frame bit     4: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88145000] CHANNEL Frame bit     5: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88155000] CHANNEL Frame bit     6: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88165000] CHANNEL Frame bit     7: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88175000] CHANNEL Frame bit     8: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [88185000] CHANNEL Frame bit     9: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88195000] CHANNEL Frame bit    10: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88205000] CHANNEL Frame bit    11: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88215000] CHANNEL Frame bit    12: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88225000] CHANNEL Frame bit    13: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88235000] CHANNEL Frame bit    14: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88245000] CHANNEL Frame bit    15: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88255000] CHANNEL Frame bit    16: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88265000] CHANNEL Frame bit    17: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [88275000] CHANNEL Frame bit    18: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88285000] CHANNEL Frame bit    19: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88295000] CHANNEL Frame bit    20: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88305000] CHANNEL Frame bit    21: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88315000] CHANNEL Frame bit    22: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88325000] CHANNEL Frame bit    23: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88335000] CHANNEL Frame bit    24: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [88345000] CHANNEL Frame bit    25: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [88355000] CHANNEL Frame bit    26: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88365000] CHANNEL Frame bit    27: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88375000] CHANNEL Frame bit    28: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88385000] CHANNEL Frame bit    29: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88395000] CHANNEL Frame bit    30: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [88405000] CHANNEL Frame bit    31: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [90365000] Counter: Completed frame 1/1 - stopping generation
+  [98095000] Encoded        1000 bits...
+  [104095000] enc_data_valid FALLING EDGE
+  Input data (first 64 bytes hex):
+    3f3e3d3c3b3a393837363534333231302f2e2d2c2b2a292827262524232221201f1e1d1c1b1a191817161514131211100f0e0d0c0b0a09080706050403020100
+  Output data (first 64 bytes hex):
+    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0ee6bf860a09080706050403020100
+FAIL: Error correction - Failed to correct errors
+  Full Input:  a7a6a5a4a3a2a1a09f9e9d9c9b9a999897969594939291908f8e8d8c8b8a898887868584838281807f7e7d7c7b7a797877767574737271706f6e6d6c6b6a696867666564636261605f5e5d5c5b5a595857565554535251504f4e4d4c4b4a494847464544434241403f3e3d3c3b3a393837363534333231302f2e2d2c2b2a292827262524232221201f1e1d1c1b1a191817161514131211100f0e0d0c0b0a09080706050403020100
+  Full Output: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0ee6bf860a09080706050403020100
+  Resetting between tests...
+  Reset complete
+
+=== TEST 3: Multiple Frame Test (WITH ERROR INJECTION) ===
+  Resetting between tests...
+  Reset complete
+Testing           3 consecutive frames with continuous streaming...
+  Counter starts from 0 and continues incrementing across all frames
+  ERROR INJECTION ENABLED: 3 bit errors per frame at positions 700, 800, 900
+  RS decoder should correct all errors
+  Starting parallel collection of input and output bits...
+  Waiting for decoder output to start...
+    Input Bit           0: data_bit=0 (counter=  0)
+  [121265000] COUNTER->ENCODER: Frame bit           0 = 0 (counter byte          0)
+  Input Frame           1 starting (bit           0, counter=  0)
+  Expected frame           1 first byte: 00 (counter starts at   0)
+    Input Bit           1: data_bit=0 (counter=  0)
+  [121275000] COUNTER->ENCODER: Frame bit           1 = 0 (counter byte          0)
+    Input Bit           2: data_bit=0 (counter=  0)
+  [121285000] COUNTER->ENCODER: Frame bit           2 = 0 (counter byte          0)
+    Input Bit           3: data_bit=0 (counter=  0)
+  [121295000] COUNTER->ENCODER: Frame bit           3 = 0 (counter byte          0)
+    Input Bit           4: data_bit=0 (counter=  0)
+  [121305000] COUNTER->ENCODER: Frame bit           4 = 0 (counter byte          0)
+    Input Bit           5: data_bit=0 (counter=  0)
+  [121315000] COUNTER->ENCODER: Frame bit           5 = 0 (counter byte          0)
+    Input Bit           6: data_bit=0 (counter=  0)
+  [121325000] COUNTER->ENCODER: Frame bit           6 = 0 (counter byte          0)
+    Input Bit           7: data_bit=0 (counter=  1)
+  [121335000] COUNTER->ENCODER: Frame bit           7 = 0 (counter byte          0)
+    Input Bit           8: data_bit=1 (counter=  1)
+  [121345000] COUNTER->ENCODER: Frame bit           8 = 1 (counter byte          0)
+    Input Bit           9: data_bit=0 (counter=  1)
+  [121355000] COUNTER->ENCODER: Frame bit           9 = 0 (counter byte          0)
+    Input Bit          10: data_bit=0 (counter=  1)
+  [121365000] COUNTER->ENCODER: Frame bit          10 = 0 (counter byte          0)
+    Input Bit          11: data_bit=0 (counter=  1)
+  [121375000] COUNTER->ENCODER: Frame bit          11 = 0 (counter byte          0)
+    Input Bit          12: data_bit=0 (counter=  1)
+  [121385000] COUNTER->ENCODER: Frame bit          12 = 0 (counter byte          0)
+    Input Bit          13: data_bit=0 (counter=  1)
+  [121395000] COUNTER->ENCODER: Frame bit          13 = 0 (counter byte          0)
+    Input Bit          14: data_bit=0 (counter=  1)
+  [121405000] COUNTER->ENCODER: Frame bit          14 = 0 (counter byte          0)
+    Input Bit          15: data_bit=0 (counter=  2)
+  [121415000] COUNTER->ENCODER: Frame bit          15 = 0 (counter byte          0)
+  [121425000] COUNTER->ENCODER: Frame bit          16 = 0 (counter byte          0)
+  [121435000] COUNTER->ENCODER: Frame bit          17 = 1 (counter byte          0)
+  [121445000] COUNTER->ENCODER: Frame bit          18 = 0 (counter byte          0)
+  [121455000] COUNTER->ENCODER: Frame bit          19 = 0 (counter byte          0)
+  [121465000] COUNTER->ENCODER: Frame bit          20 = 0 (counter byte          0)
+  [121475000] COUNTER->ENCODER: Frame bit          21 = 0 (counter byte          0)
+  [121485000] COUNTER->ENCODER: Frame bit          22 = 0 (counter byte          0)
+  [121495000] COUNTER->ENCODER: Frame bit          23 = 0 (counter byte          0)
+  [121505000] COUNTER->ENCODER: Frame bit          24 = 1 (counter byte          0)
+  [121515000] COUNTER->ENCODER: Frame bit          25 = 1 (counter byte          0)
+  [121525000] COUNTER->ENCODER: Frame bit          26 = 0 (counter byte          0)
+  [121535000] COUNTER->ENCODER: Frame bit          27 = 0 (counter byte          0)
+  [121545000] COUNTER->ENCODER: Frame bit          28 = 0 (counter byte          0)
+  [121555000] COUNTER->ENCODER: Frame bit          29 = 0 (counter byte          0)
+  [121565000] COUNTER->ENCODER: Frame bit          30 = 0 (counter byte          0)
+  [121575000] COUNTER->ENCODER: Frame bit          31 = 0 (counter byte          0)
+  Collected        1000 input bits (counter=125)...
+  [134975000] enc_data_valid RISING EDGE, enc_data_out=0, p2s.serial_data_out=0
+  [134975000] Encoded           0 bits...
+  [134975000] CHANNEL Frame bit     0: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [134975000] CHANNEL: New frame starting, first bit: enc_out=0 -> channel=0
+  [134975000] DECODER S2P collecting bit    0: channel_data=0, bit_counter=   0
+  [134985000] CHANNEL Frame bit     1: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [134985000] DECODER S2P collecting bit    1: channel_data=0, bit_counter=   1
+  [134995000] CHANNEL Frame bit     2: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [134995000] DECODER S2P collecting bit    2: channel_data=0, bit_counter=   2
+  [135005000] CHANNEL Frame bit     3: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135005000] DECODER S2P collecting bit    3: channel_data=0, bit_counter=   3
+  [135015000] CHANNEL Frame bit     4: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135015000] DECODER S2P collecting bit    4: channel_data=0, bit_counter=   4
+  [135025000] CHANNEL Frame bit     5: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135025000] DECODER S2P collecting bit    5: channel_data=0, bit_counter=   5
+  [135035000] CHANNEL Frame bit     6: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135035000] DECODER S2P collecting bit    6: channel_data=0, bit_counter=   6
+  [135045000] CHANNEL Frame bit     7: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135045000] DECODER S2P collecting bit    7: channel_data=0, bit_counter=   7
+  [135055000] CHANNEL Frame bit     8: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [135055000] DECODER S2P collecting bit    8: channel_data=1, bit_counter=   8
+  [135065000] CHANNEL Frame bit     9: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135065000] DECODER S2P collecting bit    9: channel_data=0, bit_counter=   9
+  [135075000] CHANNEL Frame bit    10: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135075000] DECODER S2P collecting bit   10: channel_data=0, bit_counter=  10
+  [135085000] CHANNEL Frame bit    11: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135085000] DECODER S2P collecting bit   11: channel_data=0, bit_counter=  11
+  [135095000] CHANNEL Frame bit    12: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135095000] DECODER S2P collecting bit   12: channel_data=0, bit_counter=  12
+  [135105000] CHANNEL Frame bit    13: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135105000] DECODER S2P collecting bit   13: channel_data=0, bit_counter=  13
+  [135115000] CHANNEL Frame bit    14: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135115000] DECODER S2P collecting bit   14: channel_data=0, bit_counter=  14
+  [135125000] CHANNEL Frame bit    15: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135125000] DECODER S2P collecting bit   15: channel_data=0, bit_counter=  15
+  [135135000] CHANNEL Frame bit    16: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135135000] DECODER S2P collecting bit   16: channel_data=0, bit_counter=  16
+  [135145000] CHANNEL Frame bit    17: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [135145000] DECODER S2P collecting bit   17: channel_data=1, bit_counter=  17
+  [135155000] CHANNEL Frame bit    18: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135155000] DECODER S2P collecting bit   18: channel_data=0, bit_counter=  18
+  [135165000] CHANNEL Frame bit    19: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135165000] DECODER S2P collecting bit   19: channel_data=0, bit_counter=  19
+  [135175000] CHANNEL Frame bit    20: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135175000] DECODER S2P collecting bit   20: channel_data=0, bit_counter=  20
+  [135185000] CHANNEL Frame bit    21: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135185000] DECODER S2P collecting bit   21: channel_data=0, bit_counter=  21
+  [135195000] CHANNEL Frame bit    22: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135195000] DECODER S2P collecting bit   22: channel_data=0, bit_counter=  22
+  [135205000] CHANNEL Frame bit    23: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135205000] DECODER S2P collecting bit   23: channel_data=0, bit_counter=  23
+  [135215000] CHANNEL Frame bit    24: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [135215000] DECODER S2P collecting bit   24: channel_data=1, bit_counter=  24
+  [135225000] CHANNEL Frame bit    25: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [135225000] DECODER S2P collecting bit   25: channel_data=1, bit_counter=  25
+  [135235000] CHANNEL Frame bit    26: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135235000] DECODER S2P collecting bit   26: channel_data=0, bit_counter=  26
+  [135245000] CHANNEL Frame bit    27: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135245000] DECODER S2P collecting bit   27: channel_data=0, bit_counter=  27
+  [135255000] CHANNEL Frame bit    28: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135255000] DECODER S2P collecting bit   28: channel_data=0, bit_counter=  28
+  [135265000] CHANNEL Frame bit    29: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135265000] DECODER S2P collecting bit   29: channel_data=0, bit_counter=  29
+  [135275000] CHANNEL Frame bit    30: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135275000] DECODER S2P collecting bit   30: channel_data=0, bit_counter=  30
+  [135285000] CHANNEL Frame bit    31: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [135285000] DECODER S2P collecting bit   31: channel_data=0, bit_counter=  31
+  [137245000] Counter: Completed frame 1/3 - continuing
+  [137265000] COUNTER->ENCODER: Frame bit           0 = 0 (counter byte         21)
+  Input Frame           2 starting (bit        1344, counter=168)
+  Expected frame           2 first byte: a8 (counter starts at 168)
+  [137275000] COUNTER->ENCODER: Frame bit           1 = 0 (counter byte         21)
+  [137285000] COUNTER->ENCODER: Frame bit           2 = 0 (counter byte         21)
+  [137295000] COUNTER->ENCODER: Frame bit           3 = 1 (counter byte         21)
+  [137305000] COUNTER->ENCODER: Frame bit           4 = 0 (counter byte         21)
+  [137315000] COUNTER->ENCODER: Frame bit           5 = 1 (counter byte         21)
+  [137325000] COUNTER->ENCODER: Frame bit           6 = 0 (counter byte         21)
+  [137335000] COUNTER->ENCODER: Frame bit           7 = 1 (counter byte         21)
+  [137345000] COUNTER->ENCODER: Frame bit           8 = 1 (counter byte         21)
+  [137355000] COUNTER->ENCODER: Frame bit           9 = 0 (counter byte         21)
+  [137365000] COUNTER->ENCODER: Frame bit          10 = 0 (counter byte         21)
+  [137375000] COUNTER->ENCODER: Frame bit          11 = 1 (counter byte         21)
+  [137385000] COUNTER->ENCODER: Frame bit          12 = 0 (counter byte         21)
+  [137395000] COUNTER->ENCODER: Frame bit          13 = 1 (counter byte         21)
+  [137405000] COUNTER->ENCODER: Frame bit          14 = 0 (counter byte         21)
+  [137415000] COUNTER->ENCODER: Frame bit          15 = 1 (counter byte         21)
+  [137425000] COUNTER->ENCODER: Frame bit          16 = 0 (counter byte         21)
+  [137435000] COUNTER->ENCODER: Frame bit          17 = 1 (counter byte         21)
+  [137445000] COUNTER->ENCODER: Frame bit          18 = 0 (counter byte         21)
+  [137455000] COUNTER->ENCODER: Frame bit          19 = 1 (counter byte         21)
+  [137465000] COUNTER->ENCODER: Frame bit          20 = 0 (counter byte         21)
+  [137475000] COUNTER->ENCODER: Frame bit          21 = 1 (counter byte         21)
+  [137485000] COUNTER->ENCODER: Frame bit          22 = 0 (counter byte         21)
+  [137495000] COUNTER->ENCODER: Frame bit          23 = 1 (counter byte         21)
+  [137505000] COUNTER->ENCODER: Frame bit          24 = 1 (counter byte         21)
+  [137515000] COUNTER->ENCODER: Frame bit          25 = 1 (counter byte         21)
+  [137525000] COUNTER->ENCODER: Frame bit          26 = 0 (counter byte         21)
+  [137535000] COUNTER->ENCODER: Frame bit          27 = 1 (counter byte         21)
+  [137545000] COUNTER->ENCODER: Frame bit          28 = 0 (counter byte         21)
+  [137555000] COUNTER->ENCODER: Frame bit          29 = 1 (counter byte         21)
+  [137565000] COUNTER->ENCODER: Frame bit          30 = 0 (counter byte         21)
+  [137575000] COUNTER->ENCODER: Frame bit          31 = 1 (counter byte         21)
+  Collected        2000 input bits (counter=250)...
+  [144975000] Encoded        1000 bits...
+  [150965000] DECODER S2P: About to complete frame, last bit=z, collected data[31:0]=06040200
+  [150975000] enc_data_valid FALLING EDGE
+  [150995000] enc_data_valid RISING EDGE, enc_data_out=0, p2s.serial_data_out=0
+  [150995000] CHANNEL Frame bit     0: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [150995000] CHANNEL: New frame starting, first bit: enc_out=0 -> channel=0
+  [150995000] DECODER S2P collecting bit    0: channel_data=0, bit_counter=   0
+  [151005000] CHANNEL Frame bit     1: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151005000] DECODER S2P collecting bit    1: channel_data=0, bit_counter=   1
+  [151015000] CHANNEL Frame bit     2: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151015000] DECODER S2P collecting bit    2: channel_data=0, bit_counter=   2
+  [151025000] CHANNEL Frame bit     3: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151025000] DECODER S2P collecting bit    3: channel_data=1, bit_counter=   3
+  [151035000] CHANNEL Frame bit     4: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151035000] DECODER S2P collecting bit    4: channel_data=0, bit_counter=   4
+  [151045000] CHANNEL Frame bit     5: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151045000] DECODER S2P collecting bit    5: channel_data=1, bit_counter=   5
+  [151055000] CHANNEL Frame bit     6: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151055000] DECODER S2P collecting bit    6: channel_data=0, bit_counter=   6
+  [151065000] CHANNEL Frame bit     7: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151065000] DECODER S2P collecting bit    7: channel_data=1, bit_counter=   7
+  [151075000] CHANNEL Frame bit     8: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151075000] DECODER S2P collecting bit    8: channel_data=1, bit_counter=   8
+  [151085000] CHANNEL Frame bit     9: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151085000] DECODER S2P collecting bit    9: channel_data=0, bit_counter=   9
+  [151095000] CHANNEL Frame bit    10: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151095000] DECODER S2P collecting bit   10: channel_data=0, bit_counter=  10
+  [151105000] CHANNEL Frame bit    11: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151105000] DECODER S2P collecting bit   11: channel_data=1, bit_counter=  11
+  [151115000] CHANNEL Frame bit    12: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151115000] DECODER S2P collecting bit   12: channel_data=0, bit_counter=  12
+  [151125000] CHANNEL Frame bit    13: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151125000] DECODER S2P collecting bit   13: channel_data=1, bit_counter=  13
+  [151135000] CHANNEL Frame bit    14: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151135000] DECODER S2P collecting bit   14: channel_data=0, bit_counter=  14
+  [151145000] CHANNEL Frame bit    15: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151145000] DECODER S2P collecting bit   15: channel_data=1, bit_counter=  15
+  [151155000] CHANNEL Frame bit    16: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151155000] DECODER S2P collecting bit   16: channel_data=0, bit_counter=  16
+  [151165000] CHANNEL Frame bit    17: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151165000] DECODER S2P collecting bit   17: channel_data=1, bit_counter=  17
+  [151175000] CHANNEL Frame bit    18: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151175000] DECODER S2P collecting bit   18: channel_data=0, bit_counter=  18
+  [151185000] CHANNEL Frame bit    19: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151185000] DECODER S2P collecting bit   19: channel_data=1, bit_counter=  19
+  [151195000] CHANNEL Frame bit    20: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151195000] DECODER S2P collecting bit   20: channel_data=0, bit_counter=  20
+  [151205000] CHANNEL Frame bit    21: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151205000] DECODER S2P collecting bit   21: channel_data=1, bit_counter=  21
+  [151215000] CHANNEL Frame bit    22: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151215000] DECODER S2P collecting bit   22: channel_data=0, bit_counter=  22
+  [151225000] CHANNEL Frame bit    23: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151225000] DECODER S2P collecting bit   23: channel_data=1, bit_counter=  23
+  [151235000] CHANNEL Frame bit    24: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151235000] DECODER S2P collecting bit   24: channel_data=1, bit_counter=  24
+  [151245000] CHANNEL Frame bit    25: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151245000] DECODER S2P collecting bit   25: channel_data=1, bit_counter=  25
+  [151255000] CHANNEL Frame bit    26: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151255000] DECODER S2P collecting bit   26: channel_data=0, bit_counter=  26
+  [151265000] CHANNEL Frame bit    27: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151265000] DECODER S2P collecting bit   27: channel_data=1, bit_counter=  27
+  [151275000] CHANNEL Frame bit    28: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151275000] DECODER S2P collecting bit   28: channel_data=0, bit_counter=  28
+  [151285000] Output Frame boundary detected at bit           0 (Frame           1 starts)
+  [151285000] CHANNEL Frame bit    29: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151285000] DECODER S2P collecting bit   29: channel_data=1, bit_counter=  29
+  [151295000] CHANNEL Frame bit    30: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [151295000] DECODER S2P collecting bit   30: channel_data=0, bit_counter=  30
+  [151305000] CHANNEL Frame bit    31: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [151305000] DECODER S2P collecting bit   31: channel_data=1, bit_counter=  31
+  [153245000] Counter: Completed frame 2/3 - continuing
+  [153265000] COUNTER->ENCODER: Frame bit           0 = 0 (counter byte         10)
+  Input Frame           3 starting (bit        2688, counter= 80)
+  Expected frame           3 first byte: 50 (counter starts at  80)
+  [153275000] COUNTER->ENCODER: Frame bit           1 = 0 (counter byte         10)
+  [153285000] COUNTER->ENCODER: Frame bit           2 = 0 (counter byte         10)
+  [153295000] COUNTER->ENCODER: Frame bit           3 = 0 (counter byte         10)
+  [153305000] COUNTER->ENCODER: Frame bit           4 = 1 (counter byte         10)
+  [153315000] COUNTER->ENCODER: Frame bit           5 = 0 (counter byte         10)
+  [153325000] COUNTER->ENCODER: Frame bit           6 = 1 (counter byte         10)
+  [153335000] COUNTER->ENCODER: Frame bit           7 = 0 (counter byte         10)
+  [153345000] COUNTER->ENCODER: Frame bit           8 = 1 (counter byte         10)
+  [153355000] COUNTER->ENCODER: Frame bit           9 = 0 (counter byte         10)
+  [153365000] COUNTER->ENCODER: Frame bit          10 = 0 (counter byte         10)
+  [153375000] COUNTER->ENCODER: Frame bit          11 = 0 (counter byte         10)
+  [153385000] COUNTER->ENCODER: Frame bit          12 = 1 (counter byte         10)
+  [153395000] COUNTER->ENCODER: Frame bit          13 = 0 (counter byte         10)
+  [153405000] COUNTER->ENCODER: Frame bit          14 = 1 (counter byte         10)
+  [153415000] COUNTER->ENCODER: Frame bit          15 = 0 (counter byte         10)
+  [153425000] COUNTER->ENCODER: Frame bit          16 = 0 (counter byte         10)
+  [153435000] COUNTER->ENCODER: Frame bit          17 = 1 (counter byte         10)
+  [153445000] COUNTER->ENCODER: Frame bit          18 = 0 (counter byte         10)
+  [153455000] COUNTER->ENCODER: Frame bit          19 = 0 (counter byte         10)
+  [153465000] COUNTER->ENCODER: Frame bit          20 = 1 (counter byte         10)
+  [153475000] COUNTER->ENCODER: Frame bit          21 = 0 (counter byte         10)
+  [153485000] COUNTER->ENCODER: Frame bit          22 = 1 (counter byte         10)
+  [153495000] COUNTER->ENCODER: Frame bit          23 = 0 (counter byte         10)
+  [153505000] COUNTER->ENCODER: Frame bit          24 = 1 (counter byte         10)
+  [153515000] COUNTER->ENCODER: Frame bit          25 = 1 (counter byte         10)
+  [153525000] COUNTER->ENCODER: Frame bit          26 = 0 (counter byte         10)
+  [153535000] COUNTER->ENCODER: Frame bit          27 = 0 (counter byte         10)
+  [153545000] COUNTER->ENCODER: Frame bit          28 = 1 (counter byte         10)
+  [153555000] COUNTER->ENCODER: Frame bit          29 = 0 (counter byte         10)
+  [153565000] COUNTER->ENCODER: Frame bit          30 = 1 (counter byte         10)
+  [153575000] COUNTER->ENCODER: Frame bit          31 = 0 (counter byte         10)
+  [154995000] Encoded        2000 bits...
+  Collected        3000 input bits (counter=119)...
+  Received        1000 output bits...
+  [164995000] Encoded        3000 bits...
+  Collected        4000 input bits (counter=244)...
+  Finished collecting        4032 input bits
+  [166985000] DECODER S2P: About to complete frame, last bit=z, collected data[31:0]=5755535Z
+  [166995000] enc_data_valid FALLING EDGE
+  [167015000] enc_data_valid RISING EDGE, enc_data_out=0, p2s.serial_data_out=0
+  [167015000] CHANNEL Frame bit     0: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167015000] CHANNEL: New frame starting, first bit: enc_out=0 -> channel=0
+  [167015000] DECODER S2P collecting bit    0: channel_data=0, bit_counter=   0
+  [167025000] CHANNEL Frame bit     1: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167025000] DECODER S2P collecting bit    1: channel_data=0, bit_counter=   1
+  [167035000] CHANNEL Frame bit     2: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167035000] DECODER S2P collecting bit    2: channel_data=0, bit_counter=   2
+  [167045000] CHANNEL Frame bit     3: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167045000] DECODER S2P collecting bit    3: channel_data=0, bit_counter=   3
+  [167055000] CHANNEL Frame bit     4: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167055000] DECODER S2P collecting bit    4: channel_data=1, bit_counter=   4
+  [167065000] CHANNEL Frame bit     5: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167065000] DECODER S2P collecting bit    5: channel_data=0, bit_counter=   5
+  [167075000] CHANNEL Frame bit     6: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167075000] DECODER S2P collecting bit    6: channel_data=1, bit_counter=   6
+  [167085000] CHANNEL Frame bit     7: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167085000] DECODER S2P collecting bit    7: channel_data=0, bit_counter=   7
+  [167095000] CHANNEL Frame bit     8: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167095000] DECODER S2P collecting bit    8: channel_data=1, bit_counter=   8
+  [167105000] CHANNEL Frame bit     9: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167105000] DECODER S2P collecting bit    9: channel_data=0, bit_counter=   9
+  [167115000] CHANNEL Frame bit    10: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167115000] DECODER S2P collecting bit   10: channel_data=0, bit_counter=  10
+  [167125000] CHANNEL Frame bit    11: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167125000] DECODER S2P collecting bit   11: channel_data=0, bit_counter=  11
+  [167135000] CHANNEL Frame bit    12: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167135000] DECODER S2P collecting bit   12: channel_data=1, bit_counter=  12
+  [167145000] CHANNEL Frame bit    13: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167145000] DECODER S2P collecting bit   13: channel_data=0, bit_counter=  13
+  [167155000] CHANNEL Frame bit    14: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167155000] DECODER S2P collecting bit   14: channel_data=1, bit_counter=  14
+  [167165000] CHANNEL Frame bit    15: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167165000] DECODER S2P collecting bit   15: channel_data=0, bit_counter=  15
+  [167175000] CHANNEL Frame bit    16: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167175000] DECODER S2P collecting bit   16: channel_data=0, bit_counter=  16
+  [167185000] CHANNEL Frame bit    17: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167185000] DECODER S2P collecting bit   17: channel_data=1, bit_counter=  17
+  [167195000] CHANNEL Frame bit    18: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167195000] DECODER S2P collecting bit   18: channel_data=0, bit_counter=  18
+  [167205000] CHANNEL Frame bit    19: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167205000] DECODER S2P collecting bit   19: channel_data=0, bit_counter=  19
+  [167215000] CHANNEL Frame bit    20: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167215000] DECODER S2P collecting bit   20: channel_data=1, bit_counter=  20
+  [167225000] CHANNEL Frame bit    21: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167225000] DECODER S2P collecting bit   21: channel_data=0, bit_counter=  21
+  [167235000] CHANNEL Frame bit    22: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167235000] DECODER S2P collecting bit   22: channel_data=1, bit_counter=  22
+  [167245000] CHANNEL Frame bit    23: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167245000] DECODER S2P collecting bit   23: channel_data=0, bit_counter=  23
+  [167255000] CHANNEL Frame bit    24: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167255000] DECODER S2P collecting bit   24: channel_data=1, bit_counter=  24
+  [167265000] CHANNEL Frame bit    25: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167265000] DECODER S2P collecting bit   25: channel_data=1, bit_counter=  25
+  [167275000] CHANNEL Frame bit    26: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167275000] DECODER S2P collecting bit   26: channel_data=0, bit_counter=  26
+  [167285000] CHANNEL Frame bit    27: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167285000] DECODER S2P collecting bit   27: channel_data=0, bit_counter=  27
+  [167295000] CHANNEL Frame bit    28: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167295000] DECODER S2P collecting bit   28: channel_data=1, bit_counter=  28
+  [167305000] Output Frame boundary detected at bit        1344 (Frame           2 starts)
+  [167305000] CHANNEL Frame bit    29: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167305000] DECODER S2P collecting bit   29: channel_data=0, bit_counter=  29
+  [167315000] CHANNEL Frame bit    30: enc_out=1, channel=1, dec_will_receive=1 (inject=1)
+  [167315000] DECODER S2P collecting bit   30: channel_data=1, bit_counter=  30
+  [167325000] CHANNEL Frame bit    31: enc_out=0, channel=0, dec_will_receive=0 (inject=1)
+  [167325000] DECODER S2P collecting bit   31: channel_data=0, bit_counter=  31
+  [169245000] Counter: Completed frame 3/3 - stopping generation
+  Received        2000 output bits...
+  [175015000] Encoded        4000 bits...
+  [181255000] TB WAITING: output_idx=       2688, dec_data_valid=0 (timeout=       6000/      60000)
+  [182255000] TB WAITING: output_idx=       2688, dec_data_valid=0 (timeout=       6100/      60000)
+  [183005000] DECODER S2P: About to complete frame, last bit=z, collected data[31:0]=a6a4a2aZ
+  [183015000] enc_data_valid FALLING EDGE
+  [183255000] TB WAITING: output_idx=       2688, dec_data_valid=0 (timeout=       6200/      60000)
+  [183325000] Output Frame boundary detected at bit        2688 (Frame           3 starts)
+  [183325000] TB Frame 3: bit        2688, dec_data=0, dec_valid=1
+  [183335000] TB Frame 3: bit        2689, dec_data=0, dec_valid=1
+  [183345000] TB Frame 3: bit        2690, dec_data=0, dec_valid=1
+  [183355000] TB Frame 3: bit        2691, dec_data=0, dec_valid=1
+  [183365000] TB Frame 3: bit        2692, dec_data=1, dec_valid=1
+  [183375000] TB Frame 3: bit        2693, dec_data=0, dec_valid=1
+  [183385000] TB Frame 3: bit        2694, dec_data=1, dec_valid=1
+  [183395000] TB Frame 3: bit        2695, dec_data=0, dec_valid=1
+  [183405000] TB Frame 3: bit        2696, dec_data=1, dec_valid=1
+  [183415000] TB Frame 3: bit        2697, dec_data=0, dec_valid=1
+  [183425000] TB Frame 3: bit        2698, dec_data=0, dec_valid=1
+  [183435000] TB Frame 3: bit        2699, dec_data=0, dec_valid=1
+  [185245000] TB CRITICAL: bit        2880, dec_data=x, dec_valid=1
+  [185255000] TB CRITICAL: bit        2881, dec_data=x, dec_valid=1
+  [185265000] TB CRITICAL: bit        2882, dec_data=x, dec_valid=1
+  [185275000] TB CRITICAL: bit        2883, dec_data=x, dec_valid=1
+  [185285000] TB CRITICAL: bit        2884, dec_data=x, dec_valid=1
+  [185295000] TB CRITICAL: bit        2885, dec_data=x, dec_valid=1
+  [185305000] TB CRITICAL: bit        2886, dec_data=x, dec_valid=1
+  [185315000] TB CRITICAL: bit        2887, dec_data=x, dec_valid=1
+  [185325000] TB CRITICAL: bit        2888, dec_data=x, dec_valid=1
+  [185335000] TB CRITICAL: bit        2889, dec_data=x, dec_valid=1
+  [185345000] TB CRITICAL: bit        2890, dec_data=x, dec_valid=1
+  [185355000] TB CRITICAL: bit        2891, dec_data=x, dec_valid=1
+  [185365000] TB CRITICAL: bit        2892, dec_data=x, dec_valid=1
+  [185375000] TB CRITICAL: bit        2893, dec_data=x, dec_valid=1
+  [185385000] TB CRITICAL: bit        2894, dec_data=x, dec_valid=1
+  [185395000] TB CRITICAL: bit        2895, dec_data=x, dec_valid=1
+  [185405000] TB CRITICAL: bit        2896, dec_data=x, dec_valid=1
+  [185415000] TB CRITICAL: bit        2897, dec_data=x, dec_valid=1
+  [185425000] TB CRITICAL: bit        2898, dec_data=x, dec_valid=1
+  [185435000] TB CRITICAL: bit        2899, dec_data=x, dec_valid=1
+  [185445000] TB CRITICAL: bit        2900, dec_data=x, dec_valid=1
+  Received        3000 output bits...
+  Received        4000 output bits...
+  [196665000] TB: Received bit        4022 (dec_data_valid=1, dec_data_out=x)
+  [196675000] TB: Received bit        4023 (dec_data_valid=1, dec_data_out=x)
+  [196685000] TB: Received bit        4024 (dec_data_valid=1, dec_data_out=x)
+  [196695000] TB: Received bit        4025 (dec_data_valid=1, dec_data_out=x)
+  [196705000] TB: Received bit        4026 (dec_data_valid=1, dec_data_out=x)
+  [196715000] TB: Received bit        4027 (dec_data_valid=1, dec_data_out=x)
+  [196725000] TB: Received bit        4028 (dec_data_valid=1, dec_data_out=x)
+  [196735000] TB: Received bit        4029 (dec_data_valid=1, dec_data_out=x)
+  [196745000] TB: Received bit        4030 (dec_data_valid=1, dec_data_out=x)
+  [196755000] TB: Received bit        4031 (dec_data_valid=1, dec_data_out=x)
+  Successfully received all        4032 output bits
+
+  ============ FRAME VALIDATION ============
+  Validating           3 frames
+
+  --- Frame           1 ---
+  Expected Frame Data (first 32 bytes):
+    00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f 
+    10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f 
+    
+  Received Frame Data (first 32 bytes):
+    00 01 02 03 04 05 06 07 08 09 0a 86 bf e6 0e xx 
+    xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx 
+    
+  Result: FAIL (       1239 bit errors)
+  First mismatches (up to 10):
+    Bit   88: expected=1, got=0 (byte          11, bit           0)
+    Bit   90: expected=0, got=1 (byte          11, bit           2)
+    Bit   91: expected=1, got=0 (byte          11, bit           3)
+    Bit   95: expected=0, got=1 (byte          11, bit           7)
+    Bit   96: expected=0, got=1 (byte          12, bit           0)
+    Bit   97: expected=0, got=1 (byte          12, bit           1)
+    Bit  100: expected=0, got=1 (byte          12, bit           4)
+    Bit  101: expected=0, got=1 (byte          12, bit           5)
+    Bit  103: expected=0, got=1 (byte          12, bit           7)
+    Bit  104: expected=1, got=0 (byte          13, bit           0)
+
+  --- Frame           2 ---
+  Expected Frame Data (first 32 bytes):
+    a8 a9 aa ab ac ad ae af b0 b1 b2 b3 b4 b5 b6 b7 
+    b8 b9 ba bb bc bd be bf c0 c1 c2 c3 c4 c5 c6 c7 
+    
+  Received Frame Data (first 32 bytes):
+    a8 a9 aa ab ac ad ae af b0 b1 b2 75 b4 9e 8c xx 
+    xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx 
+    
+  Result: FAIL (       1236 bit errors)
+  First mismatches (up to 10):
+    Bit   89: expected=1, got=0 (byte          11, bit           1)
+    Bit   90: expected=0, got=1 (byte          11, bit           2)
+    Bit   94: expected=0, got=1 (byte          11, bit           6)
+    Bit   95: expected=1, got=0 (byte          11, bit           7)
+    Bit  104: expected=1, got=0 (byte          13, bit           0)
+    Bit  105: expected=0, got=1 (byte          13, bit           1)
+    Bit  107: expected=0, got=1 (byte          13, bit           3)
+    Bit  109: expected=1, got=0 (byte          13, bit           5)
+    Bit  113: expected=1, got=0 (byte          14, bit           1)
+    Bit  115: expected=0, got=1 (byte          14, bit           3)
+
+  --- Frame           3 ---
+  Expected Frame Data (first 32 bytes):
+    50 51 52 53 54 55 56 57 58 59 5a 5b 5c 5d 5e 5f 
+    60 61 62 63 64 65 66 67 68 69 6a 6b 6c 6d 6e 6f 
+    
+  Received Frame Data (first 32 bytes):
+    50 51 52 53 54 55 56 57 58 59 5a 1f 8b 1f 62 xx 
+    xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx xx 
+    
+  Result: FAIL (       1238 bit errors)
+  First mismatches (up to 10):
+    Bit   90: expected=0, got=1 (byte          11, bit           2)
+    Bit   94: expected=1, got=0 (byte          11, bit           6)
+    Bit   96: expected=0, got=1 (byte          12, bit           0)
+    Bit   97: expected=0, got=1 (byte          12, bit           1)
+    Bit   98: expected=1, got=0 (byte          12, bit           2)
+    Bit  100: expected=1, got=0 (byte          12, bit           4)
+    Bit  102: expected=1, got=0 (byte          12, bit           6)
+    Bit  103: expected=0, got=1 (byte          12, bit           7)
+    Bit  105: expected=0, got=1 (byte          13, bit           1)
+    Bit  110: expected=1, got=0 (byte          13, bit           6)
+  Overall: SOME FRAMES FAILED - Pipeline issues detected
+
+=== ALL TESTS COMPLETED ===
+Total tests run:           3
+$finish called at time : 196755 ns : File "/autofs/fs1.ece/fs1.eecg.tcc/liqasim1/Desktop/projects/s25-uoft-ri-fpga/BER_SIM_ZCU102/BER_IP/FULL_2D_RS/code/rs/rs_1d_serdes_tb.sv" Line 290
+

@@ -17,7 +17,11 @@ This repository contains the code for my research internship at the University o
 
 ## Project Overview
 
+## Project Hardware Specifications
 
+- AMD Zynq UltraScale+™ MPSoC ZCU102 Evaluation Kit
+- Docker running PetaLinux 2022.2 on Ubuntu 20.04
+- Vivado 2022.2
 
 ## Repository Structure
 

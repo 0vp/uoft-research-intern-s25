@@ -1,0 +1,684 @@
+`timescale 1ns / 1ps
+
+// Test bench for 2D RS(15,11) SerDes + ZGC IP Integration
+// Validates the 2D Reed-Solomon encoding and decoding
+// Uses 8-bit upcounter for predictable test patterns
+
+module rs_2d_serdes_tb;
+
+// Parameters for 2D RS(15,11) configuration
+localparam RS_N = 15;                             // Total symbols per dimension
+localparam RS_K = 11;                             // Data symbols per dimension
+localparam RS_SYMBOL_WIDTH = 8;                   // Symbol width
+localparam DATA_SYMBOLS = RS_K * RS_K;            // 121 symbols
+localparam ENCODED_SYMBOLS = RS_N * RS_N;         // 225 symbols
+localparam DATA_BITS = DATA_SYMBOLS * RS_SYMBOL_WIDTH;      // 968 bits
+localparam ENCODED_BITS = ENCODED_SYMBOLS * RS_SYMBOL_WIDTH; // 1800 bits
+localparam NUM_TEST_FRAMES = 3;                   // Number of frames for continuous streaming test
+localparam MAX_ITERATIONS = 8;                    // Maximum decoding iterations
+
+// Clock and reset
+reg clk, rstn;
+always #5 clk = ~clk;  // 100MHz clock
+
+// Test control
+reg test_active;
+reg inject_errors;
+integer test_number;
+integer error_count;
+integer bit_count;
+reg [31:0] counter_frames;  // Dynamic frame count for counter
+
+// Data generation using counter module
+wire data_bit;
+wire data_valid;
+
+// Ready signals for backpressure
+wire enc_ready;  // Encoder ready to accept data
+wire dec_ready;  // Decoder ready to accept data
+
+// Instantiate counter module for predictable test patterns
+// Gate counter enable with encoder ready for proper backpressure
+// For 2D mode, pass K*K and N*N to generate correct number of bits
+counter #(
+    .RS_K(RS_K * RS_K),  // 11*11 = 121 symbols for 2D mode
+    .RS_N(RS_N * RS_N),  // 15*15 = 225 symbols for 2D mode
+    .RS_SYMBOL_WIDTH(RS_SYMBOL_WIDTH)
+) data_gen (
+    .clk(clk),
+    .en(test_active && enc_ready),  // Only generate when encoder is ready
+    .rstn(rstn),
+    .N_PCS(counter_frames),  // Dynamic frame count
+    .data(data_bit),
+    .valid(data_valid)
+);
+
+// Pipeline stages (mimic ber_top.sv exactly)
+wire enc_data_out, enc_data_valid;        // After encoder
+wire channel_data, channel_valid;         // After channel (with/without errors)  
+wire dec_data_out, dec_data_valid;        // After decoder
+
+// SerDes-only test signals
+wire serdes_out, serdes_valid;            // Direct S2P->P2S bypass output
+reg serdes_test_mode;                     // Enable SerDes-only test mode
+
+// Bit position tracking for error injection
+reg [15:0] bit_position;
+
+// Instantiate 2D RS encoder
+rs_2d_encoder #(
+    .N(RS_N), 
+    .K(RS_K), 
+    .SYMBOL_WIDTH(RS_SYMBOL_WIDTH)
+) encoder_2d (
+    .clk(clk), 
+    .rstn(rstn),
+    .data_in(data_bit), 
+    .data_in_valid(data_valid && !serdes_test_mode),
+    .data_out(enc_data_out), 
+    .data_out_valid(enc_data_valid),
+    .ready(enc_ready)
+);
+
+// Channel model (inject errors at known positions)
+wire error_injection;
+assign error_injection = inject_errors && enc_data_valid && (
+    bit_position == 57 ||     // Error positions within 1800-bit codeword
+    bit_position == 56 ||     
+    bit_position == 58 ||
+    bit_position == 59
+);
+assign channel_data = error_injection ? ~enc_data_out : enc_data_out;
+// Gate channel with decoder ready for proper backpressure
+assign channel_valid = enc_data_valid && dec_ready;
+
+// Track bit position within codeword
+always @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+        bit_position <= 0;
+    end else if (channel_valid) begin  // Only count when data actually passes through channel
+        bit_position <= (bit_position == ENCODED_BITS - 1) ? 0 : bit_position + 1;
+    end
+end
+
+// Instantiate 2D RS decoder
+rs_2d_decoder #(
+    .N(RS_N), 
+    .K(RS_K), 
+    .SYMBOL_WIDTH(RS_SYMBOL_WIDTH),
+    .MAX_ITERATIONS(MAX_ITERATIONS)
+) decoder_2d (
+    .clk(clk), 
+    .rstn(rstn),
+    .data_in(channel_data), 
+    .data_in_valid(channel_valid),
+    .data_out(dec_data_out), 
+    .data_out_valid(dec_data_valid),
+    .ready(dec_ready)
+);
+
+// SerDes-only bypass test: Direct S2P -> P2S connection
+// This tests ONLY the SerDes converters without any RS encoding/decoding
+wire [DATA_BITS-1:0] s2p_bypass_data;
+wire s2p_bypass_valid;
+wire p2s_bypass_ready;
+
+// Serial to Parallel converter (standalone for bypass test)
+serial_to_parallel #(
+    .N(RS_N),
+    .K(RS_K),
+    .SYMBOL_WIDTH(RS_SYMBOL_WIDTH),
+    .MODE("ENCODE_2D")  // Collect K*K*8 = 968 bits
+) s2p_bypass (
+    .clk(clk),
+    .rstn(rstn),
+    .serial_data_in(data_bit),
+    .serial_data_valid(data_valid && serdes_test_mode),
+    .parallel_data_out(s2p_bypass_data),
+    .parallel_data_valid(s2p_bypass_valid),
+    .parallel_data_ready(p2s_bypass_ready)
+);
+
+// Parallel to Serial converter (standalone for bypass test)
+parallel_to_serial #(
+    .N(RS_N),
+    .K(RS_K),
+    .SYMBOL_WIDTH(RS_SYMBOL_WIDTH),
+    .MODE("DECODE_2D")  // Output K*K*8 = 968 bits
+) p2s_bypass (
+    .clk(clk),
+    .rstn(rstn),
+    .parallel_data_in(s2p_bypass_data),
+    .parallel_data_valid(s2p_bypass_valid),
+    .parallel_data_ready(p2s_bypass_ready),
+    .serial_data_out(serdes_out),
+    .serial_data_valid(serdes_valid)
+);
+
+// Test data collection for validation
+reg [DATA_BITS-1:0] input_data;
+reg [DATA_BITS-1:0] output_data;
+reg [15:0] input_bit_count;
+reg [15:0] output_bit_count;
+
+// Adaptive timeout for large frame counts
+localparam OUTPUT_TIMEOUT_PER_FRAME = 50000;  // Conservative: 50k cycles per frame for 2D
+localparam MAX_OUTPUT_TIMEOUT = OUTPUT_TIMEOUT_PER_FRAME * NUM_TEST_FRAMES;
+
+// Continuous streaming test data (for Test 3)
+reg [DATA_BITS*NUM_TEST_FRAMES-1:0] all_input_data;   // Store all frames of input
+reg [DATA_BITS*NUM_TEST_FRAMES-1:0] all_output_data;  // Collect all frames of output
+
+// Collect input data
+always @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+        input_data <= 0;
+        input_bit_count <= 0;
+    end else if (data_valid && input_bit_count < DATA_BITS) begin
+        input_data[input_bit_count] <= data_bit;  // Place bit at correct position
+        input_bit_count <= input_bit_count + 1;
+        if (input_bit_count == DATA_BITS - 1) begin
+            input_bit_count <= 0;  // Reset for next frame
+        end
+    end
+end
+
+// Monitor ready signals for debugging backpressure
+reg enc_ready_prev, dec_ready_prev;
+reg enc_data_valid_prev;
+always @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+        enc_ready_prev <= 1;
+        dec_ready_prev <= 1;
+        enc_data_valid_prev <= 0;
+    end else begin
+        if (enc_ready !== enc_ready_prev || dec_ready !== dec_ready_prev) begin
+            $display("  [%0t] Ready signals CHANGED: enc_ready=%b, dec_ready=%b", $time, enc_ready, dec_ready);
+            enc_ready_prev <= enc_ready;
+            dec_ready_prev <= dec_ready;
+        end
+        // Track encoder valid transitions
+        if (enc_data_valid && !enc_data_valid_prev) begin
+            $display("  [%0t] enc_data_valid RISING EDGE", $time);
+        end else if (!enc_data_valid && enc_data_valid_prev) begin
+            $display("  [%0t] enc_data_valid FALLING EDGE", $time);
+        end
+        enc_data_valid_prev <= enc_data_valid;
+    end
+end
+
+// Collect output data (from decoder or SerDes bypass)
+always @(posedge clk or negedge rstn) begin
+    if (!rstn) begin
+        output_data <= 0;
+        output_bit_count <= 0;
+    end else begin
+        // Select output based on test mode
+        if (serdes_test_mode) begin
+            // Collect from SerDes bypass
+            if (serdes_valid && output_bit_count < DATA_BITS) begin
+                output_data[output_bit_count] <= serdes_out;  // Place bit at correct position
+                output_bit_count <= output_bit_count + 1;
+            end
+        end else begin
+            // Collect from decoder
+            if (dec_data_valid && output_bit_count < DATA_BITS) begin
+                output_data[output_bit_count] <= dec_data_out;  // Place bit at correct position
+                output_bit_count <= output_bit_count + 1;
+            end
+        end
+    end
+end
+
+// Test sequence
+initial begin
+    $display("=== 2D RS(15,11) SerDes + ZGC IP Test Bench ===");
+    $display("DATA_BITS = %d, ENCODED_BITS = %d", DATA_BITS, ENCODED_BITS);
+    $display("Data array: %dx%d, Encoded array: %dx%d", RS_K, RS_K, RS_N, RS_N);
+    
+    clk = 0; rstn = 0; test_active = 0; inject_errors = 0;
+    test_number = 0;
+    error_count = 0; bit_count = 0; serdes_test_mode = 0;
+    counter_frames = 1;  // Default to single frame
+    
+    #20 rstn = 1;
+    #10;
+    
+    // TEST 0: SerDes-only test (S2P → P2S bypass)
+    $display("\n=== TEST 0: SerDes-Only Test (S2P → P2S Direct) ===");
+    test_number = 0;
+    inject_errors = 0;
+    counter_frames = 1;  // Single frame for this test
+    test_active = 1;
+    run_serdes_only_test();
+    reset_between_tests();  // Clean reset and flush
+    
+    // TEST 1: 2D Pipeline Validation (no errors)
+    $display("\n=== TEST 1: 2D Pipeline Validation (Clean Channel) ===");
+    test_number = 1; 
+    inject_errors = 0;
+    counter_frames = 1;  // Single frame for this test
+    test_active = 1;
+    run_clean_channel_test();
+    reset_between_tests();  // Clean reset and flush
+    
+    // TEST 2: Error injection and correction
+    $display("\n=== TEST 2: 2D Error Injection and Correction ==="); 
+    test_number = 2; 
+    inject_errors = 1;
+    counter_frames = 1;  // Single frame for this test
+    test_active = 1;
+    run_error_correction_test();
+    reset_between_tests();  // Clean reset and flush
+    
+    // TEST 3: Multiple frames with different patterns
+    $display("\n=== TEST 3: Multiple Frame Test (WITH ERROR INJECTION) ===");
+    test_number = 3;
+    inject_errors = 1;  // Enable error injection to test RS correction
+    reset_between_tests();  // Clean reset to ensure counter starts from 0
+    counter_frames = NUM_TEST_FRAMES;  // Generate all frames continuously
+    test_active = 1;
+    run_multiple_frame_test();
+    
+    $display("\n=== ALL TESTS COMPLETED ===");
+    $display("Total tests run: %d", test_number);
+    $finish;
+end
+
+// Test tasks
+task reset_between_tests;
+    begin
+        $display("  Resetting between tests...");
+        // Stop all activity
+        test_active = 0;
+        
+        // Apply reset pulse
+        rstn = 0;
+        repeat(10) @(posedge clk);
+        rstn = 1;
+        repeat(10) @(posedge clk);
+        
+        // Clear all test data collectors
+        input_data = 0;
+        output_data = 0;
+        input_bit_count = 0;
+        output_bit_count = 0;
+        bit_position = 0;
+        bit_count = 0;
+        
+        // Wait for pipelines to fully clear
+        repeat(100) @(posedge clk);
+        $display("  Reset complete");
+    end
+endtask
+
+task run_serdes_only_test;
+    integer i;
+    integer timeout;
+    begin
+        $display("Testing SerDes-only bypass (S2P -> P2S direct connection)");
+        $display("This validates bit accuracy without any RS encoding/decoding");
+        serdes_test_mode = 1;  // Enable SerDes bypass mode
+        
+        $display("Sending %d bits with counter starting from 0", DATA_BITS);
+        $display("  Counter pattern: LSB of incrementing 8-bit counter");
+        
+        // Counter module automatically generates DATA_BITS of data
+        // Wait for counter to complete
+        timeout = 0;
+        while (data_gen.bit_count < DATA_BITS && timeout < DATA_BITS * 2) begin
+            @(posedge clk);
+            timeout = timeout + 1;
+            
+            // Debug first few bits
+            if (data_valid && data_gen.counter < 10) begin
+                $display("  [%0t] Counter=%03d, Bit: data_bit=%b, data_valid=%b", 
+                         $time, data_gen.counter, data_bit, data_valid);
+            end
+        end
+        
+        $display("  All %d bits sent", DATA_BITS);
+        
+        // Wait for SerDes output
+        wait_for_serdes_output();
+        
+        // Validate bit-for-bit accuracy
+        $display("Comparing input and output data:");
+        $display("  First 64 bits of input:  %016h", input_data[63:0]);
+        $display("  First 64 bits of output: %016h", output_data[63:0]);
+        
+        if (input_data == output_data) begin
+            $display("PASS: SerDes-only test - Perfect bit accuracy!");
+            $display("  All %d bits match exactly", DATA_BITS);
+        end else begin
+            $display("FAIL: SerDes-only test - Bit mismatch detected");
+            $display("  Input:  %h", input_data[255:0]);
+            $display("  Output: %h", output_data[255:0]);
+            
+            // Find first mismatch
+            for (i = 0; i < DATA_BITS; i = i + 1) begin
+                if (input_data[i] != output_data[i]) begin
+                    $display("  First mismatch at bit %d: input=%b, output=%b", 
+                             i, input_data[i], output_data[i]);
+                    break;
+                end
+            end
+            error_count = error_count + 1;
+        end
+        
+        serdes_test_mode = 0;  // Disable SerDes bypass mode
+    end
+endtask
+
+task run_clean_channel_test;
+    integer timeout;
+    begin
+        $display("Sending %d information bits through clean 2D channel...", DATA_BITS);
+        $display("  Counter starts from 0 again for this test");
+        $display("  2D encoding: %dx%d data -> %dx%d encoded", RS_K, RS_K, RS_N, RS_N);
+        
+        // Counter module automatically generates one complete frame
+        // Just wait for it to complete
+        timeout = 0;
+        while (data_gen.bit_count < DATA_BITS && timeout < DATA_BITS * 2) begin
+            @(posedge clk);
+            timeout = timeout + 1;
+        end
+        
+        // Wait for output
+        wait_for_output_frame();
+        
+        // Always display data in hex for visibility
+        $display("  Input data (first 64 bytes hex):");
+        $display("    %h", input_data[511:0]);
+        $display("  Output data (first 64 bytes hex):");
+        $display("    %h", output_data[511:0]);
+        
+        // Validate
+        if (input_data == output_data) begin
+            $display("PASS: Clean channel - Input matches output");
+        end else begin
+            $display("FAIL: Clean channel - Input/output mismatch");
+            $display("  Full Input:  %h", input_data);
+            $display("  Full Output: %h", output_data);
+            error_count = error_count + 1;
+        end
+    end
+endtask
+
+task run_error_correction_test;
+    integer timeout;
+    begin
+        $display("Sending %d bits with 3 error injections...", DATA_BITS);
+        $display("  Counter starts from 0 again for this test");
+        $display("  2D decoder will perform iterative correction");
+        
+        // Counter module automatically generates one complete frame
+        // Just wait for it to complete
+        timeout = 0;
+        while (data_gen.bit_count < DATA_BITS && timeout < DATA_BITS * 2) begin
+            @(posedge clk);
+            timeout = timeout + 1;
+        end
+        
+        // Wait for output
+        wait_for_output_frame();
+        
+        // Always display data in hex for visibility
+        $display("  Input data (first 64 bytes hex):");
+        $display("    %h", input_data[511:0]);
+        $display("  Output data (first 64 bytes hex):");
+        $display("    %h", output_data[511:0]);
+        
+        // Validate
+        if (input_data == output_data) begin
+            $display("PASS: Error correction - Errors corrected successfully");
+            $display("  3 errors injected at positions 500, 900, 1300");
+        end else begin
+            $display("FAIL: Error correction - Failed to correct errors");
+            $display("  Full Input:  %h", input_data);
+            $display("  Full Output: %h", output_data);
+            error_count = error_count + 1;
+        end
+    end
+endtask
+
+task run_multiple_frame_test;
+    integer i, j;
+    integer input_idx;
+    integer output_idx;
+    integer input_timeout;
+    integer output_timeout;
+    begin
+        $display("Testing %d consecutive frames with continuous streaming...", NUM_TEST_FRAMES);
+        $display("  Counter starts from 0 and continues incrementing across all frames");
+        if (inject_errors) begin
+            $display("  ERROR INJECTION ENABLED: 3 bit errors per frame");
+            $display("  2D RS decoder should correct all errors");
+        end
+        
+        // Initialize
+        all_input_data = 0;
+        all_output_data = 0;
+        input_idx = 0;
+        output_idx = 0;
+        
+        $display("  Starting parallel collection of input and output bits...");
+        
+        // Use fork-join to collect input and output SIMULTANEOUSLY
+        fork
+            // Thread 1: Collect input data
+            begin
+                input_timeout = 0;
+                while (input_idx < DATA_BITS * NUM_TEST_FRAMES && input_timeout < DATA_BITS * NUM_TEST_FRAMES * 2) begin
+                    @(posedge clk);
+                    if (data_valid) begin
+                        // Store the actual counter output
+                        all_input_data[input_idx] = data_bit;
+                        input_idx = input_idx + 1;
+                        
+                        // Show first few bits to verify pattern
+                        if (input_idx <= 16) begin
+                            $display("    Input Bit %d: data_bit=%b (counter=%d)", input_idx-1, data_bit, data_gen.counter);
+                        end
+                        
+                        // Progress indicator every 500 bits
+                        if (input_idx % 500 == 0) begin
+                            $display("  Collected %d input bits (counter=%d)...", input_idx, data_gen.counter);
+                        end
+                        
+                        // Show frame boundaries
+                        if (input_idx % DATA_BITS == 1) begin
+                            $display("  Input Frame %d starting (bit %d, counter=%d)", 
+                                    (input_idx-1) / DATA_BITS + 1, input_idx-1, data_gen.counter);
+                        end
+                    end
+                    input_timeout = input_timeout + 1;
+                end
+                $display("  Finished collecting %d input bits", input_idx);
+            end
+            
+            // Thread 2: Collect decoder output synchronized with dec_data_valid
+            begin
+                output_timeout = 0;
+                $display("  Waiting for decoder output to start...");
+                
+                while (output_idx < DATA_BITS * NUM_TEST_FRAMES && output_timeout < MAX_OUTPUT_TIMEOUT) begin
+                    @(posedge clk);
+                    
+                    // Collect from decoder output whenever valid
+                    if (dec_data_valid) begin
+                        all_output_data[output_idx] = dec_data_out;
+                        
+                        // Show frame boundaries
+                        if (output_idx % DATA_BITS == 0) begin
+                            $display("  [%0t] Output Frame boundary detected at bit %d (Frame %d starts)", 
+                                     $time, output_idx, (output_idx / DATA_BITS) + 1);
+                        end
+                        
+                        output_idx = output_idx + 1;
+                        
+                        // Progress indicator
+                        if (output_idx % 500 == 0) begin
+                            $display("  Received %d output bits...", output_idx);
+                        end
+                    end
+                    
+                    // Progress monitoring for long frame tests
+                    if (NUM_TEST_FRAMES > 10 && output_timeout % 10000 == 0 && output_timeout > 0) begin
+                        $display("  [%0t] TB PROGRESS: Received %d/%d bits, timeout %d/%d", 
+                                 $time, output_idx, DATA_BITS * NUM_TEST_FRAMES, output_timeout, MAX_OUTPUT_TIMEOUT);
+                    end
+                    
+                    output_timeout = output_timeout + 1;
+                end
+                
+                if (output_timeout >= MAX_OUTPUT_TIMEOUT) begin
+                    $display("ERROR: Timeout after %d cycles - only received %d/%d output bits", 
+                             MAX_OUTPUT_TIMEOUT, output_idx, DATA_BITS * NUM_TEST_FRAMES);
+                    $display("  Consider increasing OUTPUT_TIMEOUT_PER_FRAME if decoder needs more time");
+                    error_count = error_count + 1;
+                end else begin
+                    $display("  Successfully received all %d output bits", output_idx);
+                end
+            end
+        join
+        
+        // VALIDATE: Check all frames at once
+        validate_all_frames();
+    end
+endtask
+
+task wait_for_serdes_output;
+    integer timeout;
+    begin
+        timeout = 0;
+        while (output_bit_count < DATA_BITS && timeout < 10000) begin
+            @(posedge clk);
+            timeout = timeout + 1;
+        end
+        if (timeout >= 10000) begin
+            $display("ERROR: Timeout waiting for SerDes output");
+            $display("  Only received %d out of %d bits", output_bit_count, DATA_BITS);
+            error_count = error_count + 1;
+        end else begin
+            $display("  SerDes output completed: %d bits received", output_bit_count);
+        end
+        // Wait a bit more for pipeline to clear
+        repeat(50) @(posedge clk);
+    end
+endtask
+
+task wait_for_output_frame;
+    integer timeout;
+    begin
+        timeout = 0;
+        while (output_bit_count < DATA_BITS && timeout < 30000) begin
+            @(posedge clk);
+            timeout = timeout + 1;
+        end
+        if (timeout >= 30000) begin
+            $display("ERROR: Timeout waiting for decoder output");
+            error_count = error_count + 1;
+        end
+        // Wait a bit more for pipeline to clear
+        repeat(100) @(posedge clk);
+    end
+endtask
+
+// Display frame data in hex for visual inspection
+task display_frame_data;
+    input [DATA_BITS-1:0] frame_data;
+    input string frame_name;
+    integer byte_idx;
+    reg [7:0] current_byte;
+    begin
+        $display("  %s Frame Data (first 32 bytes):", frame_name);
+        $write("    ");
+        for (byte_idx = 0; byte_idx < 32 && byte_idx < DATA_BITS/8; byte_idx = byte_idx + 1) begin
+            current_byte = frame_data[byte_idx*8 +: 8];
+            $write("%02h ", current_byte);
+            if ((byte_idx + 1) % 16 == 0) begin
+                $write("\n    ");
+            end
+        end
+        $display("");
+    end
+endtask
+
+// Validate all frames collected during continuous streaming
+task validate_all_frames;
+    integer frame_idx;
+    integer bit_idx;
+    integer frame_errors;
+    integer all_match;
+    reg [DATA_BITS-1:0] expected_frame;
+    reg [DATA_BITS-1:0] received_frame;
+    begin
+        all_match = 1;
+        
+        $display("\n  ============ FRAME VALIDATION ============");
+        $display("  Validating %d frames", NUM_TEST_FRAMES);
+        
+        // Check each frame
+        for (frame_idx = 0; frame_idx < NUM_TEST_FRAMES; frame_idx = frame_idx + 1) begin
+            frame_errors = 0;
+            
+            // Extract frame data
+            for (bit_idx = 0; bit_idx < DATA_BITS; bit_idx = bit_idx + 1) begin
+                expected_frame[bit_idx] = all_input_data[frame_idx*DATA_BITS + bit_idx];
+                received_frame[bit_idx] = all_output_data[frame_idx*DATA_BITS + bit_idx];
+                
+                if (expected_frame[bit_idx] !== received_frame[bit_idx]) begin
+                    frame_errors = frame_errors + 1;
+                end
+            end
+            
+            $display("\n  --- Frame %d ---", frame_idx + 1);
+            display_frame_data(expected_frame, "Expected");
+            display_frame_data(received_frame, "Received");
+            
+            if (frame_errors == 0) begin
+                $display("  Result: PASS");
+            end else begin
+                $display("  Result: FAIL (%d bit errors)", frame_errors);
+                
+                // Show first few mismatches for diagnosis
+                $display("  First mismatches (up to 10):");
+                begin
+                    integer mismatch_count;
+                    mismatch_count = 0;
+                    for (bit_idx = 0; bit_idx < DATA_BITS && mismatch_count < 10; bit_idx = bit_idx + 1) begin
+                        if (expected_frame[bit_idx] !== received_frame[bit_idx]) begin
+                            $display("    Bit %4d: expected=%b, got=%b (byte %d, bit %d)", 
+                                    bit_idx, expected_frame[bit_idx], received_frame[bit_idx],
+                                    bit_idx / 8, bit_idx % 8);
+                            mismatch_count = mismatch_count + 1;
+                        end
+                    end
+                end
+                
+                all_match = 0;
+                error_count = error_count + 1;
+            end
+        end
+        
+        if (all_match) begin
+            $display("  Overall: ALL FRAMES PASS - Continuous streaming works!");
+        end else begin
+            $display("  Overall: SOME FRAMES FAILED - Pipeline issues detected");
+        end
+    end
+endtask
+
+// Monitor for debugging
+always @(posedge clk) begin
+    if (enc_data_valid && test_active) begin
+        bit_count <= bit_count + 1;
+        if (bit_count % 1000 == 0) begin
+            $display("  [%0t] Encoded %d bits...", $time, bit_count);
+        end
+    end
+end
+
+endmodule

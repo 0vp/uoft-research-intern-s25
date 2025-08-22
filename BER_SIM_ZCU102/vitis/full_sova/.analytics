@@ -1,0 +1,41 @@
+timestamp=[2024-09-04 09:28:46], mode=WORKBENCH_START, duration=0:00:04.242, duration_ms=4242, data={}
+timestamp=[2024-09-04 09:28:46], mode=WORKBENCH_UI_INIT, duration=0:00:00.343, duration_ms=343, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2024-09-04 09:28:51], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:04.181, duration_ms=4181, data={}
+timestamp=[2024-09-04 09:29:57], mode=APP_CREATION, duration=0:00:06.659, duration_ms=6659, data={name=full_sova, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2024-09-04 09:32:08], mode=PLATFORM_GENERATION, duration=0:00:04.645, duration_ms=4645, data={name=design_1_wrapper}
+timestamp=[2024-09-04 09:32:09], mode=BUILD, duration=0:00:01.488, duration_ms=1488, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-04 09:59:22], mode=BUILD, duration=0:00:02.525, duration_ms=2525, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-05 09:25:01], mode=PLATFORM_GENERATION, duration=0:00:03.832, duration_ms=3832, data={name=design_1_wrapper}
+timestamp=[2024-09-05 09:30:53], mode=BUILD, duration=0:00:02.960, duration_ms=2960, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-06 21:11:30], mode=BUILD, duration=0:00:00.355, duration_ms=355, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-06 21:15:11], mode=BUILD, duration=0:00:00.265, duration_ms=265, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-07 10:55:36], mode=WORKBENCH_START, duration=0:00:08.623, duration_ms=8623, data={}
+timestamp=[2024-09-07 10:55:37], mode=WORKBENCH_UI_INIT, duration=0:00:00.519, duration_ms=519, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_1_wrapper,full_sova,full_sova_system}
+timestamp=[2024-09-07 10:55:37], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.086, duration_ms=86, data={}
+timestamp=[2024-09-07 10:56:08], mode=PLATFORM_GENERATION, duration=0:00:06.705, duration_ms=6705, data={name=design_1_wrapper}
+timestamp=[2024-09-07 10:56:09], mode=BUILD, duration=0:00:00.806, duration_ms=806, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-07 18:42:13], mode=PLATFORM_GENERATION, duration=0:00:02.674, duration_ms=2674, data={name=design_1_wrapper}
+timestamp=[2024-09-07 18:42:21], mode=BUILD, duration=0:00:00.298, duration_ms=298, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-07 18:42:22], mode=BUILD, duration=0:00:00.130, duration_ms=130, data={name=full_sova_system, configuration=Debug, clean_build=false}
+timestamp=[2024-09-07 18:48:49], mode=PLATFORM_GENERATION, duration=0:00:02.049, duration_ms=2049, data={name=design_1_wrapper}
+timestamp=[2024-09-07 18:52:07], mode=BUILD, duration=0:00:02.296, duration_ms=2296, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-09 09:57:27], mode=BUILD, duration=0:00:02.732, duration_ms=2732, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-09 09:59:19], mode=BUILD, duration=0:00:00.222, duration_ms=222, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-09 20:56:33], mode=BUILD, duration=0:00:00.746, duration_ms=746, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-10 21:21:34], mode=PLATFORM_GENERATION, duration=0:00:05.440, duration_ms=5440, data={name=design_1_wrapper}
+timestamp=[2024-09-10 21:22:55], mode=BUILD, duration=0:00:03.224, duration_ms=3224, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-10 21:29:12], mode=BUILD, duration=0:00:01.130, duration_ms=1130, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 11:38:56], mode=WORKBENCH_START, duration=0:00:12.215, duration_ms=12215, data={}
+timestamp=[2024-09-11 11:38:57], mode=WORKBENCH_UI_INIT, duration=0:00:00.984, duration_ms=984, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,design_1_wrapper,full_sova,full_sova_system}
+timestamp=[2024-09-11 11:38:57], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.120, duration_ms=120, data={}
+timestamp=[2024-09-11 11:39:15], mode=PLATFORM_GENERATION, duration=0:00:11.014, duration_ms=11014, data={name=design_1_wrapper}
+timestamp=[2024-09-11 11:39:17], mode=BUILD, duration=0:00:01.319, duration_ms=1319, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 11:39:34], mode=PLATFORM_GENERATION, duration=0:00:02.202, duration_ms=2202, data={name=design_1_wrapper}
+timestamp=[2024-09-11 11:39:42], mode=BUILD, duration=0:00:00.225, duration_ms=225, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 11:41:41], mode=BUILD, duration=0:00:01.073, duration_ms=1073, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 11:54:48], mode=BUILD, duration=0:00:01.050, duration_ms=1050, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 18:59:38], mode=PLATFORM_GENERATION, duration=0:00:02.720, duration_ms=2720, data={name=design_1_wrapper}
+timestamp=[2024-09-11 18:59:41], mode=BUILD, duration=0:00:02.506, duration_ms=2506, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 19:01:58], mode=BUILD, duration=0:00:00.239, duration_ms=239, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-11 19:04:23], mode=BUILD, duration=0:00:01.191, duration_ms=1191, data={name=full_sova, configuration=Debug, clean_build=false}
+timestamp=[2024-09-12 09:25:51], mode=BUILD, duration=0:00:03.077, duration_ms=3077, data={name=full_sova, configuration=Debug, clean_build=false}

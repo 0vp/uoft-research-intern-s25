@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Aug 16 10:35:37 2024
+# Process ID: 24375
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP
+# Command line: vivado
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/vivado.log
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project MLSE_CONTROLLER /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CONTROLLER -part xczu9eg-ffvb1156-2-e
+set_property board_part xilinx.com:zcu102:part0:3.4 [current_project]
+create_peripheral user.org user sim_controller 1.0 -dir /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo
+add_peripheral_interface S00_AXI -interface_mode slave -axi_type lite [ipx::find_open_core user.org:user:sim_controller:1.0]
+add_peripheral_interface M00_AXI -interface_mode master -axi_type lite [ipx::find_open_core user.org:user:sim_controller:1.0]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core user.org:user:sim_controller:1.0]
+write_peripheral [ipx::find_open_core user.org:user:sim_controller:1.0]
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo/sim_controller_1.0 [current_project]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name sim_controller_v1_0_project -directory /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CONTROLLER/MLSE_CONTROLLER.tmp/sim_controller_v1_0_project /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo/sim_controller_1.0/component.xml
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+open_project /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN/edit_sim_controller_v2_0.xpr
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN/sim_controller_2.0/component.xml
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project sim_controller_v1_0_project
+close_project
+close_project

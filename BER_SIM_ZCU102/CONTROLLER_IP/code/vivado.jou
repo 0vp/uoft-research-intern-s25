@@ -1,0 +1,127 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Aug 15 17:19:24 2024
+# Process ID: 7826
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code
+# Command line: vivado
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code/vivado.log
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd}
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:sim_controller_v2_0:1.0 sim_controller_v2_0_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:parallel_ber_top:1.0 parallel_ber_top_0
+endgroup
+set_property location {5.5 2015 712} [get_bd_cells sim_controller_v2_0_0]
+set_property location {6 2466 709} [get_bd_cells parallel_ber_top_0]
+set_property location {2 1300 713} [get_bd_cells sim_controller_v2_0_0]
+set_property location {3.5 1928 695} [get_bd_cells parallel_ber_top_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz_1/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins parallel_ber_top_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/sim_controller_v2_0_0/m00_axi} Slave {/axi_uartlite_0/S_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_v2_0_0/m00_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/sim_controller_v2_0_0/s00_axi} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_v2_0_0/s00_axi]
+endgroup
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bits] [get_bd_pins sim_controller_v2_0_0/total_bits]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_pre] [get_bd_pins sim_controller_v2_0_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_post] [get_bd_pins sim_controller_v2_0_0/total_bit_errors_post]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frames] [get_bd_pins sim_controller_v2_0_0/total_frames]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frame_errors] [get_bd_pins sim_controller_v2_0_0/total_frame_errors]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/en_prbs] [get_bd_pins parallel_ber_top_0/en]
+disconnect_bd_net /rst_clk_wiz_1_100M_peripheral_aresetn [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/rstn_blocks] [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/n_interleave] [get_bd_pins parallel_ber_top_0/n_interleave]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/probability_out] [get_bd_pins parallel_ber_top_0/probability_in]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/probability_idx] [get_bd_pins parallel_ber_top_0/probability_idx]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0
+endgroup
+set_property location {6 2407 675} [get_bd_cells ila_0]
+set_property -dict [list CONFIG.C_PROBE5_WIDTH {4} CONFIG.C_PROBE4_WIDTH {32} CONFIG.C_PROBE3_WIDTH {64} CONFIG.C_PROBE2_WIDTH {64} CONFIG.C_PROBE1_WIDTH {64} CONFIG.C_PROBE0_WIDTH {64} CONFIG.C_NUM_OF_PROBES {10} CONFIG.C_ENABLE_ILA_AXI_MON {false} CONFIG.C_MONITOR_TYPE {Native}] [get_bd_cells ila_0]
+connect_bd_net [get_bd_pins ila_0/clk] [get_bd_pins clk_wiz_1/clk_out1]
+connect_bd_net [get_bd_pins ila_0/probe0] [get_bd_pins parallel_ber_top_0/total_bits]
+connect_bd_net [get_bd_pins ila_0/probe1] [get_bd_pins parallel_ber_top_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins ila_0/probe2] [get_bd_pins parallel_ber_top_0/total_frame_errors]
+connect_bd_net [get_bd_pins ila_0/probe3] [get_bd_pins sim_controller_v2_0_0/probability_out]
+connect_bd_net [get_bd_pins ila_0/probe4] [get_bd_pins sim_controller_v2_0_0/probability_idx]
+connect_bd_net [get_bd_pins ila_0/probe5] [get_bd_pins sim_controller_v2_0_0/n_interleave]
+connect_bd_net [get_bd_pins ila_0/probe6] [get_bd_pins sim_controller_v2_0_0/rstn_blocks]
+connect_bd_net [get_bd_pins ila_0/probe7] [get_bd_pins sim_controller_v2_0_0/en_prbs]
+connect_bd_net [get_bd_pins ila_0/probe8] [get_bd_pins sim_controller_v2_0_0/precode_en]
+connect_bd_net [get_bd_pins ila_0/probe9] [get_bd_pins sim_controller_v2_0_0/m00_axi_error]
+save_bd_design
+reset_run synth_1
+reset_run design_1_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+wait_on_run impl_1
+open_run impl_1
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+open_bd_design {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_intf_nets microblaze_0_axi_periph_M02_AXI] [get_bd_nets sim_controller_v2_0_0_precode_en] [get_bd_nets sim_controller_v2_0_0_m00_axi_error] [get_bd_intf_nets sim_controller_v2_0_0_m00_axi] [get_bd_nets parallel_ber_top_0_total_bit_errors_post] [get_bd_nets parallel_ber_top_0_total_frames] [get_bd_cells sim_controller_v2_0_0]
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:sim_controller:1.0 sim_controller_0
+endgroup
+set_property location {3 1341 704} [get_bd_cells sim_controller_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/sim_controller_0/M00_AXI} Slave {/axi_uartlite_0/S_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_0/M00_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/sim_controller_0/S00_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_0/S00_AXI]
+endgroup
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bits] [get_bd_pins sim_controller_0/total_bits]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_pre] [get_bd_pins sim_controller_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_post] [get_bd_pins sim_controller_0/total_bit_errors_post]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frames] [get_bd_pins sim_controller_0/total_frames]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frame_errors] [get_bd_pins sim_controller_0/total_frame_errors]
+connect_bd_net [get_bd_pins sim_controller_0/en_prbs] [get_bd_pins parallel_ber_top_0/en]
+connect_bd_net [get_bd_pins sim_controller_0/rstn_blocks] [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]
+undo
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/probability_in]
+undo
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]
+undo
+connect_bd_net [get_bd_pins parallel_ber_top_0/n_interleave] [get_bd_pins sim_controller_0/n_interleave]
+connect_bd_net [get_bd_pins parallel_ber_top_0/probability_in] [get_bd_pins sim_controller_0/probability_out]
+connect_bd_net [get_bd_pins parallel_ber_top_0/probability_idx] [get_bd_pins sim_controller_0/probability_idx]
+connect_bd_net [get_bd_pins sim_controller_0/m00_axi_error] [get_bd_pins ila_0/probe8]
+connect_bd_net [get_bd_pins sim_controller_0/m00_axi_txn_done] [get_bd_pins ila_0/probe9]
+save_bd_design
+startgroup
+set_property -dict [list CONFIG.N_CORES {2}] [get_bd_cells parallel_ber_top_0]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run design_1_parallel_ber_top_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv user.org:user:sim_controller:1.0 [get_ips  design_1_sim_controller_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_sim_controller_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa

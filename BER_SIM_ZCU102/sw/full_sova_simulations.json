@@ -1,0 +1,111 @@
+[
+    {
+        "timestamp": "2025-07-30 16:55:46",
+        "results": {
+            "Total Bits": "34990091",
+            "Bit Errors (Pre-FEC)": "111831",
+            "Bit Errors (Post-FEC)": "25247",
+            "Total Frames": "6430",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "3.20e-03",
+            "BER (Post-FEC)": "7.22e-04",
+            "CER (Frame Error Rate)": "1.56e-01",
+            "Coding Gain": "6.46 dB",
+            "SNR": "14.00 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 16:55:46",
+        "results": {
+            "Total Bits": "103164171",
+            "Bit Errors (Pre-FEC)": "276695",
+            "Bit Errors (Post-FEC)": "24934",
+            "Total Frames": "18962",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "2.68e-03",
+            "BER (Post-FEC)": "2.42e-04",
+            "CER (Frame Error Rate)": "5.27e-02",
+            "Coding Gain": "10.45 dB",
+            "SNR": "14.10 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 16:55:48",
+        "results": {
+            "Total Bits": "420860191",
+            "Bit Errors (Pre-FEC)": "948164",
+            "Bit Errors (Post-FEC)": "24609",
+            "Total Frames": "77364",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "2.25e-03",
+            "BER (Post-FEC)": "5.85e-05",
+            "CER (Frame Error Rate)": "1.29e-02",
+            "Coding Gain": "15.86 dB",
+            "SNR": "14.20 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 16:55:53",
+        "results": {
+            "Total Bits": "2254248991",
+            "Bit Errors (Pre-FEC)": "4244255",
+            "Bit Errors (Post-FEC)": "24287",
+            "Total Frames": "414384",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "1.88e-03",
+            "BER (Post-FEC)": "1.08e-05",
+            "CER (Frame Error Rate)": "2.41e-03",
+            "Coding Gain": "22.42 dB",
+            "SNR": "14.30 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 16:56:17",
+        "results": {
+            "Total Bits": "16381580831",
+            "Bit Errors (Pre-FEC)": "25537839",
+            "Bit Errors (Post-FEC)": "23970",
+            "Total Frames": "3011320",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "1.56e-03",
+            "BER (Post-FEC)": "1.46e-06",
+            "CER (Frame Error Rate)": "3.32e-04",
+            "Coding Gain": "30.28 dB",
+            "SNR": "14.40 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 16:59:12",
+        "results": {
+            "Total Bits": "159673313291",
+            "Bit Errors (Pre-FEC)": "204995044",
+            "Bit Errors (Post-FEC)": "23962",
+            "Total Frames": "29351710",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "1.28e-03",
+            "BER (Post-FEC)": "1.50e-07",
+            "CER (Frame Error Rate)": "3.41e-05",
+            "Coding Gain": "39.32 dB",
+            "SNR": "14.50 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 17:27:36",
+        "results": {
+            "Total Bits": "1780203704331",
+            "Bit Errors (Pre-FEC)": "1872584903",
+            "Bit Errors (Post-FEC)": "23911",
+            "Total Frames": "327243326",
+            "Frame Errors": "1000",
+            "BER (Pre-FEC)": "1.05e-03",
+            "BER (Post-FEC)": "1.34e-08",
+            "CER (Frame Error Rate)": "3.06e-06",
+            "Coding Gain": "48.94 dB",
+            "SNR": "14.60 dB"
+        }
+    },
+    {
+        "timestamp": "2025-07-30 22:44:07",
+        "results": {}
+    }
+]

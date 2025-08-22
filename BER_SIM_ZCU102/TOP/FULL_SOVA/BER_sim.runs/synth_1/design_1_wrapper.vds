@@ -1,0 +1,373 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Sep 11 12:01:25 2024
+# Process ID: 38264
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/design_1_wrapper.vds
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/FULL_SOVA_bypass'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/CMC/tools/xilinx/Vivado_2021.1/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_1_wrapper -part xczu9eg-ffvb1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 38822
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2778.172 ; gain = 47.719 ; free physical = 110306 ; free virtual = 611998
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_0' (1#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_bram_ctrl_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_bram_ctrl_0_bram_0' (2#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_bram_ctrl_0_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'design_1_axi_bram_ctrl_0_bram_0' is unconnected for instance 'axi_bram_ctrl_0_bram' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:238]
+WARNING: [Synth 8-7023] instance 'axi_bram_ctrl_0_bram' of module 'design_1_axi_bram_ctrl_0_bram_0' has 8 connections declared, but only 7 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:238]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_uartlite_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_uartlite_0_0' (3#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'design_1_axi_uartlite_0_0' is unconnected for instance 'axi_uartlite_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:246]
+WARNING: [Synth 8-7023] instance 'axi_uartlite_0' of module 'design_1_axi_uartlite_0_0' has 22 connections declared, but only 21 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:246]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_1_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_1_0' (4#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_clk_wiz_1_0_stub.v:5]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:274]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ila_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_0_0' (5#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mdm_1_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mdm_1_0' (6#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_0' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_microblaze_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'Interrupt_Ack' of module 'design_1_microblaze_0_0' is unconnected for instance 'microblaze_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:299]
+WARNING: [Synth 8-7023] instance 'microblaze_0' of module 'design_1_microblaze_0_0' has 52 connections declared, but only 51 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:299]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_periph_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:570]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_8RVYHO' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1382]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_8RVYHO' (8#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1382]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1UTB3Y5' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1514]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (9#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'design_1_auto_pc_0' is unconnected for instance 'auto_pc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1729]
+WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'design_1_auto_pc_0' is unconnected for instance 'auto_pc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1729]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'design_1_auto_pc_0' is unconnected for instance 'auto_pc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1729]
+WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'design_1_auto_pc_0' is unconnected for instance 'auto_pc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1729]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_0' has 56 connections declared, but only 52 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1729]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_1UTB3Y5' (10#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1514]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_7ANRHB' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1784]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_7ANRHB' (11#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1784]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1RZP34U' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2164]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1RZP34U' (12#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2164]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_2REGHR' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2310]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_2REGHR' (13#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2310]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (14#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_periph_0' (15#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:570]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1930]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_bram_if_cntlr_0' (16#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_v10_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_v10_0' (17#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_1_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2076]
+WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'design_1_dlmb_v10_0' has 25 connections declared, but only 24 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2076]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_bram_if_cntlr_0' (18#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_v10_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_v10_0' (19#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'design_1_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2122]
+WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'design_1_ilmb_v10_0' has 25 connections declared, but only 24 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2122]
+INFO: [Synth 8-6157] synthesizing module 'design_1_lmb_bram_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_lmb_bram_0' (20#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'design_1_lmb_bram_0' is unconnected for instance 'lmb_bram' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2147]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'design_1_lmb_bram_0' is unconnected for instance 'lmb_bram' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2147]
+WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'design_1_lmb_bram_0' has 16 connections declared, but only 14 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:2147]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' (21#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:1930]
+INFO: [Synth 8-6157] synthesizing module 'design_1_parallel_ber_top_0_7' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_parallel_ber_top_0_7_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_parallel_ber_top_0_7' (22#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_parallel_ber_top_0_7_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_1_100M_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_1_100M_0' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:503]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:503]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'design_1_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:503]
+INFO: [Synth 8-6157] synthesizing module 'design_1_sim_controller_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_sim_controller_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sim_controller_0_0' (24#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/.Xil/Vivado-38264-crimson.eecg/realtime/design_1_sim_controller_0_0_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'parallel_ber_top_0'. This will prevent further optimization [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:491]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'sim_controller_0'. This will prevent further optimization [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:512]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_0'. This will prevent further optimization [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:274]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (25#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (26#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2822.109 ; gain = 91.656 ; free physical = 109434 ; free virtual = 611127
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2839.922 ; gain = 109.469 ; free physical = 109423 ; free virtual = 611116
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2839.922 ; gain = 109.469 ; free physical = 109423 ; free virtual = 611116
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2839.922 ; gain = 0.000 ; free physical = 109415 ; free virtual = 611108
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0/design_1_microblaze_0_0_in_context.xdc] for cell 'design_1_i/microblaze_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0/design_1_ilmb_v10_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0/design_1_lmb_bram_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0/design_1_lmb_bram_0_in_context.xdc] for cell 'design_1_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0/design_1_mdm_1_0_in_context.xdc] for cell 'design_1_i/mdm_1'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0/design_1_mdm_1_0_in_context.xdc] for cell 'design_1_i/mdm_1'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc] for cell 'design_1_i/clk_wiz_1'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc] for cell 'design_1_i/clk_wiz_1'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_1_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0/design_1_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'design_1_i/rst_clk_wiz_1_100M'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_1_i/axi_uartlite_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_in_context.xdc] for cell 'design_1_i/axi_uartlite_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/m01_couplers/auto_pc'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/microblaze_0_axi_periph/m01_couplers/auto_pc'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0_in_context.xdc] for cell 'design_1_i/axi_bram_ctrl_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0/design_1_axi_bram_ctrl_0_0_in_context.xdc] for cell 'design_1_i/axi_bram_ctrl_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0_in_context.xdc] for cell 'design_1_i/axi_bram_ctrl_0_bram'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0/design_1_axi_bram_ctrl_0_bram_0_in_context.xdc] for cell 'design_1_i/axi_bram_ctrl_0_bram'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0/design_1_ila_0_0_in_context.xdc] for cell 'design_1_i/ila_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0/design_1_ila_0_0_in_context.xdc] for cell 'design_1_i/ila_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_sim_controller_0_0/design_1_sim_controller_0_0/design_1_sim_controller_0_0_in_context.xdc] for cell 'design_1_i/sim_controller_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_sim_controller_0_0/design_1_sim_controller_0_0/design_1_sim_controller_0_0_in_context.xdc] for cell 'design_1_i/sim_controller_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_parallel_ber_top_0_7/design_1_parallel_ber_top_0_7/design_1_parallel_ber_top_0_7_in_context.xdc] for cell 'design_1_i/parallel_ber_top_0'
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_parallel_ber_top_0_7/design_1_parallel_ber_top_0_7/design_1_parallel_ber_top_0_7_in_context.xdc] for cell 'design_1_i/parallel_ber_top_0'
+Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2937.672 ; gain = 0.000 ; free physical = 109963 ; free virtual = 611656
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2937.672 ; gain = 0.000 ; free physical = 109956 ; free virtual = 611649
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/axi_bram_ctrl_0_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2937.672 ; gain = 207.219 ; free physical = 110164 ; free virtual = 611857
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2937.672 ; gain = 207.219 ; free physical = 110164 ; free virtual = 611858
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for user_si570_sysclk_clk_n. (constraint file  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for user_si570_sysclk_clk_n. (constraint file  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for user_si570_sysclk_clk_p. (constraint file  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for user_si570_sysclk_clk_p. (constraint file  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0/design_1_clk_wiz_1_0_in_context.xdc, line 6).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/mdm_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_uartlite_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_axi_periph/m01_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/microblaze_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_bram_ctrl_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_bram_ctrl_0_bram. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/ila_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/sim_controller_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/parallel_ber_top_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2937.672 ; gain = 207.219 ; free physical = 110187 ; free virtual = 611880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2937.672 ; gain = 207.219 ; free physical = 110194 ; free virtual = 611888
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2937.672 ; gain = 207.219 ; free physical = 110176 ; free virtual = 611874
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 3385.344 ; gain = 654.891 ; free physical = 109645 ; free virtual = 611342
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 3385.344 ; gain = 654.891 ; free physical = 109645 ; free virtual = 611342
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 3405.375 ; gain = 674.922 ; free physical = 109643 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109643 ; free virtual = 611341
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |design_1_xbar_0                 |         1|
+|2     |design_1_auto_pc_0              |         1|
+|3     |design_1_axi_bram_ctrl_0_0      |         1|
+|4     |design_1_axi_bram_ctrl_0_bram_0 |         1|
+|5     |design_1_axi_uartlite_0_0       |         1|
+|6     |design_1_clk_wiz_1_0            |         1|
+|7     |design_1_ila_0_0                |         1|
+|8     |design_1_mdm_1_0                |         1|
+|9     |design_1_microblaze_0_0         |         1|
+|10    |design_1_parallel_ber_top_0_7   |         1|
+|11    |design_1_rst_clk_wiz_1_100M_0   |         1|
+|12    |design_1_sim_controller_0_0     |         1|
+|13    |design_1_dlmb_bram_if_cntlr_0   |         1|
+|14    |design_1_dlmb_v10_0             |         1|
+|15    |design_1_ilmb_bram_if_cntlr_0   |         1|
+|16    |design_1_ilmb_v10_0             |         1|
+|17    |design_1_lmb_bram_0             |         1|
++------+--------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |design_1_auto_pc              |     1|
+|2     |design_1_axi_bram_ctrl_0      |     1|
+|3     |design_1_axi_bram_ctrl_0_bram |     1|
+|4     |design_1_axi_uartlite_0       |     1|
+|5     |design_1_clk_wiz_1            |     1|
+|6     |design_1_dlmb_bram_if_cntlr   |     1|
+|7     |design_1_dlmb_v10             |     1|
+|8     |design_1_ila_0                |     1|
+|9     |design_1_ilmb_bram_if_cntlr   |     1|
+|10    |design_1_ilmb_v10             |     1|
+|11    |design_1_lmb_bram             |     1|
+|12    |design_1_mdm_1                |     1|
+|13    |design_1_microblaze_0         |     1|
+|14    |design_1_parallel_ber_top_0   |     1|
+|15    |design_1_rst_clk_wiz_1_100M   |     1|
+|16    |design_1_sim_controller_0     |     1|
+|17    |design_1_xbar                 |     1|
+|18    |IBUF                          |     2|
+|19    |OBUF                          |     1|
++------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.312 ; gain = 680.859 ; free physical = 109644 ; free virtual = 611341
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3411.312 ; gain = 583.109 ; free physical = 109680 ; free virtual = 611377
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3411.320 ; gain = 680.859 ; free physical = 109680 ; free virtual = 611378
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3429.219 ; gain = 0.000 ; free physical = 109773 ; free virtual = 611470
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3452.031 ; gain = 0.000 ; free physical = 109697 ; free virtual = 611394
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  IBUF => IBUF (IBUFCTRL, INBUF): 2 instances
+
+Synth Design complete, checksum: 2ba0a043
+INFO: [Common 17-83] Releasing license: Synthesis
+74 Infos, 24 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 3452.031 ; gain = 951.105 ; free physical = 109835 ; free virtual = 611533
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 11 12:02:17 2024...

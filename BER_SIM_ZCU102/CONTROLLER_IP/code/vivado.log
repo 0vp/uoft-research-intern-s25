@@ -1,0 +1,348 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Aug 15 17:19:24 2024
+# Process ID: 7826
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code
+# Command line: vivado
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code/vivado.log
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC/code/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/CMC/tools/xilinx/Vivado_2021.1/Vivado/2021.1/data/ip'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 7697.316 ; gain = 185.797 ; free physical = 182228 ; free virtual = 634590
+update_compile_order -fileset sources_1
+open_bd_design {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:microblaze:11.0 - microblaze_0
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding component instance block -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_clk_wiz_1_100M
+Adding component instance block -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - microblaze_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - axi_bram_ctrl_0_bram
+Successfully read diagram <design_1> from block design file </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:05 . Memory (MB): peak = 8155.785 ; gain = 0.000 ; free physical = 179916 ; free virtual = 632292
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:sim_controller_v2_0:1.0 sim_controller_v2_0_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:parallel_ber_top:1.0 parallel_ber_top_0
+endgroup
+set_property location {5.5 2015 712} [get_bd_cells sim_controller_v2_0_0]
+set_property location {6 2466 709} [get_bd_cells parallel_ber_top_0]
+set_property location {2 1300 713} [get_bd_cells sim_controller_v2_0_0]
+set_property location {3.5 1928 695} [get_bd_cells parallel_ber_top_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz_1/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins parallel_ber_top_0/clk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/sim_controller_v2_0_0/m00_axi} Slave {/axi_uartlite_0/S_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_v2_0_0/m00_axi]
+Slave segment '/axi_bram_ctrl_0/S_AXI/Mem0' is being assigned into address space '/sim_controller_v2_0_0/m00_axi' at <0xC000_0000 [ 8K ]>.
+Slave segment '/axi_uartlite_0/S_AXI/Reg' is being assigned into address space '/sim_controller_v2_0_0/m00_axi' at <0x4060_0000 [ 64K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/sim_controller_v2_0_0/s00_axi} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_v2_0_0/s00_axi]
+Slave segment '/sim_controller_v2_0_0/s00_axi/reg0' is being assigned into address space '/microblaze_0/Data' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/sim_controller_v2_0_0/s00_axi/reg0' is being assigned into address space '/sim_controller_v2_0_0/m00_axi' at <0x44A0_0000 [ 64K ]>.
+endgroup
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bits] [get_bd_pins sim_controller_v2_0_0/total_bits]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_pre] [get_bd_pins sim_controller_v2_0_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_post] [get_bd_pins sim_controller_v2_0_0/total_bit_errors_post]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frames] [get_bd_pins sim_controller_v2_0_0/total_frames]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frame_errors] [get_bd_pins sim_controller_v2_0_0/total_frame_errors]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/en_prbs] [get_bd_pins parallel_ber_top_0/en]
+disconnect_bd_net /rst_clk_wiz_1_100M_peripheral_aresetn [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/rstn_blocks] [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/n_interleave] [get_bd_pins parallel_ber_top_0/n_interleave]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/probability_out] [get_bd_pins parallel_ber_top_0/probability_in]
+connect_bd_net [get_bd_pins sim_controller_v2_0_0/probability_idx] [get_bd_pins parallel_ber_top_0/probability_idx]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0
+INFO: [xilinx.com:ip:ila:6.2-6] /ila_0: Xilinx recommends using the System ILA IP in IP Integrator. The System ILA IP is functionally equivalent to an ILA and offers additional benefits in debugging interfaces both within IP Integrator and the Hardware Manager. Consult the Programming and Debug User Guide UG908 for further details.
+endgroup
+set_property location {6 2407 675} [get_bd_cells ila_0]
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE5_WIDTH {4} CONFIG.C_PROBE4_WIDTH {32} CONFIG.C_PROBE3_WIDTH {64} CONFIG.C_PROBE2_WIDTH {64} CONFIG.C_PROBE1_WIDTH {64} CONFIG.C_PROBE0_WIDTH {64} CONFIG.C_NUM_OF_PROBES {10} CONFIG.C_ENABLE_ILA_AXI_MON {false} CONFIG.C_MONITOR_TYPE {Native}] [get_bd_cells ila_0]
+connect_bd_net [get_bd_pins ila_0/clk] [get_bd_pins clk_wiz_1/clk_out1]
+connect_bd_net [get_bd_pins ila_0/probe0] [get_bd_pins parallel_ber_top_0/total_bits]
+connect_bd_net [get_bd_pins ila_0/probe1] [get_bd_pins parallel_ber_top_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins ila_0/probe2] [get_bd_pins parallel_ber_top_0/total_frame_errors]
+connect_bd_net [get_bd_pins ila_0/probe3] [get_bd_pins sim_controller_v2_0_0/probability_out]
+connect_bd_net [get_bd_pins ila_0/probe4] [get_bd_pins sim_controller_v2_0_0/probability_idx]
+connect_bd_net [get_bd_pins ila_0/probe5] [get_bd_pins sim_controller_v2_0_0/n_interleave]
+connect_bd_net [get_bd_pins ila_0/probe6] [get_bd_pins sim_controller_v2_0_0/rstn_blocks]
+connect_bd_net [get_bd_pins ila_0/probe7] [get_bd_pins sim_controller_v2_0_0/en_prbs]
+connect_bd_net [get_bd_pins ila_0/probe8] [get_bd_pins sim_controller_v2_0_0/precode_en]
+connect_bd_net [get_bd_pins ila_0/probe9] [get_bd_pins sim_controller_v2_0_0/m00_axi_error]
+save_bd_design
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1
+
+reset_run design_1_xbar_0_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_xbar_0_synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sim_controller_v2_0_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block parallel_ber_top_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ila_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m01_couplers/auto_pc .
+Exporting to file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 7afeb0369cbf0b0d; cache size = 13.722 MB.
+[Thu Aug 15 17:29:31 2024] Launched design_1_xbar_0_synth_1, design_1_parallel_ber_top_0_0_synth_1, design_1_sim_controller_v2_0_0_0_synth_1, design_1_ila_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_xbar_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_xbar_0_synth_1/runme.log
+design_1_parallel_ber_top_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_parallel_ber_top_0_0_synth_1/runme.log
+design_1_sim_controller_v2_0_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_v2_0_0_0_synth_1/runme.log
+design_1_ila_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_ila_0_0_synth_1/runme.log
+synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1/runme.log
+[Thu Aug 15 17:29:31 2024] Launched impl_1...
+Run output will be captured here: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:29 ; elapsed = 00:00:19 . Memory (MB): peak = 9869.496 ; gain = 114.156 ; free physical = 179363 ; free virtual = 631729
+open_run impl_1
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.38 . Memory (MB): peak = 10343.719 ; gain = 0.000 ; free physical = 178089 ; free virtual = 630876
+INFO: [Netlist 29-17] Analyzing 5145 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 10842.871 ; gain = 87.027 ; free physical = 177475 ; free virtual = 630262
+Restored from archive | CPU: 4.290000 secs | Memory: 90.966362 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 10842.871 ; gain = 87.027 ; free physical = 177475 ; free virtual = 630262
+Generating merged BMM file for the design top 'design_1_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf 
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 11246.977 ; gain = 0.000 ; free physical = 177098 ; free virtual = 629885
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 448 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 196 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 100 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 2 instances
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 110 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 32 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  SRLC16E => SRL16E: 1 instance 
+
+open_run: Time (s): cpu = 00:01:06 ; elapsed = 00:00:56 . Memory (MB): peak = 11508.727 ; gain = 1639.230 ; free physical = 176765 ; free virtual = 629552
+open_report: Time (s): cpu = 00:00:37 ; elapsed = 00:00:06 . Memory (MB): peak = 13067.520 ; gain = 1473.980 ; free physical = 175670 ; free virtual = 628462
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa ...
+INFO: [Hsi 55-2053] elapsed time for repository (/CMC/tools/xilinx/Vivado_2021.1/Vivado/2021.1/data/embeddedsw) loading 0 seconds
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+write_hw_platform: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 13067.520 ; gain = 0.000 ; free physical = 174921 ; free virtual = 627744
+open_bd_design {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_intf_nets microblaze_0_axi_periph_M02_AXI] [get_bd_nets sim_controller_v2_0_0_precode_en] [get_bd_nets sim_controller_v2_0_0_m00_axi_error] [get_bd_intf_nets sim_controller_v2_0_0_m00_axi] [get_bd_nets parallel_ber_top_0_total_bit_errors_post] [get_bd_nets parallel_ber_top_0_total_frames] [get_bd_cells sim_controller_v2_0_0]
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  {} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/CONTROLLER_IP/AWGN'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+set_property  ip_repo_paths  {/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:sim_controller:1.0 sim_controller_0
+endgroup
+set_property location {3 1341 704} [get_bd_cells sim_controller_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/sim_controller_0/M00_AXI} Slave {/axi_uartlite_0/S_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_0/M00_AXI]
+Slave segment '/axi_bram_ctrl_0/S_AXI/Mem0' is being assigned into address space '/sim_controller_0/M00_AXI' at <0xC000_0000 [ 8K ]>.
+Slave segment '/axi_uartlite_0/S_AXI/Reg' is being assigned into address space '/sim_controller_0/M00_AXI' at <0x4060_0000 [ 64K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {Auto} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0 (Periph)} Slave {/sim_controller_0/S00_AXI} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins sim_controller_0/S00_AXI]
+Slave segment '/sim_controller_0/S00_AXI/S00_AXI_reg' is being assigned into address space '/microblaze_0/Data' at <0x44A0_0000 [ 64K ]>.
+Slave segment '/sim_controller_0/S00_AXI/S00_AXI_reg' is being assigned into address space '/sim_controller_0/M00_AXI' at <0x44A0_0000 [ 64K ]>.
+endgroup
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bits] [get_bd_pins sim_controller_0/total_bits]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_pre] [get_bd_pins sim_controller_0/total_bit_errors_pre]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_bit_errors_post] [get_bd_pins sim_controller_0/total_bit_errors_post]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frames] [get_bd_pins sim_controller_0/total_frames]
+connect_bd_net [get_bd_pins parallel_ber_top_0/total_frame_errors] [get_bd_pins sim_controller_0/total_frame_errors]
+connect_bd_net [get_bd_pins sim_controller_0/en_prbs] [get_bd_pins parallel_ber_top_0/en]
+connect_bd_net [get_bd_pins sim_controller_0/rstn_blocks] [get_bd_pins parallel_ber_top_0/rstn]
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]'
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/probability_in]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/probability_in]'
+connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins sim_controller_0/precode_en] [get_bd_pins parallel_ber_top_0/n_interleave]'
+connect_bd_net [get_bd_pins parallel_ber_top_0/n_interleave] [get_bd_pins sim_controller_0/n_interleave]
+connect_bd_net [get_bd_pins parallel_ber_top_0/probability_in] [get_bd_pins sim_controller_0/probability_out]
+connect_bd_net [get_bd_pins parallel_ber_top_0/probability_idx] [get_bd_pins sim_controller_0/probability_idx]
+connect_bd_net [get_bd_pins sim_controller_0/m00_axi_error] [get_bd_pins ila_0/probe8]
+connect_bd_net [get_bd_pins sim_controller_0/m00_axi_txn_done] [get_bd_pins ila_0/probe9]
+save_bd_design
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+startgroup
+set_property -dict [list CONFIG.N_CORES {2}] [get_bd_cells parallel_ber_top_0]
+endgroup
+save_bd_design
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1
+
+reset_run design_1_parallel_ber_top_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block parallel_ber_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sim_controller_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m01_couplers/auto_pc .
+Exporting to file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 7afeb0369cbf0b0d; cache size = 130.628 MB.
+[Fri Aug 16 10:51:29 2024] Launched design_1_parallel_ber_top_0_0_synth_1, design_1_sim_controller_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_parallel_ber_top_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_parallel_ber_top_0_0_synth_1/runme.log
+design_1_sim_controller_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/runme.log
+synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1/runme.log
+[Fri Aug 16 10:51:29 2024] Launched impl_1...
+Run output will be captured here: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:23 ; elapsed = 00:00:17 . Memory (MB): peak = 13549.055 ; gain = 57.961 ; free physical = 174070 ; free virtual = 626586
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa ...
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo'.
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv user.org:user:sim_controller:1.0 [get_ips  design_1_sim_controller_0_0] -log ip_upgrade.log
+Upgrading '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3422] Upgraded design_1_sim_controller_0_0 (sim_controller_v1.0 1.0) from revision 2 to revision 3
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips design_1_sim_controller_0_0] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 40
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_1 clk_wiz propagate
+Wrote  : </autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.srcs/sources_1/bd/design_1/design_1.bd> 
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.v
+WARNING: [BD 41-2384] Width mismatch when connecting pin: '/axi_bram_ctrl_0_bram/addra'(32) to pin: '/axi_bram_ctrl_0/bram_addr_a'(13) - Only lower order bits will be connected.
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block sim_controller_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/m01_couplers/auto_pc .
+Exporting to file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 7afeb0369cbf0b0d; cache size = 149.059 MB.
+[Fri Aug 16 11:32:45 2024] Launched design_1_sim_controller_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_sim_controller_0_0_synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/runme.log
+synth_1: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/synth_1/runme.log
+[Fri Aug 16 11:32:45 2024] Launched impl_1...
+Run output will be captured here: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:24 ; elapsed = 00:00:17 . Memory (MB): peak = 13752.207 ; gain = 21.898 ; free physical = 173093 ; free virtual = 625704
+write_hw_platform -fixed -include_bit -force -file /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+INFO: [Vivado 12-4895] Creating Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa ...
+INFO: [Vivado 12-12464] The Hardware Platform can be used for Hardware
+INFO: [Vivado 12-4896] Successfully created Hardware Platform: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/design_1_wrapper.xsa
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 19 16:12:39 2024...

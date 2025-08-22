@@ -1,0 +1,1763 @@
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run all
+DEBUG [93490000] PRBS FRAME: d323e6acd4f7b31aeac857eafa31aa5e7eb1f07e1ca5fdc507a421044bdc0c9e11d8c619b8c82b4464d2945592b0fb995aef79fd6fa21957de63140f61cc57f0c54a782344a9f0229fbd10cb9bf420cf418e62b95838c2a385254f97d0928fc91edfa170e36f20b646c1c7224b62c3b5968492cdbb4e89bd771b6ead9ba7358f325b67ed59d2bd22addb506fd4ef8ecfecdbe160fa6126a06ad847421d46d7c17ed1938c4f96f08706e56929a1762312165f76f5c734ca6c75c3363c92babd693c8ab48b6f9f8f768b3fbb3b614123373a819a9b4786cab29f055f5b9116bfaf421fc3d9667781e38c4088d755310449298332f3fea619b6f50aae2807d455b63e3fe4f010f9fdb484805a2062140dbb1b01dcc14c782d9a5a04ca87a910ed5ddc1abf11f6626fccc85f8264354d60aab1c10d58bfaf43ffa4862fd381e38801db14e0e904493004da7a427619b6a01add1d8d3455b7c05ece4d2eb9fdb081c6a5aee7940da30497dde651782dca1b70cc55e710ecbc5b22a9fc52626b89dacff409ed4d7934dea038346faf16bac7c090b961e2779e90836397444d3147630b497399aea7934a3bb72955e7d16bbc99b2f7fc50e7798b55ae3009e253153bfde4a0344dea7e980c5bc0b9ac7d075029d88395e90e13e0f4d3097c762468423aea370934d9718c9e7cb236bad7252b450bacb79ef2defb9e39ebb1462ec619449479a794e694579b7915d17a5779f15b167ce71df31427da750a524c2a78d0dd3e3deda8fd12e2ce848c6df20e6e4ea71b296c2c2565a7d25af768e8df5dd0ed
+[137010000] ERROR: Missing parity at position [          5][          3]!
+DEBUG [3477490000] PRBS FRAME: de337272c3cce26cc4ab2d2e88aa4d6a9bfaeee733fdaf7f581e6652a80de303d04555eff02c4a08e19ffc6020e9bc3245400940c27588ad9f8037828d3d33ed4100b10f2e8ea86f8603a622e727f1611409d4ce52d027467834faa5eee0d39510ba1fdc6642e97e639c40c9558e7705494982b7fd25321fb7b50fb00edeac41b1be21a026c7e985a584c5c0d690751ddd1a9c82f7613e4cce5f4b0e334685aaa5c3ba24ab971dffdc899cdbf9724c00cb354ad8172da802babfbed072edf00f9f8186e12e6c202141051646e568c0c7861e75965f72829114453d75c32f0f66799e8f3c8ae223551547228b3e4ccbfe7f92cf3a85aab805016ea29f1dff901e0767cf424c0160441350a38da80741986be3c92df01385517848b6ec20691fe711b3b668c176405265a9b572873581ed5df5bf2f12bd046fcc3d82e26f8e1960a88d0e4d61245743f32e25af46d9f3882ae4dde396d42930fe5acc4976f8f6a205dea9b7361237cc1cc7f5b2b46cb0a84a903dafb96ba3f1bf608de19779c82583432c457314b0dd0b8ae99f2a7ba2ce393e7542fd19cea496853f8e0e54a7db771e812425fbd0db324706d8dc18e2daad9216d2c8524edfed6c76eeb1eda6c06f693667a46dd6816376b551d96cf7074b37bfe4d76a3213bab1805af37cac699fa501de2b0be97541de04c4fa38773f84c41a9a1c9132811a985f5c4b66af065f51c3c9bb57e215c3e488b59bf04c7c885b33bd5821a90b31daa98fd0c5f63aa4dff520e29c349fdac03ec24f48bb40de80868da3b39b82c703172dc9a9590e
+[3665690000] DECODER next_state: IDLE -> COLLECT_DATA (s2p_valid=1)
+[3665710000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[3665710000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[3665730000] DECODER STATE TRANSITION: IDLE -> COLLECT_DATA (row_idx=  0, col_idx=  0, iter=  0)
+[3665730000] DECODER: Entering COLLECT_DATA, unpacking         900 symbols
+[3665730000] DECODER: Data collected, changes_detected=0, ready for DECODE_ROWS
+[3665750000] DECODER STATE TRANSITION: COLLECT_DATA -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  0)
+[3665750000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3665750000] DECODER: Triggering 1D decoder for row   0 (op #  0 since clear)
+[3666550000] DECODER: Row   0 decode_complete received, with_error=0
+[3666550000] Progress: Iter          1 | Row   0 | changes:          0
+[3666570000] DECODER: Triggering 1D decoder for row   1 (op #  1 since clear)
+[3667370000] DECODER: Row   1 decode_complete received, with_error=0
+[3667370000] Progress: Iter          1 | Row   1 | changes:          0
+[3667390000] DECODER: Triggering 1D decoder for row   2 (op #  2 since clear)
+[3668190000] DECODER: Row   2 decode_complete received, with_error=0
+[3668190000] Progress: Iter          1 | Row   2 | changes:          0
+[3668210000] DECODER: Triggering 1D decoder for row   3 (op #  3 since clear)
+[3669010000] DECODER: Row   3 decode_complete received, with_error=0
+[3669010000] Progress: Iter          1 | Row   3 | changes:          0
+[3669030000] DECODER: Triggering 1D decoder for row   4 (op #  4 since clear)
+[3671310000] DECODER: Row   4 decode_complete received, with_error=0
+[3671310000] Progress: Iter          1 | Row   4 | changes:          0
+[3671330000] DECODER: Triggering 1D decoder for row   5 (op #  5 since clear)
+[3673610000] DECODER: Row   5 decode_complete received, with_error=0
+[3673610000] Progress: Iter          1 | Row   5 | changes:          1
+[3673630000] DECODER: Triggering 1D decoder for row   6 (op #  6 since clear)
+[3675910000] DECODER: Row   6 decode_complete received, with_error=0
+[3675910000] Progress: Iter          1 | Row   6 | changes:          2
+[3675930000] DECODER: Triggering 1D decoder for row   7 (op #  7 since clear)
+[3676730000] DECODER: Row   7 decode_complete received, with_error=0
+[3676730000] Progress: Iter          1 | Row   7 | changes:          3
+[3676750000] DECODER: Triggering 1D decoder for row   8 (op #  8 since clear)
+[3679030000] DECODER: Row   8 decode_complete received, with_error=0
+[3679030000] Progress: Iter          1 | Row   8 | changes:          3
+[3679050000] DECODER: Triggering 1D decoder for row   9 (op #  9 since clear)
+[3679850000] DECODER: Row   9 decode_complete received, with_error=0
+[3679850000] Progress: Iter          1 | Row   9 | changes:          4
+[3679870000] DECODER: Triggering 1D decoder for row  10 (op # 10 since clear)
+[3680670000] DECODER: Row  10 decode_complete received, with_error=0
+[3680670000] Progress: Iter          1 | Row  10 | changes:          4
+[3680690000] DECODER: Triggering 1D decoder for row  11 (op # 11 since clear)
+[3681490000] DECODER: Row  11 decode_complete received, with_error=0
+[3681490000] Progress: Iter          1 | Row  11 | changes:          4
+[3681510000] DECODER: Triggering 1D decoder for row  12 (op # 12 since clear)
+[3683790000] DECODER: Row  12 decode_complete received, with_error=0
+[3683790000] Progress: Iter          1 | Row  12 | changes:          4
+[3683810000] DECODER: Triggering 1D decoder for row  13 (op # 13 since clear)
+[3684610000] DECODER: Row  13 decode_complete received, with_error=0
+[3684610000] Progress: Iter          1 | Row  13 | changes:          5
+[3684630000] DECODER: Triggering 1D decoder for row  14 (op # 14 since clear)
+[3685430000] DECODER: Row  14 decode_complete received, with_error=0
+[3685430000] Progress: Iter          1 | Row  14 | changes:          5
+[3685450000] DECODER: Triggering 1D decoder for row  15 (op # 15 since clear)
+[3686250000] DECODER: Row  15 decode_complete received, with_error=0
+[3686250000] Progress: Iter          1 | Row  15 | changes:          5
+[3686270000] DECODER: Triggering 1D decoder for row  16 (op # 16 since clear)
+[3688550000] DECODER: Row  16 decode_complete received, with_error=0
+[3688550000] Progress: Iter          1 | Row  16 | changes:          5
+[3688570000] DECODER: Triggering 1D decoder for row  17 (op # 17 since clear)
+[3690850000] DECODER: Row  17 decode_complete received, with_error=0
+[3690850000] Progress: Iter          1 | Row  17 | changes:          6
+[3690870000] DECODER: Triggering 1D decoder for row  18 (op # 18 since clear)
+[3691670000] DECODER: Row  18 decode_complete received, with_error=0
+[3691670000] Progress: Iter          1 | Row  18 | changes:          7
+[3691690000] DECODER: Triggering 1D decoder for row  19 (op # 19 since clear)
+[3693970000] DECODER: Row  19 decode_complete received, with_error=0
+[3693970000] Progress: Iter          1 | Row  19 | changes:          7
+[3693990000] DECODER: Triggering 1D decoder for row  20 (op # 20 since clear)
+[3694790000] DECODER: Row  20 decode_complete received, with_error=0
+[3694790000] Progress: Iter          1 | Row  20 | changes:          8
+[3694810000] DECODER: Triggering 1D decoder for row  21 (op # 21 since clear)
+[3695610000] DECODER: Row  21 decode_complete received, with_error=0
+[3695610000] Progress: Iter          1 | Row  21 | changes:          8
+[3695630000] DECODER: Triggering 1D decoder for row  22 (op # 22 since clear)
+[3696430000] DECODER: Row  22 decode_complete received, with_error=0
+[3696430000] Progress: Iter          1 | Row  22 | changes:          8
+[3696450000] DECODER: Triggering 1D decoder for row  23 (op # 23 since clear)
+[3698730000] DECODER: Row  23 decode_complete received, with_error=0
+[3698730000] Progress: Iter          1 | Row  23 | changes:          8
+[3698750000] DECODER: Triggering 1D decoder for row  24 (op # 24 since clear)
+[3701030000] DECODER: Row  24 decode_complete received, with_error=0
+[3701030000] Progress: Iter          1 | Row  24 | changes:          9
+[3701050000] DECODER: Triggering 1D decoder for row  25 (op # 25 since clear)
+[3703330000] DECODER: Row  25 decode_complete received, with_error=0
+[3703330000] Progress: Iter          1 | Row  25 | changes:         10
+[3703350000] DECODER: Triggering 1D decoder for row  26 (op # 26 since clear)
+[3704150000] DECODER: Row  26 decode_complete received, with_error=0
+[3704150000] Progress: Iter          1 | Row  26 | changes:         11
+[3704170000] DECODER: Triggering 1D decoder for row  27 (op # 27 since clear)
+[3706450000] DECODER: Row  27 decode_complete received, with_error=0
+[3706450000] Progress: Iter          1 | Row  27 | changes:         11
+[3706470000] DECODER: Triggering 1D decoder for row  28 (op # 28 since clear)
+[3708750000] DECODER: Row  28 decode_complete received, with_error=0
+[3708750000] Progress: Iter          1 | Row  28 | changes:         12
+[3708770000] DECODER: Triggering 1D decoder for row  29 (op # 29 since clear)
+[3711050000] DECODER: Row  29 decode_complete received, with_error=0
+[3711050000] Progress: Iter          1 | Row  29 | changes:         13
+[3711050000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[3711090000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  0)
+[3711090000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3711090000] DECODER: Triggering 1D decoder for column   0 (op # 30 since clear)
+[3711890000] DECODER: Column   0 decode_complete received, with_error=0
+[3711890000] Progress: Iter          1 | Col   0 | changes:         14
+[3711910000] DECODER: Triggering 1D decoder for column   1 (op # 31 since clear)
+[3712710000] DECODER: Column   1 decode_complete received, with_error=0
+[3712710000] Progress: Iter          1 | Col   1 | changes:         14
+[3712730000] DECODER: Triggering 1D decoder for column   2 (op # 32 since clear)
+[3713530000] DECODER: Column   2 decode_complete received, with_error=0
+[3713530000] Progress: Iter          1 | Col   2 | changes:         14
+[3713550000] DECODER: Triggering 1D decoder for column   3 (op # 33 since clear)
+[3714350000] DECODER: Column   3 decode_complete received, with_error=0
+[3714350000] Progress: Iter          1 | Col   3 | changes:         14
+[3714370000] DECODER: Triggering 1D decoder for column   4 (op # 34 since clear)
+[3715170000] DECODER: Column   4 decode_complete received, with_error=0
+[3715170000] Progress: Iter          1 | Col   4 | changes:         14
+[3715190000] DECODER: Triggering 1D decoder for column   5 (op # 35 since clear)
+[3715990000] DECODER: Column   5 decode_complete received, with_error=0
+[3715990000] Progress: Iter          1 | Col   5 | changes:         14
+[3716010000] DECODER: Triggering 1D decoder for column   6 (op # 36 since clear)
+[3716810000] DECODER: Column   6 decode_complete received, with_error=0
+[3716810000] Progress: Iter          1 | Col   6 | changes:         14
+[3716830000] DECODER: Triggering 1D decoder for column   7 (op # 37 since clear)
+[3717630000] DECODER: Column   7 decode_complete received, with_error=0
+[3717630000] Progress: Iter          1 | Col   7 | changes:         14
+[3717650000] DECODER: Triggering 1D decoder for column   8 (op # 38 since clear)
+[3718450000] DECODER: Column   8 decode_complete received, with_error=0
+[3718450000] Progress: Iter          1 | Col   8 | changes:         14
+[3718470000] DECODER: Triggering 1D decoder for column   9 (op # 39 since clear)
+[3719270000] DECODER: Column   9 decode_complete received, with_error=0
+[3719270000] Progress: Iter          1 | Col   9 | changes:         14
+[3719290000] DECODER: Triggering 1D decoder for column  10 (op # 40 since clear)
+[3720090000] DECODER: Column  10 decode_complete received, with_error=0
+[3720090000] Progress: Iter          1 | Col  10 | changes:         14
+[3720110000] DECODER: Triggering 1D decoder for column  11 (op # 41 since clear)
+[3720910000] DECODER: Column  11 decode_complete received, with_error=0
+[3720910000] Progress: Iter          1 | Col  11 | changes:         14
+[3720930000] DECODER: Triggering 1D decoder for column  12 (op # 42 since clear)
+[3721730000] DECODER: Column  12 decode_complete received, with_error=0
+[3721730000] Progress: Iter          1 | Col  12 | changes:         14
+[3721750000] DECODER: Triggering 1D decoder for column  13 (op # 43 since clear)
+[3722550000] DECODER: Column  13 decode_complete received, with_error=0
+[3722550000] Progress: Iter          1 | Col  13 | changes:         14
+[3722570000] DECODER: Triggering 1D decoder for column  14 (op # 44 since clear)
+[3723370000] DECODER: Column  14 decode_complete received, with_error=0
+[3723370000] Progress: Iter          1 | Col  14 | changes:         14
+[3723390000] DECODER: Triggering 1D decoder for column  15 (op # 45 since clear)
+[3724190000] DECODER: Column  15 decode_complete received, with_error=0
+[3724190000] Progress: Iter          1 | Col  15 | changes:         14
+[3724210000] DECODER: Triggering 1D decoder for column  16 (op # 46 since clear)
+[3725010000] DECODER: Column  16 decode_complete received, with_error=0
+[3725010000] Progress: Iter          1 | Col  16 | changes:         14
+[3725030000] DECODER: Triggering 1D decoder for column  17 (op # 47 since clear)
+[3725830000] DECODER: Column  17 decode_complete received, with_error=0
+[3725830000] Progress: Iter          1 | Col  17 | changes:         14
+[3725850000] DECODER: Triggering 1D decoder for column  18 (op # 48 since clear)
+[3726650000] DECODER: Column  18 decode_complete received, with_error=0
+[3726650000] Progress: Iter          1 | Col  18 | changes:         14
+[3726670000] DECODER: Triggering 1D decoder for column  19 (op # 49 since clear)
+[3727470000] DECODER: Column  19 decode_complete received, with_error=0
+[3727470000] Progress: Iter          1 | Col  19 | changes:         14
+[3727490000] DECODER: Triggering 1D decoder for column  20 (op # 50 since clear)
+[3728290000] DECODER: Column  20 decode_complete received, with_error=0
+[3728290000] Progress: Iter          1 | Col  20 | changes:         14
+[3728310000] DECODER: Triggering 1D decoder for column  21 (op # 51 since clear)
+[3729110000] DECODER: Column  21 decode_complete received, with_error=0
+[3729110000] Progress: Iter          1 | Col  21 | changes:         14
+[3729130000] DECODER: Triggering 1D decoder for column  22 (op # 52 since clear)
+[3729930000] DECODER: Column  22 decode_complete received, with_error=0
+[3729930000] Progress: Iter          1 | Col  22 | changes:         14
+[3729950000] DECODER: Triggering 1D decoder for column  23 (op # 53 since clear)
+[3730750000] DECODER: Column  23 decode_complete received, with_error=0
+[3730750000] Progress: Iter          1 | Col  23 | changes:         14
+[3730770000] DECODER: Triggering 1D decoder for column  24 (op # 54 since clear)
+[3731570000] DECODER: Column  24 decode_complete received, with_error=0
+[3731570000] Progress: Iter          1 | Col  24 | changes:         14
+[3731590000] DECODER: Triggering 1D decoder for column  25 (op # 55 since clear)
+[3732390000] DECODER: Column  25 decode_complete received, with_error=0
+[3732390000] Progress: Iter          1 | Col  25 | changes:         14
+[3732410000] DECODER: Triggering 1D decoder for column  26 (op # 56 since clear)
+[3733210000] DECODER: Column  26 decode_complete received, with_error=0
+[3733210000] Progress: Iter          1 | Col  26 | changes:         14
+[3733230000] DECODER: Triggering 1D decoder for column  27 (op # 57 since clear)
+[3734030000] DECODER: Column  27 decode_complete received, with_error=0
+[3734030000] Progress: Iter          1 | Col  27 | changes:         14
+[3734050000] DECODER: Triggering 1D decoder for column  28 (op # 58 since clear)
+[3734850000] DECODER: Column  28 decode_complete received, with_error=0
+[3734850000] Progress: Iter          1 | Col  28 | changes:         14
+[3734870000] DECODER: Triggering 1D decoder for column  29 (op # 59 since clear)
+[3735670000] DECODER: Column  29 decode_complete received, with_error=0
+[3735670000] Progress: Iter          1 | Col  29 | changes:         14
+[3735670000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[3735690000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  0, changes=1)
+[3735710000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  0)
+[3735710000] DECODER: Entering CHECK_CONVERGENCE, total_changes=        14, iteration=  0
+[3735710000] DECODER: Iteration          1 complete,         14 changes detected, continuing
+[3735730000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  1)
+[3735730000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3735730000] DECODER: Triggering 1D decoder for row   0 (op # 60 since clear)
+[3736530000] DECODER: Row   0 decode_complete received, with_error=0
+[3736530000] Progress: Iter          2 | Row   0 | changes:          0
+[3736550000] DECODER: Triggering 1D decoder for row   1 (op # 61 since clear)
+[3737350000] DECODER: Row   1 decode_complete received, with_error=0
+[3737350000] Progress: Iter          2 | Row   1 | changes:          0
+[3737370000] DECODER: Triggering 1D decoder for row   2 (op # 62 since clear)
+[3738170000] DECODER: Row   2 decode_complete received, with_error=0
+[3738170000] Progress: Iter          2 | Row   2 | changes:          0
+[3738190000] DECODER: Triggering 1D decoder for row   3 (op # 63 since clear)
+[3738990000] DECODER: Row   3 decode_complete received, with_error=0
+[3738990000] Progress: Iter          2 | Row   3 | changes:          0
+[3739010000] DECODER: Triggering 1D decoder for row   4 (op # 64 since clear)
+[3739810000] DECODER: Row   4 decode_complete received, with_error=0
+[3739810000] Progress: Iter          2 | Row   4 | changes:          0
+[3739830000] DECODER: Triggering 1D decoder for row   5 (op # 65 since clear)
+[3740630000] DECODER: Row   5 decode_complete received, with_error=0
+[3740630000] Progress: Iter          2 | Row   5 | changes:          0
+[3740650000] DECODER: Triggering 1D decoder for row   6 (op # 66 since clear)
+[3741450000] DECODER: Row   6 decode_complete received, with_error=0
+[3741450000] Progress: Iter          2 | Row   6 | changes:          0
+[3741470000] DECODER: Triggering 1D decoder for row   7 (op # 67 since clear)
+[3742270000] DECODER: Row   7 decode_complete received, with_error=0
+[3742270000] Progress: Iter          2 | Row   7 | changes:          0
+[3742290000] DECODER: Triggering 1D decoder for row   8 (op # 68 since clear)
+[3743090000] DECODER: Row   8 decode_complete received, with_error=0
+[3743090000] Progress: Iter          2 | Row   8 | changes:          0
+[3743110000] DECODER: Triggering 1D decoder for row   9 (op # 69 since clear)
+[3743910000] DECODER: Row   9 decode_complete received, with_error=0
+[3743910000] Progress: Iter          2 | Row   9 | changes:          0
+[3743930000] DECODER: Triggering 1D decoder for row  10 (op # 70 since clear)
+[3744730000] DECODER: Row  10 decode_complete received, with_error=0
+[3744730000] Progress: Iter          2 | Row  10 | changes:          0
+[3744750000] DECODER: Triggering 1D decoder for row  11 (op # 71 since clear)
+[3745550000] DECODER: Row  11 decode_complete received, with_error=0
+[3745550000] Progress: Iter          2 | Row  11 | changes:          0
+[3745570000] DECODER: Triggering 1D decoder for row  12 (op # 72 since clear)
+[3746370000] DECODER: Row  12 decode_complete received, with_error=0
+[3746370000] Progress: Iter          2 | Row  12 | changes:          0
+[3746390000] DECODER: Triggering 1D decoder for row  13 (op # 73 since clear)
+[3747190000] DECODER: Row  13 decode_complete received, with_error=0
+[3747190000] Progress: Iter          2 | Row  13 | changes:          0
+[3747210000] DECODER: Triggering 1D decoder for row  14 (op # 74 since clear)
+[3748010000] DECODER: Row  14 decode_complete received, with_error=0
+[3748010000] Progress: Iter          2 | Row  14 | changes:          0
+[3748030000] DECODER: Triggering 1D decoder for row  15 (op # 75 since clear)
+[3748830000] DECODER: Row  15 decode_complete received, with_error=0
+[3748830000] Progress: Iter          2 | Row  15 | changes:          0
+[3748850000] DECODER: Triggering 1D decoder for row  16 (op # 76 since clear)
+[3749650000] DECODER: Row  16 decode_complete received, with_error=0
+[3749650000] Progress: Iter          2 | Row  16 | changes:          0
+[3749670000] DECODER: Triggering 1D decoder for row  17 (op # 77 since clear)
+[3750470000] DECODER: Row  17 decode_complete received, with_error=0
+[3750470000] Progress: Iter          2 | Row  17 | changes:          0
+[3750490000] DECODER: Triggering 1D decoder for row  18 (op # 78 since clear)
+[3751290000] DECODER: Row  18 decode_complete received, with_error=0
+[3751290000] Progress: Iter          2 | Row  18 | changes:          0
+[3751310000] DECODER: Triggering 1D decoder for row  19 (op # 79 since clear)
+[3752110000] DECODER: Row  19 decode_complete received, with_error=0
+[3752110000] Progress: Iter          2 | Row  19 | changes:          0
+[3752130000] DECODER: Triggering 1D decoder for row  20 (op # 80 since clear)
+[3752930000] DECODER: Row  20 decode_complete received, with_error=0
+[3752930000] Progress: Iter          2 | Row  20 | changes:          0
+[3752950000] DECODER: Triggering 1D decoder for row  21 (op # 81 since clear)
+[3753750000] DECODER: Row  21 decode_complete received, with_error=0
+[3753750000] Progress: Iter          2 | Row  21 | changes:          0
+[3753770000] DECODER: Triggering 1D decoder for row  22 (op # 82 since clear)
+[3754570000] DECODER: Row  22 decode_complete received, with_error=0
+[3754570000] Progress: Iter          2 | Row  22 | changes:          0
+[3754590000] DECODER: Triggering 1D decoder for row  23 (op # 83 since clear)
+[3755390000] DECODER: Row  23 decode_complete received, with_error=0
+[3755390000] Progress: Iter          2 | Row  23 | changes:          0
+[3755410000] DECODER: Triggering 1D decoder for row  24 (op # 84 since clear)
+[3756210000] DECODER: Row  24 decode_complete received, with_error=0
+[3756210000] Progress: Iter          2 | Row  24 | changes:          0
+[3756230000] DECODER: Triggering 1D decoder for row  25 (op # 85 since clear)
+[3757030000] DECODER: Row  25 decode_complete received, with_error=0
+[3757030000] Progress: Iter          2 | Row  25 | changes:          0
+[3757050000] DECODER: Triggering 1D decoder for row  26 (op # 86 since clear)
+[3757850000] DECODER: Row  26 decode_complete received, with_error=0
+[3757850000] Progress: Iter          2 | Row  26 | changes:          0
+[3757870000] DECODER: Triggering 1D decoder for row  27 (op # 87 since clear)
+[3758670000] DECODER: Row  27 decode_complete received, with_error=0
+[3758670000] Progress: Iter          2 | Row  27 | changes:          0
+[3758690000] DECODER: Triggering 1D decoder for row  28 (op # 88 since clear)
+[3759490000] DECODER: Row  28 decode_complete received, with_error=0
+[3759490000] Progress: Iter          2 | Row  28 | changes:          0
+[3759510000] DECODER: Triggering 1D decoder for row  29 (op # 89 since clear)
+[3760310000] DECODER: Row  29 decode_complete received, with_error=0
+[3760310000] Progress: Iter          2 | Row  29 | changes:          0
+[3760310000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[3760350000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  1)
+[3760350000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3760350000] DECODER: Triggering 1D decoder for column   0 (op # 90 since clear)
+[3761150000] DECODER: Column   0 decode_complete received, with_error=0
+[3761150000] Progress: Iter          2 | Col   0 | changes:          0
+[3761170000] DECODER: Triggering 1D decoder for column   1 (op # 91 since clear)
+[3761970000] DECODER: Column   1 decode_complete received, with_error=0
+[3761970000] Progress: Iter          2 | Col   1 | changes:          0
+[3761990000] DECODER: Triggering 1D decoder for column   2 (op # 92 since clear)
+[3762790000] DECODER: Column   2 decode_complete received, with_error=0
+[3762790000] Progress: Iter          2 | Col   2 | changes:          0
+[3762810000] DECODER: Triggering 1D decoder for column   3 (op # 93 since clear)
+[3763610000] DECODER: Column   3 decode_complete received, with_error=0
+[3763610000] Progress: Iter          2 | Col   3 | changes:          0
+[3763630000] DECODER: Triggering 1D decoder for column   4 (op # 94 since clear)
+[3764430000] DECODER: Column   4 decode_complete received, with_error=0
+[3764430000] Progress: Iter          2 | Col   4 | changes:          0
+[3764450000] DECODER: Triggering 1D decoder for column   5 (op # 95 since clear)
+[3765250000] DECODER: Column   5 decode_complete received, with_error=0
+[3765250000] Progress: Iter          2 | Col   5 | changes:          0
+[3765270000] DECODER: Triggering 1D decoder for column   6 (op # 96 since clear)
+[3766070000] DECODER: Column   6 decode_complete received, with_error=0
+[3766070000] Progress: Iter          2 | Col   6 | changes:          0
+[3766090000] DECODER: Triggering 1D decoder for column   7 (op # 97 since clear)
+[3766890000] DECODER: Column   7 decode_complete received, with_error=0
+[3766890000] Progress: Iter          2 | Col   7 | changes:          0
+[3766910000] DECODER: Triggering 1D decoder for column   8 (op # 98 since clear)
+[3767710000] DECODER: Column   8 decode_complete received, with_error=0
+[3767710000] Progress: Iter          2 | Col   8 | changes:          0
+[3767730000] DECODER: Triggering 1D decoder for column   9 (op # 99 since clear)
+[3768530000] DECODER: Column   9 decode_complete received, with_error=0
+[3768530000] Progress: Iter          2 | Col   9 | changes:          0
+[3768550000] DECODER: Triggering 1D decoder for column  10 (op #100 since clear)
+[3769350000] DECODER: Column  10 decode_complete received, with_error=0
+[3769350000] Progress: Iter          2 | Col  10 | changes:          0
+[3769370000] DECODER: Triggering 1D decoder for column  11 (op #101 since clear)
+[3770170000] DECODER: Column  11 decode_complete received, with_error=0
+[3770170000] Progress: Iter          2 | Col  11 | changes:          0
+[3770190000] DECODER: Triggering 1D decoder for column  12 (op #102 since clear)
+[3770990000] DECODER: Column  12 decode_complete received, with_error=0
+[3770990000] Progress: Iter          2 | Col  12 | changes:          0
+[3771010000] DECODER: Triggering 1D decoder for column  13 (op #103 since clear)
+[3771810000] DECODER: Column  13 decode_complete received, with_error=0
+[3771810000] Progress: Iter          2 | Col  13 | changes:          0
+[3771830000] DECODER: Triggering 1D decoder for column  14 (op #104 since clear)
+[3772630000] DECODER: Column  14 decode_complete received, with_error=0
+[3772630000] Progress: Iter          2 | Col  14 | changes:          0
+[3772650000] DECODER: Triggering 1D decoder for column  15 (op #105 since clear)
+[3773450000] DECODER: Column  15 decode_complete received, with_error=0
+[3773450000] Progress: Iter          2 | Col  15 | changes:          0
+[3773470000] DECODER: Triggering 1D decoder for column  16 (op #106 since clear)
+[3774270000] DECODER: Column  16 decode_complete received, with_error=0
+[3774270000] Progress: Iter          2 | Col  16 | changes:          0
+[3774290000] DECODER: Triggering 1D decoder for column  17 (op #107 since clear)
+[3775090000] DECODER: Column  17 decode_complete received, with_error=0
+[3775090000] Progress: Iter          2 | Col  17 | changes:          0
+[3775110000] DECODER: Triggering 1D decoder for column  18 (op #108 since clear)
+[3775910000] DECODER: Column  18 decode_complete received, with_error=0
+[3775910000] Progress: Iter          2 | Col  18 | changes:          0
+[3775930000] DECODER: Triggering 1D decoder for column  19 (op #109 since clear)
+[3776730000] DECODER: Column  19 decode_complete received, with_error=0
+[3776730000] Progress: Iter          2 | Col  19 | changes:          0
+[3776750000] DECODER: Triggering 1D decoder for column  20 (op #110 since clear)
+[3777550000] DECODER: Column  20 decode_complete received, with_error=0
+[3777550000] Progress: Iter          2 | Col  20 | changes:          0
+[3777570000] DECODER: Triggering 1D decoder for column  21 (op #111 since clear)
+[3778370000] DECODER: Column  21 decode_complete received, with_error=0
+[3778370000] Progress: Iter          2 | Col  21 | changes:          0
+[3778390000] DECODER: Triggering 1D decoder for column  22 (op #112 since clear)
+[3779190000] DECODER: Column  22 decode_complete received, with_error=0
+[3779190000] Progress: Iter          2 | Col  22 | changes:          0
+[3779210000] DECODER: Triggering 1D decoder for column  23 (op #113 since clear)
+[3780010000] DECODER: Column  23 decode_complete received, with_error=0
+[3780010000] Progress: Iter          2 | Col  23 | changes:          0
+[3780030000] DECODER: Triggering 1D decoder for column  24 (op #114 since clear)
+[3780830000] DECODER: Column  24 decode_complete received, with_error=0
+[3780830000] Progress: Iter          2 | Col  24 | changes:          0
+[3780850000] DECODER: Triggering 1D decoder for column  25 (op #115 since clear)
+[3781650000] DECODER: Column  25 decode_complete received, with_error=0
+[3781650000] Progress: Iter          2 | Col  25 | changes:          0
+[3781670000] DECODER: Triggering 1D decoder for column  26 (op #116 since clear)
+[3782470000] DECODER: Column  26 decode_complete received, with_error=0
+[3782470000] Progress: Iter          2 | Col  26 | changes:          0
+[3782490000] DECODER: Triggering 1D decoder for column  27 (op #117 since clear)
+[3783290000] DECODER: Column  27 decode_complete received, with_error=0
+[3783290000] Progress: Iter          2 | Col  27 | changes:          0
+[3783310000] DECODER: Triggering 1D decoder for column  28 (op #118 since clear)
+[3784110000] DECODER: Column  28 decode_complete received, with_error=0
+[3784110000] Progress: Iter          2 | Col  28 | changes:          0
+[3784130000] DECODER: Triggering 1D decoder for column  29 (op #119 since clear)
+[3784930000] DECODER: Column  29 decode_complete received, with_error=0
+[3784930000] Progress: Iter          2 | Col  29 | changes:          0
+[3784930000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[3784950000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  1, changes=1)
+[3784970000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  1)
+[3784970000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  1
+[3784970000] DECODER: Converged after          2 iterations
+[3784990000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  2)
+[3784990000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3784990000] DECODER: Triggering 1D decoder for row   0 (op #120 since clear)
+[3785790000] DECODER: Row   0 decode_complete received, with_error=0
+[3785790000] Progress: Iter          3 | Row   0 | changes:          0
+[3785810000] DECODER: Triggering 1D decoder for row   1 (op #121 since clear)
+[3786610000] DECODER: Row   1 decode_complete received, with_error=0
+[3786610000] Progress: Iter          3 | Row   1 | changes:          0
+[3786630000] DECODER: Triggering 1D decoder for row   2 (op #122 since clear)
+[3787430000] DECODER: Row   2 decode_complete received, with_error=0
+[3787430000] Progress: Iter          3 | Row   2 | changes:          0
+[3787450000] DECODER: Triggering 1D decoder for row   3 (op #123 since clear)
+[3788250000] DECODER: Row   3 decode_complete received, with_error=0
+[3788250000] Progress: Iter          3 | Row   3 | changes:          0
+[3788270000] DECODER: Triggering 1D decoder for row   4 (op #124 since clear)
+[3789070000] DECODER: Row   4 decode_complete received, with_error=0
+[3789070000] Progress: Iter          3 | Row   4 | changes:          0
+[3789090000] DECODER: Triggering 1D decoder for row   5 (op #125 since clear)
+[3789890000] DECODER: Row   5 decode_complete received, with_error=0
+[3789890000] Progress: Iter          3 | Row   5 | changes:          0
+[3789910000] DECODER: Triggering 1D decoder for row   6 (op #126 since clear)
+[3790710000] DECODER: Row   6 decode_complete received, with_error=0
+[3790710000] Progress: Iter          3 | Row   6 | changes:          0
+[3790730000] DECODER: Triggering 1D decoder for row   7 (op #127 since clear)
+[3791530000] DECODER: Row   7 decode_complete received, with_error=0
+[3791530000] Progress: Iter          3 | Row   7 | changes:          0
+[3791550000] DECODER: Triggering 1D decoder for row   8 (op #128 since clear)
+[3792350000] DECODER: Row   8 decode_complete received, with_error=0
+[3792350000] Progress: Iter          3 | Row   8 | changes:          0
+[3792370000] DECODER: Triggering 1D decoder for row   9 (op #129 since clear)
+[3793170000] DECODER: Row   9 decode_complete received, with_error=0
+[3793170000] Progress: Iter          3 | Row   9 | changes:          0
+[3793190000] DECODER: Triggering 1D decoder for row  10 (op #130 since clear)
+[3793990000] DECODER: Row  10 decode_complete received, with_error=0
+[3793990000] Progress: Iter          3 | Row  10 | changes:          0
+[3794010000] DECODER: Triggering 1D decoder for row  11 (op #131 since clear)
+[3794810000] DECODER: Row  11 decode_complete received, with_error=0
+[3794810000] Progress: Iter          3 | Row  11 | changes:          0
+[3794830000] DECODER: Triggering 1D decoder for row  12 (op #132 since clear)
+[3795630000] DECODER: Row  12 decode_complete received, with_error=0
+[3795630000] Progress: Iter          3 | Row  12 | changes:          0
+[3795650000] DECODER: Triggering 1D decoder for row  13 (op #133 since clear)
+[3796450000] DECODER: Row  13 decode_complete received, with_error=0
+[3796450000] Progress: Iter          3 | Row  13 | changes:          0
+[3796470000] DECODER: Triggering 1D decoder for row  14 (op #134 since clear)
+[3797270000] DECODER: Row  14 decode_complete received, with_error=0
+[3797270000] Progress: Iter          3 | Row  14 | changes:          0
+[3797290000] DECODER: Triggering 1D decoder for row  15 (op #135 since clear)
+[3798090000] DECODER: Row  15 decode_complete received, with_error=0
+[3798090000] Progress: Iter          3 | Row  15 | changes:          0
+[3798110000] DECODER: Triggering 1D decoder for row  16 (op #136 since clear)
+[3798910000] DECODER: Row  16 decode_complete received, with_error=0
+[3798910000] Progress: Iter          3 | Row  16 | changes:          0
+[3798930000] DECODER: Triggering 1D decoder for row  17 (op #137 since clear)
+[3799730000] DECODER: Row  17 decode_complete received, with_error=0
+[3799730000] Progress: Iter          3 | Row  17 | changes:          0
+[3799750000] DECODER: Triggering 1D decoder for row  18 (op #138 since clear)
+[3800550000] DECODER: Row  18 decode_complete received, with_error=0
+[3800550000] Progress: Iter          3 | Row  18 | changes:          0
+[3800570000] DECODER: Triggering 1D decoder for row  19 (op #139 since clear)
+[3801370000] DECODER: Row  19 decode_complete received, with_error=0
+[3801370000] Progress: Iter          3 | Row  19 | changes:          0
+[3801390000] DECODER: Triggering 1D decoder for row  20 (op #140 since clear)
+[3802190000] DECODER: Row  20 decode_complete received, with_error=0
+[3802190000] Progress: Iter          3 | Row  20 | changes:          0
+[3802210000] DECODER: Triggering 1D decoder for row  21 (op #141 since clear)
+[3803010000] DECODER: Row  21 decode_complete received, with_error=0
+[3803010000] Progress: Iter          3 | Row  21 | changes:          0
+[3803030000] DECODER: Triggering 1D decoder for row  22 (op #142 since clear)
+[3803830000] DECODER: Row  22 decode_complete received, with_error=0
+[3803830000] Progress: Iter          3 | Row  22 | changes:          0
+[3803850000] DECODER: Triggering 1D decoder for row  23 (op #143 since clear)
+[3804650000] DECODER: Row  23 decode_complete received, with_error=0
+[3804650000] Progress: Iter          3 | Row  23 | changes:          0
+[3804670000] DECODER: Triggering 1D decoder for row  24 (op #144 since clear)
+[3805470000] DECODER: Row  24 decode_complete received, with_error=0
+[3805470000] Progress: Iter          3 | Row  24 | changes:          0
+[3805490000] DECODER: Triggering 1D decoder for row  25 (op #145 since clear)
+[3806290000] DECODER: Row  25 decode_complete received, with_error=0
+[3806290000] Progress: Iter          3 | Row  25 | changes:          0
+[3806310000] DECODER: Triggering 1D decoder for row  26 (op #146 since clear)
+[3807110000] DECODER: Row  26 decode_complete received, with_error=0
+[3807110000] Progress: Iter          3 | Row  26 | changes:          0
+[3807130000] DECODER: Triggering 1D decoder for row  27 (op #147 since clear)
+[3807930000] DECODER: Row  27 decode_complete received, with_error=0
+[3807930000] Progress: Iter          3 | Row  27 | changes:          0
+[3807950000] DECODER: Triggering 1D decoder for row  28 (op #148 since clear)
+[3808750000] DECODER: Row  28 decode_complete received, with_error=0
+[3808750000] Progress: Iter          3 | Row  28 | changes:          0
+[3808770000] DECODER: Triggering 1D decoder for row  29 (op #149 since clear)
+[3809570000] DECODER: Row  29 decode_complete received, with_error=0
+[3809570000] Progress: Iter          3 | Row  29 | changes:          0
+[3809570000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[3809610000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  2)
+[3809610000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[3809610000] DECODER: Triggering 1D decoder for column   0 (op #150 since clear)
+[3810410000] DECODER: Column   0 decode_complete received, with_error=0
+[3810410000] Progress: Iter          3 | Col   0 | changes:          0
+[3810430000] DECODER: Triggering 1D decoder for column   1 (op #151 since clear)
+[3811230000] DECODER: Column   1 decode_complete received, with_error=0
+[3811230000] Progress: Iter          3 | Col   1 | changes:          0
+[3811250000] DECODER: Triggering 1D decoder for column   2 (op #152 since clear)
+[3812050000] DECODER: Column   2 decode_complete received, with_error=0
+[3812050000] Progress: Iter          3 | Col   2 | changes:          0
+[3812070000] DECODER: Triggering 1D decoder for column   3 (op #153 since clear)
+[3812870000] DECODER: Column   3 decode_complete received, with_error=0
+[3812870000] Progress: Iter          3 | Col   3 | changes:          0
+[3812890000] DECODER: Triggering 1D decoder for column   4 (op #154 since clear)
+[3813690000] DECODER: Column   4 decode_complete received, with_error=0
+[3813690000] Progress: Iter          3 | Col   4 | changes:          0
+[3813710000] DECODER: Triggering 1D decoder for column   5 (op #155 since clear)
+[3814510000] DECODER: Column   5 decode_complete received, with_error=0
+[3814510000] Progress: Iter          3 | Col   5 | changes:          0
+[3814530000] DECODER: Triggering 1D decoder for column   6 (op #156 since clear)
+[3815330000] DECODER: Column   6 decode_complete received, with_error=0
+[3815330000] Progress: Iter          3 | Col   6 | changes:          0
+[3815350000] DECODER: Triggering 1D decoder for column   7 (op #157 since clear)
+[3816150000] DECODER: Column   7 decode_complete received, with_error=0
+[3816150000] Progress: Iter          3 | Col   7 | changes:          0
+[3816170000] DECODER: Triggering 1D decoder for column   8 (op #158 since clear)
+[3816970000] DECODER: Column   8 decode_complete received, with_error=0
+[3816970000] Progress: Iter          3 | Col   8 | changes:          0
+[3816990000] DECODER: Triggering 1D decoder for column   9 (op #159 since clear)
+[3817790000] DECODER: Column   9 decode_complete received, with_error=0
+[3817790000] Progress: Iter          3 | Col   9 | changes:          0
+[3817810000] DECODER: Triggering 1D decoder for column  10 (op #160 since clear)
+[3818610000] DECODER: Column  10 decode_complete received, with_error=0
+[3818610000] Progress: Iter          3 | Col  10 | changes:          0
+[3818630000] DECODER: Triggering 1D decoder for column  11 (op #161 since clear)
+[3819430000] DECODER: Column  11 decode_complete received, with_error=0
+[3819430000] Progress: Iter          3 | Col  11 | changes:          0
+[3819450000] DECODER: Triggering 1D decoder for column  12 (op #162 since clear)
+[3820250000] DECODER: Column  12 decode_complete received, with_error=0
+[3820250000] Progress: Iter          3 | Col  12 | changes:          0
+[3820270000] DECODER: Triggering 1D decoder for column  13 (op #163 since clear)
+[3821070000] DECODER: Column  13 decode_complete received, with_error=0
+[3821070000] Progress: Iter          3 | Col  13 | changes:          0
+[3821090000] DECODER: Triggering 1D decoder for column  14 (op #164 since clear)
+[3821890000] DECODER: Column  14 decode_complete received, with_error=0
+[3821890000] Progress: Iter          3 | Col  14 | changes:          0
+[3821910000] DECODER: Triggering 1D decoder for column  15 (op #165 since clear)
+[3822710000] DECODER: Column  15 decode_complete received, with_error=0
+[3822710000] Progress: Iter          3 | Col  15 | changes:          0
+[3822730000] DECODER: Triggering 1D decoder for column  16 (op #166 since clear)
+[3823530000] DECODER: Column  16 decode_complete received, with_error=0
+[3823530000] Progress: Iter          3 | Col  16 | changes:          0
+[3823550000] DECODER: Triggering 1D decoder for column  17 (op #167 since clear)
+[3824350000] DECODER: Column  17 decode_complete received, with_error=0
+[3824350000] Progress: Iter          3 | Col  17 | changes:          0
+[3824370000] DECODER: Triggering 1D decoder for column  18 (op #168 since clear)
+[3825170000] DECODER: Column  18 decode_complete received, with_error=0
+[3825170000] Progress: Iter          3 | Col  18 | changes:          0
+[3825190000] DECODER: Triggering 1D decoder for column  19 (op #169 since clear)
+[3825990000] DECODER: Column  19 decode_complete received, with_error=0
+[3825990000] Progress: Iter          3 | Col  19 | changes:          0
+[3826010000] DECODER: Triggering 1D decoder for column  20 (op #170 since clear)
+[3826810000] DECODER: Column  20 decode_complete received, with_error=0
+[3826810000] Progress: Iter          3 | Col  20 | changes:          0
+[3826830000] DECODER: Triggering 1D decoder for column  21 (op #171 since clear)
+[3827630000] DECODER: Column  21 decode_complete received, with_error=0
+[3827630000] Progress: Iter          3 | Col  21 | changes:          0
+[3827650000] DECODER: Triggering 1D decoder for column  22 (op #172 since clear)
+[3828450000] DECODER: Column  22 decode_complete received, with_error=0
+[3828450000] Progress: Iter          3 | Col  22 | changes:          0
+[3828470000] DECODER: Triggering 1D decoder for column  23 (op #173 since clear)
+[3829270000] DECODER: Column  23 decode_complete received, with_error=0
+[3829270000] Progress: Iter          3 | Col  23 | changes:          0
+[3829290000] DECODER: Triggering 1D decoder for column  24 (op #174 since clear)
+[3830090000] DECODER: Column  24 decode_complete received, with_error=0
+[3830090000] Progress: Iter          3 | Col  24 | changes:          0
+[3830110000] DECODER: Triggering 1D decoder for column  25 (op #175 since clear)
+[3830910000] DECODER: Column  25 decode_complete received, with_error=0
+[3830910000] Progress: Iter          3 | Col  25 | changes:          0
+[3830930000] DECODER: Triggering 1D decoder for column  26 (op #176 since clear)
+[3831730000] DECODER: Column  26 decode_complete received, with_error=0
+[3831730000] Progress: Iter          3 | Col  26 | changes:          0
+[3831750000] DECODER: Triggering 1D decoder for column  27 (op #177 since clear)
+[3832550000] DECODER: Column  27 decode_complete received, with_error=0
+[3832550000] Progress: Iter          3 | Col  27 | changes:          0
+[3832570000] DECODER: Triggering 1D decoder for column  28 (op #178 since clear)
+[3833370000] DECODER: Column  28 decode_complete received, with_error=0
+[3833370000] Progress: Iter          3 | Col  28 | changes:          0
+[3833390000] DECODER: Triggering 1D decoder for column  29 (op #179 since clear)
+[3834190000] DECODER: Column  29 decode_complete received, with_error=0
+[3834190000] Progress: Iter          3 | Col  29 | changes:          0
+[3834190000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[3834210000] DECODER next_state: CHECK_CONVERGENCE -> OUTPUT_DATA (iter=  2, changes=0)
+[3834230000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  2)
+[3834230000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  2
+[3834230000] DECODER: Converged after          3 iterations
+[3834250000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> OUTPUT_DATA (row_idx=  0, col_idx=  0, iter=  3)
+[3834250000] DECODER next_state: OUTPUT_DATA -> IDLE (p2s_valid=1, p2s_ready=1)
+[3834270000] DECODER: Pulsing clrn - transitioning to IDLE (ops_since_clear=180)
+[3834290000] DECODER STATE TRANSITION: OUTPUT_DATA -> IDLE (row_idx=  0, col_idx=  0, iter=  0)
+[3834290000] DECODER: Entering IDLE state
+[3876750000] Periodic reset triggered at frame 11, starting 16-cycle reset
+[3877070000] Reset complete, resuming normal operation
+DEBUG [3969250000] PRBS FRAME: a9ef612da9ef6633f46346edf46354a8394b966c394bfbf097b9756897b8182371973f73719050cb2572832b2561e2badf2f0afadf444f9ec2e23e1ec399a1468e4c84468955c79725ab199737fc9172ddfa5572b00b672ecc1dff2fa03b52e6a84c02e1c09bee57f1a80e44835865f025f0259b0bd15c20dc20dd5a38e7c8c2c8c2cfdc9250b28eb28ea0cb6de3af27af27c2bb6c49e2d1e2d08f9b69b44ee44ee3215b75b9a659a64ac7db3d95d5d5d5be90da8d7cfcfcfd8762df2f0a0a0a0d134ec2e23c3c3c2e6ba68e4c888888e579d725ab3333325f14f2ddfaaaaaadc27a2ecc1fffffec8d1ce6a84000006b2e4a57f18000017ae5bdf0250000071e5d8c20de00001245cd28c2c400006d9caef28e9800016d4be62f275000076fb854e2d3e000136191fa4ee840006b45641da67180017b9f584dd52500071943d1acfede00125788e5ea06c4006df1325c7c1698016c26adc90877500768d7ecb63133e01372f06bb4a6a8406b2e2179bbd7f1817ae4c71598f025071e5a927d5220de1245df6d0fecc2c46d9cc36e206a8e996d4a8b64c17f27576fbf3b5a8702d3f361829bdf120ee82b450f58c26c2670fb9e23d28d68d5221944c8ef2f72fecc579ab262e32e06a9f15fad4e4ae417f427c1efa5be587038d08461dd85d12092e31944cd1ce6c36e4a579aae4a568b65bdf15fe5bdf73b5d8c27c05d8c329bcd28d081cd28af58aef2e304aef3e3d3e62e4a1be62848e854e5bc5854f1b271fa5d89d1fa25ad241dcd34e41cddeed84caeba584acc66d1abe79dd1bea956e5
+DEBUG [7353250000] PRBS FRAME: f8514ce587f7f65c11e7aa5d103035c86451fdce60a0bcb159e40ca543c38ba7d4582bdf888939d0f9d0f8c1333694e214e21286aab77a4c7a4c6f17ffb31da91da9627001aa4df64df74d2005fdac35ac33aec01c0de8bde8a9e680482c738c73f45701b0e929292839f205a276f6f6f0942c1dcd3636362378e84caeb4b4b4cb1271abe7bbbbbaba6d25f85199999f9d6edc11e55555414f66c8645fffff87a356b159c0000111cbf7a7d480000664b831d0fb0000155b90a4e21a00007fd963da4c5c000100d748dda9c8000602f3b2cdf4b000140e29aeac3ba0007824f5e7e899c00110da3c507354800662dc89e12bfb00154ecb3446f81a007fa6bab996105c0101d79f957461c80604f1417f3944b0141a278702979ba0785cd1120f7159c111cae66c2327d48664be5568cad0fb155b85ff72bee21a7fd91c032f864c5d00d6480ae115a9ce02f5b03e467df4a40e3da085950c3bd8248dc31d7e2898d0db2c8a4f04f352e2daeb3da21a2bee4ede7a8dcc5cf865a6c51f2ca9ca115dd69e42ebf4bc67ccf7458e783b8950aa339d25109937e3fca94ede6356b0480bf7a6c54bf7a1b03831d69fb831c5a090a4f74190a49dc363da338563db4c8b48dca91f48dbab3bb2cbf643b2d9fa99aeb83589aed41f55e790bd35e6f843fc51638ebc56118809e7492789f465303453b6d134395ea0b9e9b6e6b897c7c39475b65793709089793db5f16b236337168dbc277acb4ab2772d88d31ebbbfad32ed32ea479981eeae6eae7d91550467e567e50d67fe19505f505e2f500457e1c3
+[7541450000] DECODER next_state: IDLE -> COLLECT_DATA (s2p_valid=1)
+[7541470000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[7541470000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[7541490000] DECODER STATE TRANSITION: IDLE -> COLLECT_DATA (row_idx=  0, col_idx=  0, iter=  0)
+[7541490000] DECODER: Entering COLLECT_DATA, unpacking         900 symbols
+[7541490000] DECODER: Data collected, changes_detected=0, ready for DECODE_ROWS
+[7541510000] DECODER STATE TRANSITION: COLLECT_DATA -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  0)
+[7541510000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7541510000] DECODER: Triggering 1D decoder for row   0 (op #  0 since clear)
+[7543790000] DECODER: Row   0 decode_complete received, with_error=0
+[7543790000] Progress: Iter          1 | Row   0 | changes:          0
+[7543810000] DECODER: Triggering 1D decoder for row   1 (op #  1 since clear)
+[7544610000] DECODER: Row   1 decode_complete received, with_error=0
+[7544610000] Progress: Iter          1 | Row   1 | changes:          1
+[7544630000] DECODER: Triggering 1D decoder for row   2 (op #  2 since clear)
+[7545430000] DECODER: Row   2 decode_complete received, with_error=0
+[7545430000] Progress: Iter          1 | Row   2 | changes:          1
+[7545450000] DECODER: Triggering 1D decoder for row   3 (op #  3 since clear)
+[7546250000] DECODER: Row   3 decode_complete received, with_error=0
+[7546250000] Progress: Iter          1 | Row   3 | changes:          1
+[7546270000] DECODER: Triggering 1D decoder for row   4 (op #  4 since clear)
+[7547070000] DECODER: Row   4 decode_complete received, with_error=0
+[7547070000] Progress: Iter          1 | Row   4 | changes:          1
+[7547090000] DECODER: Triggering 1D decoder for row   5 (op #  5 since clear)
+[7547890000] DECODER: Row   5 decode_complete received, with_error=0
+[7547890000] Progress: Iter          1 | Row   5 | changes:          1
+[7547910000] DECODER: Triggering 1D decoder for row   6 (op #  6 since clear)
+[7548710000] DECODER: Row   6 decode_complete received, with_error=0
+[7548710000] Progress: Iter          1 | Row   6 | changes:          1
+[7548730000] DECODER: Triggering 1D decoder for row   7 (op #  7 since clear)
+[7549530000] DECODER: Row   7 decode_complete received, with_error=0
+[7549530000] Progress: Iter          1 | Row   7 | changes:          1
+[7549550000] DECODER: Triggering 1D decoder for row   8 (op #  8 since clear)
+[7551830000] DECODER: Row   8 decode_complete received, with_error=0
+[7551830000] Progress: Iter          1 | Row   8 | changes:          1
+[7551850000] DECODER: Triggering 1D decoder for row   9 (op #  9 since clear)
+[7552650000] DECODER: Row   9 decode_complete received, with_error=0
+[7552650000] Progress: Iter          1 | Row   9 | changes:          2
+[7552670000] DECODER: Triggering 1D decoder for row  10 (op # 10 since clear)
+[7554950000] DECODER: Row  10 decode_complete received, with_error=0
+[7554950000] Progress: Iter          1 | Row  10 | changes:          2
+[7554970000] DECODER: Triggering 1D decoder for row  11 (op # 11 since clear)
+[7555770000] DECODER: Row  11 decode_complete received, with_error=0
+[7555770000] Progress: Iter          1 | Row  11 | changes:          3
+[7555790000] DECODER: Triggering 1D decoder for row  12 (op # 12 since clear)
+[7556590000] DECODER: Row  12 decode_complete received, with_error=0
+[7556590000] Progress: Iter          1 | Row  12 | changes:          3
+[7556610000] DECODER: Triggering 1D decoder for row  13 (op # 13 since clear)
+[7558890000] DECODER: Row  13 decode_complete received, with_error=0
+[7558890000] Progress: Iter          1 | Row  13 | changes:          3
+[7558910000] DECODER: Triggering 1D decoder for row  14 (op # 14 since clear)
+[7561190000] DECODER: Row  14 decode_complete received, with_error=0
+[7561190000] Progress: Iter          1 | Row  14 | changes:          4
+[7561210000] DECODER: Triggering 1D decoder for row  15 (op # 15 since clear)
+[7563490000] DECODER: Row  15 decode_complete received, with_error=0
+[7563490000] Progress: Iter          1 | Row  15 | changes:          5
+[7563510000] DECODER: Triggering 1D decoder for row  16 (op # 16 since clear)
+[7564310000] DECODER: Row  16 decode_complete received, with_error=0
+[7564310000] Progress: Iter          1 | Row  16 | changes:          6
+[7564330000] DECODER: Triggering 1D decoder for row  17 (op # 17 since clear)
+[7565130000] DECODER: Row  17 decode_complete received, with_error=0
+[7565130000] Progress: Iter          1 | Row  17 | changes:          6
+[7565150000] DECODER: Triggering 1D decoder for row  18 (op # 18 since clear)
+[7565950000] DECODER: Row  18 decode_complete received, with_error=0
+[7565950000] Progress: Iter          1 | Row  18 | changes:          6
+[7565970000] DECODER: Triggering 1D decoder for row  19 (op # 19 since clear)
+[7566770000] DECODER: Row  19 decode_complete received, with_error=0
+[7566770000] Progress: Iter          1 | Row  19 | changes:          6
+[7566790000] DECODER: Triggering 1D decoder for row  20 (op # 20 since clear)
+[7567590000] DECODER: Row  20 decode_complete received, with_error=0
+[7567590000] Progress: Iter          1 | Row  20 | changes:          6
+[7567610000] DECODER: Triggering 1D decoder for row  21 (op # 21 since clear)
+[7568410000] DECODER: Row  21 decode_complete received, with_error=0
+[7568410000] Progress: Iter          1 | Row  21 | changes:          6
+[7568430000] DECODER: Triggering 1D decoder for row  22 (op # 22 since clear)
+[7570710000] DECODER: Row  22 decode_complete received, with_error=0
+[7570710000] Progress: Iter          1 | Row  22 | changes:          6
+[7570730000] DECODER: Triggering 1D decoder for row  23 (op # 23 since clear)
+[7573010000] DECODER: Row  23 decode_complete received, with_error=0
+[7573010000] Progress: Iter          1 | Row  23 | changes:          7
+[7573030000] DECODER: Triggering 1D decoder for row  24 (op # 24 since clear)
+[7573830000] DECODER: Row  24 decode_complete received, with_error=0
+[7573830000] Progress: Iter          1 | Row  24 | changes:          8
+[7573850000] DECODER: Triggering 1D decoder for row  25 (op # 25 since clear)
+[7574650000] DECODER: Row  25 decode_complete received, with_error=0
+[7574650000] Progress: Iter          1 | Row  25 | changes:          8
+[7574670000] DECODER: Triggering 1D decoder for row  26 (op # 26 since clear)
+[7575470000] DECODER: Row  26 decode_complete received, with_error=0
+[7575470000] Progress: Iter          1 | Row  26 | changes:          8
+[7575490000] DECODER: Triggering 1D decoder for row  27 (op # 27 since clear)
+[7576290000] DECODER: Row  27 decode_complete received, with_error=0
+[7576290000] Progress: Iter          1 | Row  27 | changes:          8
+[7576310000] DECODER: Triggering 1D decoder for row  28 (op # 28 since clear)
+[7578590000] DECODER: Row  28 decode_complete received, with_error=0
+[7578590000] Progress: Iter          1 | Row  28 | changes:          8
+[7578610000] DECODER: Triggering 1D decoder for row  29 (op # 29 since clear)
+[7580890000] DECODER: Row  29 decode_complete received, with_error=0
+[7580890000] Progress: Iter          1 | Row  29 | changes:          9
+[7580890000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[7580930000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  0)
+[7580930000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7580930000] DECODER: Triggering 1D decoder for column   0 (op # 30 since clear)
+[7581730000] DECODER: Column   0 decode_complete received, with_error=0
+[7581730000] Progress: Iter          1 | Col   0 | changes:         10
+[7581750000] DECODER: Triggering 1D decoder for column   1 (op # 31 since clear)
+[7582550000] DECODER: Column   1 decode_complete received, with_error=0
+[7582550000] Progress: Iter          1 | Col   1 | changes:         10
+[7582570000] DECODER: Triggering 1D decoder for column   2 (op # 32 since clear)
+[7583370000] DECODER: Column   2 decode_complete received, with_error=0
+[7583370000] Progress: Iter          1 | Col   2 | changes:         10
+[7583390000] DECODER: Triggering 1D decoder for column   3 (op # 33 since clear)
+[7584190000] DECODER: Column   3 decode_complete received, with_error=0
+[7584190000] Progress: Iter          1 | Col   3 | changes:         10
+[7584210000] DECODER: Triggering 1D decoder for column   4 (op # 34 since clear)
+[7585010000] DECODER: Column   4 decode_complete received, with_error=0
+[7585010000] Progress: Iter          1 | Col   4 | changes:         10
+[7585030000] DECODER: Triggering 1D decoder for column   5 (op # 35 since clear)
+[7585830000] DECODER: Column   5 decode_complete received, with_error=0
+[7585830000] Progress: Iter          1 | Col   5 | changes:         10
+[7585850000] DECODER: Triggering 1D decoder for column   6 (op # 36 since clear)
+[7586650000] DECODER: Column   6 decode_complete received, with_error=0
+[7586650000] Progress: Iter          1 | Col   6 | changes:         10
+[7586670000] DECODER: Triggering 1D decoder for column   7 (op # 37 since clear)
+[7587470000] DECODER: Column   7 decode_complete received, with_error=0
+[7587470000] Progress: Iter          1 | Col   7 | changes:         10
+[7587490000] DECODER: Triggering 1D decoder for column   8 (op # 38 since clear)
+[7588290000] DECODER: Column   8 decode_complete received, with_error=0
+[7588290000] Progress: Iter          1 | Col   8 | changes:         10
+[7588310000] DECODER: Triggering 1D decoder for column   9 (op # 39 since clear)
+[7589110000] DECODER: Column   9 decode_complete received, with_error=0
+[7589110000] Progress: Iter          1 | Col   9 | changes:         10
+[7589130000] DECODER: Triggering 1D decoder for column  10 (op # 40 since clear)
+[7589930000] DECODER: Column  10 decode_complete received, with_error=0
+[7589930000] Progress: Iter          1 | Col  10 | changes:         10
+[7589950000] DECODER: Triggering 1D decoder for column  11 (op # 41 since clear)
+[7590750000] DECODER: Column  11 decode_complete received, with_error=0
+[7590750000] Progress: Iter          1 | Col  11 | changes:         10
+[7590770000] DECODER: Triggering 1D decoder for column  12 (op # 42 since clear)
+[7591570000] DECODER: Column  12 decode_complete received, with_error=0
+[7591570000] Progress: Iter          1 | Col  12 | changes:         10
+[7591590000] DECODER: Triggering 1D decoder for column  13 (op # 43 since clear)
+[7592390000] DECODER: Column  13 decode_complete received, with_error=0
+[7592390000] Progress: Iter          1 | Col  13 | changes:         10
+[7592410000] DECODER: Triggering 1D decoder for column  14 (op # 44 since clear)
+[7593210000] DECODER: Column  14 decode_complete received, with_error=0
+[7593210000] Progress: Iter          1 | Col  14 | changes:         10
+[7593230000] DECODER: Triggering 1D decoder for column  15 (op # 45 since clear)
+[7594030000] DECODER: Column  15 decode_complete received, with_error=0
+[7594030000] Progress: Iter          1 | Col  15 | changes:         10
+[7594050000] DECODER: Triggering 1D decoder for column  16 (op # 46 since clear)
+[7594850000] DECODER: Column  16 decode_complete received, with_error=0
+[7594850000] Progress: Iter          1 | Col  16 | changes:         10
+[7594870000] DECODER: Triggering 1D decoder for column  17 (op # 47 since clear)
+[7595670000] DECODER: Column  17 decode_complete received, with_error=0
+[7595670000] Progress: Iter          1 | Col  17 | changes:         10
+[7595690000] DECODER: Triggering 1D decoder for column  18 (op # 48 since clear)
+[7596490000] DECODER: Column  18 decode_complete received, with_error=0
+[7596490000] Progress: Iter          1 | Col  18 | changes:         10
+[7596510000] DECODER: Triggering 1D decoder for column  19 (op # 49 since clear)
+[7597310000] DECODER: Column  19 decode_complete received, with_error=0
+[7597310000] Progress: Iter          1 | Col  19 | changes:         10
+[7597330000] DECODER: Triggering 1D decoder for column  20 (op # 50 since clear)
+[7598130000] DECODER: Column  20 decode_complete received, with_error=0
+[7598130000] Progress: Iter          1 | Col  20 | changes:         10
+[7598150000] DECODER: Triggering 1D decoder for column  21 (op # 51 since clear)
+[7598950000] DECODER: Column  21 decode_complete received, with_error=0
+[7598950000] Progress: Iter          1 | Col  21 | changes:         10
+[7598970000] DECODER: Triggering 1D decoder for column  22 (op # 52 since clear)
+[7599770000] DECODER: Column  22 decode_complete received, with_error=0
+[7599770000] Progress: Iter          1 | Col  22 | changes:         10
+[7599790000] DECODER: Triggering 1D decoder for column  23 (op # 53 since clear)
+[7600590000] DECODER: Column  23 decode_complete received, with_error=0
+[7600590000] Progress: Iter          1 | Col  23 | changes:         10
+[7600610000] DECODER: Triggering 1D decoder for column  24 (op # 54 since clear)
+[7601410000] DECODER: Column  24 decode_complete received, with_error=0
+[7601410000] Progress: Iter          1 | Col  24 | changes:         10
+[7601430000] DECODER: Triggering 1D decoder for column  25 (op # 55 since clear)
+[7602230000] DECODER: Column  25 decode_complete received, with_error=0
+[7602230000] Progress: Iter          1 | Col  25 | changes:         10
+[7602250000] DECODER: Triggering 1D decoder for column  26 (op # 56 since clear)
+[7603050000] DECODER: Column  26 decode_complete received, with_error=0
+[7603050000] Progress: Iter          1 | Col  26 | changes:         10
+[7603070000] DECODER: Triggering 1D decoder for column  27 (op # 57 since clear)
+[7603870000] DECODER: Column  27 decode_complete received, with_error=0
+[7603870000] Progress: Iter          1 | Col  27 | changes:         10
+[7603890000] DECODER: Triggering 1D decoder for column  28 (op # 58 since clear)
+[7604690000] DECODER: Column  28 decode_complete received, with_error=0
+[7604690000] Progress: Iter          1 | Col  28 | changes:         10
+[7604710000] DECODER: Triggering 1D decoder for column  29 (op # 59 since clear)
+[7605510000] DECODER: Column  29 decode_complete received, with_error=0
+[7605510000] Progress: Iter          1 | Col  29 | changes:         10
+[7605510000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[7605530000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  0, changes=1)
+[7605550000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  0)
+[7605550000] DECODER: Entering CHECK_CONVERGENCE, total_changes=        10, iteration=  0
+[7605550000] DECODER: Iteration          1 complete,         10 changes detected, continuing
+[7605570000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  1)
+[7605570000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7605570000] DECODER: Triggering 1D decoder for row   0 (op # 60 since clear)
+[7606370000] DECODER: Row   0 decode_complete received, with_error=0
+[7606370000] Progress: Iter          2 | Row   0 | changes:          0
+[7606390000] DECODER: Triggering 1D decoder for row   1 (op # 61 since clear)
+[7607190000] DECODER: Row   1 decode_complete received, with_error=0
+[7607190000] Progress: Iter          2 | Row   1 | changes:          0
+[7607210000] DECODER: Triggering 1D decoder for row   2 (op # 62 since clear)
+[7608010000] DECODER: Row   2 decode_complete received, with_error=0
+[7608010000] Progress: Iter          2 | Row   2 | changes:          0
+[7608030000] DECODER: Triggering 1D decoder for row   3 (op # 63 since clear)
+[7608830000] DECODER: Row   3 decode_complete received, with_error=0
+[7608830000] Progress: Iter          2 | Row   3 | changes:          0
+[7608850000] DECODER: Triggering 1D decoder for row   4 (op # 64 since clear)
+[7609650000] DECODER: Row   4 decode_complete received, with_error=0
+[7609650000] Progress: Iter          2 | Row   4 | changes:          0
+[7609670000] DECODER: Triggering 1D decoder for row   5 (op # 65 since clear)
+[7610470000] DECODER: Row   5 decode_complete received, with_error=0
+[7610470000] Progress: Iter          2 | Row   5 | changes:          0
+[7610490000] DECODER: Triggering 1D decoder for row   6 (op # 66 since clear)
+[7611290000] DECODER: Row   6 decode_complete received, with_error=0
+[7611290000] Progress: Iter          2 | Row   6 | changes:          0
+[7611310000] DECODER: Triggering 1D decoder for row   7 (op # 67 since clear)
+[7612110000] DECODER: Row   7 decode_complete received, with_error=0
+[7612110000] Progress: Iter          2 | Row   7 | changes:          0
+[7612130000] DECODER: Triggering 1D decoder for row   8 (op # 68 since clear)
+[7612930000] DECODER: Row   8 decode_complete received, with_error=0
+[7612930000] Progress: Iter          2 | Row   8 | changes:          0
+[7612950000] DECODER: Triggering 1D decoder for row   9 (op # 69 since clear)
+[7613750000] DECODER: Row   9 decode_complete received, with_error=0
+[7613750000] Progress: Iter          2 | Row   9 | changes:          0
+[7613770000] DECODER: Triggering 1D decoder for row  10 (op # 70 since clear)
+[7614570000] DECODER: Row  10 decode_complete received, with_error=0
+[7614570000] Progress: Iter          2 | Row  10 | changes:          0
+[7614590000] DECODER: Triggering 1D decoder for row  11 (op # 71 since clear)
+[7615390000] DECODER: Row  11 decode_complete received, with_error=0
+[7615390000] Progress: Iter          2 | Row  11 | changes:          0
+[7615410000] DECODER: Triggering 1D decoder for row  12 (op # 72 since clear)
+[7616210000] DECODER: Row  12 decode_complete received, with_error=0
+[7616210000] Progress: Iter          2 | Row  12 | changes:          0
+[7616230000] DECODER: Triggering 1D decoder for row  13 (op # 73 since clear)
+[7617030000] DECODER: Row  13 decode_complete received, with_error=0
+[7617030000] Progress: Iter          2 | Row  13 | changes:          0
+[7617050000] DECODER: Triggering 1D decoder for row  14 (op # 74 since clear)
+[7617850000] DECODER: Row  14 decode_complete received, with_error=0
+[7617850000] Progress: Iter          2 | Row  14 | changes:          0
+[7617870000] DECODER: Triggering 1D decoder for row  15 (op # 75 since clear)
+[7618670000] DECODER: Row  15 decode_complete received, with_error=0
+[7618670000] Progress: Iter          2 | Row  15 | changes:          0
+[7618690000] DECODER: Triggering 1D decoder for row  16 (op # 76 since clear)
+[7619490000] DECODER: Row  16 decode_complete received, with_error=0
+[7619490000] Progress: Iter          2 | Row  16 | changes:          0
+[7619510000] DECODER: Triggering 1D decoder for row  17 (op # 77 since clear)
+[7620310000] DECODER: Row  17 decode_complete received, with_error=0
+[7620310000] Progress: Iter          2 | Row  17 | changes:          0
+[7620330000] DECODER: Triggering 1D decoder for row  18 (op # 78 since clear)
+[7621130000] DECODER: Row  18 decode_complete received, with_error=0
+[7621130000] Progress: Iter          2 | Row  18 | changes:          0
+[7621150000] DECODER: Triggering 1D decoder for row  19 (op # 79 since clear)
+[7621950000] DECODER: Row  19 decode_complete received, with_error=0
+[7621950000] Progress: Iter          2 | Row  19 | changes:          0
+[7621970000] DECODER: Triggering 1D decoder for row  20 (op # 80 since clear)
+[7622770000] DECODER: Row  20 decode_complete received, with_error=0
+[7622770000] Progress: Iter          2 | Row  20 | changes:          0
+[7622790000] DECODER: Triggering 1D decoder for row  21 (op # 81 since clear)
+[7623590000] DECODER: Row  21 decode_complete received, with_error=0
+[7623590000] Progress: Iter          2 | Row  21 | changes:          0
+[7623610000] DECODER: Triggering 1D decoder for row  22 (op # 82 since clear)
+[7624410000] DECODER: Row  22 decode_complete received, with_error=0
+[7624410000] Progress: Iter          2 | Row  22 | changes:          0
+[7624430000] DECODER: Triggering 1D decoder for row  23 (op # 83 since clear)
+[7625230000] DECODER: Row  23 decode_complete received, with_error=0
+[7625230000] Progress: Iter          2 | Row  23 | changes:          0
+[7625250000] DECODER: Triggering 1D decoder for row  24 (op # 84 since clear)
+[7626050000] DECODER: Row  24 decode_complete received, with_error=0
+[7626050000] Progress: Iter          2 | Row  24 | changes:          0
+[7626070000] DECODER: Triggering 1D decoder for row  25 (op # 85 since clear)
+[7626870000] DECODER: Row  25 decode_complete received, with_error=0
+[7626870000] Progress: Iter          2 | Row  25 | changes:          0
+[7626890000] DECODER: Triggering 1D decoder for row  26 (op # 86 since clear)
+[7627690000] DECODER: Row  26 decode_complete received, with_error=0
+[7627690000] Progress: Iter          2 | Row  26 | changes:          0
+[7627710000] DECODER: Triggering 1D decoder for row  27 (op # 87 since clear)
+[7628510000] DECODER: Row  27 decode_complete received, with_error=0
+[7628510000] Progress: Iter          2 | Row  27 | changes:          0
+[7628530000] DECODER: Triggering 1D decoder for row  28 (op # 88 since clear)
+[7629330000] DECODER: Row  28 decode_complete received, with_error=0
+[7629330000] Progress: Iter          2 | Row  28 | changes:          0
+[7629350000] DECODER: Triggering 1D decoder for row  29 (op # 89 since clear)
+[7630150000] DECODER: Row  29 decode_complete received, with_error=0
+[7630150000] Progress: Iter          2 | Row  29 | changes:          0
+[7630150000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[7630190000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  1)
+[7630190000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7630190000] DECODER: Triggering 1D decoder for column   0 (op # 90 since clear)
+[7630990000] DECODER: Column   0 decode_complete received, with_error=0
+[7630990000] Progress: Iter          2 | Col   0 | changes:          0
+[7631010000] DECODER: Triggering 1D decoder for column   1 (op # 91 since clear)
+[7631810000] DECODER: Column   1 decode_complete received, with_error=0
+[7631810000] Progress: Iter          2 | Col   1 | changes:          0
+[7631830000] DECODER: Triggering 1D decoder for column   2 (op # 92 since clear)
+[7632630000] DECODER: Column   2 decode_complete received, with_error=0
+[7632630000] Progress: Iter          2 | Col   2 | changes:          0
+[7632650000] DECODER: Triggering 1D decoder for column   3 (op # 93 since clear)
+[7633450000] DECODER: Column   3 decode_complete received, with_error=0
+[7633450000] Progress: Iter          2 | Col   3 | changes:          0
+[7633470000] DECODER: Triggering 1D decoder for column   4 (op # 94 since clear)
+[7634270000] DECODER: Column   4 decode_complete received, with_error=0
+[7634270000] Progress: Iter          2 | Col   4 | changes:          0
+[7634290000] DECODER: Triggering 1D decoder for column   5 (op # 95 since clear)
+[7635090000] DECODER: Column   5 decode_complete received, with_error=0
+[7635090000] Progress: Iter          2 | Col   5 | changes:          0
+[7635110000] DECODER: Triggering 1D decoder for column   6 (op # 96 since clear)
+[7635910000] DECODER: Column   6 decode_complete received, with_error=0
+[7635910000] Progress: Iter          2 | Col   6 | changes:          0
+[7635930000] DECODER: Triggering 1D decoder for column   7 (op # 97 since clear)
+[7636730000] DECODER: Column   7 decode_complete received, with_error=0
+[7636730000] Progress: Iter          2 | Col   7 | changes:          0
+[7636750000] DECODER: Triggering 1D decoder for column   8 (op # 98 since clear)
+[7637550000] DECODER: Column   8 decode_complete received, with_error=0
+[7637550000] Progress: Iter          2 | Col   8 | changes:          0
+[7637570000] DECODER: Triggering 1D decoder for column   9 (op # 99 since clear)
+[7638370000] DECODER: Column   9 decode_complete received, with_error=0
+[7638370000] Progress: Iter          2 | Col   9 | changes:          0
+[7638390000] DECODER: Triggering 1D decoder for column  10 (op #100 since clear)
+[7639190000] DECODER: Column  10 decode_complete received, with_error=0
+[7639190000] Progress: Iter          2 | Col  10 | changes:          0
+[7639210000] DECODER: Triggering 1D decoder for column  11 (op #101 since clear)
+[7640010000] DECODER: Column  11 decode_complete received, with_error=0
+[7640010000] Progress: Iter          2 | Col  11 | changes:          0
+[7640030000] DECODER: Triggering 1D decoder for column  12 (op #102 since clear)
+[7640830000] DECODER: Column  12 decode_complete received, with_error=0
+[7640830000] Progress: Iter          2 | Col  12 | changes:          0
+[7640850000] DECODER: Triggering 1D decoder for column  13 (op #103 since clear)
+[7641650000] DECODER: Column  13 decode_complete received, with_error=0
+[7641650000] Progress: Iter          2 | Col  13 | changes:          0
+[7641670000] DECODER: Triggering 1D decoder for column  14 (op #104 since clear)
+[7642470000] DECODER: Column  14 decode_complete received, with_error=0
+[7642470000] Progress: Iter          2 | Col  14 | changes:          0
+[7642490000] DECODER: Triggering 1D decoder for column  15 (op #105 since clear)
+[7643290000] DECODER: Column  15 decode_complete received, with_error=0
+[7643290000] Progress: Iter          2 | Col  15 | changes:          0
+[7643310000] DECODER: Triggering 1D decoder for column  16 (op #106 since clear)
+[7644110000] DECODER: Column  16 decode_complete received, with_error=0
+[7644110000] Progress: Iter          2 | Col  16 | changes:          0
+[7644130000] DECODER: Triggering 1D decoder for column  17 (op #107 since clear)
+[7644930000] DECODER: Column  17 decode_complete received, with_error=0
+[7644930000] Progress: Iter          2 | Col  17 | changes:          0
+[7644950000] DECODER: Triggering 1D decoder for column  18 (op #108 since clear)
+[7645750000] DECODER: Column  18 decode_complete received, with_error=0
+[7645750000] Progress: Iter          2 | Col  18 | changes:          0
+[7645770000] DECODER: Triggering 1D decoder for column  19 (op #109 since clear)
+[7646570000] DECODER: Column  19 decode_complete received, with_error=0
+[7646570000] Progress: Iter          2 | Col  19 | changes:          0
+[7646590000] DECODER: Triggering 1D decoder for column  20 (op #110 since clear)
+[7647390000] DECODER: Column  20 decode_complete received, with_error=0
+[7647390000] Progress: Iter          2 | Col  20 | changes:          0
+[7647410000] DECODER: Triggering 1D decoder for column  21 (op #111 since clear)
+[7648210000] DECODER: Column  21 decode_complete received, with_error=0
+[7648210000] Progress: Iter          2 | Col  21 | changes:          0
+[7648230000] DECODER: Triggering 1D decoder for column  22 (op #112 since clear)
+[7649030000] DECODER: Column  22 decode_complete received, with_error=0
+[7649030000] Progress: Iter          2 | Col  22 | changes:          0
+[7649050000] DECODER: Triggering 1D decoder for column  23 (op #113 since clear)
+[7649850000] DECODER: Column  23 decode_complete received, with_error=0
+[7649850000] Progress: Iter          2 | Col  23 | changes:          0
+[7649870000] DECODER: Triggering 1D decoder for column  24 (op #114 since clear)
+[7650670000] DECODER: Column  24 decode_complete received, with_error=0
+[7650670000] Progress: Iter          2 | Col  24 | changes:          0
+[7650690000] DECODER: Triggering 1D decoder for column  25 (op #115 since clear)
+[7651490000] DECODER: Column  25 decode_complete received, with_error=0
+[7651490000] Progress: Iter          2 | Col  25 | changes:          0
+[7651510000] DECODER: Triggering 1D decoder for column  26 (op #116 since clear)
+[7652310000] DECODER: Column  26 decode_complete received, with_error=0
+[7652310000] Progress: Iter          2 | Col  26 | changes:          0
+[7652330000] DECODER: Triggering 1D decoder for column  27 (op #117 since clear)
+[7653130000] DECODER: Column  27 decode_complete received, with_error=0
+[7653130000] Progress: Iter          2 | Col  27 | changes:          0
+[7653150000] DECODER: Triggering 1D decoder for column  28 (op #118 since clear)
+[7653950000] DECODER: Column  28 decode_complete received, with_error=0
+[7653950000] Progress: Iter          2 | Col  28 | changes:          0
+[7653970000] DECODER: Triggering 1D decoder for column  29 (op #119 since clear)
+[7654770000] DECODER: Column  29 decode_complete received, with_error=0
+[7654770000] Progress: Iter          2 | Col  29 | changes:          0
+[7654770000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[7654790000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  1, changes=1)
+[7654810000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  1)
+[7654810000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  1
+[7654810000] DECODER: Converged after          2 iterations
+[7654830000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  2)
+[7654830000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7654830000] DECODER: Triggering 1D decoder for row   0 (op #120 since clear)
+[7655630000] DECODER: Row   0 decode_complete received, with_error=0
+[7655630000] Progress: Iter          3 | Row   0 | changes:          0
+[7655650000] DECODER: Triggering 1D decoder for row   1 (op #121 since clear)
+[7656450000] DECODER: Row   1 decode_complete received, with_error=0
+[7656450000] Progress: Iter          3 | Row   1 | changes:          0
+[7656470000] DECODER: Triggering 1D decoder for row   2 (op #122 since clear)
+[7657270000] DECODER: Row   2 decode_complete received, with_error=0
+[7657270000] Progress: Iter          3 | Row   2 | changes:          0
+[7657290000] DECODER: Triggering 1D decoder for row   3 (op #123 since clear)
+[7658090000] DECODER: Row   3 decode_complete received, with_error=0
+[7658090000] Progress: Iter          3 | Row   3 | changes:          0
+[7658110000] DECODER: Triggering 1D decoder for row   4 (op #124 since clear)
+[7658910000] DECODER: Row   4 decode_complete received, with_error=0
+[7658910000] Progress: Iter          3 | Row   4 | changes:          0
+[7658930000] DECODER: Triggering 1D decoder for row   5 (op #125 since clear)
+[7659730000] DECODER: Row   5 decode_complete received, with_error=0
+[7659730000] Progress: Iter          3 | Row   5 | changes:          0
+[7659750000] DECODER: Triggering 1D decoder for row   6 (op #126 since clear)
+[7660550000] DECODER: Row   6 decode_complete received, with_error=0
+[7660550000] Progress: Iter          3 | Row   6 | changes:          0
+[7660570000] DECODER: Triggering 1D decoder for row   7 (op #127 since clear)
+[7661370000] DECODER: Row   7 decode_complete received, with_error=0
+[7661370000] Progress: Iter          3 | Row   7 | changes:          0
+[7661390000] DECODER: Triggering 1D decoder for row   8 (op #128 since clear)
+[7662190000] DECODER: Row   8 decode_complete received, with_error=0
+[7662190000] Progress: Iter          3 | Row   8 | changes:          0
+[7662210000] DECODER: Triggering 1D decoder for row   9 (op #129 since clear)
+[7663010000] DECODER: Row   9 decode_complete received, with_error=0
+[7663010000] Progress: Iter          3 | Row   9 | changes:          0
+[7663030000] DECODER: Triggering 1D decoder for row  10 (op #130 since clear)
+[7663830000] DECODER: Row  10 decode_complete received, with_error=0
+[7663830000] Progress: Iter          3 | Row  10 | changes:          0
+[7663850000] DECODER: Triggering 1D decoder for row  11 (op #131 since clear)
+[7664650000] DECODER: Row  11 decode_complete received, with_error=0
+[7664650000] Progress: Iter          3 | Row  11 | changes:          0
+[7664670000] DECODER: Triggering 1D decoder for row  12 (op #132 since clear)
+[7665470000] DECODER: Row  12 decode_complete received, with_error=0
+[7665470000] Progress: Iter          3 | Row  12 | changes:          0
+[7665490000] DECODER: Triggering 1D decoder for row  13 (op #133 since clear)
+[7666290000] DECODER: Row  13 decode_complete received, with_error=0
+[7666290000] Progress: Iter          3 | Row  13 | changes:          0
+[7666310000] DECODER: Triggering 1D decoder for row  14 (op #134 since clear)
+[7667110000] DECODER: Row  14 decode_complete received, with_error=0
+[7667110000] Progress: Iter          3 | Row  14 | changes:          0
+[7667130000] DECODER: Triggering 1D decoder for row  15 (op #135 since clear)
+[7667930000] DECODER: Row  15 decode_complete received, with_error=0
+[7667930000] Progress: Iter          3 | Row  15 | changes:          0
+[7667950000] DECODER: Triggering 1D decoder for row  16 (op #136 since clear)
+[7668750000] DECODER: Row  16 decode_complete received, with_error=0
+[7668750000] Progress: Iter          3 | Row  16 | changes:          0
+[7668770000] DECODER: Triggering 1D decoder for row  17 (op #137 since clear)
+[7669570000] DECODER: Row  17 decode_complete received, with_error=0
+[7669570000] Progress: Iter          3 | Row  17 | changes:          0
+[7669590000] DECODER: Triggering 1D decoder for row  18 (op #138 since clear)
+[7670390000] DECODER: Row  18 decode_complete received, with_error=0
+[7670390000] Progress: Iter          3 | Row  18 | changes:          0
+[7670410000] DECODER: Triggering 1D decoder for row  19 (op #139 since clear)
+[7671210000] DECODER: Row  19 decode_complete received, with_error=0
+[7671210000] Progress: Iter          3 | Row  19 | changes:          0
+[7671230000] DECODER: Triggering 1D decoder for row  20 (op #140 since clear)
+[7672030000] DECODER: Row  20 decode_complete received, with_error=0
+[7672030000] Progress: Iter          3 | Row  20 | changes:          0
+[7672050000] DECODER: Triggering 1D decoder for row  21 (op #141 since clear)
+[7672850000] DECODER: Row  21 decode_complete received, with_error=0
+[7672850000] Progress: Iter          3 | Row  21 | changes:          0
+[7672870000] DECODER: Triggering 1D decoder for row  22 (op #142 since clear)
+[7673670000] DECODER: Row  22 decode_complete received, with_error=0
+[7673670000] Progress: Iter          3 | Row  22 | changes:          0
+[7673690000] DECODER: Triggering 1D decoder for row  23 (op #143 since clear)
+[7674490000] DECODER: Row  23 decode_complete received, with_error=0
+[7674490000] Progress: Iter          3 | Row  23 | changes:          0
+[7674510000] DECODER: Triggering 1D decoder for row  24 (op #144 since clear)
+[7675310000] DECODER: Row  24 decode_complete received, with_error=0
+[7675310000] Progress: Iter          3 | Row  24 | changes:          0
+[7675330000] DECODER: Triggering 1D decoder for row  25 (op #145 since clear)
+[7676130000] DECODER: Row  25 decode_complete received, with_error=0
+[7676130000] Progress: Iter          3 | Row  25 | changes:          0
+[7676150000] DECODER: Triggering 1D decoder for row  26 (op #146 since clear)
+[7676950000] DECODER: Row  26 decode_complete received, with_error=0
+[7676950000] Progress: Iter          3 | Row  26 | changes:          0
+[7676970000] DECODER: Triggering 1D decoder for row  27 (op #147 since clear)
+[7677770000] DECODER: Row  27 decode_complete received, with_error=0
+[7677770000] Progress: Iter          3 | Row  27 | changes:          0
+[7677790000] DECODER: Triggering 1D decoder for row  28 (op #148 since clear)
+[7678590000] DECODER: Row  28 decode_complete received, with_error=0
+[7678590000] Progress: Iter          3 | Row  28 | changes:          0
+[7678610000] DECODER: Triggering 1D decoder for row  29 (op #149 since clear)
+[7679410000] DECODER: Row  29 decode_complete received, with_error=0
+[7679410000] Progress: Iter          3 | Row  29 | changes:          0
+[7679410000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[7679450000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  2)
+[7679450000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[7679450000] DECODER: Triggering 1D decoder for column   0 (op #150 since clear)
+[7680250000] DECODER: Column   0 decode_complete received, with_error=0
+[7680250000] Progress: Iter          3 | Col   0 | changes:          0
+[7680270000] DECODER: Triggering 1D decoder for column   1 (op #151 since clear)
+[7681070000] DECODER: Column   1 decode_complete received, with_error=0
+[7681070000] Progress: Iter          3 | Col   1 | changes:          0
+[7681090000] DECODER: Triggering 1D decoder for column   2 (op #152 since clear)
+[7681890000] DECODER: Column   2 decode_complete received, with_error=0
+[7681890000] Progress: Iter          3 | Col   2 | changes:          0
+[7681910000] DECODER: Triggering 1D decoder for column   3 (op #153 since clear)
+[7682710000] DECODER: Column   3 decode_complete received, with_error=0
+[7682710000] Progress: Iter          3 | Col   3 | changes:          0
+[7682730000] DECODER: Triggering 1D decoder for column   4 (op #154 since clear)
+[7683530000] DECODER: Column   4 decode_complete received, with_error=0
+[7683530000] Progress: Iter          3 | Col   4 | changes:          0
+[7683550000] DECODER: Triggering 1D decoder for column   5 (op #155 since clear)
+[7684350000] DECODER: Column   5 decode_complete received, with_error=0
+[7684350000] Progress: Iter          3 | Col   5 | changes:          0
+[7684370000] DECODER: Triggering 1D decoder for column   6 (op #156 since clear)
+[7685170000] DECODER: Column   6 decode_complete received, with_error=0
+[7685170000] Progress: Iter          3 | Col   6 | changes:          0
+[7685190000] DECODER: Triggering 1D decoder for column   7 (op #157 since clear)
+[7685990000] DECODER: Column   7 decode_complete received, with_error=0
+[7685990000] Progress: Iter          3 | Col   7 | changes:          0
+[7686010000] DECODER: Triggering 1D decoder for column   8 (op #158 since clear)
+[7686810000] DECODER: Column   8 decode_complete received, with_error=0
+[7686810000] Progress: Iter          3 | Col   8 | changes:          0
+[7686830000] DECODER: Triggering 1D decoder for column   9 (op #159 since clear)
+[7687630000] DECODER: Column   9 decode_complete received, with_error=0
+[7687630000] Progress: Iter          3 | Col   9 | changes:          0
+[7687650000] DECODER: Triggering 1D decoder for column  10 (op #160 since clear)
+[7688450000] DECODER: Column  10 decode_complete received, with_error=0
+[7688450000] Progress: Iter          3 | Col  10 | changes:          0
+[7688470000] DECODER: Triggering 1D decoder for column  11 (op #161 since clear)
+[7689270000] DECODER: Column  11 decode_complete received, with_error=0
+[7689270000] Progress: Iter          3 | Col  11 | changes:          0
+[7689290000] DECODER: Triggering 1D decoder for column  12 (op #162 since clear)
+[7690090000] DECODER: Column  12 decode_complete received, with_error=0
+[7690090000] Progress: Iter          3 | Col  12 | changes:          0
+[7690110000] DECODER: Triggering 1D decoder for column  13 (op #163 since clear)
+[7690910000] DECODER: Column  13 decode_complete received, with_error=0
+[7690910000] Progress: Iter          3 | Col  13 | changes:          0
+[7690930000] DECODER: Triggering 1D decoder for column  14 (op #164 since clear)
+[7691730000] DECODER: Column  14 decode_complete received, with_error=0
+[7691730000] Progress: Iter          3 | Col  14 | changes:          0
+[7691750000] DECODER: Triggering 1D decoder for column  15 (op #165 since clear)
+[7692550000] DECODER: Column  15 decode_complete received, with_error=0
+[7692550000] Progress: Iter          3 | Col  15 | changes:          0
+[7692570000] DECODER: Triggering 1D decoder for column  16 (op #166 since clear)
+[7693370000] DECODER: Column  16 decode_complete received, with_error=0
+[7693370000] Progress: Iter          3 | Col  16 | changes:          0
+[7693390000] DECODER: Triggering 1D decoder for column  17 (op #167 since clear)
+[7694190000] DECODER: Column  17 decode_complete received, with_error=0
+[7694190000] Progress: Iter          3 | Col  17 | changes:          0
+[7694210000] DECODER: Triggering 1D decoder for column  18 (op #168 since clear)
+[7695010000] DECODER: Column  18 decode_complete received, with_error=0
+[7695010000] Progress: Iter          3 | Col  18 | changes:          0
+[7695030000] DECODER: Triggering 1D decoder for column  19 (op #169 since clear)
+[7695830000] DECODER: Column  19 decode_complete received, with_error=0
+[7695830000] Progress: Iter          3 | Col  19 | changes:          0
+[7695850000] DECODER: Triggering 1D decoder for column  20 (op #170 since clear)
+[7696650000] DECODER: Column  20 decode_complete received, with_error=0
+[7696650000] Progress: Iter          3 | Col  20 | changes:          0
+[7696670000] DECODER: Triggering 1D decoder for column  21 (op #171 since clear)
+[7697470000] DECODER: Column  21 decode_complete received, with_error=0
+[7697470000] Progress: Iter          3 | Col  21 | changes:          0
+[7697490000] DECODER: Triggering 1D decoder for column  22 (op #172 since clear)
+[7698290000] DECODER: Column  22 decode_complete received, with_error=0
+[7698290000] Progress: Iter          3 | Col  22 | changes:          0
+[7698310000] DECODER: Triggering 1D decoder for column  23 (op #173 since clear)
+[7699110000] DECODER: Column  23 decode_complete received, with_error=0
+[7699110000] Progress: Iter          3 | Col  23 | changes:          0
+[7699130000] DECODER: Triggering 1D decoder for column  24 (op #174 since clear)
+[7699930000] DECODER: Column  24 decode_complete received, with_error=0
+[7699930000] Progress: Iter          3 | Col  24 | changes:          0
+[7699950000] DECODER: Triggering 1D decoder for column  25 (op #175 since clear)
+[7700750000] DECODER: Column  25 decode_complete received, with_error=0
+[7700750000] Progress: Iter          3 | Col  25 | changes:          0
+[7700770000] DECODER: Triggering 1D decoder for column  26 (op #176 since clear)
+[7701570000] DECODER: Column  26 decode_complete received, with_error=0
+[7701570000] Progress: Iter          3 | Col  26 | changes:          0
+[7701590000] DECODER: Triggering 1D decoder for column  27 (op #177 since clear)
+[7702390000] DECODER: Column  27 decode_complete received, with_error=0
+[7702390000] Progress: Iter          3 | Col  27 | changes:          0
+[7702410000] DECODER: Triggering 1D decoder for column  28 (op #178 since clear)
+[7703210000] DECODER: Column  28 decode_complete received, with_error=0
+[7703210000] Progress: Iter          3 | Col  28 | changes:          0
+[7703230000] DECODER: Triggering 1D decoder for column  29 (op #179 since clear)
+[7704030000] DECODER: Column  29 decode_complete received, with_error=0
+[7704030000] Progress: Iter          3 | Col  29 | changes:          0
+[7704030000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[7704050000] DECODER next_state: CHECK_CONVERGENCE -> OUTPUT_DATA (iter=  2, changes=0)
+[7704070000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  2)
+[7704070000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  2
+[7704070000] DECODER: Converged after          3 iterations
+[7704090000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> OUTPUT_DATA (row_idx=  0, col_idx=  0, iter=  3)
+[7704090000] DECODER next_state: OUTPUT_DATA -> IDLE (p2s_valid=1, p2s_ready=1)
+[7704110000] DECODER: Pulsing clrn - transitioning to IDLE (ops_since_clear=180)
+[7704130000] DECODER STATE TRANSITION: OUTPUT_DATA -> IDLE (row_idx=  0, col_idx=  0, iter=  0)
+[7704130000] DECODER: Entering IDLE state
+[7746590000] Periodic reset triggered at frame 22, starting 16-cycle reset
+[7746910000] Reset complete, resuming normal operation
+DEBUG [7839090000] PRBS FRAME: 53dec25b53decc61e8c68ddbe8c6a94472972cd87297f7992f72ead12f703156e32e7ee6e320a7f64ae506564ac3d035be5e15f5be88e0bd85c47c3d8732438d1c99088d12ad892e4b56332e6fed36e5bbf4aae5606eb65d983bfe5f4167b5cd509805c38751bcafe3501c8913e58be04be04b36685d3841b841bab571ce918591859fbf24a7651d651d4182dbd35e4f5e4f850ed8ebc5a3c5a11e26d2789dc89dc644d6ed134cb34c959af66e6bababab7d5e356579f9f9fb0fc4bf5f1414141a209b83c27878785cc359088d111111ca8bd6332e666664bf38f4aae555555b82923bfe5fffffd90f6c9805c00000d6236b501c800002f4cb7be04b00000e3abb1841ba0000249f9a51859c0000db415de51d480002db87cc5e4fb0000ed910a9c5a1a00026d663f49dc5c000d6f5483b4c9c8002f63fb09bab4b000e3481a359fbba0024bb05cbd4199c00db9a1cb8f8554802d95c4b9211ffb00ed7c9b96c6401a026f0b597695805c0d623bd7377d01c82f4c98f2b30e04b0e3ab522faa241ba249fbece1fcd859cdb4186a440ad1d4adb8517d983ee4fbed91e70d50865a186d64522fe315dc516f59ece04a7cc9e763d46a41bd0ab45348f97d858e3fb9ebb2170d1d24819479ac722e4edb057915e92ce5a6da1f167c76ea5dd6dc427509367dccf6c98d3e36b50caa36b52e84b7be2bfcb7bee71bb184f80bb1865259a51a1039a515edd5de5c6095de7c6cfcc5c9437cc5096a0a9cb78b0a9e377c3f4bb13a3f44b30883b9a69c839baa330995d74b0959fcaa357cf3ba37d40bfcb
+DEBUG [11223090000] PRBS FRAME: f0a299cb0f8380b823cf54ba21090390c8a3fb9cc6360962b3c8194a94b4374fa8b057bf7bb8b3a1f3a1f1831993a9c429c4250a5569f498f498de3dff743b523b52c48c03389bec9bee9b280a93586b58675af03f6bd17bd153de208378e718e7e8c4c30b12525250729a8a3a6dedede12f5f3c9d6c6c6c46e3c28b4f69696996488f3ba377777575b32299cb33333f3daacf54baaaaa828dfea3fb9fffff0f2c07c81940000222e810b05780000cce7063a1f100002aa52149c4260000ffdec7b498d4000200c691bb52f8000c0297659bee1000280f735d58646000f0232bcfd159400220caf8a0e7d7800cc2be13c250f1002a8f84688de22600ff2119732c4cd40202c6572ae9aaf80c0e95f2fe75fe1028277c2e053c0460f0d308e41e88194222ea32584730578cce7cadd192a1f12aa50bece56fc426ffde386a5f6098d600c4917dc34352f4029b670c8b8bee380f5b522b3938649023dbecfa96915b60c8d86a1f7767db42b2d17c433350db8faee7098aabe2d921e652353ff84ed6c455ecbe8011a6f699fc6b870065d63754097912015cf4b3f837166c07ca3ba810b2756810bc99f063ad3f70638b542149ee8321493bf8c7b4670ac7b6981291b9523e91b7506f6597ec8765b3e1635d706b135da8474bcf217a6bcdf193b8a2c71d78ac256993ce924f13e8df7568a76da26872c33f73d36dcd712e8a8328eb6caf26e73f0af27b6be2d652823e2d1b784ef5ef0c84ee5b11a63c622b1a65da65d4894cfa5d5cdd5cfb37aa1dcfcacfca1ab1fc4ca0bea0bc5fa409abc387
+[11266610000] ERROR: Missing parity at position [          3][          2]!
+[11411290000] DECODER next_state: IDLE -> COLLECT_DATA (s2p_valid=1)
+[11411310000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[11411310000] DECODER next_state: COLLECT_DATA -> DECODE_ROWS (unconditional)
+[11411330000] DECODER STATE TRANSITION: IDLE -> COLLECT_DATA (row_idx=  0, col_idx=  0, iter=  0)
+[11411330000] DECODER: Entering COLLECT_DATA, unpacking         900 symbols
+[11411330000] DECODER: Data collected, changes_detected=0, ready for DECODE_ROWS
+[11411350000] DECODER STATE TRANSITION: COLLECT_DATA -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  0)
+[11411350000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11411350000] DECODER: Triggering 1D decoder for row   0 (op #  0 since clear)
+[11413630000] DECODER: Row   0 decode_complete received, with_error=0
+[11413630000] Progress: Iter          1 | Row   0 | changes:          0
+[11413650000] DECODER: Triggering 1D decoder for row   1 (op #  1 since clear)
+[11414450000] DECODER: Row   1 decode_complete received, with_error=0
+[11414450000] Progress: Iter          1 | Row   1 | changes:          1
+[11414470000] DECODER: Triggering 1D decoder for row   2 (op #  2 since clear)
+[11415270000] DECODER: Row   2 decode_complete received, with_error=0
+[11415270000] Progress: Iter          1 | Row   2 | changes:          1
+[11415290000] DECODER: Triggering 1D decoder for row   3 (op #  3 since clear)
+[11417570000] DECODER: Row   3 decode_complete received, with_error=0
+[11417570000] Progress: Iter          1 | Row   3 | changes:          1
+[11417590000] DECODER: Triggering 1D decoder for row   4 (op #  4 since clear)
+[11418390000] DECODER: Row   4 decode_complete received, with_error=0
+[11418390000] Progress: Iter          1 | Row   4 | changes:          2
+[11418410000] DECODER: Triggering 1D decoder for row   5 (op #  5 since clear)
+[11419210000] DECODER: Row   5 decode_complete received, with_error=0
+[11419210000] Progress: Iter          1 | Row   5 | changes:          2
+[11419230000] DECODER: Triggering 1D decoder for row   6 (op #  6 since clear)
+[11421510000] DECODER: Row   6 decode_complete received, with_error=0
+[11421510000] Progress: Iter          1 | Row   6 | changes:          2
+[11421530000] DECODER: Triggering 1D decoder for row   7 (op #  7 since clear)
+[11423810000] DECODER: Row   7 decode_complete received, with_error=0
+[11423810000] Progress: Iter          1 | Row   7 | changes:          3
+[11423830000] DECODER: Triggering 1D decoder for row   8 (op #  8 since clear)
+[11424630000] DECODER: Row   8 decode_complete received, with_error=0
+[11424630000] Progress: Iter          1 | Row   8 | changes:          4
+[11424650000] DECODER: Triggering 1D decoder for row   9 (op #  9 since clear)
+[11426930000] DECODER: Row   9 decode_complete received, with_error=0
+[11426930000] Progress: Iter          1 | Row   9 | changes:          4
+[11426950000] DECODER: Triggering 1D decoder for row  10 (op # 10 since clear)
+[11429230000] DECODER: Row  10 decode_complete received, with_error=0
+[11429230000] Progress: Iter          1 | Row  10 | changes:          5
+[11429250000] DECODER: Triggering 1D decoder for row  11 (op # 11 since clear)
+[11431530000] DECODER: Row  11 decode_complete received, with_error=0
+[11431530000] Progress: Iter          1 | Row  11 | changes:          6
+[11431550000] DECODER: Triggering 1D decoder for row  12 (op # 12 since clear)
+[11432350000] DECODER: Row  12 decode_complete received, with_error=0
+[11432350000] Progress: Iter          1 | Row  12 | changes:          7
+[11432370000] DECODER: Triggering 1D decoder for row  13 (op # 13 since clear)
+[11433170000] DECODER: Row  13 decode_complete received, with_error=0
+[11433170000] Progress: Iter          1 | Row  13 | changes:          7
+[11433190000] DECODER: Triggering 1D decoder for row  14 (op # 14 since clear)
+[11435470000] DECODER: Row  14 decode_complete received, with_error=0
+[11435470000] Progress: Iter          1 | Row  14 | changes:          7
+[11435490000] DECODER: Triggering 1D decoder for row  15 (op # 15 since clear)
+[11436290000] DECODER: Row  15 decode_complete received, with_error=0
+[11436290000] Progress: Iter          1 | Row  15 | changes:          8
+[11436310000] DECODER: Triggering 1D decoder for row  16 (op # 16 since clear)
+[11437110000] DECODER: Row  16 decode_complete received, with_error=0
+[11437110000] Progress: Iter          1 | Row  16 | changes:          8
+[11437130000] DECODER: Triggering 1D decoder for row  17 (op # 17 since clear)
+[11439410000] DECODER: Row  17 decode_complete received, with_error=0
+[11439410000] Progress: Iter          1 | Row  17 | changes:          8
+[11439430000] DECODER: Triggering 1D decoder for row  18 (op # 18 since clear)
+[11440230000] DECODER: Row  18 decode_complete received, with_error=0
+[11440230000] Progress: Iter          1 | Row  18 | changes:          9
+[11440250000] DECODER: Triggering 1D decoder for row  19 (op # 19 since clear)
+[11442530000] DECODER: Row  19 decode_complete received, with_error=0
+[11442530000] Progress: Iter          1 | Row  19 | changes:          9
+[11442550000] DECODER: Triggering 1D decoder for row  20 (op # 20 since clear)
+[11444830000] DECODER: Row  20 decode_complete received, with_error=0
+[11444830000] Progress: Iter          1 | Row  20 | changes:         10
+[11444850000] DECODER: Triggering 1D decoder for row  21 (op # 21 since clear)
+[11445650000] DECODER: Row  21 decode_complete received, with_error=0
+[11445650000] Progress: Iter          1 | Row  21 | changes:         11
+[11445670000] DECODER: Triggering 1D decoder for row  22 (op # 22 since clear)
+[11446470000] DECODER: Row  22 decode_complete received, with_error=0
+[11446470000] Progress: Iter          1 | Row  22 | changes:         11
+[11446490000] DECODER: Triggering 1D decoder for row  23 (op # 23 since clear)
+[11447290000] DECODER: Row  23 decode_complete received, with_error=0
+[11447290000] Progress: Iter          1 | Row  23 | changes:         11
+[11447310000] DECODER: Triggering 1D decoder for row  24 (op # 24 since clear)
+[11448110000] DECODER: Row  24 decode_complete received, with_error=0
+[11448110000] Progress: Iter          1 | Row  24 | changes:         11
+[11448130000] DECODER: Triggering 1D decoder for row  25 (op # 25 since clear)
+[11450410000] DECODER: Row  25 decode_complete received, with_error=0
+[11450410000] Progress: Iter          1 | Row  25 | changes:         11
+[11450430000] DECODER: Triggering 1D decoder for row  26 (op # 26 since clear)
+[11452710000] DECODER: Row  26 decode_complete received, with_error=0
+[11452710000] Progress: Iter          1 | Row  26 | changes:         12
+[11452730000] DECODER: Triggering 1D decoder for row  27 (op # 27 since clear)
+[11453530000] DECODER: Row  27 decode_complete received, with_error=0
+[11453530000] Progress: Iter          1 | Row  27 | changes:         13
+[11453550000] DECODER: Triggering 1D decoder for row  28 (op # 28 since clear)
+[11454350000] DECODER: Row  28 decode_complete received, with_error=0
+[11454350000] Progress: Iter          1 | Row  28 | changes:         13
+[11454370000] DECODER: Triggering 1D decoder for row  29 (op # 29 since clear)
+[11455170000] DECODER: Row  29 decode_complete received, with_error=0
+[11455170000] Progress: Iter          1 | Row  29 | changes:         13
+[11455170000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[11455210000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  0)
+[11455210000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11455210000] DECODER: Triggering 1D decoder for column   0 (op # 30 since clear)
+[11456010000] DECODER: Column   0 decode_complete received, with_error=0
+[11456010000] Progress: Iter          1 | Col   0 | changes:         13
+[11456030000] DECODER: Triggering 1D decoder for column   1 (op # 31 since clear)
+[11456830000] DECODER: Column   1 decode_complete received, with_error=0
+[11456830000] Progress: Iter          1 | Col   1 | changes:         13
+[11456850000] DECODER: Triggering 1D decoder for column   2 (op # 32 since clear)
+[11457650000] DECODER: Column   2 decode_complete received, with_error=0
+[11457650000] Progress: Iter          1 | Col   2 | changes:         13
+[11457670000] DECODER: Triggering 1D decoder for column   3 (op # 33 since clear)
+[11458470000] DECODER: Column   3 decode_complete received, with_error=0
+[11458470000] Progress: Iter          1 | Col   3 | changes:         13
+[11458490000] DECODER: Triggering 1D decoder for column   4 (op # 34 since clear)
+[11459290000] DECODER: Column   4 decode_complete received, with_error=0
+[11459290000] Progress: Iter          1 | Col   4 | changes:         13
+[11459310000] DECODER: Triggering 1D decoder for column   5 (op # 35 since clear)
+[11460110000] DECODER: Column   5 decode_complete received, with_error=0
+[11460110000] Progress: Iter          1 | Col   5 | changes:         13
+[11460130000] DECODER: Triggering 1D decoder for column   6 (op # 36 since clear)
+[11460930000] DECODER: Column   6 decode_complete received, with_error=0
+[11460930000] Progress: Iter          1 | Col   6 | changes:         13
+[11460950000] DECODER: Triggering 1D decoder for column   7 (op # 37 since clear)
+[11461750000] DECODER: Column   7 decode_complete received, with_error=0
+[11461750000] Progress: Iter          1 | Col   7 | changes:         13
+[11461770000] DECODER: Triggering 1D decoder for column   8 (op # 38 since clear)
+[11462570000] DECODER: Column   8 decode_complete received, with_error=0
+[11462570000] Progress: Iter          1 | Col   8 | changes:         13
+[11462590000] DECODER: Triggering 1D decoder for column   9 (op # 39 since clear)
+[11463390000] DECODER: Column   9 decode_complete received, with_error=0
+[11463390000] Progress: Iter          1 | Col   9 | changes:         13
+[11463410000] DECODER: Triggering 1D decoder for column  10 (op # 40 since clear)
+[11464210000] DECODER: Column  10 decode_complete received, with_error=0
+[11464210000] Progress: Iter          1 | Col  10 | changes:         13
+[11464230000] DECODER: Triggering 1D decoder for column  11 (op # 41 since clear)
+[11465030000] DECODER: Column  11 decode_complete received, with_error=0
+[11465030000] Progress: Iter          1 | Col  11 | changes:         13
+[11465050000] DECODER: Triggering 1D decoder for column  12 (op # 42 since clear)
+[11465850000] DECODER: Column  12 decode_complete received, with_error=0
+[11465850000] Progress: Iter          1 | Col  12 | changes:         13
+[11465870000] DECODER: Triggering 1D decoder for column  13 (op # 43 since clear)
+[11466670000] DECODER: Column  13 decode_complete received, with_error=0
+[11466670000] Progress: Iter          1 | Col  13 | changes:         13
+[11466690000] DECODER: Triggering 1D decoder for column  14 (op # 44 since clear)
+[11467490000] DECODER: Column  14 decode_complete received, with_error=0
+[11467490000] Progress: Iter          1 | Col  14 | changes:         13
+[11467510000] DECODER: Triggering 1D decoder for column  15 (op # 45 since clear)
+[11468310000] DECODER: Column  15 decode_complete received, with_error=0
+[11468310000] Progress: Iter          1 | Col  15 | changes:         13
+[11468330000] DECODER: Triggering 1D decoder for column  16 (op # 46 since clear)
+[11469130000] DECODER: Column  16 decode_complete received, with_error=0
+[11469130000] Progress: Iter          1 | Col  16 | changes:         13
+[11469150000] DECODER: Triggering 1D decoder for column  17 (op # 47 since clear)
+[11469950000] DECODER: Column  17 decode_complete received, with_error=0
+[11469950000] Progress: Iter          1 | Col  17 | changes:         13
+[11469970000] DECODER: Triggering 1D decoder for column  18 (op # 48 since clear)
+[11470770000] DECODER: Column  18 decode_complete received, with_error=0
+[11470770000] Progress: Iter          1 | Col  18 | changes:         13
+[11470790000] DECODER: Triggering 1D decoder for column  19 (op # 49 since clear)
+[11471590000] DECODER: Column  19 decode_complete received, with_error=0
+[11471590000] Progress: Iter          1 | Col  19 | changes:         13
+[11471610000] DECODER: Triggering 1D decoder for column  20 (op # 50 since clear)
+[11472410000] DECODER: Column  20 decode_complete received, with_error=0
+[11472410000] Progress: Iter          1 | Col  20 | changes:         13
+[11472430000] DECODER: Triggering 1D decoder for column  21 (op # 51 since clear)
+[11473230000] DECODER: Column  21 decode_complete received, with_error=0
+[11473230000] Progress: Iter          1 | Col  21 | changes:         13
+[11473250000] DECODER: Triggering 1D decoder for column  22 (op # 52 since clear)
+[11474050000] DECODER: Column  22 decode_complete received, with_error=0
+[11474050000] Progress: Iter          1 | Col  22 | changes:         13
+[11474070000] DECODER: Triggering 1D decoder for column  23 (op # 53 since clear)
+[11474870000] DECODER: Column  23 decode_complete received, with_error=0
+[11474870000] Progress: Iter          1 | Col  23 | changes:         13
+[11474890000] DECODER: Triggering 1D decoder for column  24 (op # 54 since clear)
+[11475690000] DECODER: Column  24 decode_complete received, with_error=0
+[11475690000] Progress: Iter          1 | Col  24 | changes:         13
+[11475710000] DECODER: Triggering 1D decoder for column  25 (op # 55 since clear)
+[11476510000] DECODER: Column  25 decode_complete received, with_error=0
+[11476510000] Progress: Iter          1 | Col  25 | changes:         13
+[11476530000] DECODER: Triggering 1D decoder for column  26 (op # 56 since clear)
+[11477330000] DECODER: Column  26 decode_complete received, with_error=0
+[11477330000] Progress: Iter          1 | Col  26 | changes:         13
+[11477350000] DECODER: Triggering 1D decoder for column  27 (op # 57 since clear)
+[11478150000] DECODER: Column  27 decode_complete received, with_error=0
+[11478150000] Progress: Iter          1 | Col  27 | changes:         13
+[11478170000] DECODER: Triggering 1D decoder for column  28 (op # 58 since clear)
+[11478970000] DECODER: Column  28 decode_complete received, with_error=0
+[11478970000] Progress: Iter          1 | Col  28 | changes:         13
+[11478990000] DECODER: Triggering 1D decoder for column  29 (op # 59 since clear)
+[11479790000] DECODER: Column  29 decode_complete received, with_error=0
+[11479790000] Progress: Iter          1 | Col  29 | changes:         13
+[11479790000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[11479810000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  0, changes=1)
+[11479830000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  0)
+[11479830000] DECODER: Entering CHECK_CONVERGENCE, total_changes=        13, iteration=  0
+[11479830000] DECODER: Iteration          1 complete,         13 changes detected, continuing
+[11479850000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  1)
+[11479850000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11479850000] DECODER: Triggering 1D decoder for row   0 (op # 60 since clear)
+[11480650000] DECODER: Row   0 decode_complete received, with_error=0
+[11480650000] Progress: Iter          2 | Row   0 | changes:          0
+[11480670000] DECODER: Triggering 1D decoder for row   1 (op # 61 since clear)
+[11481470000] DECODER: Row   1 decode_complete received, with_error=0
+[11481470000] Progress: Iter          2 | Row   1 | changes:          0
+[11481490000] DECODER: Triggering 1D decoder for row   2 (op # 62 since clear)
+[11482290000] DECODER: Row   2 decode_complete received, with_error=0
+[11482290000] Progress: Iter          2 | Row   2 | changes:          0
+[11482310000] DECODER: Triggering 1D decoder for row   3 (op # 63 since clear)
+[11483110000] DECODER: Row   3 decode_complete received, with_error=0
+[11483110000] Progress: Iter          2 | Row   3 | changes:          0
+[11483130000] DECODER: Triggering 1D decoder for row   4 (op # 64 since clear)
+[11483930000] DECODER: Row   4 decode_complete received, with_error=0
+[11483930000] Progress: Iter          2 | Row   4 | changes:          0
+[11483950000] DECODER: Triggering 1D decoder for row   5 (op # 65 since clear)
+[11484750000] DECODER: Row   5 decode_complete received, with_error=0
+[11484750000] Progress: Iter          2 | Row   5 | changes:          0
+[11484770000] DECODER: Triggering 1D decoder for row   6 (op # 66 since clear)
+[11485570000] DECODER: Row   6 decode_complete received, with_error=0
+[11485570000] Progress: Iter          2 | Row   6 | changes:          0
+[11485590000] DECODER: Triggering 1D decoder for row   7 (op # 67 since clear)
+[11486390000] DECODER: Row   7 decode_complete received, with_error=0
+[11486390000] Progress: Iter          2 | Row   7 | changes:          0
+[11486410000] DECODER: Triggering 1D decoder for row   8 (op # 68 since clear)
+[11487210000] DECODER: Row   8 decode_complete received, with_error=0
+[11487210000] Progress: Iter          2 | Row   8 | changes:          0
+[11487230000] DECODER: Triggering 1D decoder for row   9 (op # 69 since clear)
+[11488030000] DECODER: Row   9 decode_complete received, with_error=0
+[11488030000] Progress: Iter          2 | Row   9 | changes:          0
+[11488050000] DECODER: Triggering 1D decoder for row  10 (op # 70 since clear)
+[11488850000] DECODER: Row  10 decode_complete received, with_error=0
+[11488850000] Progress: Iter          2 | Row  10 | changes:          0
+[11488870000] DECODER: Triggering 1D decoder for row  11 (op # 71 since clear)
+[11489670000] DECODER: Row  11 decode_complete received, with_error=0
+[11489670000] Progress: Iter          2 | Row  11 | changes:          0
+[11489690000] DECODER: Triggering 1D decoder for row  12 (op # 72 since clear)
+[11490490000] DECODER: Row  12 decode_complete received, with_error=0
+[11490490000] Progress: Iter          2 | Row  12 | changes:          0
+[11490510000] DECODER: Triggering 1D decoder for row  13 (op # 73 since clear)
+[11491310000] DECODER: Row  13 decode_complete received, with_error=0
+[11491310000] Progress: Iter          2 | Row  13 | changes:          0
+[11491330000] DECODER: Triggering 1D decoder for row  14 (op # 74 since clear)
+[11492130000] DECODER: Row  14 decode_complete received, with_error=0
+[11492130000] Progress: Iter          2 | Row  14 | changes:          0
+[11492150000] DECODER: Triggering 1D decoder for row  15 (op # 75 since clear)
+[11492950000] DECODER: Row  15 decode_complete received, with_error=0
+[11492950000] Progress: Iter          2 | Row  15 | changes:          0
+[11492970000] DECODER: Triggering 1D decoder for row  16 (op # 76 since clear)
+[11493770000] DECODER: Row  16 decode_complete received, with_error=0
+[11493770000] Progress: Iter          2 | Row  16 | changes:          0
+[11493790000] DECODER: Triggering 1D decoder for row  17 (op # 77 since clear)
+[11494590000] DECODER: Row  17 decode_complete received, with_error=0
+[11494590000] Progress: Iter          2 | Row  17 | changes:          0
+[11494610000] DECODER: Triggering 1D decoder for row  18 (op # 78 since clear)
+[11495410000] DECODER: Row  18 decode_complete received, with_error=0
+[11495410000] Progress: Iter          2 | Row  18 | changes:          0
+[11495430000] DECODER: Triggering 1D decoder for row  19 (op # 79 since clear)
+[11496230000] DECODER: Row  19 decode_complete received, with_error=0
+[11496230000] Progress: Iter          2 | Row  19 | changes:          0
+[11496250000] DECODER: Triggering 1D decoder for row  20 (op # 80 since clear)
+[11497050000] DECODER: Row  20 decode_complete received, with_error=0
+[11497050000] Progress: Iter          2 | Row  20 | changes:          0
+[11497070000] DECODER: Triggering 1D decoder for row  21 (op # 81 since clear)
+[11497870000] DECODER: Row  21 decode_complete received, with_error=0
+[11497870000] Progress: Iter          2 | Row  21 | changes:          0
+[11497890000] DECODER: Triggering 1D decoder for row  22 (op # 82 since clear)
+[11498690000] DECODER: Row  22 decode_complete received, with_error=0
+[11498690000] Progress: Iter          2 | Row  22 | changes:          0
+[11498710000] DECODER: Triggering 1D decoder for row  23 (op # 83 since clear)
+[11499510000] DECODER: Row  23 decode_complete received, with_error=0
+[11499510000] Progress: Iter          2 | Row  23 | changes:          0
+[11499530000] DECODER: Triggering 1D decoder for row  24 (op # 84 since clear)
+[11500330000] DECODER: Row  24 decode_complete received, with_error=0
+[11500330000] Progress: Iter          2 | Row  24 | changes:          0
+[11500350000] DECODER: Triggering 1D decoder for row  25 (op # 85 since clear)
+[11501150000] DECODER: Row  25 decode_complete received, with_error=0
+[11501150000] Progress: Iter          2 | Row  25 | changes:          0
+[11501170000] DECODER: Triggering 1D decoder for row  26 (op # 86 since clear)
+[11501970000] DECODER: Row  26 decode_complete received, with_error=0
+[11501970000] Progress: Iter          2 | Row  26 | changes:          0
+[11501990000] DECODER: Triggering 1D decoder for row  27 (op # 87 since clear)
+[11502790000] DECODER: Row  27 decode_complete received, with_error=0
+[11502790000] Progress: Iter          2 | Row  27 | changes:          0
+[11502810000] DECODER: Triggering 1D decoder for row  28 (op # 88 since clear)
+[11503610000] DECODER: Row  28 decode_complete received, with_error=0
+[11503610000] Progress: Iter          2 | Row  28 | changes:          0
+[11503630000] DECODER: Triggering 1D decoder for row  29 (op # 89 since clear)
+[11504430000] DECODER: Row  29 decode_complete received, with_error=0
+[11504430000] Progress: Iter          2 | Row  29 | changes:          0
+[11504430000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[11504470000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  1)
+[11504470000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11504470000] DECODER: Triggering 1D decoder for column   0 (op # 90 since clear)
+[11505270000] DECODER: Column   0 decode_complete received, with_error=0
+[11505270000] Progress: Iter          2 | Col   0 | changes:          0
+[11505290000] DECODER: Triggering 1D decoder for column   1 (op # 91 since clear)
+[11506090000] DECODER: Column   1 decode_complete received, with_error=0
+[11506090000] Progress: Iter          2 | Col   1 | changes:          0
+[11506110000] DECODER: Triggering 1D decoder for column   2 (op # 92 since clear)
+[11506910000] DECODER: Column   2 decode_complete received, with_error=0
+[11506910000] Progress: Iter          2 | Col   2 | changes:          0
+[11506930000] DECODER: Triggering 1D decoder for column   3 (op # 93 since clear)
+[11507730000] DECODER: Column   3 decode_complete received, with_error=0
+[11507730000] Progress: Iter          2 | Col   3 | changes:          0
+[11507750000] DECODER: Triggering 1D decoder for column   4 (op # 94 since clear)
+[11508550000] DECODER: Column   4 decode_complete received, with_error=0
+[11508550000] Progress: Iter          2 | Col   4 | changes:          0
+[11508570000] DECODER: Triggering 1D decoder for column   5 (op # 95 since clear)
+[11509370000] DECODER: Column   5 decode_complete received, with_error=0
+[11509370000] Progress: Iter          2 | Col   5 | changes:          0
+[11509390000] DECODER: Triggering 1D decoder for column   6 (op # 96 since clear)
+[11510190000] DECODER: Column   6 decode_complete received, with_error=0
+[11510190000] Progress: Iter          2 | Col   6 | changes:          0
+[11510210000] DECODER: Triggering 1D decoder for column   7 (op # 97 since clear)
+[11511010000] DECODER: Column   7 decode_complete received, with_error=0
+[11511010000] Progress: Iter          2 | Col   7 | changes:          0
+[11511030000] DECODER: Triggering 1D decoder for column   8 (op # 98 since clear)
+[11511830000] DECODER: Column   8 decode_complete received, with_error=0
+[11511830000] Progress: Iter          2 | Col   8 | changes:          0
+[11511850000] DECODER: Triggering 1D decoder for column   9 (op # 99 since clear)
+[11512650000] DECODER: Column   9 decode_complete received, with_error=0
+[11512650000] Progress: Iter          2 | Col   9 | changes:          0
+[11512670000] DECODER: Triggering 1D decoder for column  10 (op #100 since clear)
+[11513470000] DECODER: Column  10 decode_complete received, with_error=0
+[11513470000] Progress: Iter          2 | Col  10 | changes:          0
+[11513490000] DECODER: Triggering 1D decoder for column  11 (op #101 since clear)
+[11514290000] DECODER: Column  11 decode_complete received, with_error=0
+[11514290000] Progress: Iter          2 | Col  11 | changes:          0
+[11514310000] DECODER: Triggering 1D decoder for column  12 (op #102 since clear)
+[11515110000] DECODER: Column  12 decode_complete received, with_error=0
+[11515110000] Progress: Iter          2 | Col  12 | changes:          0
+[11515130000] DECODER: Triggering 1D decoder for column  13 (op #103 since clear)
+[11515930000] DECODER: Column  13 decode_complete received, with_error=0
+[11515930000] Progress: Iter          2 | Col  13 | changes:          0
+[11515950000] DECODER: Triggering 1D decoder for column  14 (op #104 since clear)
+[11516750000] DECODER: Column  14 decode_complete received, with_error=0
+[11516750000] Progress: Iter          2 | Col  14 | changes:          0
+[11516770000] DECODER: Triggering 1D decoder for column  15 (op #105 since clear)
+[11517570000] DECODER: Column  15 decode_complete received, with_error=0
+[11517570000] Progress: Iter          2 | Col  15 | changes:          0
+[11517590000] DECODER: Triggering 1D decoder for column  16 (op #106 since clear)
+[11518390000] DECODER: Column  16 decode_complete received, with_error=0
+[11518390000] Progress: Iter          2 | Col  16 | changes:          0
+[11518410000] DECODER: Triggering 1D decoder for column  17 (op #107 since clear)
+[11519210000] DECODER: Column  17 decode_complete received, with_error=0
+[11519210000] Progress: Iter          2 | Col  17 | changes:          0
+[11519230000] DECODER: Triggering 1D decoder for column  18 (op #108 since clear)
+[11520030000] DECODER: Column  18 decode_complete received, with_error=0
+[11520030000] Progress: Iter          2 | Col  18 | changes:          0
+[11520050000] DECODER: Triggering 1D decoder for column  19 (op #109 since clear)
+[11520850000] DECODER: Column  19 decode_complete received, with_error=0
+[11520850000] Progress: Iter          2 | Col  19 | changes:          0
+[11520870000] DECODER: Triggering 1D decoder for column  20 (op #110 since clear)
+[11521670000] DECODER: Column  20 decode_complete received, with_error=0
+[11521670000] Progress: Iter          2 | Col  20 | changes:          0
+[11521690000] DECODER: Triggering 1D decoder for column  21 (op #111 since clear)
+[11522490000] DECODER: Column  21 decode_complete received, with_error=0
+[11522490000] Progress: Iter          2 | Col  21 | changes:          0
+[11522510000] DECODER: Triggering 1D decoder for column  22 (op #112 since clear)
+[11523310000] DECODER: Column  22 decode_complete received, with_error=0
+[11523310000] Progress: Iter          2 | Col  22 | changes:          0
+[11523330000] DECODER: Triggering 1D decoder for column  23 (op #113 since clear)
+[11524130000] DECODER: Column  23 decode_complete received, with_error=0
+[11524130000] Progress: Iter          2 | Col  23 | changes:          0
+[11524150000] DECODER: Triggering 1D decoder for column  24 (op #114 since clear)
+[11524950000] DECODER: Column  24 decode_complete received, with_error=0
+[11524950000] Progress: Iter          2 | Col  24 | changes:          0
+[11524970000] DECODER: Triggering 1D decoder for column  25 (op #115 since clear)
+[11525770000] DECODER: Column  25 decode_complete received, with_error=0
+[11525770000] Progress: Iter          2 | Col  25 | changes:          0
+[11525790000] DECODER: Triggering 1D decoder for column  26 (op #116 since clear)
+[11526590000] DECODER: Column  26 decode_complete received, with_error=0
+[11526590000] Progress: Iter          2 | Col  26 | changes:          0
+[11526610000] DECODER: Triggering 1D decoder for column  27 (op #117 since clear)
+[11527410000] DECODER: Column  27 decode_complete received, with_error=0
+[11527410000] Progress: Iter          2 | Col  27 | changes:          0
+[11527430000] DECODER: Triggering 1D decoder for column  28 (op #118 since clear)
+[11528230000] DECODER: Column  28 decode_complete received, with_error=0
+[11528230000] Progress: Iter          2 | Col  28 | changes:          0
+[11528250000] DECODER: Triggering 1D decoder for column  29 (op #119 since clear)
+[11529050000] DECODER: Column  29 decode_complete received, with_error=0
+[11529050000] Progress: Iter          2 | Col  29 | changes:          0
+[11529050000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[11529070000] DECODER next_state: CHECK_CONVERGENCE -> DECODE_ROWS (iter=  1, changes=1)
+[11529090000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  1)
+[11529090000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  1
+[11529090000] DECODER: Converged after          2 iterations
+[11529110000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> DECODE_ROWS (row_idx=  0, col_idx=  0, iter=  2)
+[11529110000] DECODER: Entering DECODE_ROWS, row_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11529110000] DECODER: Triggering 1D decoder for row   0 (op #120 since clear)
+[11529910000] DECODER: Row   0 decode_complete received, with_error=0
+[11529910000] Progress: Iter          3 | Row   0 | changes:          0
+[11529930000] DECODER: Triggering 1D decoder for row   1 (op #121 since clear)
+[11530730000] DECODER: Row   1 decode_complete received, with_error=0
+[11530730000] Progress: Iter          3 | Row   1 | changes:          0
+[11530750000] DECODER: Triggering 1D decoder for row   2 (op #122 since clear)
+[11531550000] DECODER: Row   2 decode_complete received, with_error=0
+[11531550000] Progress: Iter          3 | Row   2 | changes:          0
+[11531570000] DECODER: Triggering 1D decoder for row   3 (op #123 since clear)
+[11532370000] DECODER: Row   3 decode_complete received, with_error=0
+[11532370000] Progress: Iter          3 | Row   3 | changes:          0
+[11532390000] DECODER: Triggering 1D decoder for row   4 (op #124 since clear)
+[11533190000] DECODER: Row   4 decode_complete received, with_error=0
+[11533190000] Progress: Iter          3 | Row   4 | changes:          0
+[11533210000] DECODER: Triggering 1D decoder for row   5 (op #125 since clear)
+[11534010000] DECODER: Row   5 decode_complete received, with_error=0
+[11534010000] Progress: Iter          3 | Row   5 | changes:          0
+[11534030000] DECODER: Triggering 1D decoder for row   6 (op #126 since clear)
+[11534830000] DECODER: Row   6 decode_complete received, with_error=0
+[11534830000] Progress: Iter          3 | Row   6 | changes:          0
+[11534850000] DECODER: Triggering 1D decoder for row   7 (op #127 since clear)
+[11535650000] DECODER: Row   7 decode_complete received, with_error=0
+[11535650000] Progress: Iter          3 | Row   7 | changes:          0
+[11535670000] DECODER: Triggering 1D decoder for row   8 (op #128 since clear)
+[11536470000] DECODER: Row   8 decode_complete received, with_error=0
+[11536470000] Progress: Iter          3 | Row   8 | changes:          0
+[11536490000] DECODER: Triggering 1D decoder for row   9 (op #129 since clear)
+[11537290000] DECODER: Row   9 decode_complete received, with_error=0
+[11537290000] Progress: Iter          3 | Row   9 | changes:          0
+[11537310000] DECODER: Triggering 1D decoder for row  10 (op #130 since clear)
+[11538110000] DECODER: Row  10 decode_complete received, with_error=0
+[11538110000] Progress: Iter          3 | Row  10 | changes:          0
+[11538130000] DECODER: Triggering 1D decoder for row  11 (op #131 since clear)
+[11538930000] DECODER: Row  11 decode_complete received, with_error=0
+[11538930000] Progress: Iter          3 | Row  11 | changes:          0
+[11538950000] DECODER: Triggering 1D decoder for row  12 (op #132 since clear)
+[11539750000] DECODER: Row  12 decode_complete received, with_error=0
+[11539750000] Progress: Iter          3 | Row  12 | changes:          0
+[11539770000] DECODER: Triggering 1D decoder for row  13 (op #133 since clear)
+[11540570000] DECODER: Row  13 decode_complete received, with_error=0
+[11540570000] Progress: Iter          3 | Row  13 | changes:          0
+[11540590000] DECODER: Triggering 1D decoder for row  14 (op #134 since clear)
+[11541390000] DECODER: Row  14 decode_complete received, with_error=0
+[11541390000] Progress: Iter          3 | Row  14 | changes:          0
+[11541410000] DECODER: Triggering 1D decoder for row  15 (op #135 since clear)
+[11542210000] DECODER: Row  15 decode_complete received, with_error=0
+[11542210000] Progress: Iter          3 | Row  15 | changes:          0
+[11542230000] DECODER: Triggering 1D decoder for row  16 (op #136 since clear)
+[11543030000] DECODER: Row  16 decode_complete received, with_error=0
+[11543030000] Progress: Iter          3 | Row  16 | changes:          0
+[11543050000] DECODER: Triggering 1D decoder for row  17 (op #137 since clear)
+[11543850000] DECODER: Row  17 decode_complete received, with_error=0
+[11543850000] Progress: Iter          3 | Row  17 | changes:          0
+[11543870000] DECODER: Triggering 1D decoder for row  18 (op #138 since clear)
+[11544670000] DECODER: Row  18 decode_complete received, with_error=0
+[11544670000] Progress: Iter          3 | Row  18 | changes:          0
+[11544690000] DECODER: Triggering 1D decoder for row  19 (op #139 since clear)
+[11545490000] DECODER: Row  19 decode_complete received, with_error=0
+[11545490000] Progress: Iter          3 | Row  19 | changes:          0
+[11545510000] DECODER: Triggering 1D decoder for row  20 (op #140 since clear)
+[11546310000] DECODER: Row  20 decode_complete received, with_error=0
+[11546310000] Progress: Iter          3 | Row  20 | changes:          0
+[11546330000] DECODER: Triggering 1D decoder for row  21 (op #141 since clear)
+[11547130000] DECODER: Row  21 decode_complete received, with_error=0
+[11547130000] Progress: Iter          3 | Row  21 | changes:          0
+[11547150000] DECODER: Triggering 1D decoder for row  22 (op #142 since clear)
+[11547950000] DECODER: Row  22 decode_complete received, with_error=0
+[11547950000] Progress: Iter          3 | Row  22 | changes:          0
+[11547970000] DECODER: Triggering 1D decoder for row  23 (op #143 since clear)
+[11548770000] DECODER: Row  23 decode_complete received, with_error=0
+[11548770000] Progress: Iter          3 | Row  23 | changes:          0
+[11548790000] DECODER: Triggering 1D decoder for row  24 (op #144 since clear)
+[11549590000] DECODER: Row  24 decode_complete received, with_error=0
+[11549590000] Progress: Iter          3 | Row  24 | changes:          0
+[11549610000] DECODER: Triggering 1D decoder for row  25 (op #145 since clear)
+[11550410000] DECODER: Row  25 decode_complete received, with_error=0
+[11550410000] Progress: Iter          3 | Row  25 | changes:          0
+[11550430000] DECODER: Triggering 1D decoder for row  26 (op #146 since clear)
+[11551230000] DECODER: Row  26 decode_complete received, with_error=0
+[11551230000] Progress: Iter          3 | Row  26 | changes:          0
+[11551250000] DECODER: Triggering 1D decoder for row  27 (op #147 since clear)
+[11552050000] DECODER: Row  27 decode_complete received, with_error=0
+[11552050000] Progress: Iter          3 | Row  27 | changes:          0
+[11552070000] DECODER: Triggering 1D decoder for row  28 (op #148 since clear)
+[11552870000] DECODER: Row  28 decode_complete received, with_error=0
+[11552870000] Progress: Iter          3 | Row  28 | changes:          0
+[11552890000] DECODER: Triggering 1D decoder for row  29 (op #149 since clear)
+[11553690000] DECODER: Row  29 decode_complete received, with_error=0
+[11553690000] Progress: Iter          3 | Row  29 | changes:          0
+[11553690000] DECODER next_state: DECODE_ROWS -> DECODE_COLS (row_idx= 30, busy=0)
+[11553730000] DECODER STATE TRANSITION: DECODE_ROWS -> DECODE_COLS (row_idx= 30, col_idx=  0, iter=  2)
+[11553730000] DECODER: Entering DECODE_COLS, col_idx=  0, decoder_busy_1d=0, dec_1d_ready=1
+[11553730000] DECODER: Triggering 1D decoder for column   0 (op #150 since clear)
+[11554530000] DECODER: Column   0 decode_complete received, with_error=0
+[11554530000] Progress: Iter          3 | Col   0 | changes:          0
+[11554550000] DECODER: Triggering 1D decoder for column   1 (op #151 since clear)
+[11555350000] DECODER: Column   1 decode_complete received, with_error=0
+[11555350000] Progress: Iter          3 | Col   1 | changes:          0
+[11555370000] DECODER: Triggering 1D decoder for column   2 (op #152 since clear)
+[11556170000] DECODER: Column   2 decode_complete received, with_error=0
+[11556170000] Progress: Iter          3 | Col   2 | changes:          0
+[11556190000] DECODER: Triggering 1D decoder for column   3 (op #153 since clear)
+[11556990000] DECODER: Column   3 decode_complete received, with_error=0
+[11556990000] Progress: Iter          3 | Col   3 | changes:          0
+[11557010000] DECODER: Triggering 1D decoder for column   4 (op #154 since clear)
+[11557810000] DECODER: Column   4 decode_complete received, with_error=0
+[11557810000] Progress: Iter          3 | Col   4 | changes:          0
+[11557830000] DECODER: Triggering 1D decoder for column   5 (op #155 since clear)
+[11558630000] DECODER: Column   5 decode_complete received, with_error=0
+[11558630000] Progress: Iter          3 | Col   5 | changes:          0
+[11558650000] DECODER: Triggering 1D decoder for column   6 (op #156 since clear)
+[11559450000] DECODER: Column   6 decode_complete received, with_error=0
+[11559450000] Progress: Iter          3 | Col   6 | changes:          0
+[11559470000] DECODER: Triggering 1D decoder for column   7 (op #157 since clear)
+[11560270000] DECODER: Column   7 decode_complete received, with_error=0
+[11560270000] Progress: Iter          3 | Col   7 | changes:          0
+[11560290000] DECODER: Triggering 1D decoder for column   8 (op #158 since clear)
+[11561090000] DECODER: Column   8 decode_complete received, with_error=0
+[11561090000] Progress: Iter          3 | Col   8 | changes:          0
+[11561110000] DECODER: Triggering 1D decoder for column   9 (op #159 since clear)
+[11561910000] DECODER: Column   9 decode_complete received, with_error=0
+[11561910000] Progress: Iter          3 | Col   9 | changes:          0
+[11561930000] DECODER: Triggering 1D decoder for column  10 (op #160 since clear)
+[11562730000] DECODER: Column  10 decode_complete received, with_error=0
+[11562730000] Progress: Iter          3 | Col  10 | changes:          0
+[11562750000] DECODER: Triggering 1D decoder for column  11 (op #161 since clear)
+[11563550000] DECODER: Column  11 decode_complete received, with_error=0
+[11563550000] Progress: Iter          3 | Col  11 | changes:          0
+[11563570000] DECODER: Triggering 1D decoder for column  12 (op #162 since clear)
+[11564370000] DECODER: Column  12 decode_complete received, with_error=0
+[11564370000] Progress: Iter          3 | Col  12 | changes:          0
+[11564390000] DECODER: Triggering 1D decoder for column  13 (op #163 since clear)
+[11565190000] DECODER: Column  13 decode_complete received, with_error=0
+[11565190000] Progress: Iter          3 | Col  13 | changes:          0
+[11565210000] DECODER: Triggering 1D decoder for column  14 (op #164 since clear)
+[11566010000] DECODER: Column  14 decode_complete received, with_error=0
+[11566010000] Progress: Iter          3 | Col  14 | changes:          0
+[11566030000] DECODER: Triggering 1D decoder for column  15 (op #165 since clear)
+[11566830000] DECODER: Column  15 decode_complete received, with_error=0
+[11566830000] Progress: Iter          3 | Col  15 | changes:          0
+[11566850000] DECODER: Triggering 1D decoder for column  16 (op #166 since clear)
+[11567650000] DECODER: Column  16 decode_complete received, with_error=0
+[11567650000] Progress: Iter          3 | Col  16 | changes:          0
+[11567670000] DECODER: Triggering 1D decoder for column  17 (op #167 since clear)
+[11568470000] DECODER: Column  17 decode_complete received, with_error=0
+[11568470000] Progress: Iter          3 | Col  17 | changes:          0
+[11568490000] DECODER: Triggering 1D decoder for column  18 (op #168 since clear)
+[11569290000] DECODER: Column  18 decode_complete received, with_error=0
+[11569290000] Progress: Iter          3 | Col  18 | changes:          0
+[11569310000] DECODER: Triggering 1D decoder for column  19 (op #169 since clear)
+[11570110000] DECODER: Column  19 decode_complete received, with_error=0
+[11570110000] Progress: Iter          3 | Col  19 | changes:          0
+[11570130000] DECODER: Triggering 1D decoder for column  20 (op #170 since clear)
+[11570930000] DECODER: Column  20 decode_complete received, with_error=0
+[11570930000] Progress: Iter          3 | Col  20 | changes:          0
+[11570950000] DECODER: Triggering 1D decoder for column  21 (op #171 since clear)
+[11571750000] DECODER: Column  21 decode_complete received, with_error=0
+[11571750000] Progress: Iter          3 | Col  21 | changes:          0
+[11571770000] DECODER: Triggering 1D decoder for column  22 (op #172 since clear)
+[11572570000] DECODER: Column  22 decode_complete received, with_error=0
+[11572570000] Progress: Iter          3 | Col  22 | changes:          0
+[11572590000] DECODER: Triggering 1D decoder for column  23 (op #173 since clear)
+[11573390000] DECODER: Column  23 decode_complete received, with_error=0
+[11573390000] Progress: Iter          3 | Col  23 | changes:          0
+[11573410000] DECODER: Triggering 1D decoder for column  24 (op #174 since clear)
+[11574210000] DECODER: Column  24 decode_complete received, with_error=0
+[11574210000] Progress: Iter          3 | Col  24 | changes:          0
+[11574230000] DECODER: Triggering 1D decoder for column  25 (op #175 since clear)
+[11575030000] DECODER: Column  25 decode_complete received, with_error=0
+[11575030000] Progress: Iter          3 | Col  25 | changes:          0
+[11575050000] DECODER: Triggering 1D decoder for column  26 (op #176 since clear)
+[11575850000] DECODER: Column  26 decode_complete received, with_error=0
+[11575850000] Progress: Iter          3 | Col  26 | changes:          0
+[11575870000] DECODER: Triggering 1D decoder for column  27 (op #177 since clear)
+[11576670000] DECODER: Column  27 decode_complete received, with_error=0
+[11576670000] Progress: Iter          3 | Col  27 | changes:          0
+[11576690000] DECODER: Triggering 1D decoder for column  28 (op #178 since clear)
+[11577490000] DECODER: Column  28 decode_complete received, with_error=0
+[11577490000] Progress: Iter          3 | Col  28 | changes:          0
+[11577510000] DECODER: Triggering 1D decoder for column  29 (op #179 since clear)
+[11578310000] DECODER: Column  29 decode_complete received, with_error=0
+[11578310000] Progress: Iter          3 | Col  29 | changes:          0
+[11578310000] DECODER next_state: DECODE_COLS -> CHECK_CONVERGENCE (col_idx= 30, busy=0)
+[11578330000] DECODER next_state: CHECK_CONVERGENCE -> OUTPUT_DATA (iter=  2, changes=0)
+[11578350000] DECODER STATE TRANSITION: DECODE_COLS -> CHECK_CONVERGENCE (row_idx= 30, col_idx= 30, iter=  2)
+[11578350000] DECODER: Entering CHECK_CONVERGENCE, total_changes=         0, iteration=  2
+[11578350000] DECODER: Converged after          3 iterations
+[11578370000] DECODER STATE TRANSITION: CHECK_CONVERGENCE -> OUTPUT_DATA (row_idx=  0, col_idx=  0, iter=  3)
+[11578370000] DECODER next_state: OUTPUT_DATA -> IDLE (p2s_valid=1, p2s_ready=1)
+[11578390000] DECODER: Pulsing clrn - transitioning to IDLE (ops_since_clear=180)
+[11578410000] DECODER STATE TRANSITION: OUTPUT_DATA -> IDLE (row_idx=  0, col_idx=  0, iter=  0)
+[11578410000] DECODER: Entering IDLE state
+[11620870000] Periodic reset triggered at frame 33, starting 16-cycle reset
+[11621190000] Reset complete, resuming normal operation
+DEBUG [11713370000] PRBS FRAME: a7bd84b6a7bd98c5d18d1bb7d18d529ce52e59b0e52fef4a5ee5d5a25ee063bdc65cfdcdc641498c95ca0cac9587b52b7cbc2beb7d11befb0b88f87b0e65861a3932111a255d145c96ac665cdfce79cb77e955cac0a514bb3077fcbe83de7b9aa1300b8708c5195fc6a03912329e57c097c0966caf45f0837083756be39c230b230b3f784948ca3aca3a8311b7b2bc9ebc9f0a65b1af8b478b423d5da5e13b913b8c8fcddc469966992b20acc997575756fac3eab573f3f3f61e887fbf2828283447310182f0f0f0b992a6050e222223956fd41e24ccccc97f60f844daaaaab70342119adfffffb20b8c655ec00001ac39295fc6800005e896f7c09700001c73763083720000492b34a30b2c0001b6fabbca3ae80005b61f98bc9e70001db441538b4520004db987e93b9ec001ad95107699468005ed7e61375797001c6f0546b3f1720049621f97a8272c01b74c4171f0d2e805b3a9872422ee701da9f512d8ce65204df43e6ed2a55ec1ac388566efdfc685e8931f5660c0971c736a43f5428372492b7d883f8f0b2db6fb0d3081223aedb61a2ea306cc9e6db45ce7ca16ab456db9ca50bc77fb9f6d94bde3893019436d7b8c4936a0578b6f1929b6b7c1f13b6256f5b7b084269b4df63db1a318d75bac348da5ca52f3d9e8bb2ddcbdee28d4739aeccb8c64f2f9295e6ab9295a2e16f7c57f96f7dce476309f017630ca5934a3420734a2bdd6bbcb8c12bbcf8cf798b9286f98a12a315396f16153c6fca7e9762747e8960bd07734d390737438e132bae9612b389246af9e7746fa936d97
+run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 7448.277 ; gain = 0.000 ; free physical = 45380 ; free virtual = 258506
+

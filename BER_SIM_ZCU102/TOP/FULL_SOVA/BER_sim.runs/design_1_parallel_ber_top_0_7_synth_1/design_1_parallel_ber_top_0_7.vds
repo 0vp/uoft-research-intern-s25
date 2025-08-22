@@ -1,0 +1,1189 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Sep 11 11:52:14 2024
+# Process ID: 25282
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/design_1_parallel_ber_top_0_7_synth_1
+# Command line: vivado -log design_1_parallel_ber_top_0_7.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_parallel_ber_top_0_7.tcl
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/design_1_parallel_ber_top_0_7_synth_1/design_1_parallel_ber_top_0_7.vds
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/design_1_parallel_ber_top_0_7_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_parallel_ber_top_0_7.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/FULL_SOVA_bypass'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/CMC/tools/xilinx/Vivado_2021.1/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_1_parallel_ber_top_0_7 -part xczu9eg-ffvb1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 25683
+WARNING: [Synth 8-6901] identifier 'y_isi' is used before its declaration [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/channel_model.sv:23]
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module urng_64 [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-2507] parameter declaration becomes local in parallel_ber_top with formal parameter declaration list [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:429]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2741.312 ; gain = 48.750 ; free physical = 111042 ; free virtual = 611788
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_parallel_ber_top_0_7' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_parallel_ber_top_0_7/synth/design_1_parallel_ber_top_0_7.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'parallel_ber_top' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:405]
+INFO: [Synth 8-6157] synthesizing module 'ber_top' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8' (1#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'grey_encode' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/grey_code.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'grey_encode' (2#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/grey_code.v:3]
+INFO: [Synth 8-6157] synthesizing module 'precode_tx' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'precode_tx' (3#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:3]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64' (4#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel' (5#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'precode_rx' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'precode_rx' (6#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:37]
+INFO: [Synth 8-6157] synthesizing module 'grey_decode' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/grey_code.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'grey_decode' (7#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/grey_code.v:50]
+INFO: [Synth 8-6157] synthesizing module 'hamming_enc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:48]
+INFO: [Synth 8-6157] synthesizing module 'codeword_xor' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'codeword_xor' (8#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:30]
+INFO: [Synth 8-6157] synthesizing module 'enc' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'enc' (9#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'hamming_enc' (10#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:48]
+INFO: [Synth 8-6157] synthesizing module 'ISI_channel_one_tap' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/channel_model.sv:417]
+INFO: [Synth 8-6155] done synthesizing module 'ISI_channel_one_tap' (11#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/channel_model.sv:417]
+INFO: [Synth 8-6157] synthesizing module 'random_noise' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized0' (11#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise' (12#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'noise_adder' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'noise_adder' (13#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'SOVA' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'delta_gen' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova_modules.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'delta_gen' (14#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova_modules.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'reliability_update' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova_modules.sv:69]
+INFO: [Synth 8-6155] done synthesizing module 'reliability_update' (15#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova_modules.sv:69]
+INFO: [Synth 8-6157] synthesizing module 'saturate' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/slicer.sv:158]
+INFO: [Synth 8-6155] done synthesizing module 'saturate' (16#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/slicer.sv:158]
+INFO: [Synth 8-6155] done synthesizing module 'SOVA' (17#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/sova.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'SD_decoder_top' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:667]
+INFO: [Synth 8-6157] synthesizing module 'hamming_dec' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:265]
+INFO: [Synth 8-3876] $readmem data file 'syndrome_lut.mem' is read successfully [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:291]
+INFO: [Synth 8-3876] $readmem data file 'test_patterns.mem' is read successfully [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:296]
+INFO: [Synth 8-6157] synthesizing module 'dec' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:214]
+INFO: [Synth 8-6155] done synthesizing module 'dec' (18#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:214]
+INFO: [Synth 8-6157] synthesizing module 'llr_adder' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:241]
+INFO: [Synth 8-6155] done synthesizing module 'llr_adder' (19#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:241]
+INFO: [Synth 8-6155] done synthesizing module 'hamming_dec' (20#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:265]
+INFO: [Synth 8-6155] done synthesizing module 'SD_decoder_top' (21#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:667]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized1' (21#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized0' (21#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker' (22#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'ber_top__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8__parameterized0' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized1' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'random_noise__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise__parameterized0' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized0' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top__parameterized0' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'ber_top__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8__parameterized1' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized5' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized5' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'random_noise__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized6' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized6' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise__parameterized1' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized7' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized7' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized1' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized1' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top__parameterized1' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'ber_top__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized5' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized8' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized8' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized5' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'random_noise__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized9' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized9' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized6' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized10' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized10' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized6' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized2' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top__parameterized2' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'ber_top__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized7' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized11' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized11' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized7' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'random_noise__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized12' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized12' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized8' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized13' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized13' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized8' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized3' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top__parameterized3' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'ber_top__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_120_8__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_120_8__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:44]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized9' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized14' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized14' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized9' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'random_noise__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized15' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized15' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:68]
+INFO: [Synth 8-6155] done synthesizing module 'random_noise__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:43]
+INFO: [Synth 8-6157] synthesizing module 'epf_channel__parameterized10' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'urng_64__parameterized16' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+INFO: [Synth 8-6155] done synthesizing module 'urng_64__parameterized16' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/noise.sv:237]
+WARNING: [Synth 8-7071] port 'valid' of module 'urng_64' is unconnected for instance 'rng' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+WARNING: [Synth 8-7023] instance 'rng' of module 'urng_64' has 5 connections declared, but only 4 given [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'epf_channel__parameterized10' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/epf_channel.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized4' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'prbs63_ci_IL_FEC_checker__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/prbs.sv:291]
+INFO: [Synth 8-6155] done synthesizing module 'ber_top__parameterized4' (23#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'parallel_ber_top' (24#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/ber_top.sv:405]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_parallel_ber_top_0_7' (25#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ip/design_1_parallel_ber_top_0_7/synth/design_1_parallel_ber_top_0_7.sv:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2983.391 ; gain = 290.828 ; free physical = 111080 ; free virtual = 611830
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3001.203 ; gain = 308.641 ; free physical = 111130 ; free virtual = 611880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3001.203 ; gain = 308.641 ; free physical = 111130 ; free virtual = 611880
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3039.781 ; gain = 0.000 ; free physical = 110926 ; free virtual = 611676
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3505.969 ; gain = 1.000 ; free physical = 110536 ; free virtual = 611286
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 3591.781 ; gain = 85.812 ; free physical = 110473 ; free virtual = 611224
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:48 ; elapsed = 00:00:34 . Memory (MB): peak = 3591.781 ; gain = 899.219 ; free physical = 110970 ; free virtual = 611721
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:48 ; elapsed = 00:00:34 . Memory (MB): peak = 3591.781 ; gain = 899.219 ; free physical = 110971 ; free virtual = 611721
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:34 . Memory (MB): peak = 3591.781 ; gain = 899.219 ; free physical = 110970 ; free virtual = 611721
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'SD_decoder_top'
+INFO: [Synth 8-6904] The RAM "hamming_dec:/llr1_sign_reg_reg" of size (depth=64 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "hamming_dec:/llr1_reg_reg" of size (depth=64 x width=5) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                         00000000
+                 iSTATE1 |                              010 |                         00000001
+                  iSTATE |                              100 |                         00000010
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'SD_decoder_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:04 ; elapsed = 00:00:54 . Memory (MB): peak = 3591.781 ; gain = 899.219 ; free physical = 105626 ; free virtual = 606384
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   6 Input   64 Bit       Adders := 5     
+	   3 Input   32 Bit       Adders := 108   
+	   2 Input   32 Bit       Adders := 30    
+	   2 Input   18 Bit       Adders := 3456  
+	   2 Input    9 Bit       Adders := 6     
+	   2 Input    8 Bit       Adders := 24    
+	   3 Input    2 Bit       Adders := 12    
+	   2 Input    2 Bit       Adders := 24    
++---XORs : 
+	   3 Input     64 Bit         XORs := 18    
+	   2 Input     25 Bit         XORs := 18    
+	   2 Input     19 Bit         XORs := 18    
+	   2 Input     16 Bit         XORs := 18    
+	   2 Input      1 Bit         XORs := 834   
+	   6 Input      1 Bit         XORs := 18    
+	   3 Input      1 Bit         XORs := 18    
+	   4 Input      1 Bit         XORs := 18    
+	   7 Input      1 Bit         XORs := 18    
+	   5 Input      1 Bit         XORs := 54    
+	  13 Input      1 Bit         XORs := 18    
+	  34 Input      1 Bit         XORs := 18    
+	  24 Input      1 Bit         XORs := 18    
+	  23 Input      1 Bit         XORs := 30    
+	  35 Input      1 Bit         XORs := 18    
+	  29 Input      1 Bit         XORs := 18    
+	  14 Input      1 Bit         XORs := 30    
+	  16 Input      1 Bit         XORs := 18    
+	  28 Input      1 Bit         XORs := 12    
+	   9 Input      1 Bit         XORs := 12    
+	  25 Input      1 Bit         XORs := 12    
+	  27 Input      1 Bit         XORs := 12    
+	  32 Input      1 Bit         XORs := 12    
+	  26 Input      1 Bit         XORs := 12    
+	  17 Input      1 Bit         XORs := 12    
+	  19 Input      1 Bit         XORs := 12    
++---Registers : 
+	              120 Bit    Registers := 48    
+	               68 Bit    Registers := 36    
+	               64 Bit    Registers := 450   
+	               63 Bit    Registers := 12    
+	               32 Bit    Registers := 150   
+	               18 Bit    Registers := 990   
+	               16 Bit    Registers := 36    
+	                8 Bit    Registers := 744   
+	                6 Bit    Registers := 144   
+	                5 Bit    Registers := 234   
+	                3 Bit    Registers := 18    
+	                2 Bit    Registers := 360   
+	                1 Bit    Registers := 1062  
++---RAMs : 
+	              320 Bit	(64 X 5 bit)          RAMs := 18    
+	               64 Bit	(64 X 1 bit)          RAMs := 18    
++---Muxes : 
+	   2 Input  120 Bit        Muxes := 348   
+	   7 Input  120 Bit        Muxes := 18    
+	   4 Input  120 Bit        Muxes := 18    
+	   2 Input   68 Bit        Muxes := 522   
+	   4 Input   68 Bit        Muxes := 36    
+	   2 Input   63 Bit        Muxes := 18    
+	   2 Input   32 Bit        Muxes := 198   
+	   6 Input   32 Bit        Muxes := 48    
+	   2 Input   18 Bit        Muxes := 2988  
+	   3 Input   18 Bit        Muxes := 6     
+	   4 Input   18 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 54    
+	   8 Input   16 Bit        Muxes := 18    
+	  64 Input    8 Bit        Muxes := 6     
+	   2 Input    8 Bit        Muxes := 222   
+	   5 Input    8 Bit        Muxes := 90    
+	   6 Input    8 Bit        Muxes := 18    
+	 257 Input    8 Bit        Muxes := 18    
+	   3 Input    8 Bit        Muxes := 6     
+	   4 Input    8 Bit        Muxes := 12    
+	   2 Input    5 Bit        Muxes := 276   
+	   2 Input    3 Bit        Muxes := 96    
+	   6 Input    3 Bit        Muxes := 18    
+	   3 Input    3 Bit        Muxes := 36    
+	   4 Input    3 Bit        Muxes := 6     
+	   4 Input    2 Bit        Muxes := 234   
+	   3 Input    2 Bit        Muxes := 18    
+	   2 Input    2 Bit        Muxes := 48    
+	   2 Input    1 Bit        Muxes := 1272  
+	   3 Input    1 Bit        Muxes := 36    
+	   7 Input    1 Bit        Muxes := 18    
+	   4 Input    1 Bit        Muxes := 174   
+	   5 Input    1 Bit        Muxes := 18    
+	   6 Input    1 Bit        Muxes := 90    
+	   8 Input    1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP cumulative_metrics[1], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[1] is absorbed into DSP cumulative_metrics[1].
+DSP Report: Generating DSP cumulative_metrics[2], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[2] is absorbed into DSP cumulative_metrics[2].
+DSP Report: Generating DSP cumulative_metrics[3], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[3] is absorbed into DSP cumulative_metrics[3].
+DSP Report: Generating DSP cumulative_metrics[0], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[0] is absorbed into DSP cumulative_metrics[0].
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP p_1_out, operation Mode is: (0 or PCIN)+(0 or (A:0x0):B)+(0 or C).
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP cumulative_metrics[1], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[1] is absorbed into DSP cumulative_metrics[1].
+DSP Report: Generating DSP cumulative_metrics[2], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[2] is absorbed into DSP cumulative_metrics[2].
+DSP Report: Generating DSP cumulative_metrics[3], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[3] is absorbed into DSP cumulative_metrics[3].
+DSP Report: Generating DSP cumulative_metrics[0], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[0] is absorbed into DSP cumulative_metrics[0].
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP p_1_out, operation Mode is: (0 or PCIN)+(0 or (A:0x0):B)+(0 or C).
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP cumulative_metrics[1], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[1] is absorbed into DSP cumulative_metrics[1].
+DSP Report: Generating DSP cumulative_metrics[2], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[2] is absorbed into DSP cumulative_metrics[2].
+DSP Report: Generating DSP cumulative_metrics[3], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[3] is absorbed into DSP cumulative_metrics[3].
+DSP Report: Generating DSP cumulative_metrics[0], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[0] is absorbed into DSP cumulative_metrics[0].
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP p_1_out, operation Mode is: (0 or PCIN)+(0 or (A:0x0):B)+(0 or C).
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP cumulative_metrics[1], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[1] is absorbed into DSP cumulative_metrics[1].
+DSP Report: Generating DSP cumulative_metrics[2], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[2] is absorbed into DSP cumulative_metrics[2].
+DSP Report: Generating DSP cumulative_metrics[3], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[3] is absorbed into DSP cumulative_metrics[3].
+DSP Report: Generating DSP cumulative_metrics[0], operation Mode is: C+(A:0x0):B.
+DSP Report: operator cumulative_metrics[0] is absorbed into DSP cumulative_metrics[0].
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: PCIN+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP survivor_path_delta0, operation Mode is: C+(A:0x0):B+1.
+DSP Report: operator survivor_path_delta0 is absorbed into DSP survivor_path_delta0.
+DSP Report: Generating DSP p_1_out, operation Mode is: (0 or PCIN)+(0 or (A:0x0):B)+(0 or C).
+DSP Report: operator p_1_out is absorbed into DSP p_1_out.
+DSP Report: Generating DSP delay_reg, operation Mode is: (P+1)'.
+DSP Report: register delay_reg is absorbed into DSP delay_reg.
+DSP Report: operator delay0 is absorbed into DSP delay_reg.
+DSP Report: Generating DSP e0[3], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e0[3] is absorbed into DSP e0[3].
+DSP Report: operator p_1_out is absorbed into DSP e0[3].
+DSP Report: Generating DSP e0[2], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e0[2] is absorbed into DSP e0[2].
+DSP Report: operator p_1_out is absorbed into DSP e0[2].
+DSP Report: Generating DSP e0[1], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e0[1] is absorbed into DSP e0[1].
+DSP Report: operator p_1_out is absorbed into DSP e0[1].
+DSP Report: Generating DSP e0[0], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e0[0] is absorbed into DSP e0[0].
+DSP Report: operator p_1_out is absorbed into DSP e0[0].
+DSP Report: Generating DSP e3[3], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e3[3] is absorbed into DSP e3[3].
+DSP Report: operator p_1_out is absorbed into DSP e3[3].
+DSP Report: Generating DSP e3[2], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e3[2] is absorbed into DSP e3[2].
+DSP Report: operator p_1_out is absorbed into DSP e3[2].
+DSP Report: Generating DSP e2[3], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e2[3] is absorbed into DSP e2[3].
+DSP Report: operator p_1_out is absorbed into DSP e2[3].
+DSP Report: Generating DSP e2[2], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e2[2] is absorbed into DSP e2[2].
+DSP Report: operator p_1_out is absorbed into DSP e2[2].
+DSP Report: Generating DSP e1[3], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e1[3] is absorbed into DSP e1[3].
+DSP Report: operator p_1_out is absorbed into DSP e1[3].
+DSP Report: Generating DSP e1[2], operation Mode is: (D+A)*(D+A).
+DSP Report: operator e1[2] is absorbed into DSP e1[2].
+DSP Report: operator p_1_out is absorbed into DSP e1[2].
+DSP Report: Generating DSP sumreg[5], operation Mode is: C+(A:0x0):B.
+DSP Report: operator sumreg[5] is absorbed into DSP sumreg[5].
+INFO: [Synth 8-4471] merging register 'output_counter_reg[7:0]' into 'output_counter_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:376]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[1][7:0]' into 'least_reliable_symbols_reg[1][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[0][7:0]' into 'least_reliable_symbols_reg[0][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[2][7:0]' into 'least_reliable_symbols_reg[2][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[3][7:0]' into 'least_reliable_symbols_reg[3][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[4][7:0]' into 'least_reliable_symbols_reg[4][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[5][7:0]' into 'least_reliable_symbols_reg[5][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'most_reliable_error_location_reg[7:0]' into 'most_reliable_error_location_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:380]
+INFO: [Synth 8-4471] merging register 'counter_reg[7:0]' into 'counter_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:371]
+INFO: [Synth 8-4471] merging register 'counter_reg[7:0]' into 'counter_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:371]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[0][7:0]' into 'least_reliable_symbols_reg[0][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[1][7:0]' into 'least_reliable_symbols_reg[1][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[2][7:0]' into 'least_reliable_symbols_reg[2][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[3][7:0]' into 'least_reliable_symbols_reg[3][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[4][7:0]' into 'least_reliable_symbols_reg[4][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[5][7:0]' into 'least_reliable_symbols_reg[5][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'most_reliable_error_location_reg[7:0]' into 'most_reliable_error_location_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:380]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[0][7:0]' into 'least_reliable_symbols_reg[0][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[1][7:0]' into 'least_reliable_symbols_reg[1][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[2][7:0]' into 'least_reliable_symbols_reg[2][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[3][7:0]' into 'least_reliable_symbols_reg[3][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[4][7:0]' into 'least_reliable_symbols_reg[4][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[5][7:0]' into 'least_reliable_symbols_reg[5][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'counter_reg[7:0]' into 'counter_reg[7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:371]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[5][7:0]' into 'least_reliable_symbols_reg[5][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[4][7:0]' into 'least_reliable_symbols_reg[4][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[3][7:0]' into 'least_reliable_symbols_reg[3][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[2][7:0]' into 'least_reliable_symbols_reg[2][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[1][7:0]' into 'least_reliable_symbols_reg[1][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-4471] merging register 'least_reliable_symbols_reg[0][7:0]' into 'least_reliable_symbols_reg[0][7:0]' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/hamming_68_60.sv:459]
+INFO: [Synth 8-5544] ROM "most_reliable_tp_idx1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+DSP Report: Generating DSP output_counter0, operation Mode is: C'+1.
+DSP Report: register output_counter_reg is absorbed into DSP output_counter0.
+DSP Report: operator output_counter0 is absorbed into DSP output_counter0.
+INFO: [Synth 8-6904] The RAM "hamming_dec/llr1_sign_reg_reg" of size (depth=64 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[1] is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg2, operation Mode is: C+CarryIn.
+DSP Report: operator data1_reg2 is absorbed into DSP data1_reg2.
+INFO: [Synth 8-6904] The RAM "hamming_dec/llr1_reg_reg" of size (depth=64 x width=5) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP most_reliable_tp_wt0, operation Mode is: C+(A:0x0):B.
+DSP Report: operator most_reliable_tp_wt0 is absorbed into DSP most_reliable_tp_wt0.
+DSP Report: Generating DSP test_pattern_idx_reg, operation Mode is: (P+1)'.
+DSP Report: register test_pattern_idx_reg is absorbed into DSP test_pattern_idx_reg.
+DSP Report: operator test_pattern_idx0 is absorbed into DSP test_pattern_idx_reg.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[2] is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[3] is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[4] is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[5] is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+CarryIn.
+DSP Report: register most_reliable_error_location_reg is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP counter0, operation Mode is: C'+1.
+DSP Report: register counter_reg is absorbed into DSP counter0.
+DSP Report: operator counter0 is absorbed into DSP counter0.
+DSP Report: Generating DSP data1_reg1, operation Mode is: C'+1.
+DSP Report: register counter_reg is absorbed into DSP data1_reg1.
+DSP Report: operator data1_reg1 is absorbed into DSP data1_reg1.
+DSP Report: Generating DSP data1_reg4, operation Mode is: C+CarryIn.
+DSP Report: operator data1_reg4 is absorbed into DSP data1_reg4.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[1] is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[2] is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[3] is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[4] is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register least_reliable_symbols_reg[5] is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP data1_reg3, operation Mode is: C'+CarryIn.
+DSP Report: register most_reliable_error_location_reg is absorbed into DSP data1_reg3.
+DSP Report: operator data1_reg3 is absorbed into DSP data1_reg3.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[1] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[2] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[3] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[4] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[5] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+DSP Report: Generating DSP symbol1_reg4, operation Mode is: C'+A:B.
+DSP Report: register counter_reg is absorbed into DSP symbol1_reg4.
+DSP Report: operator symbol1_reg4 is absorbed into DSP symbol1_reg4.
+DSP Report: Generating DSP symbol1_reg3, operation Mode is: A:B.
+DSP Report: operator symbol1_reg3 is absorbed into DSP symbol1_reg3.
+DSP Report: Generating DSP symbol1_reg3, operation Mode is: (PCIN>>17)+A:B.
+DSP Report: operator symbol1_reg3 is absorbed into DSP symbol1_reg3.
+DSP Report: Generating DSP symbol1_reg1, operation Mode is: C+(A:0x0):B.
+DSP Report: operator symbol1_reg1 is absorbed into DSP symbol1_reg1.
+DSP Report: Generating DSP symbol1_reg2, operation Mode is: C+A:B.
+DSP Report: operator symbol1_reg2 is absorbed into DSP symbol1_reg2.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[5] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[4] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[3] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[2] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[1] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in6, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[0] is absorbed into DSP dec1_in6.
+DSP Report: operator dec1_in6 is absorbed into DSP dec1_in6.
+DSP Report: Generating DSP dec1_in4, operation Mode is: C'+A:B.
+DSP Report: register least_reliable_symbols_reg[0] is absorbed into DSP dec1_in4.
+DSP Report: operator dec1_in4 is absorbed into DSP dec1_in4.
+INFO: [Synth 8-6904] The RAM "hamming_dec/llr1_sign_reg_reg" of size (depth=64 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+RAM Pipeline Warning: Read Address Register Found For RAM llr1_reg_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM llr1_reg_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-6904] The RAM "hamming_dec/llr1_reg_reg" of size (depth=64 x width=5) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+RAM Pipeline Warning: Read Address Register Found For RAM llr1_reg_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\state_reg[7] )
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-3886] merging instance 'channel1/mode_reg' (FDE) to 'channel3/mode_reg'
+INFO: [Synth 8-3886] merging instance 'encoder/state_reg[6]' (FDRE) to 'encoder/state_reg[7]'
+INFO: [Synth 8-3886] merging instance 'encoder/state_reg[7]' (FDRE) to 'encoder/state_reg[5]'
+INFO: [Synth 8-3886] merging instance 'encoder/state_reg[5]' (FDRE) to 'encoder/state_reg[4]'
+INFO: [Synth 8-3886] merging instance 'encoder/state_reg[4]' (FDRE) to 'encoder/state_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\encoder/state_reg[3] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][4]' (FDRE) to 'fec/symbol_codeword_index_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][4]' (FDRE) to 'fec/symbol_codeword_index_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][4]' (FDRE) to 'fec/symbol_codeword_index_reg[4][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][4] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][3]' (FDRE) to 'fec/symbol_codeword_index_reg[6][3]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][3]' (FDRE) to 'fec/symbol_codeword_index_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][3]' (FDRE) to 'fec/symbol_codeword_index_reg[4][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][3] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][2]' (FDRE) to 'fec/symbol_codeword_index_reg[6][2]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][2]' (FDRE) to 'fec/symbol_codeword_index_reg[5][2]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][2]' (FDRE) to 'fec/symbol_codeword_index_reg[4][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][2] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][1]' (FDRE) to 'fec/symbol_codeword_index_reg[6][1]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][1]' (FDRE) to 'fec/symbol_codeword_index_reg[5][1]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][1]' (FDRE) to 'fec/symbol_codeword_index_reg[4][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][1] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][0]' (FDRE) to 'fec/symbol_codeword_index_reg[6][0]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][0]' (FDRE) to 'fec/symbol_codeword_index_reg[5][0]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][0]' (FDRE) to 'fec/symbol_codeword_index_reg[4][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][0] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][6]' (FDRE) to 'fec/symbol_bit_index_reg[6][6]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][6]' (FDRE) to 'fec/symbol_bit_index_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][6]' (FDRE) to 'fec/symbol_bit_index_reg[4][6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][6] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][7]' (FDRE) to 'fec/symbol_bit_index_reg[6][7]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][7]' (FDRE) to 'fec/symbol_bit_index_reg[5][7]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][7]' (FDRE) to 'fec/symbol_bit_index_reg[4][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][7] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][5]' (FDRE) to 'fec/symbol_bit_index_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][5]' (FDRE) to 'fec/symbol_bit_index_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][5]' (FDRE) to 'fec/symbol_bit_index_reg[4][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][5] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][4]' (FDRE) to 'fec/symbol_bit_index_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][4]' (FDRE) to 'fec/symbol_bit_index_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][4]' (FDRE) to 'fec/symbol_bit_index_reg[4][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][4] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][1]' (FDRE) to 'fec/symbol_bit_index_reg[6][1]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][1]' (FDRE) to 'fec/symbol_bit_index_reg[5][1]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][1]' (FDRE) to 'fec/symbol_bit_index_reg[4][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][1] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][2]' (FDRE) to 'fec/symbol_bit_index_reg[6][2]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][2]' (FDRE) to 'fec/symbol_bit_index_reg[5][2]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][2]' (FDRE) to 'fec/symbol_bit_index_reg[4][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][2] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][3]' (FDRE) to 'fec/symbol_bit_index_reg[6][3]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][3]' (FDRE) to 'fec/symbol_bit_index_reg[5][3]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][3]' (FDRE) to 'fec/symbol_bit_index_reg[4][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][3] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[7][0]' (FDRE) to 'fec/symbol_bit_index_reg[6][0]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[6][0]' (FDRE) to 'fec/symbol_bit_index_reg[5][0]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_bit_index_reg[5][0]' (FDRE) to 'fec/symbol_bit_index_reg[4][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][0] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][6]' (FDRE) to 'fec/symbol_codeword_index_reg[6][6]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][6]' (FDRE) to 'fec/symbol_codeword_index_reg[5][6]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][6]' (FDRE) to 'fec/symbol_codeword_index_reg[4][6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][6] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][7]' (FDRE) to 'fec/symbol_codeword_index_reg[6][7]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][7]' (FDRE) to 'fec/symbol_codeword_index_reg[5][7]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][7]' (FDRE) to 'fec/symbol_codeword_index_reg[4][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][7] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][8]' (FDRE) to 'fec/symbol_codeword_index_reg[6][8]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][8]' (FDRE) to 'fec/symbol_codeword_index_reg[5][8]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][8]' (FDRE) to 'fec/symbol_codeword_index_reg[4][8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][8] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][5]' (FDRE) to 'fec/symbol_codeword_index_reg[6][5]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][5]' (FDRE) to 'fec/symbol_codeword_index_reg[5][5]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][5]' (FDRE) to 'fec/symbol_codeword_index_reg[4][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][5] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][9]' (FDRE) to 'fec/symbol_codeword_index_reg[6][9]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][9]' (FDRE) to 'fec/symbol_codeword_index_reg[5][9]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][9]' (FDRE) to 'fec/symbol_codeword_index_reg[4][9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][9] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][10]' (FDRE) to 'fec/symbol_codeword_index_reg[6][10]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][10]' (FDRE) to 'fec/symbol_codeword_index_reg[5][10]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][10]' (FDRE) to 'fec/symbol_codeword_index_reg[4][10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][10] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][11]' (FDRE) to 'fec/symbol_codeword_index_reg[6][11]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][11]' (FDRE) to 'fec/symbol_codeword_index_reg[5][11]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][11]' (FDRE) to 'fec/symbol_codeword_index_reg[4][11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][11] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][12]' (FDRE) to 'fec/symbol_codeword_index_reg[6][12]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][12]' (FDRE) to 'fec/symbol_codeword_index_reg[5][12]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][12]' (FDRE) to 'fec/symbol_codeword_index_reg[4][12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][12] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][13]' (FDRE) to 'fec/symbol_codeword_index_reg[6][13]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][13]' (FDRE) to 'fec/symbol_codeword_index_reg[5][13]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][13]' (FDRE) to 'fec/symbol_codeword_index_reg[4][13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][13] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][14]' (FDRE) to 'fec/symbol_codeword_index_reg[6][14]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][14]' (FDRE) to 'fec/symbol_codeword_index_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][14]' (FDRE) to 'fec/symbol_codeword_index_reg[4][14]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][14] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][15]' (FDRE) to 'fec/symbol_codeword_index_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][15]' (FDRE) to 'fec/symbol_codeword_index_reg[5][15]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][15]' (FDRE) to 'fec/symbol_codeword_index_reg[4][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][15] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][16]' (FDRE) to 'fec/symbol_codeword_index_reg[6][16]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][16]' (FDRE) to 'fec/symbol_codeword_index_reg[5][16]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][16]' (FDRE) to 'fec/symbol_codeword_index_reg[4][16]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][16] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][17]' (FDRE) to 'fec/symbol_codeword_index_reg[6][17]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][17]' (FDRE) to 'fec/symbol_codeword_index_reg[5][17]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][17]' (FDRE) to 'fec/symbol_codeword_index_reg[4][17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][17] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][18]' (FDRE) to 'fec/symbol_codeword_index_reg[6][18]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][18]' (FDRE) to 'fec/symbol_codeword_index_reg[5][18]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][18]' (FDRE) to 'fec/symbol_codeword_index_reg[4][18]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][18] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][19]' (FDRE) to 'fec/symbol_codeword_index_reg[6][19]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][19]' (FDRE) to 'fec/symbol_codeword_index_reg[5][19]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][19]' (FDRE) to 'fec/symbol_codeword_index_reg[4][19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][19] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][20]' (FDRE) to 'fec/symbol_codeword_index_reg[6][20]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][20]' (FDRE) to 'fec/symbol_codeword_index_reg[5][20]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][20]' (FDRE) to 'fec/symbol_codeword_index_reg[4][20]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][20] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][21]' (FDRE) to 'fec/symbol_codeword_index_reg[6][21]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][21]' (FDRE) to 'fec/symbol_codeword_index_reg[5][21]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][21]' (FDRE) to 'fec/symbol_codeword_index_reg[4][21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][21] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][22]' (FDRE) to 'fec/symbol_codeword_index_reg[6][22]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][22]' (FDRE) to 'fec/symbol_codeword_index_reg[5][22]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[5][22]' (FDRE) to 'fec/symbol_codeword_index_reg[4][22]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][22] )
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[7][23]' (FDRE) to 'fec/symbol_codeword_index_reg[6][23]'
+INFO: [Synth 8-3886] merging instance 'fec/symbol_codeword_index_reg[6][23]' (FDRE) to 'fec/symbol_codeword_index_reg[5][23]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_errors_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_errors_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\channel/signal_out_reg[1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\channel/signal_out_reg[2] )
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\encoder/state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_bit_index_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\fec/symbol_codeword_index_reg[4][7] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4471] merging register 'pre_rx1/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Synth 8-4471] merging register 'pre_tx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:20]
+INFO: [Synth 8-4471] merging register 'pre_rx2/m_reg' into 'pre_tx1/m_reg' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.gen/sources_1/bd/design_1/ipshared/b3ed/code/precode.v:54]
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:31 . Memory (MB): peak = 3591.781 ; gain = 899.219 ; free physical = 104406 ; free virtual = 605264
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|hamming_dec | p_0_out    | 64x6          | LUT            | 
+|hamming_dec | p_0_out    | 64x6          | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object        | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------------+-----------+----------------------+--------------+
+|hamming_dec | llr1_sign_reg_reg | Implied   | 64 x 1               | RAM64M8 x 7  | 
+|hamming_dec | llr1_reg_reg      | Implied   | 64 x 5               | RAM64M8 x 1  | 
++------------+-------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below)
++------------+---------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping                           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | (0 or PCIN)+(0 or (A:0x0):B)+(0 or C) | 30     | 18     | 18     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | (0 or PCIN)+(0 or (A:0x0):B)+(0 or C) | 30     | 18     | 18     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | (0 or PCIN)+(0 or (A:0x0):B)+(0 or C) | 30     | 18     | 18     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B                           | 30     | 16     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | PCIN+(A:0x0):B+1                      | 30     | 18     | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|delta_gen   | C+(A:0x0):B+1                         | 30     | 18     | 18     | -      | 18     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|delta_gen   | (0 or PCIN)+(0 or (A:0x0):B)+(0 or C) | 30     | 18     | 18     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|SOVA        | (P+1)'                                | -      | -      | -      | -      | 4      | -    | -    | -    | -    | -     | 0    | 1    | 
+|SOVA        | (D+A)*(D+A)                           | 7      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 7      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 8      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 8      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 8      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 8      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 7      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 7      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 5      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|SOVA        | (D+A)*(D+A)                           | 5      | -      | -      | 8      | 32     | 0    | -    | -    | 0    | 0     | 0    | 0    | 
+|llr_adder   | C+(A:0x0):B                           | 30     | 5      | 5      | -      | 6      | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+1                                  | -      | -      | 8      | -      | 8      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C+CarryIn                             | -      | -      | 9      | -      | 9      | -    | -    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | C+(A:0x0):B                           | 30     | 5      | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | (P+1)'                                | -      | -      | -      | -      | 6      | -    | -    | -    | -    | -     | 0    | 1    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+1                                  | -      | -      | 8      | -      | 8      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+1                                  | -      | -      | 9      | -      | 9      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C+CarryIn                             | -      | -      | 7      | -      | 7      | -    | -    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+CarryIn                            | -      | -      | 7      | -      | 7      | -    | -    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 14     | 18     | 8      | -      | 32     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | A:B                                   | 5      | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|hamming_dec | (PCIN>>17)+A:B                        | 30     | 18     | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|hamming_dec | C+(A:0x0):B                           | 30     | 6      | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | C+A:B                                 | 14     | 18     | 6      | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 30     | 18     | 7      | -      | 7      | 0    | 0    | 1    | -    | -     | 0    | 0    | 
+|hamming_dec | C'+A:B                                | 13     | 18     | 8      | -      | 31     | 0    | 0    | 1    | -    | -     | 0    | 0    | 
++------------+---------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:54 ; elapsed = 00:01:49 . Memory (MB): peak = 3634.453 ; gain = 941.891 ; free physical = 103895 ; free virtual = 604817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:01:50 . Memory (MB): peak = 3645.453 ; gain = 952.891 ; free physical = 103885 ; free virtual = 604807
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+-------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object        | Inference | Size (Depth x Width) | Primitives   | 
++------------+-------------------+-----------+----------------------+--------------+
+|hamming_dec | llr1_sign_reg_reg | Implied   | 64 x 1               | RAM64M8 x 7  | 
+|hamming_dec | llr1_reg_reg      | Implied   | 64 x 5               | RAM64M8 x 1  | 
++------------+-------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:10 ; elapsed = 00:02:07 . Memory (MB): peak = 3698.254 ; gain = 1005.691 ; free physical = 101263 ; free virtual = 602192
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:52 ; elapsed = 00:02:52 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100712 ; free virtual = 601731
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:04 ; elapsed = 00:03:04 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100723 ; free virtual = 601742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:30 ; elapsed = 00:03:31 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100480 ; free virtual = 601499
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:33 ; elapsed = 00:03:34 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100639 ; free virtual = 601658
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:41 ; elapsed = 00:03:42 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100667 ; free virtual = 601687
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:42 ; elapsed = 00:03:44 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100663 ; free virtual = 601683
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------------------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                   | RTL Name                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------------------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|design_1_parallel_ber_top_0_7 | inst/genblk1[0].core/prbs/sr_reg[34] | 4      | 30    | YES          | NO                 | YES               | 30     | 0       | 
+|design_1_parallel_ber_top_0_7 | inst/genblk1[3].core/prbs/sr_reg[60] | 6      | 4     | YES          | NO                 | YES               | 4      | 0       | 
+|design_1_parallel_ber_top_0_7 | inst/genblk1[3].core/prbs/sr_reg[4]  | 5      | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|design_1_parallel_ber_top_0_7 | inst/genblk1[5].core/prbs/sr_reg[21] | 9      | 2     | YES          | NO                 | YES               | 2      | 0       | 
++------------------------------+--------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+-------+
+|      |Cell            |Count  |
++------+----------------+-------+
+|1     |CARRY8          |  26732|
+|2     |DSP_ALU         |   1044|
+|3     |DSP_A_B_DATA    |   1044|
+|6     |DSP_C_DATA      |   1044|
+|8     |DSP_MULTIPLIER  |   1044|
+|10    |DSP_M_DATA      |   1044|
+|11    |DSP_OUTPUT      |   1044|
+|13    |DSP_PREADD      |   1044|
+|14    |DSP_PREADD_DATA |   1044|
+|16    |LUT1            |   2283|
+|17    |LUT2            |  62152|
+|18    |LUT3            |   5830|
+|19    |LUT4            | 166123|
+|20    |LUT5            |  60577|
+|21    |LUT6            |  52504|
+|22    |MUXF7           |   3624|
+|23    |MUXF8           |   1332|
+|24    |RAM64M8         |     18|
+|25    |RAM64X1D        |    126|
+|26    |SRL16E          |     38|
+|27    |FDRE            |  40616|
+|28    |FDSE            |   2986|
++------+----------------+-------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:43 ; elapsed = 00:03:45 . Memory (MB): peak = 4438.660 ; gain = 1746.098 ; free physical = 100663 ; free virtual = 601683
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:15 ; elapsed = 00:03:34 . Memory (MB): peak = 4442.570 ; gain = 1159.430 ; free physical = 109643 ; free virtual = 610662
+Synthesis Optimization Complete : Time (s): cpu = 00:03:47 ; elapsed = 00:03:49 . Memory (MB): peak = 4442.570 ; gain = 1750.008 ; free physical = 109653 ; free virtual = 610662
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 4590.816 ; gain = 0.000 ; free physical = 109185 ; free virtual = 610193
+INFO: [Netlist 29-17] Analyzing 32876 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 7 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 5033.223 ; gain = 0.000 ; free physical = 108813 ; free virtual = 609822
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1188 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1044 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 18 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 126 instances
+
+Synth Design complete, checksum: 72de001a
+INFO: [Common 17-83] Releasing license: Synthesis
+432 Infos, 38 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:59 ; elapsed = 00:05:02 . Memory (MB): peak = 5033.223 ; gain = 2530.297 ; free physical = 109461 ; free virtual = 610470
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/design_1_parallel_ber_top_0_7_synth_1/design_1_parallel_ber_top_0_7.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:01:19 ; elapsed = 00:01:01 . Memory (MB): peak = 5073.242 ; gain = 40.020 ; free physical = 109366 ; free virtual = 610461
+write_verilog: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 5073.242 ; gain = 0.000 ; free physical = 109193 ; free virtual = 610462
+write_vhdl: Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 5073.242 ; gain = 0.000 ; free physical = 108987 ; free virtual = 610469
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Coretcl 2-1174] Renamed 223 cell refs.
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/FULL_SOVA/BER_sim.runs/design_1_parallel_ber_top_0_7_synth_1/design_1_parallel_ber_top_0_7.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:01:18 ; elapsed = 00:01:01 . Memory (MB): peak = 5073.242 ; gain = 0.000 ; free physical = 108977 ; free virtual = 610460
+INFO: [runtcl-4] Executing : report_utilization -file design_1_parallel_ber_top_0_7_utilization_synth.rpt -pb design_1_parallel_ber_top_0_7_utilization_synth.pb
+write_verilog: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 5073.242 ; gain = 0.000 ; free physical = 108795 ; free virtual = 610452
+write_vhdl: Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 5073.242 ; gain = 0.000 ; free physical = 108594 ; free virtual = 610464
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 11 12:01:13 2024...

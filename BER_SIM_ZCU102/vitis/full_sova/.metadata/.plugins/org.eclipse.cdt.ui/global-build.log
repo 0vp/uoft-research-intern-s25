@@ -1,0 +1,20 @@
+Nothing to build in platform 'design_1_wrapper'
+
+09:25:48 **** Incremental Build of configuration Debug for project full_sova ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -m64 -IC:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: full_sova.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -m64 -Wl,-T -Wl,../src/lscript.ld -LC:/Users/richa/Desktop/vitis_ZCU102/full_sova/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_microblaze_0/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "full_sova.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: full_sova.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size full_sova.elf  |tee "full_sova.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  16164	  11280	   3136	  30580	   7774	full_sova.elf
+'Finished building: full_sova.elf.size'
+' '

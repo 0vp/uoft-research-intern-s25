@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../FULL_1D_RS/code/rs/berlekamp.sv" \
+"../../../../../FULL_1D_RS/code/rs/chien-search.sv" \
+"../../../../../FULL_1D_RS/code/rs/counter.sv" \
+"../../../../../FULL_1D_RS/code/rs/decode.sv" \
+"../../../../../FULL_1D_RS/code/rs/encode.sv" \
+"../../../../../FULL_1D_RS/code/rs/inverse.sv" \
+"../../../../../FULL_1D_RS/code/rs/parallel_to_serial.sv" \
+"../../../../../FULL_1D_RS/code/rs/rs_1d.sv" \
+"../../../../../FULL_1D_RS/code/rs/rs_decode_wrapper.sv" \
+"../../../../../FULL_1D_RS/code/rs/rs_encode_wrapper.sv" \
+"../../../../../FULL_1D_RS/code/rs/serial_to_parallel.sv" \
+"../../../../../FULL_1D_RS/code/rs/syndrome.sv" \
+"../../../../../FULL_1D_RS/code/rs/rs_1d_serdes_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,281 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Fri Aug 16 11:32:47 2024
+# Process ID: 36972
+# Current directory: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1
+# Command line: vivado -log design_1_sim_controller_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sim_controller_0_0.tcl
+# Log file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/design_1_sim_controller_0_0.vds
+# Journal file: /autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_sim_controller_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/BER_IP/MLSE_CFEC'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/CONTROLLER_IP/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/CMC/tools/xilinx/Vivado_2021.1/Vivado/2021.1/data/ip'.
+Command: synth_design -top design_1_sim_controller_0_0 -part xczu9eg-ffvb1156-2-e -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu9eg'
+INFO: [Device 21-403] Loading part xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37551
+WARNING: [Synth 8-2507] parameter declaration becomes local in sim_controller_v1_0_M00_AXI with formal parameter declaration list [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:124]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2740.344 ; gain = 47.781 ; free physical = 171512 ; free virtual = 624127
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_sim_controller_0_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_sim_controller_0_0/synth/design_1_sim_controller_0_0.v:56]
+INFO: [Synth 8-6157] synthesizing module 'sim_controller_v1_0' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'sim_controller_v1_0_S00_AXI' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-226] default block is never used [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_S00_AXI.v:253]
+INFO: [Synth 8-226] default block is never used [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_S00_AXI.v:394]
+INFO: [Synth 8-6155] done synthesizing module 'sim_controller_v1_0_S00_AXI' (1#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'sim_controller_v1_0_M00_AXI' [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:481]
+INFO: [Synth 8-155] case statement is not full and has no default [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:527]
+INFO: [Synth 8-226] default block is never used [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:563]
+INFO: [Synth 8-6155] done synthesizing module 'sim_controller_v1_0_M00_AXI' (2#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0_M00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'sim_controller_v1_0' (3#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ipshared/80ea/hdl/sim_controller_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sim_controller_0_0' (4#1) [/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.gen/sources_1/bd/design_1/ip/design_1_sim_controller_0_0/synth/design_1_sim_controller_0_0.v:56]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2785.281 ; gain = 92.719 ; free physical = 170643 ; free virtual = 623259
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2803.094 ; gain = 110.531 ; free physical = 170639 ; free virtual = 623254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2803.094 ; gain = 110.531 ; free physical = 170639 ; free virtual = 623254
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2803.094 ; gain = 0.000 ; free physical = 171465 ; free virtual = 624080
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2960.938 ; gain = 0.000 ; free physical = 171329 ; free virtual = 623944
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2984.750 ; gain = 23.812 ; free physical = 171327 ; free virtual = 623942
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2984.750 ; gain = 292.188 ; free physical = 171461 ; free virtual = 624077
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu9eg-ffvb1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2984.750 ; gain = 292.188 ; free physical = 171462 ; free virtual = 624077
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2984.750 ; gain = 292.188 ; free physical = 171462 ; free virtual = 624077
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sim_controller_v1_0_S00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'sim_controller_v1_0_M00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sim_controller_v1_0'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                           000001 |                         00000000
+                 iSTATE0 |                           000010 |                         00000001
+                 iSTATE1 |                           000100 |                         00000010
+                 iSTATE2 |                           001000 |                         00000011
+                 iSTATE4 |                           010000 |                         00000101
+*
+                 iSTATE3 |                           100000 |                         00000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'sim_controller_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+              INIT_WRITE |                               01 |                               01
+               INIT_READ |                               10 |                               10
+            INIT_COMPARE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'sequential' in module 'sim_controller_v1_0_M00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                         00000000
+                 iSTATE0 |                               01 |                         00000001
+                 iSTATE1 |                               10 |                         00000010
+                 iSTATE2 |                               11 |                         00000011
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'sim_controller_v1_0'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2984.750 ; gain = 292.188 ; free physical = 171454 ; free virtual = 624070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 6     
+	               32 Bit    Registers := 9     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 32    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 8     
+	   4 Input   32 Bit        Muxes := 5     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 39    
+	   3 Input    1 Bit        Muxes := 6     
+	   6 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 8     
+	  11 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2520 (col length:168)
+BRAMs: 1824 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2984.750 ; gain = 292.188 ; free physical = 171431 ; free virtual = 624051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3359.148 ; gain = 666.586 ; free physical = 170820 ; free virtual = 623440
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 3360.148 ; gain = 667.586 ; free physical = 170807 ; free virtual = 623427
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170792 ; free virtual = 623412
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170789 ; free virtual = 623409
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170789 ; free virtual = 623409
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170790 ; free virtual = 623410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170790 ; free virtual = 623410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170787 ; free virtual = 623407
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170786 ; free virtual = 623406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY8 |    18|
+|2     |LUT1   |    10|
+|3     |LUT2   |    77|
+|4     |LUT3   |    78|
+|5     |LUT4   |    39|
+|6     |LUT5   |    13|
+|7     |LUT6   |   263|
+|8     |FDRE   |   759|
+|9     |FDSE   |    33|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.195 ; gain = 695.633 ; free physical = 170786 ; free virtual = 623406
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 3388.195 ; gain = 513.977 ; free physical = 170813 ; free virtual = 623433
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 3388.203 ; gain = 695.633 ; free physical = 170812 ; free virtual = 623432
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3399.164 ; gain = 0.000 ; free physical = 170872 ; free virtual = 623492
+INFO: [Netlist 29-17] Analyzing 18 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3458.930 ; gain = 0.000 ; free physical = 170860 ; free virtual = 623480
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 2d9e1ac4
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:01:00 . Memory (MB): peak = 3458.930 ; gain = 956.004 ; free physical = 170869 ; free virtual = 623489
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/design_1_sim_controller_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_sim_controller_0_0, cache-ID = 4e349a8c24797a7b
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint '/autofs/fs1.ece/fs1.eecg.tcc/barrieri/Documents/Thesis/new_board/TOP/BER_sim/BER_sim.runs/design_1_sim_controller_0_0_synth_1/design_1_sim_controller_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_sim_controller_0_0_utilization_synth.rpt -pb design_1_sim_controller_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 16 11:33:58 2024...
