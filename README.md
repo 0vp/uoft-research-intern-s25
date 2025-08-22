@@ -6,6 +6,7 @@ This repository contains the code for my research internship at the University o
 
 - [Special Thanks](#special-thanks)
 - [Project Overview](#project-overview)
+- [Project Hardware Specifications](#project-hardware-specifications)
 - [Repository Structure](#repository-structure)
 - [2D Reed-Solomon Theory](#2d-reed-solomon-theory)
 - [Configuration Parameters](#configuration-parameters)
@@ -17,6 +18,10 @@ This repository contains the code for my research internship at the University o
 
 ## Project Overview
 
+The main goal of the project is to test the 2D Reed-Solomon decoding algorithm on the ZCU102.
+
+The project is a work in progress and is not yet complete.
+
 ## Project Hardware Specifications
 
 - AMD Zynq UltraScale+™ MPSoC ZCU102 Evaluation Kit
@@ -25,9 +30,10 @@ This repository contains the code for my research internship at the University o
 
 ## Repository Structure
 
-- `RS/` - Reed-Solomon PAM Communication System Python Model
-- `gen_rs_sv/` - SystemVerilog Reed-Solomon Code Generator
+- `BER_SIM_ZCU102/` - FPGA-FEC simulation framework for ZCU102
+- `gen_rs_sv/` - 1D & 2D SystemVerilog Reed-Solomon Code Generator
 - `Readings/` - Research papers and documentation
+- `RS/` - 1D & 2D RS simulation framework via Python
 
 ## 2D Reed-Solomon Theory
 
