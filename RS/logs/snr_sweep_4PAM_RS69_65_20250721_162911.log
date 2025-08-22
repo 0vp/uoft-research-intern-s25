@@ -1,0 +1,151 @@
+{
+    "timestamp": "20250721_162911",
+    "config": "linear_sweep_with_refinement",
+    "pam_level": 4,
+    "rs_code": [
+        69,
+        65
+    ],
+    "raw_mode": false,
+    "results": [
+        {
+            "snr_db": 18.0,
+            "ser_mean": 0.954,
+            "ber_mean": 0.17369,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 18.5,
+            "ser_mean": 0.941,
+            "ber_mean": 0.164,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 19.0,
+            "ser_mean": 0.932,
+            "ber_mean": 0.15,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 19.5,
+            "ser_mean": 0.926,
+            "ber_mean": 0.13681,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 20.0,
+            "ser_mean": 0.894,
+            "ber_mean": 0.12737,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 20.5,
+            "ser_mean": 0.88,
+            "ber_mean": 0.12112,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 21.0,
+            "ser_mean": 0.845,
+            "ber_mean": 0.11163,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 21.5,
+            "ser_mean": 0.644,
+            "ber_mean": 0.07456,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 22.0,
+            "ser_mean": 0.556,
+            "ber_mean": 0.066,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 22.5,
+            "ser_mean": 0.283,
+            "ber_mean": 0.03056,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 23.0,
+            "ser_mean": 0.073,
+            "ber_mean": 0.00844,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 23.5,
+            "ser_mean": 0.0,
+            "ber_mean": 0.0,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        },
+        {
+            "snr_db": 24.0,
+            "ser_mean": 0.0,
+            "ber_mean": 0.0,
+            "ser_std": 0.0,
+            "ber_std": 0.0,
+            "success_count": 1,
+            "total_iterations": 1
+        }
+    ],
+    "metadata": {
+        "description": "Continuous mode SNR sweep for efficient low-BER testing",
+        "data_size": 1000,
+        "total_iterations": 1,
+        "linear_sweep_parameters": {
+            "snr_start": 18.0,
+            "snr_max": 30.0,
+            "snr_step": 0.5,
+            "refinement": {
+                "target_ber_levels": [
+                    0.1,
+                    0.01,
+                    0.001,
+                    0.0001,
+                    1e-05
+                ],
+                "min_ber_ratio": 5,
+                "max_refinement_points": 10,
+                "min_snr_gap": 0.125
+            }
+        }
+    }
+}
