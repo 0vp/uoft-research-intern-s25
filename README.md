@@ -34,7 +34,7 @@ The framework implements advanced 2D Reed-Solomon decoding for enhanced error co
 2D Reed-Solomon arranges data in a square matrix and applies error correction to both rows and columns:
 
 ```
-RS(N, K) = RS(4, 3)
+RS(N, K) = RS(4, 3) - for example
 
 Step 1: Arrange data in k×k matrix
 [d1  d2  d3]

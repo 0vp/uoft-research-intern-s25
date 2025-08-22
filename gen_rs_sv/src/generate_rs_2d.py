@@ -8,7 +8,7 @@ import os
 import shutil
 from gf256 import GF256
 
-class RSGenerator:
+class RS2DGenerator:
     """Generate 2D RS code with exact reference structure matching"""
 
     def __init__(self, n: int, k: int, output_dir: str = 'gen_2d'):
@@ -996,9 +996,6 @@ always @(posedge clk or negedge rstn) begin
                     decode_in_progress_row <= 0;  // Clear in-progress flag
                     row_idx <= row_idx + 1;  // NOW increment to next row
 
-                    $display("[%0t] DECODER: Row %d decode_complete received, with_error=%b",
-                             $time, active_row_idx, dec_1d_with_error);
-
                     // Debug prints only if errors detected
                     if (dec_1d_with_error) begin
                         $display("[%0t] DECODER: Applying error correction to row %d", $time, active_row_idx);
@@ -1056,9 +1053,6 @@ always @(posedge clk or negedge rstn) begin
                     result_consumed_col <= 1;  // Mark as consumed
                     decode_in_progress_col <= 0;  // Clear in-progress flag
                     col_idx <= col_idx + 1;  // NOW increment to next column
-
-                    $display("[%0t] DECODER: Column %d decode_complete received, with_error=%b",
-                             $time, active_col_idx, dec_1d_with_error);
 
                     // Debug prints only if errors detected
                     if (dec_1d_with_error) begin
@@ -1424,8 +1418,9 @@ endmodule"""
     output reg [{self.n}*8-1:0] error_pos,
     output reg output_valid,
     output reg ready,
-    output  with_error,  //output reg  with_error
-
+    output  with_error,  //output reg  with_error 
+    output reg decode_complete,  // Pulses when decode fully completes
+    
     output  ready_re,
     output  output_valid_re,
     output  [49:0] error_pos_re,
@@ -1447,6 +1442,7 @@ wire valid;
 reg [11:0] bit_count;
 reg [1:0] state, next_state;
 reg [7:0] decode_counter; // Counter to maintain dec_ena for k clock cycles
+reg [7:0] decode_number = 0; // Debug: Track which decode operation this is
 
 localparam [7:0] k = 8'd{self.n};
 
@@ -1479,6 +1475,8 @@ always @(posedge clk or negedge rst_n) begin
         decode_counter <= 0;
         dec_ena <= 0;
         ready <= 1;
+        decode_number <= 0;
+        decode_complete <= 0;
     end else if (!clrn) begin
         received <= 8'b0;
         state <= IDLE;
@@ -1488,9 +1486,12 @@ always @(posedge clk or negedge rst_n) begin
         decode_counter <= 0;
         dec_ena <= 0;
         ready <= 1;
+        decode_number <= 0;  // Reset decode count on clear
+        decode_complete <= 0;
     end else begin
         case (state)
             IDLE: begin
+                decode_complete <= 0;  // Clear the pulse
                 if (decode_en) begin
                     state <= DECODE;
                     dec_ena <= 0; // Enable the decoder
@@ -1498,6 +1499,9 @@ always @(posedge clk or negedge rst_n) begin
                     error_pos <= 0;
                     bit_count <= 0;
                     ready <= 0;
+                    decode_number <= decode_number + 1;
+                    // $display("[%0t] RS_DECODE_WRAPPER: Starting decode operation #%d", 
+                    //          $time, decode_number);
                 end
             end
             DECODE: begin
@@ -1516,9 +1520,11 @@ always @(posedge clk or negedge rst_n) begin
                     decode_counter <= decode_counter + 1;
                 end else begin
                     // After {self.n_parity} cycle wait, check with_error
-                    // $display("  [%0t] RS_DECODE_WRAPPER: Wait complete, with_error=%b", $time, with_error);
+                    // $display("[%0t] RS_DECODE_WRAPPER: Decode #%d complete, with_error=%b", 
+                    //          $time, decode_number, with_error);
                     if (with_error) begin
-                        // $display("  [%0t] RS_DECODE_WRAPPER: Errors detected, transitioning to COLLECT_ERROR", $time);
+                        // $display("[%0t] RS_DECODE_WRAPPER: Errors detected, entering COLLECT_ERROR state", $time);
+                        // $display("[%0t] RS_DECODE_WRAPPER: Expecting to collect %d bytes", $time, k);
                         state <= COLLECT_ERROR;
                         decode_counter <= 0;
                     end else begin
@@ -1529,18 +1535,35 @@ always @(posedge clk or negedge rst_n) begin
                 end
             end
             COLLECT_ERROR: begin
+                // Debug: Track error collection
                 if (valid) begin
                     error_pos[bit_count*8 +: 8] <= error; // Collect error data
+                    // $display("[%0t] RS_DECODE_WRAPPER: COLLECT_ERROR - byte %d = %02h (valid=1)", 
+                    //          $time, bit_count, error);
                     bit_count <= bit_count + 1; // Increment bit_count to point to the next byte
                     if (bit_count >= k-1) begin // Check if all bytes processed
+                        // $display("[%0t] RS_DECODE_WRAPPER: Collected all %d bytes, moving to COMPLETE", 
+                        //          $time, k);
                         state <= COMPLETE;
                     end
                 end else begin
-                    state <= COLLECT_ERROR; // Transition to complete once valid goes low
+                    // Debug: Show when valid is low
+                    if (bit_count > 0 && bit_count < k) begin
+                        // $display("[%0t] RS_DECODE_WRAPPER: COLLECT_ERROR - valid=0, collected %d/%d bytes so far", 
+                        //          $time, bit_count, k);
+                    end
+                    state <= COLLECT_ERROR; // Stay in COLLECT_ERROR state
                 end
             end
             COMPLETE: begin
+                if (with_error) begin
+                    // $display("[%0t] RS_DECODE_WRAPPER: COMPLETE - Final error_pos pattern:", $time);
+                    // $display("  error_pos = %h", error_pos);
+                end
+                $display("[%0t] RS_DECODE_WRAPPER: Decode #%d COMPLETE, pulsing decode_complete, with_error=%b", 
+                         $time, decode_number, with_error);
                 output_valid <= 1; // Indicate that the output data is valid
+                decode_complete <= 1; // Pulse to indicate decode is fully complete
                 state <= IDLE; // Reset to idle state for the next operation
                 bit_count <= 0; // Reset bit_count for the next operation
                 ready <= 1;
@@ -2175,7 +2198,7 @@ def main():
 
     args = parser.parse_args()
 
-    generator = RSGenerator(args.n, args.k, args.output)
+    generator = RS2DGenerator(args.n, args.k, args.output)
     generator.generate_all()
 
 if __name__ == '__main__':

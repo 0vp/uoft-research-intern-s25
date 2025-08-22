@@ -8,7 +8,7 @@ import os
 import shutil
 from gf256 import GF256
 
-class RSGenerator:
+class RS1DGenerator:
     """Generate RS code with exact reference structure matching"""
     
     def __init__(self, n: int, k: int, output_dir: str = 'gen'):
@@ -1183,7 +1183,7 @@ def main():
     
     args = parser.parse_args()
     
-    generator = RSGenerator(args.n, args.k, args.output)
+    generator = RS1DGenerator(args.n, args.k, args.output)
     generator.generate_all()
 
 if __name__ == '__main__':
