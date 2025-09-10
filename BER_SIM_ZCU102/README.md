@@ -212,3 +212,6 @@ python3 plot.py
 1. Convolutional Interleaver/Deinterleaver is disabled in this implementation, add it back and see if it improves the BER performance.
 1. 2D encoder/decoder is not optimized for speed, but for implementation simplicity. Optimize it perhaps with multiple instances of the 2D encoder/decoder and pipelining.
 1. Known bug that the RS encoder/decoders are block based, while the FPPGA-FEC is streaming bits, therefore there is sometimes a deadlock that can occur, the current fix is just soft resetting with a new seed set with LFSR every `n` frames (programmed in ber_top.sv via `FRAMES_BEFORE_RESET`).
+
+## Credits
+- Ming-Han Lei(hendrik@humanistic.org) for the initial implementation of the base RS encoder/decoder : https://github.com/PENGLAI-ZGC-TEE/TLROT (original src not found).
