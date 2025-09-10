@@ -18,15 +18,13 @@
 //Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // --------------------------------------------------------------------------
 
-module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndrome3, syndrome4, syndrome5,
-		D, DI, count, phase0, phase6, enable, clk, clrn);
-	input clk, clrn, enable, phase0, phase6;
+module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndrome3,
+		D, DI, count, phase0, phase4, enable, clk, clrn);
+	input clk, clrn, enable, phase0, phase4;
 	input [7:0] syndrome0;
 		input [7:0] syndrome1;
 		input [7:0] syndrome2;
 		input [7:0] syndrome3;
-		input [7:0] syndrome4;
-		input [7:0] syndrome5;
 	input [7:0] DI;
 	input [5:0] count;
 	output [7:0] D;
@@ -38,16 +36,14 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 	integer j;
 	reg init, delta;
 	reg [4:0] L;
-	reg [7:0] lambda[5:0];
-	reg [7:0] omega[5:0];
-	reg [7:0] A[4:0];
-	reg [7:0] B[4:0];
+	reg [7:0] lambda[3:0];
+	reg [7:0] omega[3:0];
+	reg [7:0] A[2:0];
+	reg [7:0] B[2:0];
 	wire [7:0] tmp0;
 		wire [7:0] tmp1;
 		wire [7:0] tmp2;
 		wire [7:0] tmp3;
-		wire [7:0] tmp4;
-		wire [7:0] tmp5;
 
 	always @ (tmp1) lambda_out = tmp1;
 	always @ (tmp3) omega_out = tmp3;
@@ -57,33 +53,31 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 		if (D != 0 && count >= {L, 1'b0}) delta = 1;
 		else delta = 0;
 
-	rsdec_berl_multiply x0 (tmp0, B[4], D, lambda[0], syndrome0, phase0);
-	rsdec_berl_multiply x1 (tmp1, lambda[5], DI, lambda[1], syndrome1, phase0);
-	rsdec_berl_multiply x2 (tmp2, A[4], D, lambda[2], syndrome2, phase0);
-	rsdec_berl_multiply x3 (tmp3, omega[5], DI, lambda[3], syndrome3, phase0);
-	multiply x4 (tmp4, lambda[4], syndrome4);
-	multiply x5 (tmp5, lambda[5], syndrome5);
+	rsdec_berl_multiply x0 (tmp0, B[2], D, lambda[0], syndrome0, phase0);
+	rsdec_berl_multiply x1 (tmp1, lambda[3], DI, lambda[1], syndrome1, phase0);
+	rsdec_berl_multiply x2 (tmp2, A[2], D, lambda[2], syndrome2, phase0);
+	rsdec_berl_multiply x3 (tmp3, omega[3], DI, lambda[3], syndrome3, phase0);
 
 	always @ (posedge clk or negedge clrn)
 	begin
 		if (~clrn)
 		begin
-			for (j = 0; j < 6; j = j + 1) lambda[j] <= 0;
-			for (j = 0; j < 5; j = j + 1) B[j] <= 0;
-			for (j = 0; j < 6; j = j + 1) omega[j] <= 0;
-			for (j = 0; j < 5; j = j + 1) A[j] <= 0;
+			for (j = 0; j < 4; j = j + 1) lambda[j] <= 0;
+			for (j = 0; j < 3; j = j + 1) B[j] <= 0;
+			for (j = 0; j < 4; j = j + 1) omega[j] <= 0;
+			for (j = 0; j < 3; j = j + 1) A[j] <= 0;
 			L <= 0;
 			D <= 0;
 		end
 		else if (~enable)
 		begin
 			lambda[0] <= 1;
-			for (j = 1; j < 6; j = j +1) lambda[j] <= 0;
+			for (j = 1; j < 4; j = j +1) lambda[j] <= 0;
 			B[0] <= 1;
-			for (j = 1; j < 5; j = j +1) B[j] <= 0;
+			for (j = 1; j < 3; j = j +1) B[j] <= 0;
 			omega[0] <= 1;
-			for (j = 1; j < 6; j = j +1) omega[j] <= 0;
-			for (j = 0; j < 5; j = j + 1) A[j] <= 0;
+			for (j = 1; j < 4; j = j +1) omega[j] <= 0;
+			for (j = 0; j < 3; j = j + 1) A[j] <= 0;
 			L <= 0;
 			D <= 0;
 		end
@@ -91,42 +85,42 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 		begin
 			if (~phase0)
 			begin
-				if (~phase6) lambda[0] <= lambda[5] ^ tmp0;
-				else lambda[0] <= lambda[5];
-							for (j = 1; j < 6; j = j + 1)
+				if (~phase4) lambda[0] <= lambda[3] ^ tmp0;
+				else lambda[0] <= lambda[3];
+							for (j = 1; j < 4; j = j + 1)
 								lambda[j] <= lambda[j-1];
 			end
 
 			if (~phase0)
 			begin
 				if (delta)	B[0] <= tmp1;
-				else if (~phase6) B[0] <= B[4];
+				else if (~phase4) B[0] <= B[2];
 				else B[0] <= 0;
-							for (j = 1; j < 5; j = j + 1)
+							for (j = 1; j < 3; j = j + 1)
 								B[j] <= B[j-1];
 			end
 
 			if (~phase0)
 			begin
-				if (~phase6) omega[0] <= omega[5] ^ tmp2;
-				else omega[0] <= omega[5];
-							for (j = 1; j < 6; j = j + 1)
+				if (~phase4) omega[0] <= omega[3] ^ tmp2;
+				else omega[0] <= omega[3];
+							for (j = 1; j < 4; j = j + 1)
 								omega[j] <= omega[j-1];
 			end
 
 			if (~phase0)
 			begin
 				if (delta)	A[0] <= tmp3;
-				else if (~phase6) A[0] <= A[4];
+				else if (~phase4) A[0] <= A[2];
 				else A[0] <= 0;
-							for (j = 1; j < 5; j = j + 1)
+							for (j = 1; j < 3; j = j + 1)
 								A[j] <= A[j-1];
 			end
 
 			if ((phase0 & delta) && (count != -1)) L <= count - L + 1;
 
 			if (phase0)
-				D <= tmp0 ^ tmp1 ^ tmp2 ^ tmp3 ^ tmp4 ^ tmp5;
+				D <= tmp0 ^ tmp1 ^ tmp2 ^ tmp3;
 
 		end
 	end

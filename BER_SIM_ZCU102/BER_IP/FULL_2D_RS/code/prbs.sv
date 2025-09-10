@@ -63,7 +63,7 @@ module prbs63_120_8 #(
     localparam INFO_BITS = RS_K * RS_SYMBOL_WIDTH;
     localparam TOTAL_BITS = RS_N * RS_SYMBOL_WIDTH;
     // TODO: calculate properly
-    localparam WAIT_CYCLES = RS_N * 180;  // Simplified: N * 180 for typical case
+    localparam WAIT_CYCLES = 5000;
     
     assign sr_in = (sr[62]^sr[61]);
     

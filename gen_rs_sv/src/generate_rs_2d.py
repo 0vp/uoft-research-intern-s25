@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Reed-Solomon SystemVerilog Code Generator - 2D Implementation
 Generates mathematically correct 2D RS codes with EXACT reference structure
@@ -8,7 +9,7 @@ import os
 import shutil
 from gf256 import GF256
 
-class RS2DGenerator:
+class ExactRS2DGenerator:
     """Generate 2D RS code with exact reference structure matching"""
 
     def __init__(self, n: int, k: int, output_dir: str = 'gen_2d'):
@@ -24,6 +25,94 @@ class RS2DGenerator:
 
         # Ensure output directory exists
         os.makedirs(self.output_dir, exist_ok=True)
+
+    def strip_debug_statements(self, content: str) -> str:
+        """Remove most $display statements but keep specific important ones"""
+        import re
+        
+        # Define patterns to keep
+        keep_patterns = [
+            'PRBS_FRAME',
+            'GREY.*DECODE.*FRAME', 
+            'PARITY_MATCH',
+            'PARITY_MISMATCH',
+            'DECODER STATE TRANSITION',
+            'DECODER next_state',
+            'DECODER: Pulsing clrn',
+            'DECODER: Entering COLLECT_DATA',
+            'DECODER: Data collected',
+            'DECODER: Triggering 1D decoder',
+            'DECODER: Applying error correction',
+            'Progress: Iter',
+            'ITERATION.*Starting ROW processing',
+            'ITERATION.*Starting COLUMN processing',
+            'Iter.*Row.*complete.*total_changes', 
+            'Iter.*Col.*complete.*total_changes',
+            'ITERATION.*ALL ROWS COMPLETE.*->',
+            'ITERATION.*ALL COLUMNS COMPLETE.*->',
+            '========== ITERATION.*COMPLETE ==========',
+            'Total changes in this iteration:',
+            'CONVERGENCE ACHIEVED',
+            'Converged after',
+            'Max iterations.*reached',
+            'MAX ITERATIONS REACHED', 
+            'CONTINUING.*Starting iteration',
+            'Iteration.*complete.*changes detected',
+            'No more errors to correct',
+            'Final iteration had.*changes'
+        ]
+        
+        lines = content.split('\n')
+        filtered_lines = []
+        i = 0
+        
+        while i < len(lines):
+            line = lines[i]
+            # Check if this line contains a $display statement
+            if '$display' in line:
+                # Check if this is a debug statement we want to keep
+                should_keep = False
+                for pattern in keep_patterns:
+                    if re.search(pattern, line):
+                        should_keep = True
+                        break
+                
+                if should_keep:
+                    # Keep this line and any continuation lines
+                    filtered_lines.append(line)
+                    brace_count = line.count('{') - line.count('}')
+                    paren_count = line.count('(') - line.count(')')
+                    
+                    # Handle multi-line statements
+                    while i + 1 < len(lines) and (brace_count > 0 or paren_count > 0 or line.strip().endswith(',')):
+                        i += 1
+                        if i < len(lines):
+                            line = lines[i]
+                            filtered_lines.append(line)
+                            brace_count += line.count('{') - line.count('}')
+                            paren_count += line.count('(') - line.count(')')
+                    i += 1
+                    continue
+                
+                # Skip this line and any continuation lines
+                brace_count = line.count('{') - line.count('}')
+                paren_count = line.count('(') - line.count(')')
+                
+                # Skip continuation lines if the statement spans multiple lines
+                while i + 1 < len(lines) and (brace_count > 0 or paren_count > 0 or line.strip().endswith(',')):
+                    i += 1
+                    if i < len(lines):
+                        line = lines[i]
+                        brace_count += line.count('{') - line.count('}')
+                        paren_count += line.count('(') - line.count(')')
+                # Skip this line completely
+                i += 1
+                continue
+            else:
+                filtered_lines.append(line)
+                i += 1
+                
+        return '\n'.join(filtered_lines)
 
     def generate_syndrome_sv(self):
         """Generate syndrome.sv with exact reference structure for 2D"""
@@ -254,6 +343,7 @@ wire s2p_buffer_full;
 assign ready = !s2p_buffer_full && !encoding_busy;
 assign s2p_ready_internal = !encoding_busy && p2s_ready;
 
+
 // Clear pulse generator for 1D encoder
 reg [2:0] clrn_counter;
 always @(posedge clk or negedge rstn) begin
@@ -340,6 +430,7 @@ always @(posedge clk or negedge rstn) begin
         state <= next_state;
     end
 end
+
 
 // Next state logic
 always @(*) begin
@@ -449,10 +540,6 @@ always @(posedge clk or negedge rstn) begin
                     row_idx <= 0;  // Ensure row_idx starts at 0
                 end
 
-                // Debug: Mark state entry
-                if (row_idx == 0 && col_idx == 0) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_ROWS", $time);
-                end
 
                 if (row_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin  // Only encode K data rows
                     // Prepare row data for encoding
@@ -480,10 +567,6 @@ always @(posedge clk or negedge rstn) begin
                     col_idx <= 0;  // Ensure col_idx starts at 0
                 end
 
-                // Debug: Mark state entry
-                if (col_idx == 0 && row_idx >= K) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_COLS", $time);
-                end
 
                 if (col_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin
                     // Prepare column data for encoding
@@ -503,11 +586,6 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;  // Allow next trigger
                     // Also check if we're accidentally overwriting data
                     for (i = 0; i < K; i = i + 1) begin
-                        if (enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH] != encoded_array[i][encoder_output_col_idx]) begin
-                            $display("  WARNING: Data mismatch at [%d][%d]: expected %02h, got %02h",
-                                     i, encoder_output_col_idx, encoded_array[i][encoder_output_col_idx],
-                                     enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH]);
-                        end
                     end
                 end
 
@@ -585,34 +663,18 @@ always @(posedge clk or negedge rstn) begin
             end
 
             VERIFY_PARITY: begin
-                // Debug: Show complete parity-on-parity comparison
-                // $display("[%0t] P-o-P Verification:", $time);
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        // $display("  [%d][%d]: row=%02h, col=%02h, match=%b",
-                                //  K+i, K+j, temp_parity_rows[i][j], temp_parity_cols[i][j],
-                                //  temp_parity_rows[i][j] == temp_parity_cols[i][j]);
-                    end
-                end
-
-                // Check for missing parity values (should never be zero)
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        if (temp_parity_rows[i][j] == 0 && temp_parity_cols[i][j] == 0) begin
-                            $display("[%0t] ERROR: Missing parity at position [%d][%d]!", $time, i, j);
-                        end
-                    end
-                end
-
                 // Verify parity-on-parity matches and fill bottom-right quadrant
                 for (i = 0; i < PARITY_SIZE; i = i + 1) begin
                     for (j = 0; j < PARITY_SIZE; j = j + 1) begin
                         if (temp_parity_rows[i][j] == temp_parity_cols[i][j]) begin
                             encoded_array[K+i][K+j] <= temp_parity_rows[i][j];
+
+                            $display("DEBUG [%0t] PARITY_MATCH: row_parity=%h, col_parity=%h", $time, temp_parity_rows[i][j], temp_parity_cols[i][j]);
                         end else begin
                             // Parity mismatch - use row parity (or handle error)
                             encoded_array[K+i][K+j] <= temp_parity_rows[i][j];
-                            $display("[%0t] WARNING: Parity mismatch at [%d][%d], using row parity", $time, K+i, K+j);
+
+                            $display("DEBUG [%0t] PARITY_MISMATCH: row_parity=%h, col_parity=%h", $time, temp_parity_rows[i][j], temp_parity_cols[i][j]);
                         end
                     end
                 end
@@ -634,12 +696,14 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;  // Reset for next frame
                 end
             end
+
         endcase
     end
 end
 
 endmodule"""
-        # Write to file
+        # Strip debug statements and write to file
+        content = self.strip_debug_statements(content)
         filepath = os.path.join(self.output_dir, 'rs_2d_encode.sv')
         with open(filepath, 'w') as f:
             f.write(content)
@@ -960,10 +1024,10 @@ always @(posedge clk or negedge rstn) begin
             end
 
             DECODE_ROWS: begin
-                // State entry debug
+                // State entry debug - start of row processing
                 if (prev_state != DECODE_ROWS) begin
-                    $display("[%0t] DECODER: Entering DECODE_ROWS, row_idx=%d, decoder_busy_1d=%b, dec_1d_ready=%b",
-                             $time, row_idx, decoder_busy_1d, dec_1d_ready);
+                    $display("[%0t] ITERATION %d: Starting ROW processing (all %d rows)", 
+                             $time, iteration_count + 1, N);
                 end
 
                 if (row_idx == 0 && iteration_count > 0) begin
@@ -1021,17 +1085,24 @@ always @(posedge clk or negedge rstn) begin
                         received_array[active_row_idx][i] <= corrected_row_col[i*SYMBOL_WIDTH +: SYMBOL_WIDTH];
                     end
 
-                    // Concise progress indicator
-                    $display("[%0t] Progress: Iter %d | Row %d | changes: %d",
-                             $time, iteration_count + 1, active_row_idx, total_changes);
+                    // Progress with completion tracking
+                    $display("[%0t] Iter %d | Row %d/%d complete | total_changes: %d",
+                             $time, iteration_count + 1, active_row_idx + 1, N, total_changes);
+                    
+                    // Row processing completion notification
+                    if (row_idx + 1 >= N) begin
+                        $display("[%0t] *** ITERATION %d: ALL ROWS COMPLETE (%d/%d) -> Moving to COLUMNS ***", 
+                                 $time, iteration_count + 1, N, N);
+                    end
                 end
             end
 
+
             DECODE_COLS: begin
-                // State entry debug
+                // State entry debug - start of column processing
                 if (prev_state != DECODE_COLS) begin
-                    $display("[%0t] DECODER: Entering DECODE_COLS, col_idx=%d, decoder_busy_1d=%b, dec_1d_ready=%b",
-                             $time, col_idx, decoder_busy_1d, dec_1d_ready);
+                    $display("[%0t] ITERATION %d: Starting COLUMN processing (all %d columns)", 
+                             $time, iteration_count + 1, N);
                 end
 
                 // Only trigger if no decode is in progress
@@ -1079,17 +1150,24 @@ always @(posedge clk or negedge rstn) begin
                         received_array[i][active_col_idx] <= corrected_row_col[i*SYMBOL_WIDTH +: SYMBOL_WIDTH];
                     end
 
-                    // Concise progress indicator
-                    $display("[%0t] Progress: Iter %d | Col %d | changes: %d",
-                             $time, iteration_count + 1, active_col_idx, total_changes);
+                    // Progress with completion tracking
+                    $display("[%0t] Iter %d | Col %d/%d complete | total_changes: %d",
+                             $time, iteration_count + 1, active_col_idx + 1, N, total_changes);
+                    
+                    // Column processing completion notification
+                    if (col_idx + 1 >= N) begin
+                        $display("[%0t] *** ITERATION %d: ALL COLUMNS COMPLETE (%d/%d) -> Checking convergence ***", 
+                                 $time, iteration_count + 1, N, N);
+                    end
                 end
             end
 
             CHECK_CONVERGENCE: begin
-                // State entry debug
+                // Iteration completion summary
                 if (prev_state != CHECK_CONVERGENCE) begin
-                    $display("[%0t] DECODER: Entering CHECK_CONVERGENCE, total_changes=%d, iteration=%d",
-                             $time, total_changes, iteration_count);
+                    $display("[%0t] ========== ITERATION %d COMPLETE ==========", 
+                             $time, iteration_count + 1);
+                    $display("[%0t] Total changes in this iteration: %d", $time, total_changes);
                 end
 
                 iteration_count <= iteration_count + 1;
@@ -1097,14 +1175,18 @@ always @(posedge clk or negedge rstn) begin
                 row_idx <= 0;
                 col_idx <= 0;
 
-                // Debug output (iteration_count is 0-indexed)
+                // Clear convergence decision with better formatting
                 if (total_changes == 0) begin
-                    $display("[%0t] DECODER: Converged after %d iterations", $time, iteration_count + 1);
+                    $display("[%0t] *** CONVERGENCE ACHIEVED! *** Decoder converged after %d full iteration(s)", 
+                             $time, iteration_count + 1);
+                    $display("[%0t] No more errors to correct -> Moving to OUTPUT", $time);
                 end else if (iteration_count >= max_iterations - 1) begin
-                    $display("[%0t] DECODER: Max iterations (%d) reached", $time, max_iterations);
+                    $display("[%0t] *** MAX ITERATIONS REACHED *** Stopping after %d iterations", 
+                             $time, max_iterations);
+                    $display("[%0t] Final iteration had %d changes -> Moving to OUTPUT", $time, total_changes);
                 end else begin
-                    $display("[%0t] DECODER: Iteration %d complete, %d changes detected, continuing",
-                             $time, iteration_count + 1, total_changes);
+                    $display("[%0t] *** CONTINUING *** Iteration %d had %d changes -> Starting iteration %d",
+                             $time, iteration_count + 1, total_changes, iteration_count + 2);
                 end
             end
 
@@ -1141,7 +1223,8 @@ always @(posedge clk or negedge rstn) begin
 end
 
 endmodule"""
-        # Write to file
+        # Strip debug statements and write to file
+        content = self.strip_debug_statements(content)
         filepath = os.path.join(self.output_dir, 'rs_2d_decode.sv')
         with open(filepath, 'w') as f:
             f.write(content)
@@ -2198,7 +2281,7 @@ def main():
 
     args = parser.parse_args()
 
-    generator = RS2DGenerator(args.n, args.k, args.output)
+    generator = ExactRS2DGenerator(args.n, args.k, args.output)
     generator.generate_all()
 
 if __name__ == '__main__':

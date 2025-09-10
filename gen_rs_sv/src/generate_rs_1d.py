@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Reed-Solomon SystemVerilog Code Generator - Exact Structure Match
 Generates mathematically correct RS codes with EXACT reference structure
@@ -8,7 +9,7 @@ import os
 import shutil
 from gf256 import GF256
 
-class RS1DGenerator:
+class ExactRSGenerator:
     """Generate RS code with exact reference structure matching"""
     
     def __init__(self, n: int, k: int, output_dir: str = 'gen'):
@@ -1183,7 +1184,7 @@ def main():
     
     args = parser.parse_args()
     
-    generator = RS1DGenerator(args.n, args.k, args.output)
+    generator = ExactRSGenerator(args.n, args.k, args.output)
     generator.generate_all()
 
 if __name__ == '__main__':

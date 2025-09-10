@@ -30,11 +30,9 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 		wire [7:0] s1;
 		wire [7:0] s2;
 		wire [7:0] s3;
-		wire [7:0] s4;
-		wire [7:0] s5;
 	wire [7:0] lambda, omega, alpha;
 	reg [5:0] count;
-	reg [6:0] phase;
+	reg [4:0] phase;
 	wire [7:0] D0, D1, DI;
 	reg [7:0] D, D2;
 	reg [7:0] u, length0, length1, length2, length3;
@@ -44,11 +42,11 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 	always @ (chien_search or shorten)
 		valid = chien_search & ~shorten;
 
-	rsdec_syn x0 (s0, s1, s2, s3, s4, s5,
+	rsdec_syn x0 (s0, s1, s2, s3,
 		u, syn_enable, syn_shift&phase[0], syn_init, clk, clrn);
 	rsdec_berl x1 (lambda, omega,
-		s0, s5, s4, s3, s2, s1,
-		D0, D2, count, phase[0], phase[6], berl_enable, clk, clrn);
+		s0, s3, s2, s1,
+		D0, D2, count, phase[0], phase[4], berl_enable, clk, clrn);
 	rsdec_chien x2 (error, alpha, lambda, omega,
 		D1, DI, chien_search, chien_load, shorten, clk, clrn);
 	inverse x3 (DI, D);
@@ -93,7 +91,7 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 				if (phase[0])
 				begin
 					count <= count + 1;
-					if (count == 5)
+					if (count == 3)
 					begin
 						syn_shift <= 0;
 						length0 <= 0;
@@ -101,7 +99,7 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 						length2 <= length0;
 					end
 				end
-				phase <= {phase[5:0], phase[6]};
+				phase <= {phase[3:0], phase[4]};
 			end
 			if (berl_enable & ~with_error)
 				if (&count)
@@ -111,8 +109,8 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 					berl_enable <= 0;
 				end
 				else
-					phase <= {phase[5:0], phase[6]};
-			if (chien_load & phase[6])
+					phase <= {phase[3:0], phase[4]};
+			if (chien_load & phase[4])
 			begin
 				berl_enable <= 0;
 				chien_load <= 0;
@@ -143,8 +141,8 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 
 	always @ (length0) length1 = length0 + 1;
 	always @ (length2) length3 = length2 - 1;
-	always @ (syn_shift or s0 or s1 or s2 or s3 or s4 or s5)
-		if (syn_shift && (s0 | s1 | s2 | s3 | s4 | s5)!= 0)
+	always @ (syn_shift or s0 or s1 or s2 or s3)
+		if (syn_shift && (s0 | s1 | s2 | s3)!= 0)
 			with_error = 1;
 		else with_error = 0;
 

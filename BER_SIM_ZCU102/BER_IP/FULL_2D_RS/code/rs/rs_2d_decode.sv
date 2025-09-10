@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
 // 2D Reed-Solomon Decoder
-// Implements 2D RS(30,24) iterative decoding with row/column correction
+// Implements 2D RS(15,11) iterative decoding with row/column correction
 
 module rs_2d_decoder #(
-    parameter N = 30,                    // Total symbols per dimension
-    parameter K = 24,                    // Data symbols per dimension
+    parameter N = 15,                    // Total symbols per dimension
+    parameter K = 11,                    // Data symbols per dimension
     parameter SYMBOL_WIDTH = 8           // Bits per symbol
 )(
     input wire clk,
@@ -19,10 +19,10 @@ module rs_2d_decoder #(
 );
 
 // Calculate dimensions
-localparam DATA_SYMBOLS = K * K;                           // 576 symbols
-localparam ENCODED_SYMBOLS = N * N;                        // 900 symbols
-localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 4608 bits
-localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 7200 bits
+localparam DATA_SYMBOLS = K * K;                           // 121 symbols
+localparam ENCODED_SYMBOLS = N * N;                        // 225 symbols
+localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 968 bits
+localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 1800 bits
 
 // State machine states
 typedef enum logic [3:0] {
@@ -269,7 +269,6 @@ always @(posedge clk or negedge rstn) begin
         case (state)
             IDLE: begin
                 if (prev_state != IDLE) begin
-                    $display("[%0t] DECODER: Entering IDLE state", $time);
                 end
                 decoding_busy <= 0;
                 p2s_valid <= 0;
@@ -304,10 +303,10 @@ always @(posedge clk or negedge rstn) begin
             end
 
             DECODE_ROWS: begin
-                // State entry debug
+                // State entry debug - start of row processing
                 if (prev_state != DECODE_ROWS) begin
-                    $display("[%0t] DECODER: Entering DECODE_ROWS, row_idx=%d, decoder_busy_1d=%b, dec_1d_ready=%b",
-                             $time, row_idx, decoder_busy_1d, dec_1d_ready);
+                    $display("[%0t] ITERATION %d: Starting ROW processing (all %d rows)", 
+                             $time, iteration_count + 1, N);
                 end
 
                 if (row_idx == 0 && iteration_count > 0) begin
@@ -340,13 +339,9 @@ always @(posedge clk or negedge rstn) begin
                     decode_in_progress_row <= 0;  // Clear in-progress flag
                     row_idx <= row_idx + 1;  // NOW increment to next row
 
-                    $display("[%0t] DECODER: Row %d decode_complete received, with_error=%b",
-                             $time, active_row_idx, dec_1d_with_error);
-
                     // Debug prints only if errors detected
                     if (dec_1d_with_error) begin
                         $display("[%0t] DECODER: Applying error correction to row %d", $time, active_row_idx);
-                        $display("  Error pattern: %h", dec_1d_error_pos);
                     end
 
                     // ALWAYS XOR error positions with received data (like 1D decoder does)
@@ -368,17 +363,24 @@ always @(posedge clk or negedge rstn) begin
                         received_array[active_row_idx][i] <= corrected_row_col[i*SYMBOL_WIDTH +: SYMBOL_WIDTH];
                     end
 
-                    // Concise progress indicator
-                    $display("[%0t] Progress: Iter %d | Row %d | changes: %d",
-                             $time, iteration_count + 1, active_row_idx, total_changes);
+                    // Progress with completion tracking
+                    $display("[%0t] Iter %d | Row %d/%d complete | total_changes: %d",
+                             $time, iteration_count + 1, active_row_idx + 1, N, total_changes);
+                    
+                    // Row processing completion notification
+                    if (row_idx + 1 >= N) begin
+                        $display("[%0t] *** ITERATION %d: ALL ROWS COMPLETE (%d/%d) -> Moving to COLUMNS ***", 
+                                 $time, iteration_count + 1, N, N);
+                    end
                 end
             end
 
+
             DECODE_COLS: begin
-                // State entry debug
+                // State entry debug - start of column processing
                 if (prev_state != DECODE_COLS) begin
-                    $display("[%0t] DECODER: Entering DECODE_COLS, col_idx=%d, decoder_busy_1d=%b, dec_1d_ready=%b",
-                             $time, col_idx, decoder_busy_1d, dec_1d_ready);
+                    $display("[%0t] ITERATION %d: Starting COLUMN processing (all %d columns)", 
+                             $time, iteration_count + 1, N);
                 end
 
                 // Only trigger if no decode is in progress
@@ -401,13 +403,9 @@ always @(posedge clk or negedge rstn) begin
                     decode_in_progress_col <= 0;  // Clear in-progress flag
                     col_idx <= col_idx + 1;  // NOW increment to next column
 
-                    $display("[%0t] DECODER: Column %d decode_complete received, with_error=%b",
-                             $time, active_col_idx, dec_1d_with_error);
-
                     // Debug prints only if errors detected
                     if (dec_1d_with_error) begin
                         $display("[%0t] DECODER: Applying error correction to column %d", $time, active_col_idx);
-                        $display("  Error pattern: %h", dec_1d_error_pos);
                     end
 
                     // ALWAYS XOR error positions with received data (like 1D decoder does)
@@ -429,17 +427,24 @@ always @(posedge clk or negedge rstn) begin
                         received_array[i][active_col_idx] <= corrected_row_col[i*SYMBOL_WIDTH +: SYMBOL_WIDTH];
                     end
 
-                    // Concise progress indicator
-                    $display("[%0t] Progress: Iter %d | Col %d | changes: %d",
-                             $time, iteration_count + 1, active_col_idx, total_changes);
+                    // Progress with completion tracking
+                    $display("[%0t] Iter %d | Col %d/%d complete | total_changes: %d",
+                             $time, iteration_count + 1, active_col_idx + 1, N, total_changes);
+                    
+                    // Column processing completion notification
+                    if (col_idx + 1 >= N) begin
+                        $display("[%0t] *** ITERATION %d: ALL COLUMNS COMPLETE (%d/%d) -> Checking convergence ***", 
+                                 $time, iteration_count + 1, N, N);
+                    end
                 end
             end
 
             CHECK_CONVERGENCE: begin
-                // State entry debug
+                // Iteration completion summary
                 if (prev_state != CHECK_CONVERGENCE) begin
-                    $display("[%0t] DECODER: Entering CHECK_CONVERGENCE, total_changes=%d, iteration=%d",
-                             $time, total_changes, iteration_count);
+                    $display("[%0t] ========== ITERATION %d COMPLETE ==========", 
+                             $time, iteration_count + 1);
+                    $display("[%0t] Total changes in this iteration: %d", $time, total_changes);
                 end
 
                 iteration_count <= iteration_count + 1;
@@ -447,28 +452,26 @@ always @(posedge clk or negedge rstn) begin
                 row_idx <= 0;
                 col_idx <= 0;
 
-                // Debug output (iteration_count is 0-indexed)
+                // Clear convergence decision with better formatting
                 if (total_changes == 0) begin
-                    $display("[%0t] DECODER: Converged after %d iterations", $time, iteration_count + 1);
+                    $display("[%0t] *** CONVERGENCE ACHIEVED! *** Decoder converged after %d full iteration(s)", 
+                             $time, iteration_count + 1);
+                    $display("[%0t] No more errors to correct -> Moving to OUTPUT", $time);
                 end else if (iteration_count >= max_iterations - 1) begin
-                    $display("[%0t] DECODER: Max iterations (%d) reached", $time, max_iterations);
+                    $display("[%0t] *** MAX ITERATIONS REACHED *** Stopping after %d iterations", 
+                             $time, max_iterations);
+                    $display("[%0t] Final iteration had %d changes -> Moving to OUTPUT", $time, total_changes);
                 end else begin
-                    $display("[%0t] DECODER: Iteration %d complete, %d changes detected, continuing",
-                             $time, iteration_count + 1, total_changes);
+                    $display("[%0t] *** CONTINUING *** Iteration %d had %d changes -> Starting iteration %d",
+                             $time, iteration_count + 1, total_changes, iteration_count + 2);
                 end
             end
 
             OUTPUT_DATA: begin
                 // // State entry debug
                 // if (prev_state != OUTPUT_DATA) begin
-                //     $display("[%0t] DECODER: Entering OUTPUT_DATA after %d iterations",
-                //              $time, iteration_count);
-                //     $display("[%0t] DECODER: Extracting data from array[0..%d][0..%d]", $time, K-1, K-1);
                 //     // Show first few bytes of output
                 //     for (i = 0; i < 2; i = i + 1) begin
-                //         $display("  Row %d: [0]=%02h [1]=%02h [2]=%02h [3]=%02h [4]=%02h",
-                //                  i, received_array[i][0], received_array[i][1],
-                //                  received_array[i][2], received_array[i][3], received_array[i][4]);
                 //     end
                 // end
                 // Pack data portion (K×K) into output vector

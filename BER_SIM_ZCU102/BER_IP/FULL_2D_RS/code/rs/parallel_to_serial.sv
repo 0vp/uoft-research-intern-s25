@@ -5,11 +5,11 @@
 // Features: 2-deep FIFO, continuous transmission, proper last bit handling
 
 module parallel_to_serial #(
-    parameter N = 200,                    // Total RS symbols
-    parameter K = 168,                    // Information symbols
+    parameter N = 69,                    // Total RS symbols
+    parameter K = 65,                    // Information symbols
     parameter SYMBOL_WIDTH = 8,           // Bits per symbol  
     parameter MODE = "ENCODE",            // "ENCODE" or "DECODE"
-    parameter FIFO_DEPTH = 2,             // Number of frames to buffer
+    parameter FIFO_DEPTH = 1,             // Number of frames to buffer
     // Calculate input width at parameter level for port declaration
     parameter INPUT_WIDTH = (MODE == "ENCODE") ? (N * SYMBOL_WIDTH) :        // 1D encoder outputs N*8 bits
                            (MODE == "DECODE") ? (K * SYMBOL_WIDTH) :        // 1D decoder outputs K*8 bits
@@ -54,9 +54,19 @@ reg [PTR_WIDTH-1:0] fifo_wr_ptr;
 reg [PTR_WIDTH-1:0] fifo_rd_ptr;
 reg [$clog2(FIFO_DEPTH+1)-1:0] fifo_count;  // Can count from 0 to FIFO_DEPTH
 
-// Transmission state
+// Block RAM architecture for shift register replacement
+localparam MEMORY_DEPTH = (FRAME_BITS + 7) / 8;  // Ceiling division for byte addressing
+localparam ADDR_WIDTH = $clog2(MEMORY_DEPTH);
+
+// Block RAM for frame transmission (replaces massive shift_register)
+(* ram_style = "block" *) reg [7:0] frame_memory [0:MEMORY_DEPTH-1];
+
+// Byte-level addressing for Block RAM
+reg [ADDR_WIDTH-1:0] read_byte_addr;   // Current byte being read
+reg [2:0] read_bit_offset;              // Bit position within current byte (0-7)
+
+// Transmission state (preserved interface)
 reg [BIT_COUNT_WIDTH-1:0] bit_counter;
-reg [FRAME_BITS-1:0] shift_register;
 reg transmit_active;
 reg load_new_frame;
 reg transmit_gap;  // Force gap between frames for proper boundary detection
@@ -198,11 +208,16 @@ end
 reg [31:0] loaded_data_debug;
 reg [31:0] expected_data_debug;
 
-// Transmission logic - convert frames to serial
+// Temporary variables for Block RAM initialization and frame loading
+integer mem_idx, byte_idx, bit_idx;
+reg [FRAME_BITS-1:0] temp_frame_data;  // Temporary register for frame loading
+
+// Transmission logic - Block RAM based frame transmission
 always @(posedge clk or negedge rstn) begin
     if (!rstn) begin
         bit_counter <= 0;
-        shift_register <= 0;
+        read_byte_addr <= 0;
+        read_bit_offset <= 0;
         serial_data_out <= 0;
         serial_data_valid <= 0;
         transmit_active <= 0;
@@ -216,6 +231,10 @@ always @(posedge clk or negedge rstn) begin
         first_frame_loaded <= 0;  // Reset transmission control
         loaded_data_debug <= 0;
         expected_data_debug <= 0;
+        // Initialize Block RAM to prevent X propagation
+        for (mem_idx = 0; mem_idx < MEMORY_DEPTH; mem_idx = mem_idx + 1) begin
+            frame_memory[mem_idx] <= 8'h00;
+        end
     end else begin
         load_new_frame <= 0;  // Default
         
@@ -228,10 +247,26 @@ always @(posedge clk or negedge rstn) begin
         
         // Start transmission when we have frames available (and not in gap)
         if (!transmit_active && !transmit_gap && fifo_count > 0 && first_frame_loaded) begin
-            // Load new frame from FIFO
-            shift_register <= frame_fifo[fifo_rd_ptr];
+            // Load new frame from FIFO into Block RAM
+            // Copy frame data from FIFO to temporary register first
+            temp_frame_data = frame_fifo[fifo_rd_ptr];  // Use blocking assignment for immediate access
+            
+            // Pack the frame data into Block RAM bytes
+            // LSB first: bit 0 → byte[0][0], bit 1 → byte[0][1], ..., bit 8 → byte[1][0]
+            for (byte_idx = 0; byte_idx < MEMORY_DEPTH; byte_idx = byte_idx + 1) begin
+                for (bit_idx = 0; bit_idx < 8; bit_idx = bit_idx + 1) begin
+                    if (byte_idx * 8 + bit_idx < FRAME_BITS) begin
+                        frame_memory[byte_idx][bit_idx] <= temp_frame_data[byte_idx * 8 + bit_idx];
+                    end else begin
+                        frame_memory[byte_idx][bit_idx] <= 1'b0;  // Pad with zeros
+                    end
+                end
+            end
+            
             transmit_active <= 1;
             bit_counter <= 0;
+            read_byte_addr <= 0;
+            read_bit_offset <= 0;
             load_new_frame <= 1;  // Signal to update FIFO
             
             // Enhanced debug to catch the issue
@@ -260,29 +295,32 @@ always @(posedge clk or negedge rstn) begin
         end else if (transmit_active) begin
             // Immediate debug on first cycle of transmission
             if (bit_counter == 0 && load_new_frame) begin
-                // $display("  [%0t] P2S[%s:%08h]: ALERT - Just loaded shift_reg, checking value next cycle",
+                // $display("  [%0t] P2S[%s:%08h]: ALERT - Just loaded frame into Block RAM, starting transmission",
                 //          $time, MODE, instance_id);
             end
-            // Transmit bits LSB-first (bit 0 first)
-            serial_data_out <= shift_register[0];
+            
+            // Transmit bits LSB-first (bit 0 first) from Block RAM
+            // Read current bit from Block RAM at current byte and bit position
+            serial_data_out <= frame_memory[read_byte_addr][read_bit_offset];
             serial_data_valid <= 1;
             
-            // Debug: Check shift register value at start of transmission
+            // Debug: Check Block RAM value at start of transmission
             if (bit_counter == 0) begin
-                // $display("  [%0t] P2S[%s:%08h]: START OF TRANSMISSION - shift_reg[31:0]=%08h, first bit=%b",
-                //          $time, MODE, instance_id, shift_register[31:0], shift_register[0]);
-                // $display("  [%0t] P2S[%s:%08h]: Expected data was: %08h, Loaded data was: %08h",
-                //          $time, MODE, instance_id, expected_data_debug, loaded_data_debug);
-                // Check if shift register matches what we loaded
-                if (shift_register[31:0] != loaded_data_debug) begin
-                    // $display("  [%0t] P2S[%s:%08h]: ERROR! Shift register doesn't match loaded data!",
-                    //          $time, MODE, instance_id);
-                    // $display("  [%0t] P2S[%s:%08h]: shift_reg[31:0]=%08h, loaded_data=%08h",
-                    //          $time, MODE, instance_id, shift_register[31:0], loaded_data_debug);
-                end
+                // $display("  [%0t] P2S[%s:%08h]: START OF TRANSMISSION - first byte=%02h, first bit=%b",
+                //          $time, MODE, instance_id, frame_memory[0], frame_memory[0][0]);
+                // $display("  [%0t] P2S[%s:%08h]: Byte addr=%d, bit offset=%d",
+                //          $time, MODE, instance_id, read_byte_addr, read_bit_offset);
             end
             
-            shift_register <= {1'b0, shift_register[FRAME_BITS-1:1]};
+            // Advance bit and byte addressing (replaces shifting)
+            if (read_bit_offset == 7) begin
+                // Current byte finished, move to next byte
+                read_byte_addr <= read_byte_addr + 1;
+                read_bit_offset <= 0;
+            end else begin
+                // Stay in same byte, advance bit position
+                read_bit_offset <= read_bit_offset + 1;
+            end
             
             // Debug tracking
             if (!first_bit_sent) begin

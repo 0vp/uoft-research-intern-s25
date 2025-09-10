@@ -27,9 +27,9 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 	reg with_error, valid;
 
 	wire [7:0] s0;
-	wire [7:0] s1;
-	wire [7:0] s2;
-	wire [7:0] s3;
+		wire [7:0] s1;
+		wire [7:0] s2;
+		wire [7:0] s3;
 	wire [7:0] lambda, omega, alpha;
 	reg [5:0] count;
 	reg [4:0] phase;
@@ -42,10 +42,10 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 	always @ (chien_search or shorten)
 		valid = chien_search & ~shorten;
 
-	rsdec_syn x0 (s0, s1, s2, s3, 
+	rsdec_syn x0 (s0, s1, s2, s3,
 		u, syn_enable, syn_shift&phase[0], syn_init, clk, clrn);
 	rsdec_berl x1 (lambda, omega,
-		s0, s3, s2, s1, 
+		s0, s3, s2, s1,
 		D0, D2, count, phase[0], phase[4], berl_enable, clk, clrn);
 	rsdec_chien x2 (error, alpha, lambda, omega,
 		D1, DI, chien_search, chien_load, shorten, clk, clrn);
@@ -81,9 +81,9 @@ module rsdec(x, error, with_error, enable, valid, k, clk, clrn);
 				syn_init <= 0;
 				if (length1 == k)
 				begin
-					syn_enable <= 0;
-					syn_shift <= 1;
-					berl_enable <= 1;
+				syn_enable <= 0;
+				syn_shift <= 1;
+				berl_enable <= 1;
 				end
 			end
 			if (berl_enable & with_error)

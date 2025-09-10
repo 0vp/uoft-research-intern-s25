@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
 // 2D Reed-Solomon Encoder
-// Implements 2D RS(30,24) encoding with row/column encoding and parity-on-parity
+// Implements 2D RS(15,11) encoding with row/column encoding and parity-on-parity
 
 module rs_2d_encoder #(
-    parameter N = 30,                    // Total symbols per dimension
-    parameter K = 24,                    // Data symbols per dimension
+    parameter N = 15,                    // Total symbols per dimension
+    parameter K = 11,                    // Data symbols per dimension
     parameter SYMBOL_WIDTH = 8           // Bits per symbol
 )(
     input wire clk,
@@ -18,11 +18,11 @@ module rs_2d_encoder #(
 );
 
 // Calculate dimensions
-localparam DATA_SYMBOLS = K * K;                           // 576 symbols
-localparam ENCODED_SYMBOLS = N * N;                        // 900 symbols
-localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 4608 bits
-localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 7200 bits
-localparam PARITY_SIZE = N - K;                            // 6 symbols
+localparam DATA_SYMBOLS = K * K;                           // 121 symbols
+localparam ENCODED_SYMBOLS = N * N;                        // 225 symbols
+localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 968 bits
+localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 1800 bits
+localparam PARITY_SIZE = N - K;                            // 4 symbols
 
 // State machine states
 typedef enum logic [3:0] {
@@ -75,6 +75,7 @@ reg enc_1d_clrn;
 wire s2p_buffer_full;
 assign ready = !s2p_buffer_full && !encoding_busy;
 assign s2p_ready_internal = !encoding_busy && p2s_ready;
+
 
 // Clear pulse generator for 1D encoder
 reg [2:0] clrn_counter;
@@ -162,6 +163,7 @@ always @(posedge clk or negedge rstn) begin
         state <= next_state;
     end
 end
+
 
 // Next state logic
 always @(*) begin
@@ -271,10 +273,6 @@ always @(posedge clk or negedge rstn) begin
                     row_idx <= 0;  // Ensure row_idx starts at 0
                 end
 
-                // Debug: Mark state entry
-                if (row_idx == 0 && col_idx == 0) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_ROWS", $time);
-                end
 
                 if (row_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin  // Only encode K data rows
                     // Prepare row data for encoding
@@ -302,10 +300,6 @@ always @(posedge clk or negedge rstn) begin
                     col_idx <= 0;  // Ensure col_idx starts at 0
                 end
 
-                // Debug: Mark state entry
-                if (col_idx == 0 && row_idx >= K) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_COLS", $time);
-                end
 
                 if (col_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin
                     // Prepare column data for encoding
@@ -325,11 +319,6 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;  // Allow next trigger
                     // Also check if we're accidentally overwriting data
                     for (i = 0; i < K; i = i + 1) begin
-                        if (enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH] != encoded_array[i][encoder_output_col_idx]) begin
-                            $display("  WARNING: Data mismatch at [%d][%d]: expected %02h, got %02h",
-                                     i, encoder_output_col_idx, encoded_array[i][encoder_output_col_idx],
-                                     enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH]);
-                        end
                     end
                 end
 
@@ -407,34 +396,18 @@ always @(posedge clk or negedge rstn) begin
             end
 
             VERIFY_PARITY: begin
-                // Debug: Show complete parity-on-parity comparison
-                // $display("[%0t] P-o-P Verification:", $time);
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        // $display("  [%d][%d]: row=%02h, col=%02h, match=%b",
-                                //  K+i, K+j, temp_parity_rows[i][j], temp_parity_cols[i][j],
-                                //  temp_parity_rows[i][j] == temp_parity_cols[i][j]);
-                    end
-                end
-
-                // Check for missing parity values (should never be zero)
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        if (temp_parity_rows[i][j] == 0 && temp_parity_cols[i][j] == 0) begin
-                            $display("[%0t] ERROR: Missing parity at position [%d][%d]!", $time, i, j);
-                        end
-                    end
-                end
-
                 // Verify parity-on-parity matches and fill bottom-right quadrant
                 for (i = 0; i < PARITY_SIZE; i = i + 1) begin
                     for (j = 0; j < PARITY_SIZE; j = j + 1) begin
                         if (temp_parity_rows[i][j] == temp_parity_cols[i][j]) begin
                             encoded_array[K+i][K+j] <= temp_parity_rows[i][j];
+
+                            $display("DEBUG [%0t] PARITY_MATCH: row_parity=%h, col_parity=%h", $time, temp_parity_rows[i][j], temp_parity_cols[i][j]);
                         end else begin
                             // Parity mismatch - use row parity (or handle error)
                             encoded_array[K+i][K+j] <= temp_parity_rows[i][j];
-                            $display("[%0t] WARNING: Parity mismatch at [%d][%d], using row parity", $time, K+i, K+j);
+
+                            $display("DEBUG [%0t] PARITY_MISMATCH: row_parity=%h, col_parity=%h", $time, temp_parity_rows[i][j], temp_parity_cols[i][j]);
                         end
                     end
                 end
@@ -456,6 +429,7 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;  // Reset for next frame
                 end
             end
+
         endcase
     end
 end

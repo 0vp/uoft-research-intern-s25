@@ -4,8 +4,8 @@ module rs_decode_wrapper(
     input decode_en,
     input clrn,
     input scan_mode,
-    input [15*8-1:0] encoded_data,
-    output reg [15*8-1:0] error_pos,
+    input [69*8-1:0] encoded_data,
+    output reg [69*8-1:0] error_pos,
     output reg output_valid,
     output reg ready,
     output  with_error,  //output reg  with_error 
@@ -34,7 +34,7 @@ reg [1:0] state, next_state;
 reg [7:0] decode_counter; // Counter to maintain dec_ena for k clock cycles
 reg [7:0] decode_number = 0; // Debug: Track which decode operation this is
 
-localparam [7:0] k = 8'd15;
+localparam [7:0] k = 8'd69;
 
 assign ready_re = 1'b1;
 assign output_valid_re = output_valid;

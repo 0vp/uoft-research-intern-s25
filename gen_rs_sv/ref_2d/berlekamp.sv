@@ -18,13 +18,13 @@
 //Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // --------------------------------------------------------------------------
 
-module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndrome3, 
+module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndrome3,
 		D, DI, count, phase0, phase4, enable, clk, clrn);
 	input clk, clrn, enable, phase0, phase4;
 	input [7:0] syndrome0;
-	input [7:0] syndrome1;
-	input [7:0] syndrome2;
-	input [7:0] syndrome3;
+		input [7:0] syndrome1;
+		input [7:0] syndrome2;
+		input [7:0] syndrome3;
 	input [7:0] DI;
 	input [5:0] count;
 	output [7:0] D;
@@ -41,9 +41,9 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 	reg [7:0] A[2:0];
 	reg [7:0] B[2:0];
 	wire [7:0] tmp0;
-	wire [7:0] tmp1;
-	wire [7:0] tmp2;
-	wire [7:0] tmp3;
+		wire [7:0] tmp1;
+		wire [7:0] tmp2;
+		wire [7:0] tmp3;
 
 	always @ (tmp1) lambda_out = tmp1;
 	always @ (tmp3) omega_out = tmp3;
@@ -87,8 +87,8 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 			begin
 				if (~phase4) lambda[0] <= lambda[3] ^ tmp0;
 				else lambda[0] <= lambda[3];
-				for (j = 1; j < 4; j = j + 1)
-					lambda[j] <= lambda[j-1];
+							for (j = 1; j < 4; j = j + 1)
+								lambda[j] <= lambda[j-1];
 			end
 
 			if (~phase0)
@@ -96,16 +96,16 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 				if (delta)	B[0] <= tmp1;
 				else if (~phase4) B[0] <= B[2];
 				else B[0] <= 0;
-				for (j = 1; j < 3; j = j + 1)
-					B[j] <= B[j-1];
+							for (j = 1; j < 3; j = j + 1)
+								B[j] <= B[j-1];
 			end
 
 			if (~phase0)
 			begin
 				if (~phase4) omega[0] <= omega[3] ^ tmp2;
 				else omega[0] <= omega[3];
-				for (j = 1; j < 4; j = j + 1)
-					omega[j] <= omega[j-1];
+							for (j = 1; j < 4; j = j + 1)
+								omega[j] <= omega[j-1];
 			end
 
 			if (~phase0)
@@ -113,8 +113,8 @@ module rsdec_berl (lambda_out, omega_out, syndrome0, syndrome1, syndrome2, syndr
 				if (delta)	A[0] <= tmp3;
 				else if (~phase4) A[0] <= A[2];
 				else A[0] <= 0;
-				for (j = 1; j < 3; j = j + 1)
-					A[j] <= A[j-1];
+							for (j = 1; j < 3; j = j + 1)
+								A[j] <= A[j-1];
 			end
 
 			if ((phase0 & delta) && (count != -1)) L <= count - L + 1;

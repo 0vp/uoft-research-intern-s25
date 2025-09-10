@@ -99,57 +99,57 @@ module rsdec_chien (error, alpha, lambda, omega, even, D, search, load, shorten,
 	reg [7:0] alpha;
 
 	wire [7:0] scale0;
-	wire [7:0] scale1;
-	wire [7:0] scale2;
-	wire [7:0] scale3;
-	wire [7:0] scale4;
-	wire [7:0] scale5;
-	wire [7:0] scale6;
-	wire [7:0] scale7;
+		wire [7:0] scale1;
+		wire [7:0] scale2;
+		wire [7:0] scale3;
+		wire [7:0] scale4;
+		wire [7:0] scale5;
+		wire [7:0] scale6;
+		wire [7:0] scale7;
 	reg [7:0] data0;
-	reg [7:0] data1;
-	reg [7:0] data2;
-	reg [7:0] data3;
+		reg [7:0] data1;
+		reg [7:0] data2;
+		reg [7:0] data3;
 	reg [7:0] a0;
-	reg [7:0] a1;
-	reg [7:0] a2;
-	reg [7:0] a3;
+		reg [7:0] a1;
+		reg [7:0] a2;
+		reg [7:0] a3;
 	reg [7:0] l0;
-	reg [7:0] l1;
-	reg [7:0] l2;
-	reg [7:0] l3;
+		reg [7:0] l1;
+		reg [7:0] l2;
+		reg [7:0] l3;
 	reg [7:0] o0;
-	reg [7:0] o1;
-	reg [7:0] o2;
-	reg [7:0] o3;
+		reg [7:0] o1;
+		reg [7:0] o2;
+		reg [7:0] o3;
 	reg [7:0] odd, numerator;
 	wire [7:0] tmp;
 	integer j;
 
 	rsdec_chien_scale0 x0 (scale0, data0);
-	rsdec_chien_scale1 x1 (scale1, data1);
-	rsdec_chien_scale2 x2 (scale2, data2);
-	rsdec_chien_scale3 x3 (scale3, data3);
+		rsdec_chien_scale1 x1 (scale1, data1);
+		rsdec_chien_scale2 x2 (scale2, data2);
+		rsdec_chien_scale3 x3 (scale3, data3);
 	rsdec_chien_scale0 x4 (scale4, o0);
-	rsdec_chien_scale1 x5 (scale5, o1);
-	rsdec_chien_scale2 x6 (scale6, o2);
-	rsdec_chien_scale3 x7 (scale7, o3);
+		rsdec_chien_scale1 x5 (scale5, o1);
+		rsdec_chien_scale2 x6 (scale6, o2);
+		rsdec_chien_scale3 x7 (scale7, o3);
 
 	always @ (shorten or a0 or l0)
-		if (shorten) data0 = a0;
-		else data0 = l0;
-
-	always @ (shorten or a1 or l1)
-		if (shorten) data1 = a1;
-		else data1 = l1;
-
-	always @ (shorten or a2 or l2)
-		if (shorten) data2 = a2;
-		else data2 = l2;
-
-	always @ (shorten or a3 or l3)
-		if (shorten) data3 = a3;
-		else data3 = l3;
+			if (shorten) data0 = a0;
+			else data0 = l0;
+	
+		always @ (shorten or a1 or l1)
+			if (shorten) data1 = a1;
+			else data1 = l1;
+	
+		always @ (shorten or a2 or l2)
+			if (shorten) data2 = a2;
+			else data2 = l2;
+	
+		always @ (shorten or a3 or l3)
+			if (shorten) data3 = a3;
+			else data3 = l3;
 
 	always @ (posedge clk or negedge clrn)
 	begin

@@ -4,12 +4,12 @@ module rs_encode_wrapper(
     input clrn,
     input encode_en,               // 开始编码的外部信号
     input scan_mode,
-    input [8*11-1:0] datain,
-    output reg [8*15-1:0] encoded_data,
+    input [8*65-1:0] datain,
+    output reg [8*69-1:0] encoded_data,
     output reg valid,              // 编码完成的信号
     output reg ready,               // 可以进行编码的信号
-    
-    output     ready_re, 
+
+    output     ready_re,
     output     valid_re,
     output [49:0] encoded_data_re
 );
@@ -19,14 +19,13 @@ module rs_encode_wrapper(
     reg enc_ena;
     reg data_present;
     wire [7:0] encoded;
-    reg [7:0] data_buffer[0:10]; // Buffer to hold input data
+    reg [7:0] data_buffer[0:64]; // Buffer to hold input data
     integer i, j;
-    reg [4:0] output_idx;  // Track where to store in output array
 
     assign valid_re = valid;
     assign ready_re = 1'b1;
     assign encoded_data_re = {50{valid}};
-     
+
     // Instantiate the rs_enc module
     rs_enc x1 (
         .y(encoded),
@@ -48,7 +47,6 @@ module rs_encode_wrapper(
             state <= S_IDLE;
             i <= 0;
             j <= 0;
-            output_idx <= 0;
             enc_ena <= 0;
             data_present <= 0;
             valid <= 0;
@@ -65,13 +63,66 @@ module rs_encode_wrapper(
             data_buffer[8] <= 0;
             data_buffer[9] <= 0;
             data_buffer[10] <= 0;
+            data_buffer[11] <= 0;
+            data_buffer[12] <= 0;
+            data_buffer[13] <= 0;
+            data_buffer[14] <= 0;
+            data_buffer[15] <= 0;
+            data_buffer[16] <= 0;
+            data_buffer[17] <= 0;
+            data_buffer[18] <= 0;
+            data_buffer[19] <= 0;
+            data_buffer[20] <= 0;
+            data_buffer[21] <= 0;
+            data_buffer[22] <= 0;
+            data_buffer[23] <= 0;
+            data_buffer[24] <= 0;
+            data_buffer[25] <= 0;
+            data_buffer[26] <= 0;
+            data_buffer[27] <= 0;
+            data_buffer[28] <= 0;
+            data_buffer[29] <= 0;
+            data_buffer[30] <= 0;
+            data_buffer[31] <= 0;
+            data_buffer[32] <= 0;
+            data_buffer[33] <= 0;
+            data_buffer[34] <= 0;
+            data_buffer[35] <= 0;
+            data_buffer[36] <= 0;
+            data_buffer[37] <= 0;
+            data_buffer[38] <= 0;
+            data_buffer[39] <= 0;
+            data_buffer[40] <= 0;
+            data_buffer[41] <= 0;
+            data_buffer[42] <= 0;
+            data_buffer[43] <= 0;
+            data_buffer[44] <= 0;
+            data_buffer[45] <= 0;
+            data_buffer[46] <= 0;
+            data_buffer[47] <= 0;
+            data_buffer[48] <= 0;
+            data_buffer[49] <= 0;
+            data_buffer[50] <= 0;
+            data_buffer[51] <= 0;
+            data_buffer[52] <= 0;
+            data_buffer[53] <= 0;
+            data_buffer[54] <= 0;
+            data_buffer[55] <= 0;
+            data_buffer[56] <= 0;
+            data_buffer[57] <= 0;
+            data_buffer[58] <= 0;
+            data_buffer[59] <= 0;
+            data_buffer[60] <= 0;
+            data_buffer[61] <= 0;
+            data_buffer[62] <= 0;
+            data_buffer[63] <= 0;
+            data_buffer[64] <= 0;
         end else if (!clrn) begin
             // Reset logic
             message <= 8'b0;
             state <= S_IDLE;
             i <= 0;
             j <= 0;
-            output_idx <= 0;
             enc_ena <= 0;
             data_present <= 0;
             valid <= 0;
@@ -88,13 +139,66 @@ module rs_encode_wrapper(
             data_buffer[8] <= 0;
             data_buffer[9] <= 0;
             data_buffer[10] <= 0;
+            data_buffer[11] <= 0;
+            data_buffer[12] <= 0;
+            data_buffer[13] <= 0;
+            data_buffer[14] <= 0;
+            data_buffer[15] <= 0;
+            data_buffer[16] <= 0;
+            data_buffer[17] <= 0;
+            data_buffer[18] <= 0;
+            data_buffer[19] <= 0;
+            data_buffer[20] <= 0;
+            data_buffer[21] <= 0;
+            data_buffer[22] <= 0;
+            data_buffer[23] <= 0;
+            data_buffer[24] <= 0;
+            data_buffer[25] <= 0;
+            data_buffer[26] <= 0;
+            data_buffer[27] <= 0;
+            data_buffer[28] <= 0;
+            data_buffer[29] <= 0;
+            data_buffer[30] <= 0;
+            data_buffer[31] <= 0;
+            data_buffer[32] <= 0;
+            data_buffer[33] <= 0;
+            data_buffer[34] <= 0;
+            data_buffer[35] <= 0;
+            data_buffer[36] <= 0;
+            data_buffer[37] <= 0;
+            data_buffer[38] <= 0;
+            data_buffer[39] <= 0;
+            data_buffer[40] <= 0;
+            data_buffer[41] <= 0;
+            data_buffer[42] <= 0;
+            data_buffer[43] <= 0;
+            data_buffer[44] <= 0;
+            data_buffer[45] <= 0;
+            data_buffer[46] <= 0;
+            data_buffer[47] <= 0;
+            data_buffer[48] <= 0;
+            data_buffer[49] <= 0;
+            data_buffer[50] <= 0;
+            data_buffer[51] <= 0;
+            data_buffer[52] <= 0;
+            data_buffer[53] <= 0;
+            data_buffer[54] <= 0;
+            data_buffer[55] <= 0;
+            data_buffer[56] <= 0;
+            data_buffer[57] <= 0;
+            data_buffer[58] <= 0;
+            data_buffer[59] <= 0;
+            data_buffer[60] <= 0;
+            data_buffer[61] <= 0;
+            data_buffer[62] <= 0;
+            data_buffer[63] <= 0;
+            data_buffer[64] <= 0;
         end else begin
             case (state)
                 S_IDLE: begin
                     valid <= 0; // Clear valid signal
                     if (encode_en && ready) begin
                         i <= 0;
-                        output_idx <= 0;  // Reset output index
                         ready <= 0; // Not ready until encoding is done
                         state <= S_LOAD;
                         // Load data into buffer
@@ -109,40 +213,88 @@ module rs_encode_wrapper(
                         data_buffer[8] <= datain[8*8 +: 8];
                         data_buffer[9] <= datain[9*8 +: 8];
                         data_buffer[10] <= datain[10*8 +: 8];
+                        data_buffer[11] <= datain[11*8 +: 8];
+                        data_buffer[12] <= datain[12*8 +: 8];
+                        data_buffer[13] <= datain[13*8 +: 8];
+                        data_buffer[14] <= datain[14*8 +: 8];
+                        data_buffer[15] <= datain[15*8 +: 8];
+                        data_buffer[16] <= datain[16*8 +: 8];
+                        data_buffer[17] <= datain[17*8 +: 8];
+                        data_buffer[18] <= datain[18*8 +: 8];
+                        data_buffer[19] <= datain[19*8 +: 8];
+                        data_buffer[20] <= datain[20*8 +: 8];
+                        data_buffer[21] <= datain[21*8 +: 8];
+                        data_buffer[22] <= datain[22*8 +: 8];
+                        data_buffer[23] <= datain[23*8 +: 8];
+                        data_buffer[24] <= datain[24*8 +: 8];
+                        data_buffer[25] <= datain[25*8 +: 8];
+                        data_buffer[26] <= datain[26*8 +: 8];
+                        data_buffer[27] <= datain[27*8 +: 8];
+                        data_buffer[28] <= datain[28*8 +: 8];
+                        data_buffer[29] <= datain[29*8 +: 8];
+                        data_buffer[30] <= datain[30*8 +: 8];
+                        data_buffer[31] <= datain[31*8 +: 8];
+                        data_buffer[32] <= datain[32*8 +: 8];
+                        data_buffer[33] <= datain[33*8 +: 8];
+                        data_buffer[34] <= datain[34*8 +: 8];
+                        data_buffer[35] <= datain[35*8 +: 8];
+                        data_buffer[36] <= datain[36*8 +: 8];
+                        data_buffer[37] <= datain[37*8 +: 8];
+                        data_buffer[38] <= datain[38*8 +: 8];
+                        data_buffer[39] <= datain[39*8 +: 8];
+                        data_buffer[40] <= datain[40*8 +: 8];
+                        data_buffer[41] <= datain[41*8 +: 8];
+                        data_buffer[42] <= datain[42*8 +: 8];
+                        data_buffer[43] <= datain[43*8 +: 8];
+                        data_buffer[44] <= datain[44*8 +: 8];
+                        data_buffer[45] <= datain[45*8 +: 8];
+                        data_buffer[46] <= datain[46*8 +: 8];
+                        data_buffer[47] <= datain[47*8 +: 8];
+                        data_buffer[48] <= datain[48*8 +: 8];
+                        data_buffer[49] <= datain[49*8 +: 8];
+                        data_buffer[50] <= datain[50*8 +: 8];
+                        data_buffer[51] <= datain[51*8 +: 8];
+                        data_buffer[52] <= datain[52*8 +: 8];
+                        data_buffer[53] <= datain[53*8 +: 8];
+                        data_buffer[54] <= datain[54*8 +: 8];
+                        data_buffer[55] <= datain[55*8 +: 8];
+                        data_buffer[56] <= datain[56*8 +: 8];
+                        data_buffer[57] <= datain[57*8 +: 8];
+                        data_buffer[58] <= datain[58*8 +: 8];
+                        data_buffer[59] <= datain[59*8 +: 8];
+                        data_buffer[60] <= datain[60*8 +: 8];
+                        data_buffer[61] <= datain[61*8 +: 8];
+                        data_buffer[62] <= datain[62*8 +: 8];
+                        data_buffer[63] <= datain[63*8 +: 8];
+                        data_buffer[64] <= datain[64*8 +: 8];
                     end
                 end
 
                 S_LOAD: begin
-                    enc_ena <= 1; // Enable encoder for 15 cycles
-                    if (i < 11) begin
+                    enc_ena <= 1; // Enable encoder for 69 cycles
+                    if (i < 65) begin
                         message <= data_buffer[i];
-                        data_present <= 1; // Latch data for 11 cycles
+                        data_present <= 1; // Latch data for 65 cycles
                         i <= i + 1;
-                        // Only store when we have valid output from encoder
-                        if (output_idx < i) begin
-                            encoded_data[output_idx*8 +: 8] <= encoded;
-                            output_idx <= output_idx + 1;
-                        end
+                        // if (i > 0) begin
+                        encoded_data[(i-1)*8 +: 8] <= encoded;
+                        // end
                     end else begin
-                        // Store the last data byte output
-                        if (output_idx < 11) begin
-                            encoded_data[output_idx*8 +: 8] <= encoded;
-                            output_idx <= output_idx + 1;
-                        end
+                        encoded_data[(i-1)*8 +: 8] <= encoded;
                         data_present <= 0; // Stop latching data
                         state <= S_ENCODE;
                     end
                 end
 
                 S_ENCODE: begin
-                    // Wait for encoder to finish encoding (output parity bytes)
-                    if (output_idx >= 15) begin
+                    // Wait for encoder to finish encoding
+                    if (i >= 69) begin
                         enc_ena <= 0; // Disable encoder
+                        // encoded_data[(i)*8 +: 8] <= encoded;
                         state <= S_FINISH; // Move to finish state
                     end else begin
-                        encoded_data[output_idx*8 +: 8] <= encoded;
-                        output_idx <= output_idx + 1;
-                        i <= i + 1;  // Keep incrementing i for cycle count
+                        i <= i + 1;
+                        encoded_data[(i)*8 +: 8] <= encoded;
                     end
                 end
 

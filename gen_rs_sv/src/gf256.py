@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Galois Field GF(2^8) operations for Reed-Solomon codes
 Using primitive polynomial: x^8 + x^7 + x^2 + x + 1 (0x187)

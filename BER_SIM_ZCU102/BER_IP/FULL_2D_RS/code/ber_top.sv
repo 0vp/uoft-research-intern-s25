@@ -32,8 +32,8 @@ module ber_top #(
     parameter D = 192,
     
     // Reed-Solomon parameters
-    parameter RS_N = 30,             // RS codeword length (2D: 15x15)
-    parameter RS_K = 24,             // RS information symbols (2D: 11x11)
+    parameter RS_N = 15,             // RS codeword length (2D: 15x15)
+    parameter RS_K = 11,             // RS information symbols (2D: 11x11)
     parameter RS_SYMBOL_WIDTH = 8   // RS symbol width (bits)
 
 )(
@@ -72,7 +72,7 @@ module ber_top #(
     localparam LATENCY = 0;//2 * CI_SUM;
 
     // Reset control parameter
-    localparam FRAMES_BEFORE_RESET = 24;
+    localparam FRAMES_BEFORE_RESET = 11;
 
     wire binary_data;
     wire binary_data_valid;
@@ -361,8 +361,8 @@ module ber_top #(
     wire binary_data_rs_valid;
     
     pam4_to_binary_rs #(
-        .N(RS_N * RS_N),            // For 2D: N×N total symbols (15×15=225)
-        .K(RS_K * RS_K),            // For 2D: K×K data symbols (11×11=121)
+        .N(RS_N),            // For 2D: N×N total symbols (15×15=225)
+        .K(RS_K),            // For 2D: K×K data symbols (11×11=121)
         .SYMBOL_WIDTH(RS_SYMBOL_WIDTH)
     ) pam4_to_bin_rs (
         .clk(clk),

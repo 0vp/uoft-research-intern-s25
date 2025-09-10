@@ -2,7 +2,6 @@
 //Syndrome generator circuit in Reed-Solomon Decoder
 //Copyright (C) Tue Apr  2 17:07:53 2002
 //by Ming-Han Lei(hendrik@humanistic.org) - Modified by Qasim Li (qasim.li@mail.mcgill.ca)
-//
 //This program is free software; you can redistribute it and/or
 //modify it under the terms of the GNU Lesser General Public License
 //as published by the Free Software Foundation; either version 2

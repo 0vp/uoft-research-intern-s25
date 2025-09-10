@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
 // 2D Reed-Solomon Encoder
-// Implements 2D RS(15,11) encoding with row/column encoding and parity-on-parity
+// Implements 2D RS(69,65) encoding with row/column encoding and parity-on-parity
 
 module rs_2d_encoder #(
-    parameter N = 15,                    // Total symbols per dimension
-    parameter K = 11,                    // Data symbols per dimension
+    parameter N = 69,                    // Total symbols per dimension
+    parameter K = 65,                    // Data symbols per dimension
     parameter SYMBOL_WIDTH = 8           // Bits per symbol
 )(
     input wire clk,
@@ -18,10 +18,10 @@ module rs_2d_encoder #(
 );
 
 // Calculate dimensions
-localparam DATA_SYMBOLS = K * K;                           // 121 symbols
-localparam ENCODED_SYMBOLS = N * N;                        // 225 symbols
-localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 968 bits
-localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 1800 bits
+localparam DATA_SYMBOLS = K * K;                           // 4225 symbols
+localparam ENCODED_SYMBOLS = N * N;                        // 4761 symbols
+localparam DATA_BITS = DATA_SYMBOLS * SYMBOL_WIDTH;        // 33800 bits
+localparam ENCODED_BITS = ENCODED_SYMBOLS * SYMBOL_WIDTH;  // 38088 bits
 localparam PARITY_SIZE = N - K;                            // 4 symbols
 
 // State machine states
@@ -166,52 +166,52 @@ end
 // Next state logic
 always @(*) begin
     next_state = state;
-    
+
     case (state)
         IDLE: begin
             if (s2p_valid) begin
                 next_state = COLLECT_DATA;
             end
         end
-        
+
         COLLECT_DATA: begin
             next_state = ENCODE_ROWS;
         end
-        
+
         ENCODE_ROWS: begin
             if (row_idx >= K && !encoder_busy_1d && !encoder_triggered) begin  // Wait for last row to complete
                 next_state = ENCODE_COLS;
             end
         end
-        
+
         ENCODE_COLS: begin
             if (col_idx >= K && !encoder_busy_1d && !encoder_triggered) begin  // Wait for last column to complete
                 next_state = PARITY_ON_PARITY_ROWS;
             end
         end
-        
+
         PARITY_ON_PARITY_ROWS: begin
             if (row_idx >= N && !encoder_busy_1d && !encoder_triggered) begin  // Wait for last row parity to complete
                 next_state = PARITY_ON_PARITY_COLS;
             end
         end
-        
+
         PARITY_ON_PARITY_COLS: begin
             if (col_idx >= N && !encoder_busy_1d && !encoder_triggered) begin  // Wait for last column parity to complete
                 next_state = VERIFY_PARITY;
             end
         end
-        
+
         VERIFY_PARITY: begin
             next_state = OUTPUT_DATA;
         end
-        
+
         OUTPUT_DATA: begin
             if (p2s_valid && p2s_ready) begin
                 next_state = IDLE;
             end
         end
-        
+
         default: next_state = IDLE;
     endcase
 end
@@ -229,7 +229,7 @@ always @(posedge clk or negedge rstn) begin
         encoder_triggered <= 0;
         encoder_output_row_idx <= 0;
         encoder_output_col_idx <= 0;
-        
+
         // Initialize arrays
         for (i = 0; i < N; i = i + 1) begin
             for (j = 0; j < N; j = j + 1) begin
@@ -244,7 +244,7 @@ always @(posedge clk or negedge rstn) begin
         end
     end else begin
         enc_1d_enable <= 0;
-        
+
         case (state)
             IDLE: begin
                 encoding_busy <= 0;
@@ -253,7 +253,7 @@ always @(posedge clk or negedge rstn) begin
                 col_idx <= 0;
                 encoder_triggered <= 0;
             end
-            
+
             COLLECT_DATA: begin
                 encoding_busy <= 1;
                 // Unpack data into 2D array (K×K data symbols)
@@ -263,19 +263,14 @@ always @(posedge clk or negedge rstn) begin
                     end
                 end
             end
-            
+
             ENCODE_ROWS: begin
                 // Reset encoder_triggered on state entry
                 if (prev_state == COLLECT_DATA) begin
                     encoder_triggered <= 0;
                     row_idx <= 0;  // Ensure row_idx starts at 0
                 end
-                
-                // Debug: Mark state entry
-                if (row_idx == 0 && col_idx == 0) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_ROWS", $time);
-                end
-                
+
                 if (row_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin  // Only encode K data rows
                     // Prepare row data for encoding
                     for (i = 0; i < K; i = i + 1) begin
@@ -294,19 +289,14 @@ always @(posedge clk or negedge rstn) begin
                     // Row stored at encoder_output_row_idx
                 end
             end
-            
+
             ENCODE_COLS: begin
                 // Reset encoder_triggered on state entry
                 if (prev_state == ENCODE_ROWS) begin
                     encoder_triggered <= 0;
                     col_idx <= 0;  // Ensure col_idx starts at 0
                 end
-                
-                // Debug: Mark state entry
-                if (col_idx == 0 && row_idx >= K) begin
-                    // $display("[%0t] ENCODER: Starting ENCODE_COLS", $time);
-                end
-                
+
                 if (col_idx < K && !encoder_triggered && !encoder_busy_1d && enc_1d_ready) begin
                     // Prepare column data for encoding
                     for (i = 0; i < K; i = i + 1) begin
@@ -323,22 +313,14 @@ always @(posedge clk or negedge rstn) begin
                         encoded_array[K+i][encoder_output_col_idx] <= enc_1d_output[(K+i)*SYMBOL_WIDTH +: SYMBOL_WIDTH];
                     end
                     encoder_triggered <= 0;  // Allow next trigger
-                    // Also check if we're accidentally overwriting data
-                    for (i = 0; i < K; i = i + 1) begin
-                        if (enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH] != encoded_array[i][encoder_output_col_idx]) begin
-                            $display("  WARNING: Data mismatch at [%d][%d]: expected %02h, got %02h",
-                                     i, encoder_output_col_idx, encoded_array[i][encoder_output_col_idx], 
-                                     enc_1d_output[i*SYMBOL_WIDTH +: SYMBOL_WIDTH]);
-                        end
-                    end
                 end
-                
+
                 // Check if column encoding is complete
                 if (col_idx >= K && !encoder_busy_1d) begin
                     // Ready to transition to PARITY_ON_PARITY_ROWS
                 end
             end
-            
+
             PARITY_ON_PARITY_ROWS: begin
                 // Reset on state entry from ENCODE_COLS
                 if (prev_state == ENCODE_COLS) begin
@@ -346,7 +328,7 @@ always @(posedge clk or negedge rstn) begin
                     row_idx <= K;  // Start at row 11 (K=11)
                     col_idx <= 0;  // Reset col_idx
                 end
-                
+
                 // Sequential encoding: wait for each encoder to complete
                 if (row_idx < N && row_idx >= K && !encoder_busy_1d && enc_1d_ready) begin
                     if (!encoder_triggered) begin
@@ -372,7 +354,7 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;   // Reset for next iteration
                 end
             end
-            
+
             PARITY_ON_PARITY_COLS: begin
                 // Reset on state entry
                 if (prev_state == PARITY_ON_PARITY_ROWS) begin
@@ -380,7 +362,7 @@ always @(posedge clk or negedge rstn) begin
                     col_idx <= K;  // Start at column 11
                     row_idx <= 0;  // Reset row_idx for any future use
                 end
-                
+
                 // Sequential encoding: wait for each encoder to complete
                 if (col_idx < N && col_idx >= K && !encoder_busy_1d && enc_1d_ready) begin
                     if (!encoder_triggered) begin
@@ -405,27 +387,8 @@ always @(posedge clk or negedge rstn) begin
                     encoder_triggered <= 0;   // Reset for next iteration
                 end
             end
-            
+
             VERIFY_PARITY: begin
-                // Debug: Show complete parity-on-parity comparison
-                // $display("[%0t] P-o-P Verification:", $time);
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        // $display("  [%d][%d]: row=%02h, col=%02h, match=%b",
-                                //  K+i, K+j, temp_parity_rows[i][j], temp_parity_cols[i][j],
-                                //  temp_parity_rows[i][j] == temp_parity_cols[i][j]);
-                    end
-                end
-                
-                // Check for missing parity values (should never be zero)
-                for (i = 0; i < PARITY_SIZE; i = i + 1) begin
-                    for (j = 0; j < PARITY_SIZE; j = j + 1) begin
-                        if (temp_parity_rows[i][j] == 0 && temp_parity_cols[i][j] == 0) begin
-                            $display("[%0t] ERROR: Missing parity at position [%d][%d]!", $time, i, j);
-                        end
-                    end
-                end
-                
                 // Verify parity-on-parity matches and fill bottom-right quadrant
                 for (i = 0; i < PARITY_SIZE; i = i + 1) begin
                     for (j = 0; j < PARITY_SIZE; j = j + 1) begin
@@ -439,7 +402,7 @@ always @(posedge clk or negedge rstn) begin
                     end
                 end
             end
-            
+
             OUTPUT_DATA: begin
                 // Pack 2D array into output vector
                 for (i = 0; i < N; i = i + 1) begin
@@ -448,7 +411,7 @@ always @(posedge clk or negedge rstn) begin
                     end
                 end
                 p2s_valid <= 1;
-                
+
                 if (p2s_valid && p2s_ready) begin
                     p2s_valid <= 0;
                     row_idx <= 0;
