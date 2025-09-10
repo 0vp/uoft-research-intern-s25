@@ -22,6 +22,10 @@ The main goal of the project is to test the 2D Reed-Solomon decoding algorithm o
 
 The project is a work in progress and is not yet complete.
 
+## Results
+![BER Plot](./assets/ber_plot.png)
+> This is the BER plot for 2D Reed-Solomon. As you can see, more iterations reflect a steeper curve as SNR increases. Even with just 1 iteration, we can see that it performs much better than 1D Reed-Solomon (2D RS(15, 11) on 1 iteration vs 1D RS(15, 11)). Future work can be done on larger RS codes.
+
 ## Project Hardware Specifications
 
 - AMD Zynq UltraScale+™ MPSoC ZCU102 Evaluation Kit

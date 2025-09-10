@@ -21,7 +21,7 @@ PRBS Data -> Grey Encode -> Precode TX -> EPF Channel 1 -> Precode RX -> Grey De
     |
 Reed-Solomon Encoder -> [Convolutional Interleaver - DISABLED] -> Grey Encode
     |
-ISI Channel -> Random Noise Addition -> SOVA Equalizer -> PAM4 to Binary
+ISI Channel (alpha = 0.5) -> Random Noise Addition (AWGN) -> SOVA Equalizer -> PAM4 to Binary
     |
 [Convolutional Deinterleaver - DISABLED] -> Reed-Solomon Decoder -> Grey Encode
     |
@@ -29,6 +29,17 @@ Precode TX -> EPF Channel 3 -> Precode RX -> Grey Decode -> Error Counting -> BR
 ```
 
 **Note**: The convolutional interleaver/deinterleaver is currently disabled in this implementation.
+
+Bits as part of frames are transmitted from the PRBS generator and goes through the data flow until the error counting. This is when the total bits received, total bit errors, as well as the total frames received and total frame errors are counted.
+
+## Block Diagram
+
+![Block Diagram](../assets/block_diagram.png)
+> This block diagram is exactly the same as the one from FPGA-FEC, but with a line from `sim_controller_0` to `parallel_ber_top_0` to control the maximum number of iterations of the 2D Reed-Solomon decoder.
+
+## Results
+![BER Plot](../assets/ber_plot.png)
+> This is the BER plot for 2D Reed-Solomon. As you can see, more iterations reflect a steeper curve as SNR increases. Even with just 1 iteration, we can see that it performs much better than 1D Reed-Solomon (2D RS(15, 11) on 1 iteration vs 1D RS(15, 11)). Future work can be done on larger RS codes.
 
 ## Project Structure
 
