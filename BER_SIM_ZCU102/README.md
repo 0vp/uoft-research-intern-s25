@@ -178,6 +178,26 @@ sudo xlnx-config --activate <config_name>
 sudo reboot
 ```
 
+### Troubleshooting FPGA Crash
+
+If after `sudo reboot` the FPGA becomes unresponsive even after waiting for around 5-10 minutes, you will need to reset it.
+
+The following steps are for the ZCU102 board that is running embedded Linux. They may not work for other boards and/or configurations.
+
+To do so:  
+1. Turn off the FPGA
+1. Eject the SD card
+1. Remove the `boot1020.bin` file from the SD card
+1. Insert the SD card back into the board
+1. Turn on the board
+1. Wait for the FPGA to boot
+
+The FPGA will now be back in the original state.
+
+The main causes of this are:
+- Using the wrong BSP file.
+- Using incompatible versions of Vivado and PetaLinux (should be the exact same version).
+
 ## Running BER Tests
 
 ### 1. Software Setup
@@ -207,6 +227,7 @@ python3 parse.py results.log
 # Generate plots
 python3 plot.py
 ```
+
 
 ## Future Improvements / TODO
 1. Convolutional Interleaver/Deinterleaver is disabled in this implementation, add it back and see if it improves the BER performance.
