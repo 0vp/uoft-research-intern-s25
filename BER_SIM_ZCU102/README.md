@@ -19,27 +19,34 @@ A comprehensive FPGA based, bit error rate (BER) simulation framework for Reed-S
 ```
 PRBS Data -> Grey Encode -> Precode TX -> EPF Channel 1 -> Precode RX -> Grey Decode
     |
-Reed-Solomon Encoder -> [Convolutional Interleaver - DISABLED] -> Grey Encode
+Reed-Solomon Encoder -> [Convolutional Interleaver - ENABLE/BYPASS] -> Grey Encode
     |
 ISI Channel (alpha = 0.5) -> Random Noise Addition (AWGN) -> SOVA Equalizer -> PAM4 to Binary
     |
-[Convolutional Deinterleaver - DISABLED] -> Reed-Solomon Decoder -> Grey Encode
+[Convolutional Deinterleaver - ENABLE/BYPASS] -> Reed-Solomon Decoder -> Grey Encode
     |
 Precode TX -> EPF Channel 3 -> Precode RX -> Grey Decode -> Error Counting -> BRAM Storage
 ```
 
-**Note**: The convolutional interleaver/deinterleaver is currently disabled in this implementation.
+**Note**: The convolutional interleaver/deinterleaver can be enabled/bypassed based on the `parallel_ber_top` selection.
 
 Bits as part of frames are transmitted from the PRBS generator and goes through the data flow until the error counting. This is when the total bits received, total bit errors, as well as the total frames received and total frame errors are counted.
 
 ## Block Diagram
 
 ![Block Diagram](../assets/block_diagram.png)
-> This block diagram is exactly the same as the one from FPGA-FEC, but with a line from `sim_controller_0` to `parallel_ber_top_0` to control the maximum number of iterations of the 2D Reed-Solomon decoder.
+> This block diagram is exactly the same as the one from FPGA-FEC, but with a line from `sim_controller_0` to `parallel_ber_top_0` to control the maximum number of iterations of the 2D Reed-Solomon decoder. In this case, the 'full protection mode' is SOVA equalizer + inner Hamming(68,60) + outer RS(544,514) + CI(M=10, W=4, D=192, P=3) (configuration found in `Barrie_Richard_202411_MAS_thesis.pdf`).
 
 ## Results
 ![BER Plot](../assets/ber_plot.png)
 > This is the BER plot for 2D Reed-Solomon. As you can see, more iterations reflect a steeper curve as SNR increases. Even with just 1 iteration, we can see that it performs much better than 1D Reed-Solomon (2D RS(15, 11) on 1 iteration vs 1D RS(15, 11)). Future work can be done on larger RS codes.
+
+![BER Plot](../assets/ber_plot_ci_comparison.png)
+> This is the BER plot for 2D Reed-Solomon with and without the convolutional interleaver/deinterleaver (CI). As you can see, the performance is slightly better with the CI. The configurations for the CI is 
+> - M=8: Bits for outer FEC symbol
+> - W=1: Outer FEC symbols in CI symbol
+> - D=192: Delay constant
+> - P=3: Number of sub-lanes
 
 ## Project Structure
 

@@ -1,0 +1,35 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../code/grey_code.v" \
+"../../../../code/precode.v" \
+
+sv xil_defaultlib  \
+"../../../../code/PAM_4.sv" \
+"../../../../code/ber_top.sv" \
+"../../../../code/rs/berlekamp.sv" \
+"../../../../code/channel_model.sv" \
+"../../../../code/rs/chien-search.sv" \
+"../../../../code/convolutional_interleaver.sv" \
+"../../../../code/rs/decode.sv" \
+"../../../../code/rs/encode.sv" \
+"../../../../code/epf_channel.sv" \
+"../../../../code/rs/inverse.sv" \
+"../../../../code/noise.sv" \
+"../../../../code/rs/parallel_to_serial.sv" \
+"../../../../code/prbs.sv" \
+"../../../../code/rs/rs_2d_decode.sv" \
+"../../../../code/rs/rs_2d_encode.sv" \
+"../../../../code/rs/rs_decode_wrapper.sv" \
+"../../../../code/rs/rs_encode_wrapper.sv" \
+"../../../../code/rs/serial_to_parallel.sv" \
+"../../../../code/slicer.sv" \
+"../../../../code/sova.sv" \
+"../../../../code/sova_modules.sv" \
+"../../../../code/rs/syndrome.sv" \
+"../../../../code/ber_top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -32,8 +32,8 @@ module ber_top #(
     parameter D = 192,
     
     // Reed-Solomon parameters
-    parameter RS_N = 15,             // RS codeword length (2D: 15x15)
-    parameter RS_K = 11,             // RS information symbols (2D: 11x11)
+    parameter RS_N = 31,             // RS codeword length (2D: 15x15)
+    parameter RS_K = 27,             // RS information symbols (2D: 11x11)
     parameter RS_SYMBOL_WIDTH = 8   // RS symbol width (bits)
 
 )(
@@ -67,12 +67,11 @@ module ber_top #(
     //parameter [63:0] RANDOM_64 [3:0] = {64'h2629488426294884, 64'h588f503226294884, 64'h2629488426294884, 64'h2645841236454785};
 
     // LATENCY calculation for convolutional interleaver
-    // Back to the theoretical formula from the paper
     localparam CI_SUM = (0 * D * W * M) + (1 * D * W * M) + (2 * D * W * M);
-    localparam LATENCY = 0;//2 * CI_SUM;
+    localparam LATENCY = 2 * CI_SUM;
 
     // Reset control parameter
-    localparam FRAMES_BEFORE_RESET = 11;
+    localparam FRAMES_BEFORE_RESET = 1;
 
     wire binary_data;
     wire binary_data_valid;
@@ -191,6 +190,22 @@ module ber_top #(
         .en(symbol_B_valid),
         .data(binary_data_B),
         .valid(binary_data_B_valid));
+
+    wire binary_data_conv;
+    wire binary_data_conv_valid;
+        
+    convolutional_interleaver #(
+        .P(P),
+        .D(D),
+        .W(W),
+        .M(M),
+        .N_PCS(N_PCS)) ci (
+        .clk(clk),
+        .rstn(!combined_reset),
+        .data_in(binary_data_B),
+        .en(binary_data_B_valid),
+        .data_out(binary_data_conv),
+        .valid(binary_data_conv_valid));
         
     wire binary_data_enc;
     wire binary_data_enc_valid;
@@ -202,27 +217,11 @@ module ber_top #(
     ) encoder (
         .clk(clk),
         .rstn(!combined_reset),
-        .data_in(binary_data_B),
-        .data_in_valid(binary_data_B_valid),
+        .data_in(binary_data_conv),
+        .data_in_valid(binary_data_conv_valid),
         .data_out(binary_data_enc),
         .data_out_valid(binary_data_enc_valid)
     );
-
-    // wire binary_data_conv;
-    // wire binary_data_conv_valid;
-        
-    // convolutional_interleaver #(
-    //     .P(P),
-    //     .D(D),
-    //     .W(W),
-    //     .M(M),
-    //     .N_PCS(N_PCS)) ci (
-    //     .clk(clk),
-    //     .rstn(rstn),
-    //     .data_in(binary_data_enc),
-    //     .en(binary_data_enc_valid),
-    //     .data_out(binary_data_conv),
-    //     .valid(binary_data_conv_valid));
 
     wire [1:0] symbol;
     wire symbol_valid;
@@ -372,22 +371,6 @@ module ber_top #(
         .data_out(binary_data_rs),
         .data_out_valid(binary_data_rs_valid)
     );
-        	
-    // wire data_deconv;
-    // wire data_deconv_valid;
-    
-    // convolutional_deinterleaver #(
-    //     .P(P),
-    //     .D(D),
-    //     .W(W),
-    //     .M(M),
-    //     .N_PCS(N_PCS)) cdi (
-    //     .clk(clk),
-    //     .rstn(rstn),
-    //     .data_in(binary_data_rs),
-    //     .en(binary_data_rs_valid),
-    //     .data_out(data_deconv),
-    //     .valid(data_deconv_valid));
 
     wire data_dec;
     wire data_dec_valid;
@@ -406,14 +389,30 @@ module ber_top #(
         .data_out(data_dec),
         .data_out_valid(data_dec_valid)
     );
+
+    wire data_deconv;
+    wire data_deconv_valid;
+    
+    convolutional_deinterleaver #(
+        .P(P),
+        .D(D),
+        .W(W),
+        .M(M),
+        .N_PCS(N_PCS)) cdi (
+        .clk(clk),
+        .rstn(!combined_reset),
+        .data_in(data_dec),
+        .en(data_dec_valid),
+        .data_out(data_deconv),
+        .valid(data_deconv_valid));
         
     wire [1:0] symbol_C;
     wire symbol_C_valid;
     
     grey_encode ge2(
         .clk(clk),
-        .data(data_dec),
-        .en(data_dec_valid),
+        .data(data_deconv),
+        .en(data_deconv_valid),
         .rstn(!combined_reset),
         .symbol(symbol_C),
         .valid(symbol_C_valid));
@@ -606,9 +605,9 @@ module ber_top #(
     
     prbs63_ci_IL_FEC_checker #(
         .SEED(RANDOM_64[0]),
-        .N(RS_K * RS_SYMBOL_WIDTH),  // Total bits in 2D data (11*11*8)
-        .M(M),                         // Bits per symbol for interleaver (keep as 10)
-        .T(0),                      // ignore outer FEC.
+        .N(544),  // Total bits in 2D data (11*11*8)
+        .M(10),                         // Bits per symbol for interleaver (keep as 10)
+        .T(15),                      // ignore outer FEC.
         .W(W),
         .LATENCY(LATENCY)) fec (
         .clk(clk),

@@ -24,7 +24,15 @@ The project is a work in progress and is not yet complete.
 
 ## Results
 ![BER Plot](./assets/ber_plot.png)
-> This is the BER plot for 2D Reed-Solomon. As you can see, more iterations reflect a steeper curve as SNR increases. Even with just 1 iteration, we can see that it performs much better than 1D Reed-Solomon (2D RS(15, 11) on 1 iteration vs 1D RS(15, 11)). Future work can be done on larger RS codes.
+> This is the BER plot for 2D Reed-Solomon. As you can see, more iterations reflect a steeper curve as SNR increases. Even with just 1 iteration, we can see that it performs much better than 1D Reed-Solomon (2D RS(15, 11) on 1 iteration vs 1D RS(15, 11)). Future work can be done on larger RS codes. In this case, the 'full protection mode' is SOVA equalizer + inner Hamming(68,60) + outer RS(544,514) + CI(M=10, W=4, D=192, P=3) (configuration found in `Barrie_Richard_202411_MAS_thesis.pdf`).
+
+![BER Plot](./assets/ber_plot_ci_comparison.png)
+> This is the BER plot for 2D Reed-Solomon with and without the convolutional interleaver/deinterleaver (CI). As you can see, the performance is slightly better with the CI. The configurations for the CI is 
+> - M=8: Bits for outer FEC symbol
+> - W=1: Outer FEC symbols in CI symbol
+> - D=192: Delay constant
+> - P=3: Number of sub-lanes
+
 
 ## Project Hardware Specifications
 
